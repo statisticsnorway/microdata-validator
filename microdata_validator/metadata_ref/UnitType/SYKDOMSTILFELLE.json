@@ -1,0 +1,9 @@
+{
+    "shortName": "SYKDOMSTILFELLE",
+    "name": [
+        {"languageCode": "no", "value": "Sykdomstilfelle"}
+    ],
+    "description": [
+        {"languageCode": "no", "value": "Sykdomstilfelle(r) for personer."}
+    ]
+}

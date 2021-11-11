@@ -1,0 +1,10 @@
+{
+    "shortName": "STOP",
+    "name": [
+        {"languageCode": "no", "value": "Stoppdato"}
+    ],
+    "description": [
+        {"languageCode": "no", "value": "Stoppdato/sluttdato for hendelsen"}
+    ],
+    "dataType": "DATE"
+}

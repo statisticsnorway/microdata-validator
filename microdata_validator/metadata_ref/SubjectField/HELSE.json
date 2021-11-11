@@ -1,0 +1,9 @@
+{
+    "shortName": "HELSE",
+    "name": [
+        {"languageCode": "no", "value": "Helse"}
+    ],
+    "description": [
+        {"languageCode": "no", "value": "Helse"}
+    ]
+}
