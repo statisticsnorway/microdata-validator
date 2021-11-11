@@ -1,23 +1,10 @@
 import datetime
 from typing import Union
 import logging
-from datastore_builder.common import dataset_utils
-
+from pathlib import Path
+from microdata_validator import file_utils
 
 logger = logging.getLogger()
-#####################
-### Usage example ###
-#####################
-# from common.config_provider import ConfigProvider
-# conf = ConfigProvider.get_config()
-# dsv = DatasetValidator(conf, "KREFTREG_DS")
-# dsv.run_validator()
-
-# TODO: Skriv rader med valideringsfeil til egen err-fil slik at S380 kan se på denne, f.eks. til filen "KREFTREG_DS.err"
-#       --> Alternativt legge inn linje-nummer i Sqlite-temp-databasen !!!
-# TODO: Legges inn i kall til denne modulen fra "reader_wrappe.py" eller en ny "validator_wrapper.py"
-# TODO: Støtte for attributes???
-# TODO: Skrive .MD-dokumentasjon for denne modulen.
 
 
 def __get_metadata_measure_variable(metadata: dict):
@@ -57,7 +44,8 @@ def __get_metadata_measure_sentinel_missing_values(metadata: dict) -> Union[list
 
 def __validate_data(sqlite_db_file_path: str, metadata: dict) -> int:
     """Read and validate sorted data rows from the temporary Sqlite database file (sorted by unit_id, start, stop)"""
-    db_conn, db_cursor = dataset_utils.read_temp_sqlite_db_data_sorted(
+    #TODO
+    db_conn, db_cursor = file_utils.read_temp_sqlite_db_data_sorted(
         sqlite_db_file_path
     )
     row_number = 0
@@ -257,18 +245,15 @@ def __is_data_row_consistent_with_metadata(metadata: dict, data_row: tuple,
     return None
 
 
-def run_validator(config: dict, dataset_name: str) -> list:
-    """Main run for DatasetValidator class"""
+def run_validator(working_directory: Path, dataset_name: str) -> list:
+    metadata_file_path: Path = working_directory.joinpath(f'{dataset_name}.json')
+    sqlite_file_path: Path = working_directory.joinpath(f"{dataset_name}.db")
     logger.info(
         f'Dataset "{dataset_name}" - validate consistency between '
         f'data and metadata, event-history (unit_id '
         f'* start * stop) and check for row duplicates'
     )
-    working_dir = config['WORKING_DIR']
-    sqlite_file_path = f"{working_dir}/{dataset_name}.db"
-    metadata = dataset_utils.read_json_file(
-        f"{working_dir}/{dataset_name}.json"
-    )
+    metadata = file_utils.load_json(metadata_file_path)
     data_errors = __validate_data(sqlite_file_path, metadata)
     if len(data_errors) > 0:
         logger.error(f'ERROR - data consistency error(s):')
