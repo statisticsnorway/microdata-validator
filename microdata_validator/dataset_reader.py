@@ -3,62 +3,22 @@ import datetime
 import os
 from shutil import copyfile
 import logging
-
-from datastore_builder.common import dataset_utils
-
+from pathlib import Path
+from microdata_validator import file_utils
 
 logger = logging.getLogger()
 
 
-#####################
-### Usage example ###
-#####################
-# from common.config_provider import ConfigProvider
-# conf = ConfigProvider.get_config()
-# dsr = DatasetReader(conf, "KREFTREG_DS")
-# dsr.run_reader()
-
-"""Expected catalog structure for input data and metadata:
-    <data_input_root catalog>
-        /DataSet
-            /DATASET_A
-                DATASET_A.json
-                DATASET_A.csv
-            /DATASET_B
-                DATASET_B.json
-                DATASET_B.csv
-            /DATASET_<XX>
-        /Attribute
-        /Identifier
-        /SubjectField
-        /UnitType
-        /ValueDomain
-"""
-
-# TODO: Støtte for "dry-runs" (validere datafil og metadata-fil,
-#       men uten at det lastes inn i datastore)
-# TODO: Legges inn i kall til denne modulen fra "reader_wrapper.py"
-# TODO: Støtte for attributes???
-# TODO: Skrive .MD-dokumentasjon for denne modulen.
-# TODO: Støtte for pseudonymisering???
-
-
-def __inline_metadata_references(dataset_metadata_file: dict,
-                                 data_input_root_path: str) -> dict:
-    """
-    Read the dataset JSON metadata file and include metadata-elements
-    from external JSON-documents if "$ref" elements exists,
-    eg. "$ref" to JSON metadata for ValueDomain, Identifier, SubjectFields, ...
-    """
-    logger.info(
-        f'Reading metadata from file "{dataset_metadata_file}"'
-    )
-    metadata = dataset_utils.read_json_file(dataset_metadata_file)
+def __inline_metadata_references(metadata_file_path: Path) -> dict:
+    logger.info(f'Reading metadata from file "{metadata_file_path}"')
+    
+    metadata_ref_directory = Path(__file__).parent.joinpath("metadata_ref")
+    metadata: dict = file_utils.load_json(metadata_file_path)
 
     if "$ref" in metadata["unitType"]:
         ref_to_unit_type = str(metadata["unitType"]["$ref"])
-        metadata["unitType"] = dataset_utils.read_json_file(
-            f"{data_input_root_path}/{ref_to_unit_type}"
+        metadata["unitType"] = file_utils.load_json(
+            metadata_ref_directory.joinpath(ref_to_unit_type)
         )
 
     identifier_variable = [
@@ -68,8 +28,8 @@ def __inline_metadata_references(dataset_metadata_file: dict,
     if len(identifier_variable) > 0 and "$ref" in identifier_variable[0]:
         ref_to_identifier = identifier_variable[0]["$ref"]
         identifier_variable[0].update(
-            dataset_utils.read_json_file(
-                f"{data_input_root_path}/{ref_to_identifier}"
+            file_utils.load_json(
+                metadata_ref_directory.joinpath(ref_to_identifier)
             )
         )
         identifier_variable[0].pop("$ref")  # remove old "$ref"
@@ -83,8 +43,10 @@ def __inline_metadata_references(dataset_metadata_file: dict,
             if "$ref" in subject_field:
                 ref_to_subject_field = subject_field["$ref"]
                 subject_field.update(
-                    dataset_utils.read_json_file(
-                        f"{data_input_root_path}/{ref_to_subject_field}"
+                    file_utils.load_json(
+                        metadata_ref_directory.joinpath(
+                            ref_to_subject_field
+                        )
                     )
                 )
                 subject_field.pop("$ref")  # remove old "$ref"
@@ -93,13 +55,14 @@ def __inline_metadata_references(dataset_metadata_file: dict,
         if "$ref" in value_domain:
             ref_to_value_domain = value_domain["$ref"]
             value_domain.update(
-                dataset_utils.read_json_file(
-                    f"{data_input_root_path}/{ref_to_value_domain}"
+                file_utils.load_json(
+                    metadata_ref_directory.joinpath(ref_to_value_domain)
                 )
             )
             value_domain.pop("$ref")  # remove old "$ref"
             if "sentinelAndMissingValues" in value_domain:
-                # If "sentinelAndMissingValues" exists in JSON then move it to the end of valueDomain for better human readability
+                # If "sentinelAndMissingValues" exists in JSON then move it
+                # to the end of valueDomain for better human readability
                 sentinel_and_missing_values = value_domain.pop(
                     "sentinelAndMissingValues"
                 )
@@ -114,8 +77,8 @@ def __inline_metadata_references(dataset_metadata_file: dict,
     if len(start_time_variable) > 0 and "$ref" in start_time_variable[0]:
         ref_to_start_time = start_time_variable[0]["$ref"]
         start_time_variable[0].update(
-            dataset_utils.read_json_file(
-                f"{data_input_root_path}/{ref_to_start_time}"
+            file_utils.load_json(
+                metadata_ref_directory.joinpath(ref_to_start_time)
             )
         )
         start_time_variable[0].pop("$ref")  # remove old "$ref"
@@ -127,8 +90,8 @@ def __inline_metadata_references(dataset_metadata_file: dict,
     if len(stop_time_variable) > 0 and "$ref" in stop_time_variable[0]:
         ref_to_stop_time = stop_time_variable[0]["$ref"]
         stop_time_variable[0].update(
-            dataset_utils.read_json_file(
-                f"{data_input_root_path}/{ref_to_stop_time}"
+            file_utils.load_json(
+                metadata_ref_directory.joinpath(ref_to_stop_time)
             )
         )
         stop_time_variable[0].pop("$ref")  # remove old "$ref"
@@ -138,9 +101,10 @@ def __inline_metadata_references(dataset_metadata_file: dict,
 
 def __insert_data_csv_into_sqlite(sqlite_file_path, dataset_data_file,
                                   field_separator=";") -> None:
-    db_conn, cursor = dataset_utils.create_temp_sqlite_db_file(
+    db_conn, cursor = file_utils.create_temp_sqlite_db_file(
         sqlite_file_path
     )
+
     with open(file=dataset_data_file, newline='', encoding='utf-8') as f:
         #csv.register_dialect('my_dialect', delimiter=';', quoting=csv.QUOTE_NONE)
         reader = csv.reader(f, delimiter=field_separator)
@@ -158,7 +122,8 @@ def __insert_data_csv_into_sqlite(sqlite_file_path, dataset_data_file,
     )
 
 
-def __validate_and_parse_for_temporal_data(data_file_path, field_separator=";",
+def __validate_and_parse_for_temporal_data(data_file_path: Path,
+                                           field_separator: str = ";",
                                            data_error_limit: int = 100) -> dict:
     data_errors = []  # used for error-reporting
     start_dates = []
@@ -304,42 +269,27 @@ def __metadata_update_temporal_coverage(metadata: dict,
         )
 
 
-def run_reader(config: dict, dataset_name: str) -> None:
-    data_input_root_dir = config['DATA_INPUT_ROOT_DIR']
-    working_dir = config['WORKING_DIR']
+def run_reader(working_directory: Path, input_directory: Path, dataset_name: str) -> None:
+    metadata_file_path: Path = input_directory.joinpath(f"{dataset_name}.json")
+    data_file_path: Path = input_directory.joinpath(f"{dataset_name}.csv")
 
-    dataset_metadata_file = (
-        f"{data_input_root_dir}/DataSet/{dataset_name}/{dataset_name}.json"
-    )
-    dataset_data_file = (
-        f"{data_input_root_dir}/DataSet/{dataset_name}/{dataset_name}.csv"
-    )
     logger.info(f'Start reading dataset "{dataset_name}"')
-
-    metadata_dict = __inline_metadata_references(
-        dataset_metadata_file, data_input_root_dir
-    )
-
-    temporal_data = __validate_and_parse_for_temporal_data(dataset_data_file)
+    metadata_dict = __inline_metadata_references(metadata_file_path)
+    temporal_data = __validate_and_parse_for_temporal_data(data_file_path)
     __metadata_update_temporal_coverage(metadata_dict, temporal_data)
-    logger.info(f'Writing metadata JSON file to working directory')
-    temp_metadata_json_file = f"{working_dir}/{dataset_name}.json"
-    dataset_utils.write_json_file(metadata_dict, temp_metadata_json_file)
 
-    sqlite_file_path = f"{working_dir}/{dataset_name}.db"
-    __insert_data_csv_into_sqlite(sqlite_file_path, dataset_data_file)
+    logger.info(f'Writing inlined metadata JSON file to working directory')
+    inlined_metadata_file_path = working_directory.joinpath(f'{dataset_name}.json')
+    file_utils.write_json(inlined_metadata_file_path, metadata_dict)
 
-    logger.info(
-        f'Validating metadata JSON file in working directory with JSON Schema'
-    )
-    dataset_utils.is_json_file_valid(
-        temp_metadata_json_file,
-        f"datastore_builder/common/DataSetMetadataSchema.json"
-    )
-    target_file = f"{working_dir}/{dataset_name}.csv"
-    if os.path.exists(target_file):
-        os.remove(target_file)
-    copyfile(dataset_data_file, target_file)
+    logger.info(f'Validating metadata JSON with JSON schema')
+    file_utils.validate_json_with_schema(inlined_metadata_file_path)
+
+    sqlite_file_path = working_directory.joinpath(f'{dataset_name}.db')
+    __insert_data_csv_into_sqlite(sqlite_file_path, data_file_path)
+
+    temp_data_file_path = working_directory.joinpath(f'{dataset_name}.csv')
+    copyfile(data_file_path, temp_data_file_path)
     logger.info(f'Copied data file to working directory')
     logger.info(f'OK - reading dataset "{dataset_name}"')
 
