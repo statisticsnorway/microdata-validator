@@ -1,0 +1,50 @@
+{
+    "shortName": "KREFTREG_DS",
+    "temporalityType": "FIXED",
+    "unitType": {
+        "$ref": "UnitType/SYKDOMSTILFELLE.json"
+    },
+    "spatialCoverageDescription": [
+        {"languageCode": "no", "value": "Norge"}
+    ],    
+    "dataRevision": {
+        "description": [
+            {"languageCode": "no", "value": "Første publisering."}
+        ],
+        "temporalEndOfSeries": false
+    },
+    "variables" : [
+        {
+            "variableRole": "IDENTIFIER",
+            "$ref": "Identifier/SYKDOMSTILFELLENUMMER.json"
+        },
+        {
+            "variableRole": "MEASURE",
+            "shortName": "KREFTREG_DS",
+            "name": [
+                {"languageCode": "no", "value": "Diagnosens sikkerhet"}
+            ],
+            "description": [
+                {"languageCode": "no", "value": "Hvor pålitelig diagnosen i meldingen er. Påliteligheten vurderes ut fra sikkerhet rundt tumors malignitetspotensiale og sikkerhet rundt tumors primære utgangspunkt."}
+            ],
+            "populationDescription": [
+                {"languageCode": "no", "value": "Alle krefttilfeller, forstadier til kreft og enkelte benigne svulster for personer i Norge."}
+            ],
+            "subjectFields": [
+                {"$ref": "SubjectField/HELSE.json"},
+                {"$ref": "SubjectField/HELSETJENESTER.json"}
+            ],
+            "dataType": "STRING",
+            "$comment": "TODO: OBS! Ved pseudonymisering av measures (f.eks. fødselsnummer) korrigeres/settes dataType=NUMBER og format=RandomUInt48 automatisk!",
+            "uriDefinition": ["https://metadata.kreftregisteret.no/variables/detail/8"]
+        },
+        {
+            "variableRole": "START_TIME",
+            "$ref": "Attribute/START.json"
+        },
+        {
+            "variableRole": "STOP_TIME",
+            "$ref": "Attribute/STOP.json"
+        }
+    ]
+}
