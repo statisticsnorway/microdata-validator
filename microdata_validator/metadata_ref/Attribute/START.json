@@ -1,0 +1,10 @@
+{
+    "shortName": "START",
+    "name": [
+        {"languageCode": "no", "value": "Startdato"}
+    ],
+    "description": [
+        {"languageCode": "no", "value": "Startdato/måletidspunktet for hendelsen"}
+    ],
+    "dataType": "DATE"
+}
