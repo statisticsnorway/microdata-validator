@@ -26,8 +26,10 @@ def write_json(filepath: Path, content: dict) -> None:
 
 
 def validate_json_with_schema(json_file: Path) -> None:
-    json_schema_file = Path(__file__).parent.joinpath("DatasetMetadataSchema.json")
-    with open(json_schema_file, mode="r", encoding="utf-8") as schema: 
+    json_schema_file = Path(__file__).parent.joinpath(
+        "DatasetMetadataSchema.json"
+    )
+    with open(json_schema_file, mode="r", encoding="utf-8") as schema:
         json_schema_dataset = json.load(schema)
     with open(json_file, mode="r", encoding="utf-8") as metadata:
         dataset_metadata_json = json.load(metadata)
@@ -38,7 +40,7 @@ def validate_json_with_schema(json_file: Path) -> None:
 
 
 def create_temp_sqlite_db_file(db_file: Path) -> Tuple[db.Connection, db.Cursor]:
-    sql_create_table = f"""
+    sql_create_table = """
         CREATE TABLE temp_dataset (
             unit_id TEXT NOT NULL, 
             value TEXT NOT NULL, 
@@ -56,7 +58,7 @@ def create_temp_sqlite_db_file(db_file: Path) -> Tuple[db.Connection, db.Cursor]
 
 
 def read_temp_sqlite_db_data_sorted(db_file: Path) -> Tuple[db.Connection, db.Cursor]:
-    sql_select_sorted = f"""\
+    sql_select_sorted = """\
         SELECT unit_id, value, start, stop, attributes
         FROM temp_dataset
         ORDER BY unit_id, start, stop """

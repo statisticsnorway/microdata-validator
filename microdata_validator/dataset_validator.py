@@ -43,8 +43,9 @@ def __get_metadata_measure_sentinel_missing_values(metadata: dict) -> Union[list
 
 
 def __validate_data(sqlite_db_file_path: str, metadata: dict) -> int:
-    """Read and validate sorted data rows from the temporary Sqlite database file (sorted by unit_id, start, stop)"""
-    #TODO
+    """Read and validate sorted data rows from the temporary Sqlite 
+       database file (sorted by unit_id, start, stop)
+    """
     db_conn, db_cursor = file_utils.read_temp_sqlite_db_data_sorted(
         sqlite_db_file_path
     )
@@ -75,7 +76,9 @@ def __validate_data(sqlite_db_file_path: str, metadata: dict) -> int:
 def __is_data_row_consistent(temporality_type: str, data_row: tuple,
                              previous_data_row: tuple,
                              row_number: int) -> Union[tuple, None]:
-    """Validate consistency and event-history (unit_id * start * stop) and check for row duplicates."""
+    """Validate consistency and event-history (unit_id * start * stop)
+       and check for row duplicates.
+    """
     unit_id = data_row[0]
     # value = data_row[1]
     start = data_row[2]
@@ -173,18 +176,11 @@ def __is_data_row_consistent(temporality_type: str, data_row: tuple,
                 ),
                 None
             )
-    # elif start not in(None, ""):
-    #    self.data_errors.append((row_number, "Inconsistency - expected no START-date (should be MISSING/NULL) when DataSet.temporalityType is " + self.metadata_temporality_type, None))
-    #    return False
-    # elif stop not in(None, ""):
-    #    self.data_errors.append((row_number, "Inconsistency - expected no STOP-date (should be MISSING/NULL) when DataSet.temporalityType is " + self.metadata_temporality_type, None))
-    #    return False
     return None
 
 
 def __is_data_row_consistent_with_metadata(metadata: dict, data_row: tuple,
                                            row_number: int) -> Union[tuple, None]:
-    #WIP: need metadata here
     data_type = __get_metadata_measure_variable(metadata)["dataType"]
     code_list = __get_metadata_measure_code_list(metadata)
     sentinel_missing_values = __get_metadata_measure_sentinel_missing_values(

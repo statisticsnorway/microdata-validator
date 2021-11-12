@@ -9,6 +9,7 @@ INVALID_METADATA_DATASET_NAME = 'INVALID_METADATA_DATASET'
 INPUT_DIRECTORY = 'tests/resources/input_directory'
 WORKING_DIRECTORY = 'tests/resources/working_directory'
 
+
 def test_validate_valid_dataset():
     data_errors = validate(
         VALID_DATASET_NAME,

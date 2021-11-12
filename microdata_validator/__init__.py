@@ -22,14 +22,17 @@ def validate(dataset_name: str,
     input_directory_path = Path(input_directory)
 
     try:
-        dataset_reader.run_reader(working_directory_path, input_directory_path, dataset_name)
-        data_errors = dataset_validator.run_validator(working_directory_path, dataset_name)
+        dataset_reader.run_reader(
+            working_directory_path, input_directory_path, dataset_name
+        )
+        data_errors = dataset_validator.run_validator(
+            working_directory_path, dataset_name
+        )
         if print_errors_to_file:
             print("errors to file")
         return data_errors
     except Exception as e:
         print(str(e))
-
 
 
 __all__ = ['validate']

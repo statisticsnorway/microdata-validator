@@ -1,8 +1,7 @@
 import csv
 import datetime
-import os
-from shutil import copyfile
 import logging
+from shutil import copyfile
 from pathlib import Path
 from microdata_validator import file_utils
 
@@ -106,7 +105,9 @@ def __insert_data_csv_into_sqlite(sqlite_file_path, dataset_data_file,
     )
 
     with open(file=dataset_data_file, newline='', encoding='utf-8') as f:
-        #csv.register_dialect('my_dialect', delimiter=';', quoting=csv.QUOTE_NONE)
+        # csv.register_dialect(
+        #     'my_dialect', delimiter=';', quoting=csv.QUOTE_NONE
+        # )
         reader = csv.reader(f, delimiter=field_separator)
         cursor.executemany(
             "INSERT INTO temp_dataset "
@@ -181,7 +182,7 @@ def __validate_and_parse_for_temporal_data(data_file_path: Path,
                         ))
                     if value is None or str(value).strip(" ") == "":
                         data_errors.append((
-                            reader.line_num, 
+                            reader.line_num,
                             "VALUE (measure) missing or null",
                             value
                         ))
@@ -207,7 +208,7 @@ def __validate_and_parse_for_temporal_data(data_file_path: Path,
                                 "STOP-date not valid",
                                 stop
                             ))
-                    #TODO: validate "attributes"?
+                    # TODO: validate "attributes"?
 
                     # find temporalCoverage from datafile
                     start_dates.append(str(start).strip('"'))
@@ -252,7 +253,7 @@ def __validate_and_parse_for_temporal_data(data_file_path: Path,
 def __metadata_update_temporal_coverage(metadata: dict,
                                         temporal_data: dict) -> None:
     logger.info(
-        f'Append temporal coverage (start, stop, status dates) to metadata'
+        'Append temporal coverage (start, stop, status dates) to metadata'
     )
     if metadata["temporalityType"] in ("FIXED", "EVENT", "ACCUMULATED"):
         metadata["dataRevision"]["temporalCoverageStart"] = (
@@ -269,7 +270,8 @@ def __metadata_update_temporal_coverage(metadata: dict,
         )
 
 
-def run_reader(working_directory: Path, input_directory: Path, dataset_name: str) -> None:
+def run_reader(working_directory: Path, input_directory: Path,
+               dataset_name: str) -> None:
     metadata_file_path: Path = input_directory.joinpath(f"{dataset_name}.json")
     data_file_path: Path = input_directory.joinpath(f"{dataset_name}.csv")
 
@@ -278,11 +280,13 @@ def run_reader(working_directory: Path, input_directory: Path, dataset_name: str
     temporal_data = __validate_and_parse_for_temporal_data(data_file_path)
     __metadata_update_temporal_coverage(metadata_dict, temporal_data)
 
-    logger.info(f'Writing inlined metadata JSON file to working directory')
-    inlined_metadata_file_path = working_directory.joinpath(f'{dataset_name}.json')
+    logger.info('Writing inlined metadata JSON file to working directory')
+    inlined_metadata_file_path = working_directory.joinpath(
+        f'{dataset_name}.json'
+    )
     file_utils.write_json(inlined_metadata_file_path, metadata_dict)
 
-    logger.info(f'Validating metadata JSON with JSON schema')
+    logger.info('Validating metadata JSON with JSON schema')
     file_utils.validate_json_with_schema(inlined_metadata_file_path)
 
     sqlite_file_path = working_directory.joinpath(f'{dataset_name}.db')
@@ -290,7 +294,7 @@ def run_reader(working_directory: Path, input_directory: Path, dataset_name: str
 
     temp_data_file_path = working_directory.joinpath(f'{dataset_name}.csv')
     copyfile(data_file_path, temp_data_file_path)
-    logger.info(f'Copied data file to working directory')
+    logger.info('Copied data file to working directory')
     logger.info(f'OK - reading dataset "{dataset_name}"')
 
 
