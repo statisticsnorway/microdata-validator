@@ -10,6 +10,8 @@ trigger:
 
 variables:
 - group: pypi-credentials
+- name: isMaster
+  value: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
 
 pool:
   vmImage: 'ubuntu-latest'
