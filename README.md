@@ -60,7 +60,7 @@ else:
     print("Dataset is invalid :(")
  ```
 
-The validate function will temporarily generate some files to quicker validate your dataset. It will clean up after itself after it is done using it, but it is important that you have write permissions to your working directory. The working directory will be created by default under your input directory, but you can define this yourself using the ```working_directory```-parameter.
+The validate function will temporarily generate some files in order to validate your dataset. It will clean up after itself when it is done, but it is important that you have write permissions to your working directory. The working directory will be created by default under your input directory, but you can define this yourself using the ```working_directory```-parameter.
 If you want these files to not get deleted after validation, you can use the ```keep_generated_files```-parameter:
 
 ```py
