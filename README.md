@@ -13,7 +13,7 @@ Import microdata-validator in your script and validate your files:
 ```py
 from microdata_validator import validate
 
-validation_errors = validate("my-dataset-name"):
+validation_errors = validate("my-dataset-name")
 
 if not validation_errors:
     print("My dataset is valid")
