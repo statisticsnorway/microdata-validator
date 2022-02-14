@@ -7,39 +7,24 @@ from microdata_validator import file_utils
 logger = logging.getLogger()
 
 
-def __get_metadata_measure_variable(metadata: dict):
-    return next(
-        variable for variable in metadata["variables"]
-        if variable.get("variableRole") == "MEASURE"
-    )
+def __get_data_type(metadata: dict) -> str:
+    return metadata["measureVariables"][0]["dataType"]
 
 
-def __get_metadata_measure_code_list(metadata: dict) -> Union[list, None]:
+def __get_code_list_with_missing_values(metadata: dict) -> Union[list, None]:
     """get codeList if exists in enumerated-valueDomain"""
     meta_value_domain_codes = None
-    metadata_measure_variable = __get_metadata_measure_variable(
-        metadata
-    )
-    value_domain = metadata_measure_variable["valueDomain"]
+    value_domain = metadata["measureVariables"][0]["valueDomain"]
     if "codeList" in value_domain:
         meta_value_domain_codes = [
             item["code"] for item in value_domain["codeList"]["codeItems"]
         ]
-    return meta_value_domain_codes
-
-
-def __get_metadata_measure_sentinel_missing_values(metadata: dict) -> Union[list, None]:
-    meta_missing_values = None
-    metadata_measure_variable = __get_metadata_measure_variable(
-        metadata
-    )
-    value_domain = metadata_measure_variable["valueDomain"]
     if "sentinelAndMissingValues" in value_domain:
-        meta_missing_values = [
+        meta_value_domain_codes += [
             missing_item["code"] for missing_item
             in value_domain["sentinelAndMissingValues"]
         ]
-    return meta_missing_values
+    return meta_value_domain_codes
 
 
 def __validate_data(sqlite_db_file_path: str, metadata: dict) -> int:
@@ -51,6 +36,8 @@ def __validate_data(sqlite_db_file_path: str, metadata: dict) -> int:
     )
     row_number = 0
     temporality_type = metadata["temporalityType"]
+    data_type = __get_data_type(metadata)
+    code_list_with_missing_values = __get_code_list_with_missing_values(metadata)
     previous_data_row = (None, None, None, None, None)
     data_errors = []
     # data-rows in cursor sorted by unit_id, start, stop
@@ -64,7 +51,7 @@ def __validate_data(sqlite_db_file_path: str, metadata: dict) -> int:
                 previous_data_row, row_number
             ),
             __is_data_row_consistent_with_metadata(
-                metadata, data_row, row_number
+                data_type, code_list_with_missing_values, data_row, row_number
             )
         ]
         data_errors += row_errors
@@ -179,23 +166,20 @@ def __is_data_row_consistent(temporality_type: str, data_row: tuple,
     return None
 
 
-def __is_data_row_consistent_with_metadata(metadata: dict, data_row: tuple,
+def __is_data_row_consistent_with_metadata(data_type:str,
+                                           code_list_with_missing_values: list,
+                                           data_row: tuple,
                                            row_number: int) -> Union[tuple, None]:
-    data_type = __get_metadata_measure_variable(metadata)["dataType"]
-    code_list = __get_metadata_measure_code_list(metadata)
-    sentinel_missing_values = __get_metadata_measure_sentinel_missing_values(
-        metadata
-    )
     # unit_id = data_row[0]
     value = data_row[1]
     # start = data_row[2]
     # stop = data_row[3]
     # attributes = data_row[4]
 
-    if code_list:
+    if code_list_with_missing_values:
         # Enumerated value-domain for variable - check if value exsists in CodeList
         value_string = str(value).strip('"')
-        if value_string not in code_list + sentinel_missing_values:
+        if value_string not in code_list_with_missing_values:
             return (
                 row_number,
                 (
