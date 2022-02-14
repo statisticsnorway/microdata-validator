@@ -139,7 +139,7 @@
             "type": "object",
             "properties": {
                 "description": {"$ref": "#/definitions/multilingualStringType"},
-                "temporalEndOfSeries": {"type": "boolean"},
+                "temporalEndOfSeries": {"type": "boolean"}
             },
             "required": [
                 "description",
@@ -241,20 +241,6 @@
                     "description",
                     "dataType"
                 ]
-            },
-            "ssbProperty": {
-                "type": "array",
-                "items": {
-                    "type": "object",
-                    "properties": {
-                        "key": {"type": "string"},
-                        "value": {"type": "string"}
-                    },
-                    "required": [
-                        "key",
-                        "value"
-                    ]
-                }
             }
         }
     },
