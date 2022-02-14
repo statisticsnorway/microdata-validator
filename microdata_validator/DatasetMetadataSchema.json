@@ -87,8 +87,7 @@
                 "sentinelAndMissingValues": {"$ref": "#/definitions/sentinelAndMissingValuesType"}
             },
             "required": [
-                "shortName",
-                "name"
+                "description"
             ]
         },
 
@@ -174,7 +173,7 @@
                     "description",
                     "dataType",
                     "valueDomain",
-                    "format"
+                    "unitType"
                 ]
             }
         },
@@ -206,8 +205,7 @@
                     "name",
                     "description",
                     "dataType",
-                    "valueDomain",
-                    "format"
+                    "valueDomain"
                 ]
             }
         },
@@ -247,7 +245,7 @@
     "required": [
         "shortName",
         "temporalityType",
-        "unitType",
+        "populationDescription",
         "identifierVariables",
         "measureVariables",
         "attributeVariables",
