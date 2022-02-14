@@ -34,7 +34,6 @@ def test_validate_invalid_metadata_dataset():
         working_directory=WORKING_DIRECTORY,
         input_directory=INPUT_DIRECTORY,
     )
-    temporary_files = get_working_directory_files()
     assert data_errors == ['<ValidationError: "\'identifierVariables\' is a required property">']
 
 
