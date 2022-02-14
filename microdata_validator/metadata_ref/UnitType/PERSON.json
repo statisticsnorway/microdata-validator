@@ -1,9 +1,0 @@
-{
-    "shortName": "PERSON",
-    "name": [
-        {"languageCode": "no", "value": "Person"}
-    ],
-    "description": [
-        {"languageCode": "no", "value": "Person."}
-    ]
-}
