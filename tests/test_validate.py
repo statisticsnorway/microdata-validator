@@ -14,8 +14,7 @@ def test_validate_valid_dataset():
     data_errors = validate(
         VALID_DATASET_NAME,
         working_directory=WORKING_DIRECTORY,
-        input_directory=INPUT_DIRECTORY,
-        keep_generated_files=True
+        input_directory=INPUT_DIRECTORY
     )
     actual_files = get_working_directory_files()
     expected_files = [
@@ -34,11 +33,9 @@ def test_validate_invalid_metadata_dataset():
         INVALID_METADATA_DATASET_NAME,
         working_directory=WORKING_DIRECTORY,
         input_directory=INPUT_DIRECTORY,
-        keep_generated_files=True
     )
     temporary_files = get_working_directory_files()
-    assert not data_errors
-    assert temporary_files == []
+    assert data_errors == ['<ValidationError: "\'identifierVariables\' is a required property">']
 
 
 def get_working_directory_files() -> list:
