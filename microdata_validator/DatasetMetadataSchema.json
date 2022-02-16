@@ -150,7 +150,6 @@
             "items": {
                 "type": "object",
                 "properties": {
-                    "variableRole": {"type": "string", "enum": ["IDENTIFIER"]},
                     "shortName": {"type": "string"},
                     "name": {"$ref": "#/definitions/multilingualStringType"},
                     "description": {"$ref": "#/definitions/multilingualStringType"},
@@ -167,7 +166,6 @@
                     }
                 },
                 "required": [
-                    "variableRole",
                     "shortName",
                     "name",
                     "description",
@@ -182,11 +180,10 @@
             "items": {
                 "type": "object",
                 "properties": {
-                    "variableRole": {"type": "string", "enum": ["MEASURE"]},
                     "shortName": {"type": "string"},
                     "name": {"$ref": "#/definitions/multilingualStringType"},
                     "description": {"$ref": "#/definitions/multilingualStringType"},
-                    "dataType": {"type": "string", "enum": ["STRING", "LONG"]},
+                    "dataType": {"type": "string", "enum": ["STRING", "LONG", "DATE", "DOUBLE"]},
                     "unitType": {"$ref": "#/definitions/unitTypeType"},
                     "valueDomain": {"$ref": "#/definitions/valueDomainType"},
                     "subjectFields": {"$ref": "#/definitions/subjectFieldsType"},
@@ -200,7 +197,6 @@
                     }
                 },
                 "required": [
-                    "variableRole",
                     "shortName",
                     "name",
                     "description",
