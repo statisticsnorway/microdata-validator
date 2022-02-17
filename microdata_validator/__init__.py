@@ -1,6 +1,7 @@
 from microdata_validator import dataset_reader
 from microdata_validator import dataset_validator
 import logging
+from jsonschema import ValidationError
 from pathlib import Path
 import uuid
 import os
@@ -12,8 +13,9 @@ logger = logging.getLogger()
 def validate(dataset_name: str,
              working_directory: str = '',
              input_directory: str = '',
-             keep_generated_files: bool = False,
+             delete_working_directory: bool = False,
              print_errors_to_file: bool = False) -> bool:
+
     if working_directory:
         working_directory_path = Path(working_directory)
     else:
@@ -21,6 +23,7 @@ def validate(dataset_name: str,
         os.mkdir(working_directory_path)
     input_directory_path = Path(input_directory)
 
+    data_errors = []
     try:
         dataset_reader.run_reader(
             working_directory_path, input_directory_path, dataset_name
@@ -30,9 +33,16 @@ def validate(dataset_name: str,
         )
         if print_errors_to_file:
             print("errors to file")
-        return data_errors
+    except ValidationError as e:
+        data_errors = [f"{repr(e)}"]
     except Exception as e:
-        print(str(e))
-
+        # Raise unexpected exceptions to user
+        raise e
+    
+    if delete_working_directory:
+        for file in os.listdir(working_directory_path):
+            os.remove(working_directory_path / file)
+    
+    return data_errors
 
 __all__ = ['validate']

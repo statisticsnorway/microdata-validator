@@ -72,9 +72,11 @@
         "valueDomainType": {
             "type": "object",
             "properties": {
-                "shortName": {"type": "string"},
-                "name": {"$ref": "#/definitions/multilingualStringType"},
                 "description": {"$ref": "#/definitions/multilingualStringType"},
+                "measurementType": {"type": "string",
+                    "enum": ["CURRENCY", "WEIGHT", "LENGTH", "HEIGHT", "GEOGRAPHICAL"]
+                },
+                "measurementUnitDescription": {"$ref": "#/definitions/multilingualStringType"},
                 "uriDefinition": {
                     "type": "array",
                     "items": [
@@ -82,15 +84,10 @@
                     ]
                 },
                 "codeList": {"$ref": "#/definitions/codeListType"},
-                "sentinelAndMissingValues": {"$ref": "#/definitions/sentinelAndMissingValuesType"},
-                "measurementType": {"type": "string",
-                    "enum": ["CURRENCY", "WEIGHT", "LENGTH", "HEIGHT", "GEOGRAPHICAL"]
-                },
-                "measurementUnitDescription": {"$ref": "#/definitions/multilingualStringType"}
+                "sentinelAndMissingValues": {"$ref": "#/definitions/sentinelAndMissingValuesType"}
             },
             "required": [
-                "shortName",
-                "name"
+                "description"
             ]
         },
 
@@ -108,7 +105,7 @@
             ]
         },
 
-        "subjectFieldType": {
+        "subjectFieldsType": {
             "type": "array",
             "items": [
                 {
@@ -135,32 +132,86 @@
         "temporalityType": {"type": "string",
             "enum": ["FIXED", "STATUS", "ACCUMULATED", "EVENT"]
         },
-        "unitType": {"$ref": "#/definitions/unitTypeType"},
+        "populationDescription": {"$ref": "#/definitions/multilingualStringType"},
         "spatialCoverageDescription": {"$ref": "#/definitions/multilingualStringType"},
         "dataRevision": {
             "type": "object",
             "properties": {
                 "description": {"$ref": "#/definitions/multilingualStringType"},
-                "temporalEndOfSeries": {"type": "boolean"},
-                "temporalCoverageStart": {"$ref": "#/definitions/dateType"},
-                "temporalCoverageLatest": {"$ref": "#/definitions/dateType"},
-                "temporalStatusDates": {
-                    "type": "array",
-                    "items": {"$ref": "#/definitions/dateType"}
-                }
+                "temporalEndOfSeries": {"type": "boolean"}
             },
             "required": [
                 "description",
                 "temporalEndOfSeries"
             ]
         },
-        "variables": {
+        "identifierVariables": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "shortName": {"type": "string"},
+                    "name": {"$ref": "#/definitions/multilingualStringType"},
+                    "description": {"$ref": "#/definitions/multilingualStringType"},
+                    "dataType": {"type": "string", "enum": ["STRING", "LONG"]},
+                    "unitType": {"$ref": "#/definitions/unitTypeType"},
+                    "valueDomain": {"$ref": "#/definitions/valueDomainType"},
+                    "uriDefinition": {
+                        "type": "array",
+                        "items": {"type": ["string", "null"] }
+                    },
+                    "format": {
+                        "type": "string",
+                        "$comment": "E.g. a regular expression or a specific type like RandomUInt48."
+                    }
+                },
+                "required": [
+                    "shortName",
+                    "name",
+                    "description",
+                    "dataType",
+                    "valueDomain",
+                    "unitType"
+                ]
+            }
+        },
+        "measureVariables": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "shortName": {"type": "string"},
+                    "name": {"$ref": "#/definitions/multilingualStringType"},
+                    "description": {"$ref": "#/definitions/multilingualStringType"},
+                    "dataType": {"type": "string", "enum": ["STRING", "LONG", "DATE", "DOUBLE"]},
+                    "unitType": {"$ref": "#/definitions/unitTypeType"},
+                    "valueDomain": {"$ref": "#/definitions/valueDomainType"},
+                    "subjectFields": {"$ref": "#/definitions/subjectFieldsType"},
+                    "uriDefinition": {
+                        "type": "array",
+                        "items": {"type": ["string", "null"] }
+                    },
+                    "format": {
+                        "type": "string",
+                        "$comment": "E.g. a regular expression or a specific type like RandomUInt48."
+                    }
+                },
+                "required": [
+                    "shortName",
+                    "name",
+                    "description",
+                    "dataType",
+                    "valueDomain"
+                ]
+            }
+        },
+        "attributeVariables": {
             "type": "array",
             "items": {
                 "type": "object",
                 "properties": {
                     "variableRole": {"type": "string",
-                        "enum": ["IDENTIFIER", "MEASURE", "START_TIME", "STOP_TIME", "ATTRIBUTE"]
+                        "enum": ["START_TIME", "STOP_TIME", "ATTRIBUTE"]
                     },
                     "shortName": {"type": "string"},
                     "name": {"$ref": "#/definitions/multilingualStringType"},
@@ -168,9 +219,6 @@
                     "dataType": {"type": "string",
                         "enum": ["STRING", "LONG", "DOUBLE", "DATE"]
                     },
-                    "valueDomain": {"$ref": "#/definitions/valueDomainType"},
-                    "populationDescription": {"$ref": "#/definitions/multilingualStringType"},
-                    "subjectFields": {"$ref": "#/definitions/subjectFieldType"},
                     "uriDefinition": {
                         "type": "array",
                         "items": {"type": ["string", "null"] }
@@ -187,32 +235,16 @@
                     "description",
                     "dataType"
                 ]
-            },
-            "ssbProperty": {
-                "type": "array",
-                "items": {
-                    "type": "object",
-                    "properties": {
-                        "key": {"type": "string"},
-                        "value": {"type": "string"}
-                    },
-                    "required": [
-                        "key",
-                        "value"
-                    ]
-                }
             }
-        },
-        "dataEncoding": {
-            "type": "string",
-            "$comment": "Only used if the data is encoded in a character set other than UTF-8, e.g. ASCII, ISO-8859-1, UTF-16 or Windows-1252."
         }
     },
     "required": [
         "shortName",
         "temporalityType",
-        "unitType",
-        "variables",
+        "populationDescription",
+        "identifierVariables",
+        "measureVariables",
+        "attributeVariables",
         "spatialCoverageDescription",
         "dataRevision"
     ]

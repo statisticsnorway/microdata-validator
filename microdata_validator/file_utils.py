@@ -30,12 +30,12 @@ def validate_json_with_schema(json_file: Path) -> None:
         "DatasetMetadataSchema.json"
     )
     with open(json_schema_file, mode="r", encoding="utf-8") as schema:
-        json_schema_dataset = json.load(schema)
+        metadata_schema = json.load(schema)
     with open(json_file, mode="r", encoding="utf-8") as metadata:
-        dataset_metadata_json = json.load(metadata)
+        metadata_json = json.load(metadata)
     validate(
-        instance=dataset_metadata_json,
-        schema=json_schema_dataset
+        instance=metadata_json,
+        schema=metadata_schema
     )
 
 

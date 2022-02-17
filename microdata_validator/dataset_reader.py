@@ -9,92 +9,12 @@ logger = logging.getLogger()
 
 
 def __inline_metadata_references(metadata_file_path: Path) -> dict:
+    # This function is currently not supported in MVP of this library.
+    # Will be implemented ASAP.
     logger.info(f'Reading metadata from file "{metadata_file_path}"')
     
-    metadata_ref_directory = Path(__file__).parent.joinpath("metadata_ref")
+    # metadata_ref_directory = Path(__file__).parent.joinpath("metadata_ref")
     metadata: dict = file_utils.load_json(metadata_file_path)
-
-    if "$ref" in metadata["unitType"]:
-        ref_to_unit_type = str(metadata["unitType"]["$ref"])
-        metadata["unitType"] = file_utils.load_json(
-            metadata_ref_directory.joinpath(ref_to_unit_type)
-        )
-
-    identifier_variable = [
-        variable for variable in metadata["variables"]
-        if variable.get("variableRole") == "IDENTIFIER"
-    ]
-    if len(identifier_variable) > 0 and "$ref" in identifier_variable[0]:
-        ref_to_identifier = identifier_variable[0]["$ref"]
-        identifier_variable[0].update(
-            file_utils.load_json(
-                metadata_ref_directory.joinpath(ref_to_identifier)
-            )
-        )
-        identifier_variable[0].pop("$ref")  # remove old "$ref"
-
-    measure_variable = [
-        variable for variable in metadata["variables"]
-        if variable.get("variableRole") == "MEASURE"
-    ]
-    if len(measure_variable) > 0:
-        for subject_field in measure_variable[0].get("subjectFields"):
-            if "$ref" in subject_field:
-                ref_to_subject_field = subject_field["$ref"]
-                subject_field.update(
-                    file_utils.load_json(
-                        metadata_ref_directory.joinpath(
-                            ref_to_subject_field
-                        )
-                    )
-                )
-                subject_field.pop("$ref")  # remove old "$ref"
-
-        value_domain = measure_variable[0].get("valueDomain")
-        if "$ref" in value_domain:
-            ref_to_value_domain = value_domain["$ref"]
-            value_domain.update(
-                file_utils.load_json(
-                    metadata_ref_directory.joinpath(ref_to_value_domain)
-                )
-            )
-            value_domain.pop("$ref")  # remove old "$ref"
-            if "sentinelAndMissingValues" in value_domain:
-                # If "sentinelAndMissingValues" exists in JSON then move it
-                # to the end of valueDomain for better human readability
-                sentinel_and_missing_values = value_domain.pop(
-                    "sentinelAndMissingValues"
-                )
-                value_domain.update({
-                    "sentinelAndMissingValues": sentinel_and_missing_values
-                })
-
-    start_time_variable = [
-        variable for variable in metadata["variables"]
-        if variable.get("variableRole") == "START_TIME"
-    ]
-    if len(start_time_variable) > 0 and "$ref" in start_time_variable[0]:
-        ref_to_start_time = start_time_variable[0]["$ref"]
-        start_time_variable[0].update(
-            file_utils.load_json(
-                metadata_ref_directory.joinpath(ref_to_start_time)
-            )
-        )
-        start_time_variable[0].pop("$ref")  # remove old "$ref"
-
-    stop_time_variable = [
-        variable for variable in metadata["variables"]
-        if variable.get("variableRole") == "STOP_TIME"
-    ]
-    if len(stop_time_variable) > 0 and "$ref" in stop_time_variable[0]:
-        ref_to_stop_time = stop_time_variable[0]["$ref"]
-        stop_time_variable[0].update(
-            file_utils.load_json(
-                metadata_ref_directory.joinpath(ref_to_stop_time)
-            )
-        )
-        stop_time_variable[0].pop("$ref")  # remove old "$ref"
-
     return metadata
 
 
@@ -105,9 +25,6 @@ def __insert_data_csv_into_sqlite(sqlite_file_path, dataset_data_file,
     )
 
     with open(file=dataset_data_file, newline='', encoding='utf-8') as f:
-        # csv.register_dialect(
-        #     'my_dialect', delimiter=';', quoting=csv.QUOTE_NONE
-        # )
         reader = csv.reader(f, delimiter=field_separator)
         cursor.executemany(
             "INSERT INTO temp_dataset "
@@ -140,7 +57,6 @@ def __validate_and_parse_for_temporal_data(data_file_path: Path,
             for data_row in reader:
                 if reader.line_num % 1000000 == 0:
                     logger.info(".. now reading row: " + str(reader.line_num))
-
                 rows_validated += 1
                 if len(data_errors) >= data_error_limit:
                     logger.error(f"ERROR in file - {data_file_path}")
