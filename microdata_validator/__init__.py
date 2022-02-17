@@ -34,7 +34,8 @@ def validate(dataset_name: str,
         if print_errors_to_file:
             print("errors to file")
     except ValidationError as e:
-        data_errors = [f"{repr(e)}"]
+        schema_path = '.'.join(e.relative_schema_path)
+        data_errors = [f"{schema_path}: {e.message}"]
     except Exception as e:
         # Raise unexpected exceptions to user
         raise e
