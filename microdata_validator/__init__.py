@@ -1,5 +1,6 @@
 from microdata_validator import dataset_reader
 from microdata_validator import dataset_validator
+from microdata_validator.dataset_reader import InvalidDataException
 import logging
 from jsonschema import ValidationError
 from pathlib import Path
@@ -33,17 +34,20 @@ def validate(dataset_name: str,
         )
         if print_errors_to_file:
             print("errors to file")
+    except InvalidDataException as e:
+        data_errors = e.data_errors
     except ValidationError as e:
         schema_path = '.'.join(e.relative_schema_path)
         data_errors = [f"{schema_path}: {e.message}"]
     except Exception as e:
         # Raise unexpected exceptions to user
         raise e
-    
+
     if delete_working_directory:
         for file in os.listdir(working_directory_path):
             os.remove(working_directory_path / file)
-    
+
     return data_errors
+
 
 __all__ = ['validate']
