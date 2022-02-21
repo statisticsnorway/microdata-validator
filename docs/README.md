@@ -31,7 +31,7 @@ Beskrivelse av verdi-kolonnen for målte verdier. Det er en liste i modellen, me
 * **shortName**: Teknisk navn på verdikolonnen. Brukes som variabelnavn i ROSE- klienten. Eksempel: INNTEKT_AKSJEUTBYTTE.
 * **name**: Navn(Tittel) på verdikolonnen. Brukes som kolonnenavn i ROSE-klienten. Eksempel: "Aksjeutbytte".
 * **description**: Beskrivelse av kolonnen. Eksempel: "Skattepliktig og skattefritt utbytte i... "
-* **dataType**: Datatype for verdiene. En av ["STRING", "LONG", "DOUBLE", "DA TE"]
+* **dataType**: Datatype for verdiene. En av ["STRING", "LONG", "DOUBLE", "DATE"]
 * **format**: Nærmere definisjon av datatypen. For eksempel et regular expression.
 * **uriDefinition**: Lenke til ekstern ressurs med definisjon for variablen.
 * **unitType**: Se definisjonen under.
@@ -118,7 +118,7 @@ En datafil skal levers som en csv-fil med semikolon som kolonneseparator. Det sk
 2. verdi
 3. start
 4. stop
-5. tom kolonne
+5. tom kolonne (Denne kolonnen er holdt av om det skulle være behov for en ekstra attributtvariabel i datasettet. Eksempel: datakilde)
 
 ```
 12345678910;100000;2020-01-01;2020-12-31;
@@ -132,7 +132,7 @@ Dette er et eksempel på et dataset som beskriver personer sin inntekt over tids
 * Verdi: Akkumulert lønn i tidsperioden
 * Start: start på tidsperioden
 * Stopp: slutt på tidsperioden
-* Tom kolonne
+* Tom kolonne (Denne kolonnen er holdt av om det skulle være behov for en ekstra attributtvariabel i datasettet. Det er ikke behov for denne kolonnen i dette datasettet, og den er derfor tom.)
 
 ### GENERELLE VALIDERINGSREGLER FOR DATA
 * Det kan ikke oppstå tomme rader i datasettet
