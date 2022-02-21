@@ -12,7 +12,7 @@ def __inline_metadata_references(metadata_file_path: Path) -> dict:
     # This function is currently not supported in MVP of this library.
     # Will be implemented ASAP.
     logger.info(f'Reading metadata from file "{metadata_file_path}"')
-    
+
     # metadata_ref_directory = Path(__file__).parent.joinpath("metadata_ref")
     metadata: dict = file_utils.load_json(metadata_file_path)
     return metadata
@@ -23,13 +23,12 @@ def __insert_data_csv_into_sqlite(sqlite_file_path, dataset_data_file,
     db_conn, cursor = file_utils.create_temp_sqlite_db_file(
         sqlite_file_path
     )
-
     with open(file=dataset_data_file, newline='', encoding='utf-8') as f:
         reader = csv.reader(f, delimiter=field_separator)
         cursor.executemany(
             "INSERT INTO temp_dataset "
-            "(unit_id, value, start, stop, attributes) "
-            "VALUES (?, ?, ?, ?, ?)",
+            "(row_number, unit_id, value, start, stop, attributes) "
+            "VALUES (?, ?, ?, ?, ?, ?)",
             reader
         )
     db_conn.commit()
@@ -40,9 +39,10 @@ def __insert_data_csv_into_sqlite(sqlite_file_path, dataset_data_file,
     )
 
 
-def __validate_and_parse_for_temporal_data(data_file_path: Path,
-                                           field_separator: str = ";",
-                                           data_error_limit: int = 100) -> dict:
+def __read_and_process_data(data_file_path: Path,
+                            enriched_data_file_path: Path,
+                            field_separator: str = ";",
+                            data_error_limit: int = 100) -> dict:
     data_errors = []  # used for error-reporting
     start_dates = []
     stop_dates = []
@@ -51,6 +51,7 @@ def __validate_and_parse_for_temporal_data(data_file_path: Path,
     logger.info(
         f'Validate datafile "{data_file_path}"'
     )
+    data_file_with_row_numbers = open(enriched_data_file_path, 'w')
     with open(file=data_file_path, newline='', encoding='utf-8', errors="strict") as f:
         reader = csv.reader(f, delimiter=field_separator)
         try:
@@ -64,9 +65,9 @@ def __validate_and_parse_for_temporal_data(data_file_path: Path,
                         f"Validation stopped - error limit reached, "
                         f"{str(rows_validated)} rows validated"
                     )
-                    for data_error in data_errors:
-                        logger.error(f"{data_error}")
-                    raise InvalidDataException(f"{data_error}")
+                    raise InvalidDataException(
+                        f'Invalid data found while reading data file', data_errors
+                    )
 
                 if not data_row:
                     data_errors.append((
@@ -90,6 +91,9 @@ def __validate_and_parse_for_temporal_data(data_file_path: Path,
                     start = data_row[2].strip('"')
                     stop = data_row[3].strip('"')
                     # TODO: attributes = data_row[4]
+                    data_file_with_row_numbers.write(
+                        f"{reader.line_num};{unit_id};{value};{start};{stop};\n"
+                    )
                     if unit_id is None or str(unit_id).strip(" ") == "":
                         data_errors.append((
                             reader.line_num,
@@ -129,6 +133,7 @@ def __validate_and_parse_for_temporal_data(data_file_path: Path,
                     # find temporalCoverage from datafile
                     start_dates.append(str(start).strip('"'))
                     stop_dates.append(str(stop).strip('"'))
+            data_file_with_row_numbers.close()
         except UnicodeDecodeError as ue:
             # See https://stackoverflow.com/questions/3269293/how-to-write-a-check-in-python-to-see-if-file-is-valid-utf-8
             logger.error(
@@ -152,10 +157,8 @@ def __validate_and_parse_for_temporal_data(data_file_path: Path,
     if data_errors:
         logger.error(f"ERROR in file - {data_file_path}")
         logger.info(f"{str(rows_validated)} rows validated")
-        for data_error in data_errors:
-            logger.error(f"{data_error}")
         raise InvalidDataException(
-            f'{data_error}'
+            f'Invalid data found while reading data file', data_errors
         )
     else:
         logger.info(f"{str(rows_validated)} rows validated")
@@ -192,8 +195,14 @@ def run_reader(working_directory: Path, input_directory: Path,
     data_file_path: Path = input_directory.joinpath(f"{dataset_name}.csv")
 
     logger.info(f'Start reading dataset "{dataset_name}"')
+    enriched_data_file_path = working_directory.joinpath(
+        f'{dataset_name}.csv'
+    )
+    temporal_data = __read_and_process_data(
+        data_file_path, enriched_data_file_path
+    )
+
     metadata_dict = __inline_metadata_references(metadata_file_path)
-    temporal_data = __validate_and_parse_for_temporal_data(data_file_path)
     __metadata_update_temporal_coverage(metadata_dict, temporal_data)
 
     logger.info('Writing inlined metadata JSON file to working directory')
@@ -206,13 +215,12 @@ def run_reader(working_directory: Path, input_directory: Path,
     file_utils.validate_json_with_schema(inlined_metadata_file_path)
 
     sqlite_file_path = working_directory.joinpath(f'{dataset_name}.db')
-    __insert_data_csv_into_sqlite(sqlite_file_path, data_file_path)
+    __insert_data_csv_into_sqlite(sqlite_file_path, enriched_data_file_path)
 
-    temp_data_file_path = working_directory.joinpath(f'{dataset_name}.csv')
-    copyfile(data_file_path, temp_data_file_path)
-    logger.info('Copied data file to working directory')
     logger.info(f'OK - reading dataset "{dataset_name}"')
 
 
 class InvalidDataException(Exception):
-    pass
+    def __init__(self, message: str, data_errors: list):
+        self.data_errors = data_errors
+        Exception.__init__(self, message)

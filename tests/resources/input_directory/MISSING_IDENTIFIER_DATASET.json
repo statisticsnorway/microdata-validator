@@ -1,5 +1,5 @@
 {
-    "shortName": "SYNT_PERSON_INNTEKT",
+    "shortName": "MISSING_IDENTIFIER_DATASET",
     "temporalityType": "ACCUMULATED",
     "populationDescription": [{"languageCode": "no", "value": "Alle rapporterte personinntekter i norge fra år 1234 til år 4321"}],
     "spatialCoverageDescription": [{"languageCode": "no", "value": "Norge"}],
@@ -7,25 +7,6 @@
       "description": [{"languageCode": "no","value": "Første publisering."}],
       "temporalEndOfSeries": false
     },
-    "identifierVariables": [
-      {
-        "variableRole": "IDENTIFIER",
-        "shortName": "PERSONID_1",
-        "name": [{"languageCode": "no", "value": "Identifikator for person i microdata"}],
-        "description": [{"languageCode": "no","value": "Statistisk enhet er person (individ, enkeltmenenske)"}],
-        "dataType": "STRING",
-        "unitType": {
-          "shortName": "PERSONID_1",
-          "name": [{"languageCode": "no", "value": "Identifikator for person i microdata"}],
-          "description": [{"languageCode": "no", "value": "Statistisk enhet er person (individ, enkeltmenenske)"}]
-        },
-        "format": "RandomUInt48",
-        "valueDomain": {
-          "shortName": "PERSONID_1",
-          "description": [{"languageCode": "no", "value":"Pseudonymisert personnummer"}]
-        }
-      }
-    ],
     "measureVariables": [
       {
         "variableRole": "MEASURE",

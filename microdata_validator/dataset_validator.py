@@ -34,24 +34,20 @@ def __validate_data(sqlite_db_file_path: str, metadata: dict) -> int:
     db_conn, db_cursor = file_utils.read_temp_sqlite_db_data_sorted(
         sqlite_db_file_path
     )
-    row_number = 0
     temporality_type = metadata["temporalityType"]
     data_type = __get_data_type(metadata)
     code_list_with_missing_values = __get_code_list_with_missing_values(metadata)
     previous_data_row = (None, None, None, None, None)
     data_errors = []
+
     # data-rows in cursor sorted by unit_id, start, stop
     for data_row in db_cursor:
-        row_number += 1
-        if row_number % 1000000 == 0:
-            logger.info(f".. now validating row: {row_number}")
         row_errors = [
             __is_data_row_consistent(
-                temporality_type, data_row,
-                previous_data_row, row_number
+                temporality_type, data_row, previous_data_row
             ),
             __is_data_row_consistent_with_metadata(
-                data_type, code_list_with_missing_values, data_row, row_number
+                data_type, code_list_with_missing_values, data_row
             )
         ]
         data_errors += row_errors
@@ -61,87 +57,64 @@ def __validate_data(sqlite_db_file_path: str, metadata: dict) -> int:
 
 
 def __is_data_row_consistent(temporality_type: str, data_row: tuple,
-                             previous_data_row: tuple,
-                             row_number: int) -> Union[tuple, None]:
+                             previous_data_row: tuple) -> Union[tuple, None]:
     """Validate consistency and event-history (unit_id * start * stop)
        and check for row duplicates.
     """
-    unit_id = data_row[0]
-    # value = data_row[1]
-    start = data_row[2]
-    stop = data_row[3]
-    # attributes = data_row[4]
-    prev_unit_id = previous_data_row[0]
-    # prev_value = previous_data_row[1]
-    prev_start = previous_data_row[2]
-    prev_stop = previous_data_row[3]
-    # prev_attributes = previous_data_row[4]
+    row_number = previous_data_row[0]
+    unit_id = data_row[1]
+    # value = data_row[2]
+    start = data_row[3]
+    stop = data_row[4]
+    # attributes = data_row[5]
 
-    if data_row == previous_data_row:
+    prev_row_number = previous_data_row[0]
+    prev_unit_id = previous_data_row[1]
+    # prev_value = previous_data_row[2]
+    prev_start = previous_data_row[3]
+    prev_stop = previous_data_row[4]
+    # prev_attributes = previous_data_row[5]
+
+    if data_row[1:] == previous_data_row[1:]:
         return (
             row_number,
-            (
-                "Inconsistency - Data row duplicate "
-                "(2 or more equal rows in datafile)"
-            ),
-            None
+            "Data row duplicate (2 or more equal rows in datafile)"
         )
     if (unit_id == prev_unit_id) and (start == prev_start):
         return (
             row_number,
-            "Inconsistency - 2 or more rows with same UNIT_ID and START-date",
-            None
+            "2 or more rows with same UNIT_ID and START-date"
         )
     # Valid temporalityTypes: "FIXED", "STATUS", "ACCUMULATED", "EVENT"
     if temporality_type in ("STATUS", "ACCUMULATED", "EVENT"):
         if start is None or str(start).strip(" ") == "":
             return (
                 row_number,
-                (
-                    "Inconsistency - START-date is missing. "
-                    "Expected START-date when DataSet.temporalityType"
-                    f"is {temporality_type}"
-                ),
-                None
+                f"Expected START-date when temporalityType is {temporality_type}"
             )
         if (stop not in (None, "")) and (start > stop):
             return (
                 row_number,
-                "Inconsistency - START-date greater than STOP-date.",
-                f"{start} --> {stop}"
+                f"START-date greater than STOP-date: {start} --> {stop}"
             )
         if temporality_type in ("STATUS", "ACCUMULATED"):
             # if str(stop).strip in(None, ""):
             if stop is None or str(stop).strip(" ") == "":
                 return (
                     row_number,
-                    (
-                        "Inconsistency - STOP-date is missing. "
-                        "Expected STOP-date when DataSet.temporalityType "
-                        f"is {temporality_type}"
-                    ),
-                    None
+                    f"Expected STOP-date when temporalityType is {temporality_type}"
                 )
         if temporality_type == "STATUS":
             if not start == stop:
                 return (
                     row_number,
-                    (
-                        "Inconsistency - expected same (equal) date for "
-                        "START-date and STOP-date when DataSet.temporalityType"
-                        f" is {temporality_type}"
-                    ),
-                    None
+                    f"START-date should equal STOP-date when DataSet.temporalityType is {temporality_type}"
                 )
         if temporality_type == "EVENT":
             if unit_id == prev_unit_id and not prev_stop:
                 return (
                     row_number,
-                    (
-                        "Inconsistency - previous row not ended "
-                        f"(missing STOP-date in line/row {row_number-1})"
-                    ),
-                    None
+                    f"previous event not ended (missing STOP-date in line/row {prev_row_number})"
                 )
             if (unit_id == prev_unit_id) and (start < prev_stop):
                 return (
@@ -149,8 +122,7 @@ def __is_data_row_consistent(temporality_type: str, data_row: tuple,
                     (
                         "Inconsistency - previous STOP-date is greater "
                         "than START-date"
-                    ),
-                    None
+                    )
                 )
     elif temporality_type == "FIXED":
         if unit_id == prev_unit_id:
@@ -160,21 +132,20 @@ def __is_data_row_consistent(temporality_type: str, data_row: tuple,
                     "Inconsistency - 2 or more rows with same UNIT_ID "
                     "(data row duplicate) not legal when "
                     f"DataSet.temporalityType is {temporality_type}"
-                ),
-                None
+                )
             )
     return None
 
 
 def __is_data_row_consistent_with_metadata(data_type:str,
                                            code_list_with_missing_values: list,
-                                           data_row: tuple,
-                                           row_number: int) -> Union[tuple, None]:
-    # unit_id = data_row[0]
-    value = data_row[1]
-    # start = data_row[2]
-    # stop = data_row[3]
-    # attributes = data_row[4]
+                                           data_row: tuple) -> Union[tuple, None]:
+    row_number = data_row[0]
+    # unit_id = data_row[1]
+    value = data_row[2]
+    # start = data_row[3]
+    # stop = data_row[4]
+    # attributes = data_row[5]
 
     if code_list_with_missing_values:
         # Enumerated value-domain for variable - check if value exsists in CodeList
@@ -198,8 +169,7 @@ def __is_data_row_consistent_with_metadata(data_type:str,
         except Exception:
             return (
                 row_number,
-                "Inconsistency - value not of type LONG",
-                None
+                "Inconsistency - value not of type LONG"
             )
     elif data_type == "DOUBLE":
         try:
@@ -207,8 +177,7 @@ def __is_data_row_consistent_with_metadata(data_type:str,
         except Exception:
             return (
                 row_number,
-                "Inconsistency - value not of type DOUBLE",
-                None
+                "Inconsistency - value not of type DOUBLE"
             )
     elif data_type == "DATE":
         try:
@@ -219,8 +188,7 @@ def __is_data_row_consistent_with_metadata(data_type:str,
         except Exception:
             return (
                 row_number,
-                "Inconsistency - value not of type DATE (YYYY-MM-DD)",
-                None
+                "Inconsistency - value not of type DATE (YYYY-MM-DD)"
             )
     return None
 
