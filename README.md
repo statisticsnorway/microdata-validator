@@ -13,7 +13,7 @@ The data file is a csv-file seperated by semicolons. A valid example would be:
 000000000000003;123;2020-01-01;2020-12-31;
 000000000000004;123;2020-01-01;2020-12-31;
 ```
-Read more about the data format and columns [here]().
+Read more about the data format and columns in the [docs](/docs).
 
 The metadata files should be in json format. The requirements for the metadata is best described through the [json schema](/microdata_validator/DatasetMetadataSchema.json), [the examples](/docs/examples), and [the documentation](/docs).
 
@@ -74,7 +74,7 @@ from microdata-validator import validate
 validation_errors = validate(
     "my-dataset-name",
     input_directory="/my/input/directory",
-    working_directory="/my/working/directory",
+    working_directory="/my/working/directory"
 )
 
 if not_validation_errors:
