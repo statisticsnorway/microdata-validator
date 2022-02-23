@@ -35,6 +35,19 @@ def test_validate_valid_dataset():
             assert file in actual_files
 
 
+def test_validate_valid_dataset_delete_working_files():
+    for valid_dataset_name in VALID_DATASET_NAMES:
+        data_errors = validate(
+            valid_dataset_name,
+            working_directory=WORKING_DIRECTORY,
+            input_directory=INPUT_DIRECTORY,
+            delete_working_directory=True
+        )
+        actual_files = get_working_directory_files()
+        assert not data_errors
+        assert not actual_files
+
+
 def test_dataset_does_not_exist():
     with pytest.raises(FileNotFoundError):
         validate(

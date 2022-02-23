@@ -7,7 +7,6 @@ from pathlib import Path
 import uuid
 import os
 
-
 logger = logging.getLogger()
 
 
@@ -44,8 +43,17 @@ def validate(dataset_name: str,
         raise e
 
     if delete_working_directory:
-        for file in os.listdir(working_directory_path):
-            os.remove(working_directory_path / file)
+        generated_files = [
+            working_directory_path / f"{dataset_name}.csv",
+            working_directory_path / f"{dataset_name}.json",
+            working_directory_path / f"{dataset_name}.db"
+        ]
+
+        for file in generated_files:
+            try:
+                os.remove(file)
+            except FileNotFoundError:
+                pass
 
     return data_errors
 
