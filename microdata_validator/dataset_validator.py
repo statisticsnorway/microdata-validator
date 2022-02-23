@@ -87,7 +87,7 @@ def __is_data_row_consistent(temporality_type: str, data_row: tuple,
         )
     # Valid temporalityTypes: "FIXED", "STATUS", "ACCUMULATED", "EVENT"
     if temporality_type in ("STATUS", "ACCUMULATED", "EVENT"):
-        if start is None or str(start).strip(" ") == "":
+        if start is None or str(start).strip() == "":
             return (
                 row_number,
                 f"Expected START-date when temporalityType is {temporality_type}"
@@ -99,7 +99,7 @@ def __is_data_row_consistent(temporality_type: str, data_row: tuple,
             )
         if temporality_type in ("STATUS", "ACCUMULATED"):
             # if str(stop).strip in(None, ""):
-            if stop is None or str(stop).strip(" ") == "":
+            if stop is None or str(stop).strip() == "":
                 return (
                     row_number,
                     f"Expected STOP-date when temporalityType is {temporality_type}"
@@ -133,6 +133,17 @@ def __is_data_row_consistent(temporality_type: str, data_row: tuple,
                     "(data row duplicate) not legal when "
                     f"DataSet.temporalityType is {temporality_type}"
                 )
+            )
+        if stop is None or str(stop).strip() == "":
+            return (
+                row_number,
+                f"Expected STOP-date when temporalityType is {temporality_type}"
+            )
+        if not (start is None or str(start).strip() == ""):
+            print(start)
+            return (
+                row_number,
+                f"There should be no START-date when temporalityType is {temporality_type}"
             )
     return None
 
