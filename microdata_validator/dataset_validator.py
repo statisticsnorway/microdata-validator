@@ -143,7 +143,7 @@ def __is_data_row_consistent(temporality_type: str, data_row: tuple,
             print(start)
             return (
                 row_number,
-                f"There should no START-date when temporalityType is {temporality_type}"
+                f"There should be no START-date when temporalityType is {temporality_type}"
             )
     return None
 
