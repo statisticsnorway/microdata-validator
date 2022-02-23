@@ -191,8 +191,12 @@ def __metadata_update_temporal_coverage(metadata: dict,
 
 def run_reader(working_directory: Path, input_directory: Path,
                dataset_name: str) -> None:
-    metadata_file_path: Path = input_directory.joinpath(f"{dataset_name}.json")
-    data_file_path: Path = input_directory.joinpath(f"{dataset_name}.csv")
+    metadata_file_path: Path = (
+        input_directory / dataset_name / f"{dataset_name}.json"
+    )
+    data_file_path: Path = (
+        input_directory / dataset_name / f"{dataset_name}.csv"
+    )
 
     logger.info(f'Start reading dataset "{dataset_name}"')
     enriched_data_file_path = working_directory.joinpath(
