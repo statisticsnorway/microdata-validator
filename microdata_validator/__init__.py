@@ -54,7 +54,6 @@ def validate(dataset_name: str,
                 os.remove(file)
             except FileNotFoundError:
                 pass
-
     return data_errors
 
 

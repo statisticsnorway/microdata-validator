@@ -139,6 +139,12 @@ def __is_data_row_consistent(temporality_type: str, data_row: tuple,
                 row_number,
                 f"Expected STOP-date when temporalityType is {temporality_type}"
             )
+        if not (start is None or str(start).strip() == ""):
+            print(start)
+            return (
+                row_number,
+                f"There should no START-date when temporalityType is {temporality_type}"
+            )
     return None
 
 
