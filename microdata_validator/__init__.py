@@ -36,7 +36,7 @@ def validate(dataset_name: str,
     except InvalidDataException as e:
         data_errors = e.data_errors
     except ValidationError as e:
-        schema_path = '.'.join(e.relative_schema_path)
+        schema_path = '.'.join([str(path) for path in e.relative_schema_path])
         data_errors = [f"{schema_path}: {e.message}"]
     except Exception as e:
         # Raise unexpected exceptions to user
