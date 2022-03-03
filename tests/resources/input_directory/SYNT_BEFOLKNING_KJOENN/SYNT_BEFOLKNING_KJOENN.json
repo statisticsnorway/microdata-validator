@@ -47,7 +47,6 @@
       "dataType": "STRING",
       "uriDefinition": [""],
       "valueDomain": {
-        "description": [{"languageCode": "no", "value": "Variabelen viser personens kjønn"}],
         "uriDefinition": [""],
         "codeList": {
           "codeItems": [

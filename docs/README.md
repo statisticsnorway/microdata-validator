@@ -66,7 +66,7 @@ Første eksempel er for et datasett med personer sin inntekt akkumulert over et 
 ```json
 "valueDomain": {
     "uriDefinition": [],
-    "description": [{"languageCode": "no", "value": "Årlig personinntekt"}],
+    "description": [{"languageCode": "no", "value": "Norske Kroner"}],
     "measurementType": "CURRENCY",
     "measurementUnitDescription": [{"languageCode": "no", "value": "Norske Kroner"}]
 }
@@ -76,7 +76,6 @@ Andre Eksempel er et datasett som beskriver kjønn for en befolkning. Dette er m
 ```json
 "valueDomain": {
     "uriDefinition": [],
-    "description": [{"languageCode": "no", "value": "Variablen viser personens kjønn"}],
     "codeList": [
         {
             "code": "1",
