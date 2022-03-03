@@ -86,7 +86,7 @@
                 "codeList": {"$ref": "#/definitions/codeListType"},
                 "sentinelAndMissingValues": {"$ref": "#/definitions/sentinelAndMissingValuesType"}
             },
-            "oneOf":[
+            "anyOf":[
                 {
                     "required":[
                         "codeList"
