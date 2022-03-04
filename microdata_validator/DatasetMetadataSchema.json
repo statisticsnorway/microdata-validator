@@ -233,6 +233,7 @@
                     "dataType": {"type": "string",
                         "enum": ["STRING", "LONG", "DOUBLE", "DATE"]
                     },
+                    "valueDomain": {"$ref": "#/definitions/valueDomainType"},
                     "uriDefinition": {
                         "type": "array",
                         "items": {"type": ["string", "null"] }
@@ -247,7 +248,8 @@
                     "shortName",
                     "name",
                     "description",
-                    "dataType"
+                    "dataType",
+                    "valueDomain"
                 ]
             }
         }
