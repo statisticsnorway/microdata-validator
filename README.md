@@ -53,7 +53,7 @@ The input directory is set to the directory of the script by default.
 If you wish to use a different directory, you can use the ```input_directory```-parameter:
 
 ```py
-from microdata-validator import validate
+from microdata_validator import validate
 
 validation_errors = validate(
     "my-dataset-name",
@@ -69,7 +69,7 @@ else:
 The validate function will temporarily generate some files in order to validate your dataset. To do this, it will create a working directory in the same location as your script. Therefore, it is important that you have writing permissions in your directory. You can also choose to define the location of this directory yourself using the ```working_directory```-parameter.
 
 ```py
-from microdata-validator import validate
+from microdata_validator import validate
 
 validation_errors = validate(
     "my-dataset-name",
@@ -77,7 +77,7 @@ validation_errors = validate(
     working_directory="/my/working/directory"
 )
 
-if not_validation_errors:
+if not validation_errors:
     print("My dataset is valid")
 else:
     print("Dataset is invalid :(")
