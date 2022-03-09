@@ -2,7 +2,7 @@
 _______
 I tillegg til de vedlagte eksemplene på metadata som json-filer, beskriver dette dokumentet feltene i modellen. Det anbefales å lese begge deler for å forstå modellen.
 
-### ROTNIVÅFILTER
+### ROTNIVÅFELTER
 Disse feltene omhandler datasettet som helhet.
 * **shortName**: Navnet på datasettet
 * **temporalityType**: temporalitetstypen for datasettet kan være en av FIXED, ACCUMULATED, STATUS og EVENT.
