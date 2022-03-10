@@ -24,12 +24,16 @@ stages:
   jobs:
   - job: unitTests
     displayName: Run Unit Tests
+    
+    strategy:
+      matrix:
+        python-version: [3.7, 3.8, 3.9, 3.10]
 
     steps:
       - task: UsePythonVersion@0
         inputs:
-          versionSpec: '3.9'
-        displayName: 'Use Python 3.9'
+          versionSpec: ${{ matrix.python-version }}
+        displayName: Use Python ${{ matrix.python-version }}
 
       - script: |
           python -m ensurepip
