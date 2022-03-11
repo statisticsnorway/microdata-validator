@@ -14,6 +14,7 @@ def validate(dataset_name: str,
              working_directory: str = '',
              input_directory: str = '',
              delete_working_directory: bool = False,
+             metadata_ref_directory: str = None,
              print_errors_to_file: bool = False) -> bool:
 
     if working_directory:
@@ -22,11 +23,16 @@ def validate(dataset_name: str,
         working_directory_path = Path(str(uuid.uuid4()))
         os.mkdir(working_directory_path)
     input_directory_path = Path(input_directory)
+    if metadata_ref_directory is not None:
+        metadata_ref_directory = Path(metadata_ref_directory)
 
     data_errors = []
     try:
         dataset_reader.run_reader(
-            working_directory_path, input_directory_path, dataset_name
+            working_directory_path,
+            input_directory_path,
+            metadata_ref_directory,
+            dataset_name
         )
         data_errors = dataset_validator.run_validator(
             working_directory_path, dataset_name

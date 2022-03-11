@@ -9,6 +9,13 @@ from jsonschema import validate
 logger = logging.getLogger()
 
 
+def inline_metadata_references(metadata_file_path: Path,
+                               metadata_ref_directory: Path) -> dict:
+    logger.info(f'Reading metadata from file "{metadata_file_path}"')
+    metadata: dict = load_json(metadata_file_path)
+    return metadata
+
+
 def load_json(filepath: Path) -> dict:
     try:
         with filepath.open() as json_file:

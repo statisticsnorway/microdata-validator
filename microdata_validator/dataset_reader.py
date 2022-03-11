@@ -8,16 +8,6 @@ from microdata_validator import file_utils
 logger = logging.getLogger()
 
 
-def __inline_metadata_references(metadata_file_path: Path) -> dict:
-    # This function is currently not supported in MVP of this library.
-    # Will be implemented ASAP.
-    logger.info(f'Reading metadata from file "{metadata_file_path}"')
-
-    # metadata_ref_directory = Path(__file__).parent.joinpath("metadata_ref")
-    metadata: dict = file_utils.load_json(metadata_file_path)
-    return metadata
-
-
 def __insert_data_csv_into_sqlite(sqlite_file_path, dataset_data_file,
                                   field_separator=";") -> None:
     db_conn, cursor = file_utils.create_temp_sqlite_db_file(
@@ -197,7 +187,7 @@ def __metadata_update_temporal_coverage(metadata: dict,
 
 
 def run_reader(working_directory: Path, input_directory: Path,
-               dataset_name: str) -> None:
+               metadata_ref_directory: Path, dataset_name: str) -> None:
     metadata_file_path: Path = (
         input_directory / dataset_name / f"{dataset_name}.json"
     )
@@ -212,8 +202,15 @@ def run_reader(working_directory: Path, input_directory: Path,
     temporal_data = __read_and_process_data(
         data_file_path, enriched_data_file_path
     )
-
-    metadata_dict = __inline_metadata_references(metadata_file_path)
+    
+    logger.info(f'Reading metadata from file "{metadata_file_path}"')
+    if metadata_ref_directory is None:
+        metadata_dict = file_utils.inline_metadata_references(
+            metadata_file_path, metadata_ref_directory
+        )
+    else:
+        metadata_dict = file_utils.load_json(metadata_file_path)
+    
     __metadata_update_temporal_coverage(metadata_dict, temporal_data)
 
     logger.info('Writing inlined metadata JSON file to working directory')
