@@ -220,7 +220,7 @@ def run_reader(working_directory: Path, input_directory: Path,
     utils.write_json(inlined_metadata_file_path, metadata_dict)
 
     logger.info('Validating metadata JSON with JSON schema')
-    utils.validate_json_with_schema(inlined_metadata_file_path)
+    utils.validate_json_with_schema(metadata_dict)
 
     sqlite_file_path = working_directory.joinpath(f'{dataset_name}.db')
     __insert_data_csv_into_sqlite(sqlite_file_path, enriched_data_file_path)

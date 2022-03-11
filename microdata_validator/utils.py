@@ -62,14 +62,12 @@ def write_json(filepath: Path, content: dict) -> None:
         )
 
 
-def validate_json_with_schema(json_file: Path) -> None:
+def validate_json_with_schema(metadata_json: dict) -> None:
     json_schema_file = Path(__file__).parent.joinpath(
         "DatasetMetadataSchema.json"
     )
     with open(json_schema_file, mode="r", encoding="utf-8") as schema:
         metadata_schema = json.load(schema)
-    with open(json_file, mode="r", encoding="utf-8") as metadata:
-        metadata_json = json.load(metadata)
     validate(
         instance=metadata_json,
         schema=metadata_schema
