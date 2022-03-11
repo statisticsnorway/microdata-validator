@@ -72,4 +72,5 @@ def validate_metadata(metadata_file_path:str):
         schema_path = '.'.join([str(path) for path in e.relative_schema_path])
         return [f"{schema_path}: {e.message}"]
 
+
 __all__ = ['validate', 'validate_metadata']

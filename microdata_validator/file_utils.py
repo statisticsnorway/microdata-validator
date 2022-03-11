@@ -1,6 +1,7 @@
 import json
 import logging
 import sqlite3 as db
+import os
 
 from pathlib import Path
 from typing import Tuple
@@ -11,8 +12,37 @@ logger = logging.getLogger()
 
 def inline_metadata_references(metadata_file_path: Path,
                                metadata_ref_directory: Path) -> dict:
+    def find_references(object: dict):
+        for key, value in object.items():
+            if isinstance(value, dict):
+                if "$ref" in value:
+                    object[key] = load_json(
+                        metadata_ref_directory / Path(value["$ref"])
+                    )
+                else:
+                    find_references(value)
+            elif isinstance(value, list):
+                for index, item in enumerate(value):
+                    if isinstance(item, dict):
+                        if "$ref" in item:
+                            value[index] = load_json(
+                                metadata_ref_directory / Path(item["$ref"])
+                            )
+                        else:
+                            find_references(item)
+            elif isinstance(value, str) and key == "$ref":
+                print(f"FOUND VALUE: {value}")
+    
+    if metadata_ref_directory is None:
+        raise ParseMetadataError("No supplied reference directory")
+    if not os.path.isdir(metadata_ref_directory):
+        raise ParseMetadataError(
+            "Supplied reference directory is invalid"
+            f" '{metadata_ref_directory}'"
+        )
     logger.info(f'Reading metadata from file "{metadata_file_path}"')
     metadata: dict = load_json(metadata_file_path)
+    find_references(metadata)
     return metadata
 
 
@@ -22,7 +52,7 @@ def load_json(filepath: Path) -> dict:
             return json.load(json_file)
     except Exception as e:
         logging.error(f"Failed to open file at {str(Path)}")
-        logging.error(f"{str(e)}")
+        raise e
 
 
 def write_json(filepath: Path, content: dict) -> None:
@@ -77,3 +107,6 @@ def read_temp_sqlite_db_data_sorted(db_file: Path) -> Tuple[db.Connection, db.Cu
     #cursor.execute("BEGIN TRANSACTION")
     cursor.execute(sql_select_sorted)
     return (db_conn, cursor)
+
+class ParseMetadataError(Exception):
+    pass

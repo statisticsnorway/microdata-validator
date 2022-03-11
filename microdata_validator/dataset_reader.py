@@ -205,11 +205,11 @@ def run_reader(working_directory: Path, input_directory: Path,
     
     logger.info(f'Reading metadata from file "{metadata_file_path}"')
     if metadata_ref_directory is None:
+        metadata_dict = file_utils.load_json(metadata_file_path)
+    else:
         metadata_dict = file_utils.inline_metadata_references(
             metadata_file_path, metadata_ref_directory
         )
-    else:
-        metadata_dict = file_utils.load_json(metadata_file_path)
     
     __metadata_update_temporal_coverage(metadata_dict, temporal_data)
 
