@@ -3,14 +3,14 @@ import datetime
 import logging
 from shutil import copyfile
 from pathlib import Path
-from microdata_validator import file_utils
+from microdata_validator import utils
 
 logger = logging.getLogger()
 
 
 def __insert_data_csv_into_sqlite(sqlite_file_path, dataset_data_file,
                                   field_separator=";") -> None:
-    db_conn, cursor = file_utils.create_temp_sqlite_db_file(
+    db_conn, cursor = utils.create_temp_sqlite_db_file(
         sqlite_file_path
     )
     with open(file=dataset_data_file, newline='', encoding='utf-8') as f:
@@ -205,9 +205,9 @@ def run_reader(working_directory: Path, input_directory: Path,
     
     logger.info(f'Reading metadata from file "{metadata_file_path}"')
     if metadata_ref_directory is None:
-        metadata_dict = file_utils.load_json(metadata_file_path)
+        metadata_dict = utils.load_json(metadata_file_path)
     else:
-        metadata_dict = file_utils.inline_metadata_references(
+        metadata_dict = utils.inline_metadata_references(
             metadata_file_path, metadata_ref_directory
         )
     
@@ -217,10 +217,10 @@ def run_reader(working_directory: Path, input_directory: Path,
     inlined_metadata_file_path = working_directory.joinpath(
         f'{dataset_name}.json'
     )
-    file_utils.write_json(inlined_metadata_file_path, metadata_dict)
+    utils.write_json(inlined_metadata_file_path, metadata_dict)
 
     logger.info('Validating metadata JSON with JSON schema')
-    file_utils.validate_json_with_schema(inlined_metadata_file_path)
+    utils.validate_json_with_schema(inlined_metadata_file_path)
 
     sqlite_file_path = working_directory.joinpath(f'{dataset_name}.db')
     __insert_data_csv_into_sqlite(sqlite_file_path, enriched_data_file_path)

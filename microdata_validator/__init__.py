@@ -1,6 +1,6 @@
 from microdata_validator import dataset_reader
 from microdata_validator import dataset_validator
-from microdata_validator import file_utils
+from microdata_validator import utils
 from microdata_validator.dataset_reader import InvalidDataException
 import logging
 from jsonschema import ValidationError
@@ -66,7 +66,7 @@ def validate(dataset_name: str,
 
 def validate_metadata(metadata_file_path:str):
     try:
-        file_utils.validate_json_with_schema(metadata_file_path)
+        utils.validate_json_with_schema(metadata_file_path)
         return []
     except ValidationError as e:
         schema_path = '.'.join([str(path) for path in e.relative_schema_path])

@@ -1,4 +1,3 @@
-import os
 import logging
 from microdata_validator import validate_metadata
 import pytest

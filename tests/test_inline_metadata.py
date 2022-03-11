@@ -1,5 +1,5 @@
-from microdata_validator import file_utils
-from microdata_validator.file_utils import ParseMetadataError
+from microdata_validator import utils
+from microdata_validator.utils import ParseMetadataError
 from pathlib import Path
 import pytest
 
@@ -13,38 +13,38 @@ REF_DIR = Path("tests/resources/ref_directory")
 
 
 def test_inline_simple():
-    actual_inlined = file_utils.inline_metadata_references(
+    actual_inlined = utils.inline_metadata_references(
         METADATA_FILE_PATH, REF_DIR
     )
-    assert actual_inlined == file_utils.load_json(
+    assert actual_inlined == utils.load_json(
        EXPECTED_METADATA_FILE_PATH
     )
 
 
 def test_inline_full_dataset():
-    actual_inlined = file_utils.inline_metadata_references(
+    actual_inlined = utils.inline_metadata_references(
         SIVSTAND_REFERENCED_FILE_PATH, REF_DIR
     )
-    actual_inlined == file_utils.load_json(
+    actual_inlined == utils.load_json(
         SIVSTAND_INLINE_FILE_PATH
     )
 
 
 def test_inline_invalid_metadata_file_path():
     with pytest.raises(FileNotFoundError):
-        file_utils.inline_metadata_references(
+        utils.inline_metadata_references(
             NONEXISTENT_FILE_PATH, REF_DIR
         )
 
 def test_inline_invalid_ref_dir():
     with pytest.raises(ParseMetadataError) as e:
-        file_utils.inline_metadata_references(
+        utils.inline_metadata_references(
             SIVSTAND_REFERENCED_FILE_PATH, None
         )
     assert "No supplied reference directory" in str(e)
 
     with pytest.raises(ParseMetadataError) as e:
-        file_utils.inline_metadata_references(
+        utils.inline_metadata_references(
             SIVSTAND_REFERENCED_FILE_PATH, SIVSTAND_REFERENCED_FILE_PATH
         )
     assert "Supplied reference directory is invalid" in str(e)

@@ -2,7 +2,7 @@ import datetime
 from typing import Union
 import logging
 from pathlib import Path
-from microdata_validator import file_utils
+from microdata_validator import utils
 
 logger = logging.getLogger()
 
@@ -31,7 +31,7 @@ def __validate_data(sqlite_db_file_path: str, metadata: dict) -> int:
     """Read and validate sorted data rows from the temporary Sqlite 
        database file (sorted by unit_id, start, stop)
     """
-    db_conn, db_cursor = file_utils.read_temp_sqlite_db_data_sorted(
+    db_conn, db_cursor = utils.read_temp_sqlite_db_data_sorted(
         sqlite_db_file_path
     )
     temporality_type = metadata["temporalityType"]
@@ -212,7 +212,7 @@ def run_validator(working_directory: Path, dataset_name: str) -> list:
         f'data and metadata, event-history (unit_id '
         f'* start * stop) and check for row duplicates'
     )
-    metadata = file_utils.load_json(metadata_file_path)
+    metadata = utils.load_json(metadata_file_path)
     data_errors = __validate_data(sqlite_file_path, metadata)
     if len(data_errors) > 0:
         logger.error(f'ERROR - data consistency error(s):')
