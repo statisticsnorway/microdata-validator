@@ -64,7 +64,8 @@ def validate(dataset_name: str,
     return data_errors
 
 
-def validate_metadata(metadata_file_path:str, metadata_ref_directory: str = None):
+def validate_metadata(metadata_file_path: str,
+                      metadata_ref_directory: str = None) -> list:
     try:
         metadata_file_path = Path(metadata_file_path)
         if metadata_ref_directory is None:
@@ -81,4 +82,29 @@ def validate_metadata(metadata_file_path:str, metadata_ref_directory: str = None
         return [f"{schema_path}: {e.message}"]
 
 
-__all__ = ['validate', 'validate_metadata']
+def inline_metadata(metadata_file_path: str, metadata_ref_directory: str,
+                    output_file_path: str = None) -> Path:
+    if output_file_path is None:
+        output_file_path = Path(
+            f"{metadata_file_path.strip('.json')}_inlined.json"
+        )
+    else:
+        output_file_path = Path(output_file_path)
+    if os.path.exists(output_file_path):
+        raise FileExistsError(
+            f"File already exists at '{output_file_path}'. "
+            f"Can not overwrite existing file."
+        )
+    
+    metadata_file_path = Path(metadata_file_path)
+    metadata_ref_directory = Path(metadata_ref_directory)
+    metadata_dict = utils.inline_metadata_references(
+        metadata_file_path, metadata_ref_directory
+    )
+    utils.validate_json_with_schema(metadata_dict)
+
+    utils.write_json(output_file_path, metadata_dict)
+    return output_file_path
+
+
+__all__ = ['validate', 'validate_metadata', 'inline_metadata']
