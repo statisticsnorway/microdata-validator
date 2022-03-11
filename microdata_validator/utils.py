@@ -12,7 +12,7 @@ logger = logging.getLogger()
 
 def inline_metadata_references(metadata_file_path: Path,
                                metadata_ref_directory: Path) -> dict:
-    def find_references(object: dict):
+    def recursive_ref_insert(object: dict):
         for key, value in object.items():
             if isinstance(value, dict):
                 if "$ref" in value:
@@ -20,7 +20,7 @@ def inline_metadata_references(metadata_file_path: Path,
                         metadata_ref_directory / Path(value["$ref"])
                     )
                 else:
-                    find_references(value)
+                    recursive_ref_insert(value)
             elif isinstance(value, list):
                 for index, item in enumerate(value):
                     if isinstance(item, dict):
@@ -29,7 +29,7 @@ def inline_metadata_references(metadata_file_path: Path,
                                 metadata_ref_directory / Path(item["$ref"])
                             )
                         else:
-                            find_references(item)
+                            recursive_ref_insert(item)
             elif isinstance(value, str) and key == "$ref":
                 print(f"FOUND VALUE: {value}")
     
@@ -42,7 +42,7 @@ def inline_metadata_references(metadata_file_path: Path,
         )
     logger.info(f'Reading metadata from file "{metadata_file_path}"')
     metadata: dict = load_json(metadata_file_path)
-    find_references(metadata)
+    recursive_ref_insert(metadata)
     return metadata
 
 
