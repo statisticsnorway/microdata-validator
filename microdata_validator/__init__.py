@@ -64,9 +64,17 @@ def validate(dataset_name: str,
     return data_errors
 
 
-def validate_metadata(metadata_file_path:str):
+def validate_metadata(metadata_file_path:str, metadata_ref_directory: str = None):
     try:
-        utils.validate_json_with_schema(metadata_file_path)
+        metadata_file_path = Path(metadata_file_path)
+        if metadata_ref_directory is None:
+            metadata_dict = utils.load_json(Path(metadata_file_path))
+        else:
+            metadata_ref_directory = Path(metadata_ref_directory)
+            metadata_dict = utils.inline_metadata_references(
+                metadata_file_path, metadata_ref_directory
+            )
+        utils.validate_json_with_schema(metadata_dict)
         return []
     except ValidationError as e:
         schema_path = '.'.join([str(path) for path in e.relative_schema_path])
