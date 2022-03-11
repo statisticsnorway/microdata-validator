@@ -17,8 +17,8 @@ KJOENN_DEFAULT_OUTPUT_PATH = (
     "SYNT_BEFOLKNING_KJOENN/SYNT_BEFOLKNING_KJOENN_inlined.json"
 )
 KJOENN_INLINED_FILE_PATH = f"{RESOURCES_DIR}/SYNT_BEFOLKNING_KJOENN_inlined.json"
-SIVSTAND_REFERENCED_FILE_PATH = f"{RESOURCES_DIR}/sivstand_referenced.json"
-SIVSTAND_INLINE_FILE_PATH = f"{RESOURCES_DIR}/sivstand_inlined.json"
+SIVSTAND_REFERENCED_FILE_PATH = f"{RESOURCES_DIR}/synt_sivstand_referenced.json"
+SIVSTAND_INLINE_FILE_PATH = f"{RESOURCES_DIR}/synt_sivstand_inlined.json"
 NONEXISTENT_FILE_PATH = f"{RESOURCES_DIR}/does-not-exist.json"
 REF_DIR = "tests/resources/ref_directory"
 
