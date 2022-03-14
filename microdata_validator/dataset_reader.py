@@ -23,7 +23,7 @@ def __insert_data_csv_into_sqlite(sqlite_file_path, dataset_data_file,
         )
     db_conn.commit()
     db_conn.close()
-    logger.info(
+    logger.debug(
         f'Done reading datafile "{dataset_data_file}" '
         'into temp Sqlite database table.'
     )
@@ -38,7 +38,7 @@ def __read_and_process_data(data_file_path: Path,
     stop_dates = []
     rows_validated = 0
 
-    logger.info(
+    logger.debug(
         f'Validate datafile "{data_file_path}"'
     )
     data_file_with_row_numbers = open(enriched_data_file_path, 'w')
@@ -47,11 +47,10 @@ def __read_and_process_data(data_file_path: Path,
         try:
             for data_row in reader:
                 if reader.line_num % 1000000 == 0:
-                    logger.info(".. now reading row: " + str(reader.line_num))
+                    logger.debug(".. now reading row: " + str(reader.line_num))
                 rows_validated += 1
                 if len(data_errors) >= data_error_limit:
-                    logger.error(f"ERROR in file - {data_file_path}")
-                    logger.error(
+                    logger.debug(
                         f"Validation stopped - error limit reached, "
                         f"{str(rows_validated)} rows validated"
                     )
@@ -60,21 +59,19 @@ def __read_and_process_data(data_file_path: Path,
                     )
 
                 if not data_row:
-                    data_errors.append((
-                        reader.line_num,
-                        "Empty data row/line (Null/missing). "
-                        "Expected row with fields "
+                    data_errors.append(
+                        f"row {reader.line_num}: "
+                        "Empty data row. Expected row with fields "
                         "UNIT_ID, VALUE, (START), (STOP), (ATTRIBUTES))",
                         None
-                    ))
+                    )
                 elif len(data_row) > 5:
-                    data_errors.append((
-                        reader.line_num,
-                        "Too many elements in row/line. "
-                        "Expected row with fields "
+                    data_errors.append(
+                        f"row {reader.line_num}: "
+                        "Too many elements. Expected row with fields "
                         "UNIT_ID, VALUE, (START), (STOP), (ATTRIBUTES))",
                         None
-                    ))
+                    )
                 else:
                     unit_id = data_row[0].strip('"')
                     value = data_row[1].strip('"')
@@ -85,39 +82,35 @@ def __read_and_process_data(data_file_path: Path,
                         f"{reader.line_num};{unit_id};{value};{start};{stop};\n"
                     )
                     if unit_id is None or str(unit_id).strip(" ") == "":
-                        data_errors.append((
-                            reader.line_num,
-                            "UNIT_ID (identifier) missing or null",
-                            unit_id
-                        ))
+                        data_errors.append(
+                            f"row {reader.line_num}: "
+                            f"identifier missing or null - '{unit_id}'"
+                        )
                     if value is None or str(value).strip(" ") == "":
-                        data_errors.append((
-                            reader.line_num,
-                            "VALUE (measure) missing or null",
-                            value
-                        ))
+                        data_errors.append(
+                            f"row {reader.line_num}: "
+                            f"measure missing or null - '{value}'"
+                        )
                     if start not in (None, ""):
                         try:
                             datetime.datetime(
                                 int(start[:4]), int(start[5:7]), int(start[8:10])
                             )
                         except Exception:
-                            data_errors.append((
-                                reader.line_num,
-                                "START-date not valid",
-                                start
-                            ))
+                            data_errors.append(
+                                f"row {reader.line_num}: "
+                                f"START date not valid - '{start}'"
+                            )
                     if stop not in (None, ""):
                         try:
                             datetime.datetime(
                                 int(stop[:4]), int(stop[5:7]), int(stop[8:10])
                             )
                         except Exception:
-                            data_errors.append((
-                                reader.line_num,
-                                "STOP-date not valid",
-                                stop
-                            ))
+                            data_errors.append(
+                                f"row {reader.line_num}: "
+                                f"STOP date not valid - '{start}'"
+                            )
                     # TODO: validate "attributes"?
 
                     # find temporalCoverage from datafile
@@ -128,30 +121,30 @@ def __read_and_process_data(data_file_path: Path,
             # See https://stackoverflow.com/questions/3269293/how-to-write-a-check-in-python-to-see-if-file-is-valid-utf-8
             logger.error(
                 f'ERROR (csv.reader error). Data file not UTF-8 encoded. '
-                f'File {data_file_path}, near line {reader.line_num}: {ue}'
+                f'File {data_file_path}, near row {reader.line_num}: {ue}'
             )
             raise InvalidDataException(
                 f'ERROR (csv.reader error). Data file not UTF-8 encoded. '
-                f'File {data_file_path}, near line {reader.line_num}: {ue}'
+                f'File {data_file_path}, near row {reader.line_num}: {ue}'
             )
         except csv.Error as e:
             logger.error(
                 f'ERROR (csv.reader error) in file {data_file_path}, '
-                f'near line {reader.line_num}: {e}'
+                f'near row {reader.line_num}: {e}'
             )
             raise InvalidDataException(
                 f'ERROR (csv.reader error) in file {data_file_path}, '
-                f'near line {reader.line_num}: {e}'
+                f'near row {reader.line_num}: {e}'
             )
 
     if data_errors:
-        logger.error(f"ERROR in file - {data_file_path}")
-        logger.info(f"{str(rows_validated)} rows validated")
+        logger.debug(f"ERROR in file - {data_file_path}")
+        logger.debug(f"{str(rows_validated)} rows validated")
         raise InvalidDataException(
             f'Invalid data found while reading data file', data_errors
         )
     else:
-        logger.info(f"{str(rows_validated)} rows validated")
+        logger.debug(f"{str(rows_validated)} rows validated")
         return {
             "start": min(start_dates),
             "latest": max(stop_dates),
@@ -161,7 +154,7 @@ def __read_and_process_data(data_file_path: Path,
 
 def __metadata_update_temporal_coverage(metadata: dict,
                                         temporal_data: dict) -> None:
-    logger.info(
+    logger.debug(
         'Append temporal coverage (start, stop, status dates) to metadata'
     )
     if metadata["temporalityType"] in ("EVENT", "ACCUMULATED"):
@@ -195,7 +188,7 @@ def run_reader(working_directory: Path, input_directory: Path,
         input_directory / dataset_name / f"{dataset_name}.csv"
     )
 
-    logger.info(f'Start reading dataset "{dataset_name}"')
+    logger.debug(f'Start reading dataset "{dataset_name}"')
     enriched_data_file_path = working_directory.joinpath(
         f'{dataset_name}.csv'
     )
@@ -203,7 +196,7 @@ def run_reader(working_directory: Path, input_directory: Path,
         data_file_path, enriched_data_file_path
     )
     
-    logger.info(f'Reading metadata from file "{metadata_file_path}"')
+    logger.debug(f'Reading metadata from file "{metadata_file_path}"')
     if metadata_ref_directory is None:
         metadata_dict = utils.load_json(metadata_file_path)
     else:
@@ -213,19 +206,19 @@ def run_reader(working_directory: Path, input_directory: Path,
     
     __metadata_update_temporal_coverage(metadata_dict, temporal_data)
 
-    logger.info('Writing inlined metadata JSON file to working directory')
+    logger.debug('Writing inlined metadata JSON file to working directory')
     inlined_metadata_file_path = working_directory.joinpath(
         f'{dataset_name}.json'
     )
     utils.write_json(inlined_metadata_file_path, metadata_dict)
 
-    logger.info('Validating metadata JSON with JSON schema')
+    logger.debug('Validating metadata JSON with JSON schema')
     utils.validate_json_with_schema(metadata_dict)
 
     sqlite_file_path = working_directory.joinpath(f'{dataset_name}.db')
     __insert_data_csv_into_sqlite(sqlite_file_path, enriched_data_file_path)
 
-    logger.info(f'OK - reading dataset "{dataset_name}"')
+    logger.debug(f'OK - reading dataset "{dataset_name}"')
 
 
 class InvalidDataException(Exception):
