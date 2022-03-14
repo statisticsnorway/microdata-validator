@@ -77,72 +77,66 @@ def __is_data_row_consistent(temporality_type: str, data_row: tuple,
 
     if data_row[1:] == previous_data_row[1:]:
         return (
-            row_number,
-            "Data row duplicate (2 or more equal rows in datafile)"
+            f"row {row_number}: "
+            f"Duplicate (2 or more equal rows in datafile)"
         )
     if (unit_id == prev_unit_id) and (start == prev_start):
         return (
-            row_number,
-            "2 or more rows with same UNIT_ID and START-date"
+            f"row {row_number}: "
+            f"2 or more rows with same identifier and START-date"
         )
     # Valid temporalityTypes: "FIXED", "STATUS", "ACCUMULATED", "EVENT"
     if temporality_type in ("STATUS", "ACCUMULATED", "EVENT"):
         if start is None or str(start).strip() == "":
             return (
-                row_number,
+                f"row {row_number}: "
                 f"Expected START-date when temporalityType is {temporality_type}"
             )
         if (stop not in (None, "")) and (start > stop):
             return (
-                row_number,
-                f"START-date greater than STOP-date: {start} --> {stop}"
+                f"row {row_number}: "
+                f"START-date greater than STOP-date - {start} > {stop}"
             )
         if temporality_type in ("STATUS", "ACCUMULATED"):
             # if str(stop).strip in(None, ""):
             if stop is None or str(stop).strip() == "":
                 return (
-                    row_number,
+                    f"row {row_number}: "
                     f"Expected STOP-date when temporalityType is {temporality_type}"
                 )
         if temporality_type == "STATUS":
             if not start == stop:
                 return (
-                    row_number,
-                    f"START-date should equal STOP-date when DataSet.temporalityType is {temporality_type}"
+                    f"row {row_number}: "
+                    f"START-date should equal STOP-date when temporalityType is {temporality_type}"
                 )
         if temporality_type == "EVENT":
             if unit_id == prev_unit_id and not prev_stop:
                 return (
-                    row_number,
+                    f"row {row_number}: "
                     f"previous event not ended (missing STOP-date in line/row {prev_row_number})"
                 )
             if (unit_id == prev_unit_id) and (start < prev_stop):
                 return (
-                    row_number,
-                    (
-                        "Inconsistency - previous STOP-date is greater "
-                        "than START-date"
-                    )
+                    f"row {row_number}: "
+                    f"Previous STOP-date greater than STOP-date - {prev_stop} > {start}"
                 )
     elif temporality_type == "FIXED":
         if unit_id == prev_unit_id:
             return (
-                row_number,
-                (
-                    "Inconsistency - 2 or more rows with same UNIT_ID "
-                    "(data row duplicate) not legal when "
-                    f"DataSet.temporalityType is {temporality_type}"
-                )
+                f"row {row_number}: "
+                "2 or more rows with same UNIT_ID (data row duplicate) not legal when "
+                f"temporalityType is {temporality_type}"
             )
         if stop is None or str(stop).strip() == "":
             return (
-                row_number,
+                f"row {row_number}: "
                 f"Expected STOP-date when temporalityType is {temporality_type}"
             )
         if not (start is None or str(start).strip() == ""):
             print(start)
             return (
-                row_number,
+                f"row {row_number}: "
                 f"There should be no START-date when temporalityType is {temporality_type}"
             )
     return None
@@ -163,12 +157,9 @@ def __is_data_row_consistent_with_metadata(data_type:str,
         value_string = str(value).strip('"')
         if value_string not in code_list_with_missing_values:
             return (
-                row_number,
-                (
-                    "Inconsistency - value (code) not in metadata "
-                    "ValueDomain/CodeList or SentinelAndMissingValues-list",
-                ),
-                value
+                f"row {row_number}: "
+                f"'{value_string}' not in metadata "
+                "codeList or sentinelAndMissingValues"
             )
     # else:
     # Described value-domian for variable (e.g. amount, weight, length, ..)
@@ -179,16 +170,16 @@ def __is_data_row_consistent_with_metadata(data_type:str,
             int(str(value).strip('"'))
         except Exception:
             return (
-                row_number,
-                "Inconsistency - value not of type LONG"
+                f"row {row_number}: "
+                f"'{value}' not of type LONG"
             )
     elif data_type == "DOUBLE":
         try:
             float(str(value).strip('"'))
         except Exception:
             return (
-                row_number,
-                "Inconsistency - value not of type DOUBLE"
+                f"row {row_number}: "
+                f"'{value}' not of type DOUBLE"
             )
     elif data_type == "DATE":
         try:
@@ -198,8 +189,8 @@ def __is_data_row_consistent_with_metadata(data_type:str,
             )
         except Exception:
             return (
-                row_number,
-                "Inconsistency - value not of type DATE (YYYY-MM-DD)"
+                f"row {row_number}: "
+                f"'{value}' not of type DATE (YYYY-MM-DD)"
             )
     return None
 
@@ -207,7 +198,7 @@ def __is_data_row_consistent_with_metadata(data_type:str,
 def run_validator(working_directory: Path, dataset_name: str) -> list:
     metadata_file_path: Path = working_directory.joinpath(f'{dataset_name}.json')
     sqlite_file_path: Path = working_directory.joinpath(f"{dataset_name}.db")
-    logger.info(
+    logger.debug(
         f'Dataset "{dataset_name}" - validate consistency between '
         f'data and metadata, event-history (unit_id '
         f'* start * stop) and check for row duplicates'
@@ -215,12 +206,10 @@ def run_validator(working_directory: Path, dataset_name: str) -> list:
     metadata = utils.load_json(metadata_file_path)
     data_errors = __validate_data(sqlite_file_path, metadata)
     if len(data_errors) > 0:
-        logger.error(f'ERROR - data consistency error(s):')
-        for error in data_errors:
-           logger.error(f'{error[1]}')
+        logger.debug(f'Found data consistency error(s)')
         return data_errors
     else:
-        logger.info(
+        logger.debug(
             f'OK - consistency validation for dataset "{dataset_name}"'
         )
         return []
