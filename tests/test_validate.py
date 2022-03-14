@@ -7,15 +7,16 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 VALID_DATASET_NAMES = [
-    'SYNT_BEFOLKNING_KJOENN', 'SYNT_BEFOLKNING_SIVSTAND', 'SYNT_PERSON_INNTEKT'
+    'SYNT_BEFOLKNING_SIVSTAND', 'SYNT_PERSON_INNTEKT'
 ]
+VALID_DATASET_REF = 'SYNT_BEFOLKNING_KJOENN'
 NO_SUCH_DATASET_NAME = 'NO_SUCH_DATASET'
 MISSING_IDENTIFIER_DATASET_NAME = 'MISSING_IDENTIFIER_DATASET'
 INVALID_DATES_DATASET_NAME = 'INVALID_DATES_DATASET'
 INVALID_DATE_RANGES_DATASET_NAME = 'INVALID_DATE_RANGES_DATASET'
 INPUT_DIRECTORY = 'tests/resources/input_directory'
 WORKING_DIRECTORY = 'tests/resources/working_directory'
-
+REF_DIRECTORY = 'tests/resources/ref_directory'
 
 def test_validate_valid_dataset():
     for valid_dataset_name in VALID_DATASET_NAMES:
@@ -33,6 +34,24 @@ def test_validate_valid_dataset():
         assert not data_errors
         for file in expected_files:
             assert file in actual_files
+
+
+def test_validate_valid_dataset_ref():
+    data_errors = validate(
+        VALID_DATASET_REF,
+        working_directory=WORKING_DIRECTORY,
+        input_directory=INPUT_DIRECTORY,
+        metadata_ref_directory=REF_DIRECTORY
+    )
+    actual_files = get_working_directory_files()
+    expected_files = [
+        f'{VALID_DATASET_REF}.db',
+        f'{VALID_DATASET_REF}.json',
+        f'{VALID_DATASET_REF}.csv'
+    ]
+    assert not data_errors
+    for file in expected_files:
+        assert file in actual_files
 
 
 def test_validate_valid_dataset_delete_working_files():

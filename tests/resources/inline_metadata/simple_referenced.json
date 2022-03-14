@@ -1,0 +1,27 @@
+{
+    "simple key": "simple value",
+    "example object": {
+        "$ref": "simple_ref.json"
+    },
+    "example list": [
+        {
+            "inlined": "item"
+        },
+        {
+            "$ref": "simple_ref.json"
+        },
+        "simple value"
+    ],
+    "other list": [
+        {
+            "nested object": {
+                "nested list": [
+                    {
+                        "$ref": "simple_ref.json"
+                    }
+                ]
+            }
+        },
+        "simple value"
+    ]
+}

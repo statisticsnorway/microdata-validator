@@ -1,0 +1,27 @@
+{
+    "simple key": "simple value",
+    "example object": {
+        "inline": "this"
+    },
+    "example list": [
+        {
+            "inlined": "item"
+        },
+        {
+            "inline": "this"
+        },
+        "simple value"
+    ],
+    "other list": [
+        {
+            "nested object": {
+                "nested list": [
+                    {
+                        "inline": "this"
+                    }
+                ]
+            }
+        },
+        "simple value"
+    ]
+}

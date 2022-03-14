@@ -9,21 +9,7 @@
   },
   "identifierVariables": [
     {
-      "variableRole": "IDENTIFIER",
-      "shortName": "PERSONID_1",
-      "name": [{"languageCode": "no", "value": "Personidentifikator"}],
-      "description": [{"languageCode": "no","value": "Identifikator for person i Microdata"}],
-      "dataType": "STRING",
-      "unitType": {
-        "shortName": "PERSON",
-        "name": [{"languageCode": "no", "value": "Person"}],
-        "description": [{"languageCode": "no", "value": "Statistisk enhet er person (individ, enkeltmenenske)"}]
-      },
-      "format": "RandomUInt48",
-      "valueDomain": {
-        "shortName": "PERSONID_1",
-        "description": [{"languageCode": "no", "value":"Pseudonymisert personnummer"}]
-      }
+      "$ref": "identifiers/personidentifikator.json"
     }
   ],
   "measureVariables": [
@@ -47,55 +33,16 @@
       "dataType": "STRING",
       "uriDefinition": [""],
       "valueDomain": {
-        "uriDefinition": [""],
-        "codeList": {
-          "codeItems": [
-            {
-              "code": "1",
-              "categoryTitle": [{"languageCode": "no", "value": "Mann"}],
-              "validFrom": "1900-01-01"
-            },
-            {
-              "code": "2",
-              "categoryTitle": [{"languageCode": "no", "value": "Kvinne"}],
-              "validFrom": "1900-01-01"
-            }
-          ]
-        }
+        "$ref": "valuedomains/kjoenn.json"
       }
     }
   ],
   "attributeVariables": [
     {
-      "variableRole": "START_TIME",
-      "shortName": "START",
-      "name": [
-        {"languageCode": "no", "value": "Startdato"},
-        {"languageCode": "en", "value": "Start date"}
-      ],
-      "description": [{"languageCode": "no", "value": "Startdato/måletidspunktet for hendelsen"}
-      ],
-      "dataType": "DATE",
-      "valueDomain": {
-        "description": [{"languageCode": "no", "value": "Dato oppgitt i dager siden 1970-01-01"}]
-      }
+      "$ref": "attributes/start.json"
     },
     {
-      "variableRole": "STOP_TIME",
-      "shortName": "STOP",
-      "name": [
-        {"languageCode": "no", "value": "Stoppdato"},
-        {"languageCode": "en", "value": "Stop date"}
-      ],
-      "description": [
-        {"languageCode": "no", "value": "Stoppdato/sluttdato for hendelsen"},
-        {"languageCode": "en", "value": "Event stop/end date"}
-      ],
-      "dataType": "DATE",
-      "valueDomain": {
-        "description": [{"languageCode": "no", "value": "Dato oppgitt i dager siden 1970-01-01"}
-        ]
-      }
+      "$ref": "attributes/stop.json"
     }
   ]
 }
