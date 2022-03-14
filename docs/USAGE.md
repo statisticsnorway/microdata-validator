@@ -1,9 +1,10 @@
 # USAGE
 
-* Get started(/docs/USAGE.md#get-started)
-* Validate dataset(/docs/USAGE.md#validate-dataset)
-* Validate metadata only (/docs/USAGE.md#validate-metadata)
-* Use metadata references (/docs/USAGE.md#use-metadata-references)
+* [Get started](/docs/USAGE.md#get-started)
+* [Validate dataset](/docs/USAGE.md#validate-dataset)
+* [Validate metadata only](/docs/USAGE.md#validate-metadata)
+* [Use metadata references](/docs/USAGE.md#use-metadata-references)
+
 ## Get started
 
 Install microdata-validator through pip:
@@ -181,7 +182,7 @@ Imagine a scenario where you are managing 50+ datasets. The repetition is not on
 }
 ```
 
-Now we can reference this "ref files" in our main dataset file:
+Now we can reference these files in our main dataset file:
 ```json
 "attributeVariables": [
     {
