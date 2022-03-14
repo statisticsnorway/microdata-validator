@@ -94,8 +94,8 @@ def test_validate_invalid_dates():
         input_directory=INPUT_DIRECTORY,
     )
     assert data_errors == [
-        (4, 'STOP-date not valid', '1927-13-01'),
-        (15, 'STOP-date not valid', '1940-02-31')
+        "row 4: STOP date not valid - '1926-01-01'",
+        "row 15: STOP date not valid - '1940-02-01'"
     ]
 
 
@@ -106,8 +106,8 @@ def test_invalid_date_ranges():
         input_directory=INPUT_DIRECTORY,
     )
     assert data_errors == [
-        (4, 'Inconsistency - previous STOP-date is greater than START-date'),
-        (13, 'Inconsistency - previous STOP-date is greater than START-date'),
+        'row 4: Previous STOP-date greater than STOP-date - 1926-02-02 > 1926-02-01',
+        'row 13: Previous STOP-date greater than STOP-date - 1940-01-31 > 1939-02-01'
     ]
 
 
