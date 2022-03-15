@@ -1,68 +1,66 @@
 ## BESKRIVELSE AV METADATAMODELLEN
 _______
-I tillegg til de vedlagte eksemplene på metadata som json-filer, beskriver dette dokumentet feltene i modellen. Det anbefales å lese begge deler for å forstå modellen.
-
-### ROTNIVÅFELTER
-Disse feltene omhandler datasettet som helhet.
-* **shortName**: Navnet på datasettet
-* **temporalityType**: temporalitetstypen for datasettet kan være en av FIXED, ACCUMULATED, STATUS og EVENT.
-* **spatialCoverageDescription**: Det geograftiske området der data er aktuelle.
-* **populationDescription**: Beskrivelse av populasjonen i datasettet.
+In addition to the examples of metadata json files present in this repository, this document briefly describes the fields in the metadata model.
+### ROOT LEVEL FIELDS
+These fields describe the dataset as a whole.
+* **shortName**: Name of the dataset
+* **temporalityType**: The temporality type of the dataset. Must be one of FIXED, ACCUMULATED, STATUS og EVENT.
+* **spatialCoverageDescription**: The geographic area relevant to the data.
+* **populationDescription**: Description of the dataset's population.
 
 
 ### DATAREVISION
-Disse feltene omhandler den aktuelle versjonen av datasettet.
-* **description**: Beskrivelse av denne versjonen av datasettet.
-* **temporalEndOfSeries**: Er dette siste oppdatering av data for dette datasettet? [True | False]
+These fields describe the current version of the dataset.
+* **description**: Description of this version of the dataset.
+* **temporalEndOfSeries**: Is this the final updates for this dataset? [True | False]
 
 ### IDENTIFIER VARIABLES
-Beskrivelse av identifikator-kolonnene. Det er en liste i modellen, men det støttes for øyeblikket kun 1 identifikator i microdata plattformen.
-* **shortName**: Teknisk navn på verdikolonnen. Eksempel: "PERSONID_1".
-* **name**: Navn på typen identifikator. Eksempel: "Personidentifikator".
-* **description**: Beskrivelse av innholdet i kolonnen. Eksempel: "Pseudonymisert fødselsnummer"
-* **dataType**: DataType for verdiene. En av ["STRING", "LONG"]
-* **format**: Nærmere definisjon av datatypen. For eksempel et regular expression.
-* **uriDefinition**: Lenke til ekstern ressurs med definisjon for variablen.
-* **unitType**: Se definisjonen under.
-* **valueDomain**: se definisjonen under.
+Description of the indentifier column of the dataset. It is represented as a list in the metadata model, but currently only one identifier is allowed per dataset.
+* **shortName**: Machine readable name for the identifier column. Example: "PERSONID_1".
+* **name**: Human readable name for the identifier colum. Example: "Personidentifikator".
+* **description**: Description of the column contents. Example: "Pseudonymisert fødselsnummer"
+* **dataType**: DataType for the values in the column. One of: ["STRING", "LONG"]
+* **format**: More detailed description of the values. For example a regular expression.
+* **uriDefinition**: Link to external resource describing the identifier.
+* **unitType**: See definition below.
+* **valueDomain**: See definition below.
 
 ### MEASURE VARIABLES
-Beskrivelse av verdi-kolonnen for målte verdier. Det er en liste i modellen, men det støttes for øyeblikket kun 1 verdi-kolonne i microdata plattformen.
-* **shortName**: Teknisk navn på verdikolonnen. Brukes som variabelnavn i ROSE- klienten. Eksempel: INNTEKT_AKSJEUTBYTTE.
-* **name**: Navn(Tittel) på verdikolonnen. Brukes som kolonnenavn i ROSE-klienten. Eksempel: "Aksjeutbytte".
-* **description**: Beskrivelse av kolonnen. Eksempel: "Skattepliktig og skattefritt utbytte i... "
-* **dataType**: Datatype for verdiene. En av ["STRING", "LONG", "DOUBLE", "DATE"]
-* **format**: Nærmere definisjon av datatypen. For eksempel et regular expression.
-* **uriDefinition**: Lenke til ekstern ressurs med definisjon for variablen.
-* **unitType**: Se definisjonen under.
-* **valueDomain**: Se definisjonen under.
+Description of the measure column of the dataset. It is represented as a list in the metadata model, but currently only one measure is allowed per dataset.
+* **shortName**: Machine readable name for the measure. Is also used as variable name in the ROSE- client. Example: INNTEKT_AKSJEUTBYTTE.
+* **name**: Human readable name(Label) of the measure column. Used as the column label in the ROSE-klienten. Example: "Aksjeutbytte".
+* **description**: Description of the column contents. Example: "Skattepliktig og skattefritt utbytte i... "
+* **dataType**: DataType for the values in the column. One of: ["STRING", "LONG", "DOUBLE", "DATE"]
+* **format**: More detailed description of the values. For example a regular expression.
+* **uriDefinition**: Link to external resource describing the measure.
+* **unitType**: See definition below.
+* **valueDomain**: See definition below.
 
 ### ATTRIBUTE VARIABLES
-Beskrivelse av attributt-kolonnene. Til å begynne med trenger man kun forholde seg til START_TIME og STOP_TIME
-* **variableRole**: En av ["START_TIME", "STOP_TIME"]
-* **shortName**: Teknisk navn på attributt-kolonnen.
-* **name**: Navn på attributt-kolonnen. Brukes som kolonnenavn i ROSE-klienten.
-* **description**: Beskrivelse av kolonnen.
-* **dataType**: Datatype for verdiene. En av ["STRING", "LONG", "DOUBLE", "DATE"]
-* **format**: Nærmere definisjon av datatypen. For eksempel et regular expression.
-* **uriDefinition**: Lenke til ekstern ressurs med definisjon for variablen.
-* **unitType**: Se definisjonen under.
-* **valueDomain**: Se definisjonen under.
+Description of the attribute columns. For now the only valid values are START_TIME og STOP_TIME
+* **variableRole**: One of: ["START_TIME", "STOP_TIME"]
+* **shortName**: Machine readable name for the measure. 
+* **name**: Human readable name(Label) of the attribute column. Used as the column label in the ROSE-klienten. Example: "Startdato".
+* **description**: Description of the column contents.
+* **dataType**: DataType for the values in the column. One of: ["STRING", "LONG", "DOUBLE", "DATE"]
+* **format**: More detailed description of the values. For example a regular expression.
+* **uriDefinition**: Link to external resource describing the measure.
+* **unitType**: See definition below.
+* **valueDomain**: See definition below.
 
 
 ### VALUE DOMAIN
-Value domain beskriver verdiområdet til variable. Enten i form av kodeverk(codeList), eller som en beskrivelse av forventede verdier.
-* **description**: En beskrivelse av domenet. Eksempel for variablen brutto-inntekt: "Alle positive tall".
-* **measurementUnitDescription**: En beskrivelse av enheten som måles i domenet. Eksempel: "Norske kroner"
-* **measurementType**: En maskinlesbar definisjon av enheten som måles. En av CURRENCY, WEIGHT, LENGTH, HEIGHT eller GEOGRAPHICAL
-* **uriDefinition**: Lenke til ekstern ressurs med definisjon for domenet.
-* **codeList**: En kodeliste med valide koder for domenet, og beskrivelser av disse kodene.
-* **sentinelAndMissingValues**: En kodeliste med koder som representerer manglende
-verdier eller invalide verdier som man fortsatt forventer at skal eksistere i datasettet. Eksempelvis kode "0" for "ukjent verdi".
+Describes the Value domain for the relevant variable. Either by codeList(enumarated value domain), or a description of expected values(described value domain).
+* **description**: A description of the domain. Example for the variable "BRUTTO_INNTEKT": "Alle positive tall".
+* **measurementUnitDescription**: A description of the unit measured. Example: "Norske Kroner"
+* **measurementType**: A machine readable definisjon of the unit measured. One of: [CURRENCY, WEIGHT, LENGTH, HEIGHT, GEOGRAPHICAL]
+* **uriDefinition**: Link to external resource describing the domain.
+* **codeList**: A code list of valid codes for the domain, description, and their validity period.
+* **sentinelAndMissingValues**: A code list where the codes represent missing or sentinel values that, while not entirely valid, are still expected to appear in the dataset. Example: Code 0 for "Unknown value".
 
 
-Her er to eksempler på to relativt forskjellige valuedomains.
-Første eksempel er for et datasett med personer sin inntekt akkumulert over et år om gangen. Dette er measureVariable sitt valueDomain:
+Here is an example of two different value domains.
+The first value domain belongs to a measure for dataset where the measure is a persons accumulated gross income:
 ```json
 "valueDomain": {
     "uriDefinition": [],
@@ -71,8 +69,9 @@ Første eksempel er for et datasett med personer sin inntekt akkumulert over et 
     "measurementUnitDescription": [{"languageCode": "no", "value": "Norske Kroner"}]
 }
 ```
+This example is what we would call a __described value domain__.
 
-Andre Eksempel er et datasett som beskriver kjønn for en befolkning. Dette er measureVariable sitt valueDomain:
+The second example belongs to the measure variable of a dataset where the measure describes the gender of a population:
 ```json
 "valueDomain": {
     "uriDefinition": [],
@@ -97,13 +96,11 @@ Andre Eksempel er et datasett som beskriver kjønn for en befolkning. Dette er m
     ]
 }
 ```
-
-Her forventer vi at alle verdier i kolonnen skal være enten 1 eller 2, da disse kodene refererer til Mann og Kvinne. Vi har også en sentinelverdi som vil oppstå, som vi forventer og ikke skal sees på som en feil i datasettet.
+We expect all values in this dataset to be either "1" or "2", as this dataset only considers "Male" or "Female". But we also expect a code "0" to be present in the dataset, where it represents "Unknown". A row with "0" as measure is therefore not considered invalid. A value domain with a code list like this is what we would call an __enumarated value domain.
 
 
 ### UNIT TYPE
-Beskrivelse av enheten data er bundet til. Et fødselsnummer kan brukes for å identifisere enheten PERSON. Et annet eksempel vil være et organisasjonsnnummer som er identifiserende variabel med enhetstype FORETAK.
-
+Description of the unit the data describes. A "fødselsnummer" can be used to identify a PERSON. Another example would be an "organisasjonsnummer" that would be used to identify a "FORETAK".
 * **shortName**: Teknisk navn på enhetstypen.
 * **name**: Menneskelig lesbart navn på enhetstypen.
 * **description**: Beksrivelse av enhetstypen.
