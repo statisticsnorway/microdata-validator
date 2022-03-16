@@ -27,8 +27,8 @@ Description of the indentifier column of the dataset. It is represented as a lis
 
 ### MEASURE VARIABLES
 Description of the measure column of the dataset. It is represented as a list in the metadata model, but currently only one measure is allowed per dataset.
-* **shortName**: Machine readable name for the measure. Is also used as variable name in the ROSE- client. Example: INNTEKT_AKSJEUTBYTTE.
-* **name**: Human readable name(Label) of the measure column. Used as the column label in the ROSE-klienten. Example: "Aksjeutbytte".
+* **shortName**: Machine readable name for the measure. Is also used as variable name in the ROSE client. Example: INNTEKT_AKSJEUTBYTTE.
+* **name**: Human readable name(Label) of the measure column. Used as the column label in the ROSE client. Example: "Aksjeutbytte".
 * **description**: Description of the column contents. Example: "Skattepliktig og skattefritt utbytte i... "
 * **dataType**: DataType for the values in the column. One of: ["STRING", "LONG", "DOUBLE", "DATE"]
 * **format**: More detailed description of the values. For example a regular expression.
@@ -40,7 +40,7 @@ Description of the measure column of the dataset. It is represented as a list in
 Description of the attribute columns. For now the only valid values are START_TIME og STOP_TIME
 * **variableRole**: One of: ["START_TIME", "STOP_TIME"]
 * **shortName**: Machine readable name for the measure. 
-* **name**: Human readable name(Label) of the attribute column. Used as the column label in the ROSE-klienten. Example: "Startdato".
+* **name**: Human readable name(Label) of the attribute column. Used as the column label in the ROSE client. Example: "Startdato".
 * **description**: Description of the column contents.
 * **dataType**: DataType for the values in the column. One of: ["STRING", "LONG", "DOUBLE", "DATE"]
 * **format**: More detailed description of the values. For example a regular expression.
@@ -128,7 +128,7 @@ This dataset describes a group of persons gross income accumulated yearly. The c
 * Identifier: fødselsnummer
 * Measure: Accumulated gross income for the time period
 * Start: start of time period
-* Stopp: end of time period
+* Stop: end of time period
 * Empty column (This column is reserved for an extra attribute variable if that is considered necessary. As there is no need here, it remains empty.)
 
 ### GENERAL VALIDATIONRULES FOR DATA
@@ -151,7 +151,7 @@ This dataset describes a group of persons gross income accumulated yearly. The c
     - Must have a stop date
     - Start can not be later than stop
     - Time periods for the same identifiers must not intersect
-* **EVENT** (Forløpsdata med gyldighetsperiode)
+* **EVENT** (data state for validity period)
     - Must have a start date
     - Start can not be later than stop, if there is a non empty stop column in the same row
     - Time periods for the same identifiers must not intersect (A row without a stop date is considered an ongoing event, and will intersect with all timespans after its start date)
