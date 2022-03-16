@@ -1,52 +1,60 @@
-## BESKRIVELSE AV EKSEMPELDATA
+## DATASET EXAMPLES
 ______
 ### SYNT_PERSON_INNTEKT
-Dette datasettet inneholder syntetisk data om personer sin årlige inntekt.
-Strukturen av en rad er nærmere beskrevet i metadata, men kan summeres opp slik:
+This dataset contains synthetic data describing the yearly income of a group of persons.
+The structure of a row in the data is described well by the metadata, but simply put:
+        
+        PERSON_ID;INCOME;START;STOP
 
-        PERSON_ID;INNTEKT;START;STOP
-
-Temporalitetstypen på dette datasettet er "ACCUMULATED". Det betyr at når vi har en rad som,
+The temporality type of this dataset is "ACCUMULATED". Meaning that when we have a row:
 
         00000000000001;1000;2020-01-01;2020-12-31;
 
-betyr det at inntekten til en person(00000000000001) akkumulert fra starten til slutten av 2020 var 1000 kroner.
-Vi kan ha flere rader med samme person, men disse radene må beskrive forskjellige, ikke- overlappende tidsspenn for den personen.
+It means that the income of a person(00000000000001) accumulated through 2020 is 1000 NOK.
+We can have several rows for the same person, but these rows must describe different, non-intersecting timespans.
 &nbsp;
 
 &nbsp; 
-
-
 
 ### SYNT_PERSON_KJOENN
-Dette datasettet innholder info om kjønn til en befolkning.
-Strukturen av en rad er nærmere beskrevet i metadata, men kan summeres opp slik:
+This dataset contains synthetic data describing recorded sex of group of persons.
+The structure of a row in the data is described well by the metadata, but simply put:
 
-        PERSON_ID;KJØNN;START;STOP
+        PERSON_ID;SEX;START;STOP
 
-Vi skriver ikke "Mann" og "Kvinne" i raden, men bruker heller en kodeliste man kan finne beskrevet i metadata. I raden står det enten 1 eller 2, for "Mann" eller "Kvinne".
+The rows do not contain the values "Male" or "Female", instead we use a code list found in the accompanying metadata.
+In this dataset, the row contains "1" for "Male" or "2" for "Female".
 
-        00000000000001;1;;2020-01-01
+        00000000000001;2;;2020-01-01
+        00000000000002;1;;2020-01-01
 
-Temporalitetstypen til dette datasettet er "FIXED". Det betyr at tilstanden har blitt innhentet på et tidspunkt og forandrer seg ikke. Vi trenger derfor ikke legge tidsspenn i en rad med data. Vi bruker STOP kolonnen til å beskrive når dataen ble hentet. Vi vet da at raden i alle fall er gyldig frem til datoen den ble uthentet.
+The temporality type of this dataset is "FIXED". This means that the state of data has been recorded at a set point in time and is not subject to change. Therefore, there is no need to add a timespan to each row of data.
+Still, the STOP column is required as it is used to describe when the data was recorded.
 &nbsp;
 
-&nbsp; 
-
+&nbsp;
 
 ### SYNT_BEFOLKNING_SIVSTAND
-Dette Datasettet inneholder info om sivilstand til en befolkning. Strukturen av en rad er nærmere beskrevet i metadata, men kan summeres opp slik:
+This dataset contains synthetic data describing the marital status of a group of persons.
+The structure of a row in the data is described well by the metadata, but simply put:
 
-        PERSON_ID;SIVILSTAND;START;STOP
+        PERSON_ID;MARITAL_STATUS;START;STOP
 
-I likhet med SYNT_BEFOLKNING_KJOENN har vi her sivilstand basert på en kodeliste. Men her er det ikke alle kodene som er gyldige for alle tidsspenn. Som vi ser i metadata er det ikke noe gyldig kode 6 ("Registrert partner") før 1927.
-Temporalitetstypen her er "EVENT". Vi krever da en START dato. Om det ikke står noe stop-dato er antagelsen at den tilstanden er sann frem til dagens dato.
-Hvis kode 1 betyr gift, og 2 betyr ugift:
+Similarly to SYNT_BEFOLKNING_KJOENN, the data refers to codes described further with a code list in the accompanying metadata. However, in this dataset not all codes are valid for all timespans.
+If we explore the metadata file, we notice that code 6 ("Registrert partner") is not valid before 1927. During validation, rows with a timespan that starts before 1927 that refer to code 6 are considered invalid.
+The temporality type of this dataset is "EVENT". A START date is therefore required. If there is no STOP date present in the row, the assumption is that the described state is ongoing.
+If code 1 means "married", and code 2 means "unmarried":
 
         000000000000001;2;1980-01-01;1999-12-31;
         000000000000001;1;2000-01-01;;
 
-Personen beskrevet her var da ugift fra 1980, og ble gift i år 2000, og er fortsatt gift i dag. Det er derfor viktig at ikke rader for samme person overlapper i tidsrommet.
+The person(000000000000001) describe here was unmarried from January 1st, 1980 until January 1st, 2000 when they got married. The lack of a STOP date in the second row suggests that they are still married.
+It is important that events for the same person do not intersect. Considering the same person:
+
+        000000000000001;2;1980-01-01;2000-12-31;
+        000000000000001;1;2000-01-01;;
+
+The person is now described to be both married, and unmarried, for the entirety of the year 2000. This is considered invalid due to the intersection of the two timespans.
 &nbsp;
 
 &nbsp; 
