@@ -1,4 +1,4 @@
-## BESKRIVELSE AV METADATAMODELLEN
+## THE METADATA MODEL
 _______
 In addition to the examples of metadata json files present in this repository, this document briefly describes the fields in the metadata model.
 ### ROOT LEVEL FIELDS
@@ -101,21 +101,22 @@ We expect all values in this dataset to be either "1" or "2", as this dataset on
 
 ### UNIT TYPE
 Description of the unit the data describes. A "fødselsnummer" can be used to identify a PERSON. Another example would be an "organisasjonsnummer" that would be used to identify a "FORETAK".
-* **shortName**: Teknisk navn på enhetstypen.
-* **name**: Menneskelig lesbart navn på enhetstypen.
-* **description**: Beksrivelse av enhetstypen.
+* **shortName**: Machine readable name.
+* **name**: Human readable name.
+* **description**: Description of the unit type.
 
 
-## VALIDERING
+## VALIDATION
 
-### UTFORMING AV DATA
-En datafil skal levers som en csv-fil med semikolon som kolonneseparator. Det skal alltid være 5 kolonner i denne rekkefølgen:
-1. identifikator
-2. verdi
+### CREATING A DATAFILE
+A data file must be supplied as a csv file with semicolon as the column seperator. There must always be 5 columns present in this order:
+1. identifier
+2. measure
 3. start
 4. stop
-5. tom kolonne (Denne kolonnen er holdt av om det skulle være behov for en ekstra attributtvariabel i datasettet. Eksempel: datakilde)
+5. empty column (This column is reserved for an extra attribute variable if that is considered necessary. Example: Datasource)
 
+Example:
 ```
 12345678910;100000;2020-01-01;2020-12-31;
 12345678910;200000;2021-01-01;2021-12-31;
@@ -123,34 +124,34 @@ En datafil skal levers som en csv-fil med semikolon som kolonneseparator. Det sk
 12345678911;150000;2020-01-01;2020-12-31;
 ```
 
-Dette er et eksempel på et dataset som beskriver personer sin inntekt over tidsperioder. Kolonnene kan beskrives slik:
-* Identifikator: fødselsnummer
-* Verdi: Akkumulert lønn i tidsperioden
-* Start: start på tidsperioden
-* Stopp: slutt på tidsperioden
-* Tom kolonne (Denne kolonnen er holdt av om det skulle være behov for en ekstra attributtvariabel i datasettet. Det er ikke behov for denne kolonnen i dette datasettet, og den er derfor tom.)
+This dataset describes a group of persons gross income accumulated yearly. The columns can be described like this:
+* Identifier: fødselsnummer
+* Measure: Accumulated gross income for the time period
+* Start: start of time period
+* Stopp: end of time period
+* Empty column (This column is reserved for an extra attribute variable if that is considered necessary. As there is no need here, it remains empty.)
 
-### GENERELLE VALIDERINGSREGLER FOR DATA
-* Det kan ikke oppstå tomme rader i datasettet
-* En rad kan ikke være lenger en 5 elementer
-* Hver rad må ha en identifikator
-* Hver rad må ha en verdi
-* Verdier som oppstår i start og stopp kolonnene må ha riktig datoformat "yyyy-mm- dd" ex.: 2020-12-31
-* Datafilen må være utf-8 enkodet
+### GENERAL VALIDATIONRULES FOR DATA
+* There can be no empty rows in the dataset
+* There can be no more than 5 elements in a row
+* Every row must have a non-empty identifier
+* Every row must have a non-empty measure
+* Values in the stop- and start-columns must be formatted correctly: "YYYY-MM-DD". Example "2020-12-31".
+* The data file must be utf-8 encoded
 
-### VALIDERINGSREGLER FOR TEMPORALITY TYPE
-* **FIXED** (Fast/konstant verdi, f.eks. fødeland)
-    - Alle rader må ha en unik identifikator
-* **STATUS** (tverrsnitt, dvs. måling på et gitt tidspunkt)
-    - Må ha en startdato
-    - Må ha en stoppdato
-    - Start og stop kolonnene skal ha samme verdi for en gitt rad
-* **ACCUMULATED** (akkumulert for en periode f.eks. årsinntekt)
-    - Må ha en startdato
-    - Må ha en stoppdato
-    - Start kan ikke være større en stopp
+### VALIDATIONRULES BY TEMPORALITY TYPE
+* **FIXED** (Constant value, ex.: place of birth)
+    - All rows must have an unique identifier. (No repeating identifiers within a dataset)
+* **STATUS** (measurement taken at a certain point in time. (cross section))
+    - Must have a start date
+    - Must have a stop date
+    - Start and stop date must be equal for any given row
+* **ACCUMULATED** (Accumulated over a period. Ex.: yearly income)
+    - Must have a start date
+    - Must have a stop date
+    - Start can not be later than stop
+    - Time periods for the same identifiers must not intersect
 * **EVENT** (Forløpsdata med gyldighetsperiode)
-    - Må ha en startdato
-    - Start kan ikke være større en stopp, om en ikke-tom stopp verdi finnes i samme rad
-    - En ny rad kan ikke legges til for samme identifikator hvis den forrige raden ikke har en stoppdato
-    - startdato må være større en forrige rads stoppdato for samme identifikator 
+    - Must have a start date
+    - Start can not be later than stop, if there is a non empty stop column in the same row
+    - Time periods for the same identifiers must not intersect (A row without a stop date is considered an ongoing event, and will intersect with all timespans after its start date)
