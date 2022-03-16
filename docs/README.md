@@ -50,7 +50,7 @@ Description of the attribute columns. For now the only valid values are START_TI
 
 
 ### VALUE DOMAIN
-Describes the Value domain for the relevant variable. Either by codeList(enumarated value domain), or a description of expected values(described value domain).
+Describes the Value domain for the relevant variable. Either by codeList(enumerated value domain), or a description of expected values(described value domain).
 * **description**: A description of the domain. Example for the variable "BRUTTO_INNTEKT": "Alle positive tall".
 * **measurementUnitDescription**: A description of the unit measured. Example: "Norske Kroner"
 * **measurementType**: A machine readable definisjon of the unit measured. One of: [CURRENCY, WEIGHT, LENGTH, HEIGHT, GEOGRAPHICAL]
@@ -71,7 +71,7 @@ The first value domain belongs to a measure for dataset where the measure is a p
 ```
 This example is what we would call a __described value domain__.
 
-The second example belongs to the measure variable of a dataset where the measure describes the gender of a population:
+The second example belongs to the measure variable of a dataset where the measure describes the sex of a population:
 ```json
 "valueDomain": {
     "uriDefinition": [],
@@ -96,7 +96,7 @@ The second example belongs to the measure variable of a dataset where the measur
     ]
 }
 ```
-We expect all values in this dataset to be either "1" or "2", as this dataset only considers "Male" or "Female". But we also expect a code "0" to be present in the dataset, where it represents "Unknown". A row with "0" as measure is therefore not considered invalid. A value domain with a code list like this is what we would call an __enumarated value domain.
+We expect all values in this dataset to be either "1" or "2", as this dataset only considers "Male" or "Female". But we also expect a code "0" to be present in the dataset, where it represents "Unknown". A row with "0" as measure is therefore not considered invalid. A value domain with a code list like this is what we would call an __enumerated value domain.
 
 
 ### UNIT TYPE

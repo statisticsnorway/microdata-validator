@@ -17,10 +17,10 @@ We can have several rows for the same person, but these rows must describe diffe
 &nbsp; 
 
 ### SYNT_PERSON_KJOENN
-This dataset contains synthetic data describing recorded gender of group of persons.
+This dataset contains synthetic data describing recorded sex of group of persons.
 The structure of a row in the data is described well by the metadata, but simply put:
 
-        PERSON_ID;GENDER;START;STOP
+        PERSON_ID;SEX;START;STOP
 
 The rows do not contain the values "Male" or "Female", instead we use a code list found in the accompanying metadata.
 In this dataset, the row contains "1" for "Male" or "2" for "Female".
@@ -38,7 +38,7 @@ Still, the STOP column is required as it is used to describe when the data was r
 This dataset contains synthetic data describing the marital status of a group of persons.
 The structure of a row in the data is described well by the metadata, but simply put:
 
-        PERSON_ID;STATUS;START;STOP
+        PERSON_ID;MARITAL_STATUS;START;STOP
 
 Similarly to SYNT_BEFOLKNING_KJOENN, the data refers to codes described further with a code list in the accompanying metadata. However, in this dataset not all codes are valid for all timespans.
 If we explore the metadata file, we notice that code 6 ("Registrert partner") is not valid before 1927. During validation, rows with a timespan that starts before 1927 that refer to code 6 are considered invalid.
