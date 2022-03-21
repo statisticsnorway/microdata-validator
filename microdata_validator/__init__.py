@@ -73,12 +73,32 @@ def validate(dataset_name: str,
                 if file not in generated_files
             ]
             if not unknown_files:
-                shutil.rmtree(working_directory_path)
+                try:
+                    shutil.rmtree(working_directory_path)
+                except Exception as e:
+                    logger.error(
+                        "An exception occured while attempting to delete"
+                        "temporary files: {e}"  
+                    )
+                    pass
+            else:
+                try:
+                    os.remove(working_directory_path / file)
+                except FileNotFoundError:
+                    logger.error(
+                        "Could not find file {file} in working directory "
+                        "when attempting to delete temporary files."    
+                    )
+                    pass
         else:
             for file in generated_files:
                 try:
                     os.remove(working_directory_path / file)
                 except FileNotFoundError:
+                    logger.error(
+                        "Could not find file {file} in working directory "
+                        "when attempting to delete temporary files."    
+                    )
                     pass
     return data_errors
 
