@@ -23,6 +23,7 @@ def test_validate_valid_dataset():
         data_errors = validate(
             valid_dataset_name,
             working_directory=WORKING_DIRECTORY,
+            keep_temporary_files=True,
             input_directory=INPUT_DIRECTORY
         )
         actual_files = get_working_directory_files()
@@ -36,10 +37,37 @@ def test_validate_valid_dataset():
             assert file in actual_files
 
 
+def test_validate_valid_dataset_delete_temporary_files():
+    for valid_dataset_name in VALID_DATASET_NAMES:
+        data_errors = validate(
+            valid_dataset_name,
+            working_directory=WORKING_DIRECTORY,
+            input_directory=INPUT_DIRECTORY
+        )
+        temp_files = get_working_directory_files()
+        assert not data_errors
+        assert temp_files == ['.gitkeep']
+
+
+def test_validate_valid_dataset_delete_generated_dir():
+    for valid_dataset_name in VALID_DATASET_NAMES:
+        data_errors = validate(
+            valid_dataset_name,
+            input_directory=INPUT_DIRECTORY
+        )
+        temp_files = [
+            dir for dir in os.listdir()
+            if os.path.isdir(dir) and dir[0] != '.'
+        ]
+        assert not data_errors
+        assert temp_files == ['tests', 'docs', 'microdata_validator']
+
+
 def test_validate_valid_dataset_ref():
     data_errors = validate(
         VALID_DATASET_REF,
         working_directory=WORKING_DIRECTORY,
+        keep_temporary_files=True,
         input_directory=INPUT_DIRECTORY,
         metadata_ref_directory=REF_DIRECTORY
     )
@@ -59,12 +87,11 @@ def test_validate_valid_dataset_delete_working_files():
         data_errors = validate(
             valid_dataset_name,
             working_directory=WORKING_DIRECTORY,
-            input_directory=INPUT_DIRECTORY,
-            delete_working_directory=True
+            input_directory=INPUT_DIRECTORY
         )
         actual_files = get_working_directory_files()
         assert not data_errors
-        assert not actual_files
+        assert actual_files == ['.gitkeep']
 
 
 def test_dataset_does_not_exist():
@@ -112,10 +139,7 @@ def test_invalid_date_ranges():
 
 
 def get_working_directory_files() -> list:
-    return [
-        file for file in os.listdir(WORKING_DIRECTORY)
-        if file != '.gitkeep'
-    ]
+    return [file for file in os.listdir(WORKING_DIRECTORY)]
 
 
 def teardown_function():
