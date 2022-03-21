@@ -7,6 +7,7 @@ from jsonschema import ValidationError
 from pathlib import Path
 import uuid
 import os
+import shutil
 
 logger = logging.getLogger()
 
@@ -14,15 +15,18 @@ logger = logging.getLogger()
 def validate(dataset_name: str,
              working_directory: str = '',
              input_directory: str = '',
-             delete_working_directory: bool = False,
+             keep_temporary_files: bool = False,
              metadata_ref_directory: str = None,
              print_errors_to_file: bool = False) -> bool:
 
     if working_directory:
+        generated_working_directory = False
         working_directory_path = Path(working_directory)
     else:
+        generated_working_directory = True
         working_directory_path = Path(str(uuid.uuid4()))
         os.mkdir(working_directory_path)
+
     input_directory_path = Path(input_directory)
     if metadata_ref_directory is not None:
         metadata_ref_directory = Path(metadata_ref_directory)
@@ -49,18 +53,26 @@ def validate(dataset_name: str,
         # Raise unexpected exceptions to user
         raise e
 
-    if delete_working_directory:
+    if not keep_temporary_files:
         generated_files = [
-            working_directory_path / f"{dataset_name}.csv",
-            working_directory_path / f"{dataset_name}.json",
-            working_directory_path / f"{dataset_name}.db"
+            f"{dataset_name}.csv",
+            f"{dataset_name}.json",
+            f"{dataset_name}.db"
         ]
-
-        for file in generated_files:
-            try:
-                os.remove(file)
-            except FileNotFoundError:
-                pass
+        if generated_working_directory:
+            temporary_files = os.listdir(working_directory_path)
+            unknown_files = [
+                file for file in temporary_files
+                if file not in generated_files
+            ]
+            if not unknown_files:
+                shutil.rmtree(working_directory_path)
+        else:
+            for file in generated_files:
+                try:
+                    os.remove(working_directory_path / file)
+                except FileNotFoundError:
+                    pass
     return data_errors
 
 
