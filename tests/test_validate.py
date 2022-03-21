@@ -60,7 +60,8 @@ def test_validate_valid_dataset_delete_generated_dir():
             if os.path.isdir(dir) and dir[0] != '.'
         ]
         assert not data_errors
-        assert temp_files == ['tests', 'docs', 'microdata_validator']
+        for file in temp_files:
+            assert file in ['tests', 'docs', 'microdata_validator']
 
 
 def test_validate_valid_dataset_ref():
