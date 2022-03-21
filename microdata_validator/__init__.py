@@ -18,7 +18,11 @@ def validate(dataset_name: str,
              keep_temporary_files: bool = False,
              metadata_ref_directory: str = None,
              print_errors_to_file: bool = False) -> bool:
+    """
+    Validate a dataset and return a list of errors. If the dataset is valid, the list will be empty.
+    """
 
+    # Generate working directory if not supplied
     if working_directory:
         generated_working_directory = False
         working_directory_path = Path(working_directory)
@@ -27,10 +31,12 @@ def validate(dataset_name: str,
         working_directory_path = Path(str(uuid.uuid4()))
         os.mkdir(working_directory_path)
 
+    # Make paths for input and ref directory
     input_directory_path = Path(input_directory)
     if metadata_ref_directory is not None:
         metadata_ref_directory = Path(metadata_ref_directory)
 
+    # Run reader and validator
     data_errors = []
     try:
         dataset_reader.run_reader(
@@ -53,6 +59,7 @@ def validate(dataset_name: str,
         # Raise unexpected exceptions to user
         raise e
 
+    # Delete temporary files
     if not keep_temporary_files:
         generated_files = [
             f"{dataset_name}.csv",
@@ -78,6 +85,9 @@ def validate(dataset_name: str,
 
 def validate_metadata(metadata_file_path: str,
                       metadata_ref_directory: str = None) -> list:
+    """
+    Validate a metadata file and return a list of errors. If the metadata is valid, the list will be empty.
+    """
     try:
         metadata_file_path = Path(metadata_file_path)
         if metadata_ref_directory is None:
@@ -96,6 +106,10 @@ def validate_metadata(metadata_file_path: str,
 
 def inline_metadata(metadata_file_path: str, metadata_ref_directory: str,
                     output_file_path: str = None) -> Path:
+    """
+    Generate a metadata file with inlined references from a supplied metadata file and a reference directory.
+    Returns the path to the generated file. Throws an error if the metadata is invalid.
+    """
     if output_file_path is None:
         output_file_path = Path(
             f"{metadata_file_path.strip('.json')}_inlined.json"
