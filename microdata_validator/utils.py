@@ -40,7 +40,7 @@ def inline_metadata_references(metadata_file_path: Path,
             "Supplied reference directory is invalid"
             f" '{metadata_ref_directory}'"
         )
-    logger.info(f'Reading metadata from file "{metadata_file_path}"')
+    logger.debug(f'Reading metadata from file "{metadata_file_path}"')
     metadata: dict = load_json(metadata_file_path)
     recursive_ref_insert(metadata)
     return metadata
