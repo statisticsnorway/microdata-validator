@@ -67,7 +67,7 @@ else:
     print("Dataset is invalid :(")
  ```
 
-The validate function will temporarily generate some files in order to validate your dataset. To do this, it will create a working directory in the same location as your script. Therefore, it is important that you have writing permissions in your directory. You can also choose to define the location of this directory yourself using the ```working_directory```-parameter.
+The validate function will temporarily generate some files in order to validate your dataset. To do this, it will create a working directory in the same location as your script, and delete it once it is done. Therefore, it is important that you have writing permissions in your directory. You can also choose to define the location of this directory yourself using the ```working_directory```-parameter. If you choose to do this, the validate function will only delete the files it generates.
 
 ```py
 from microdata_validator import validate
@@ -83,10 +83,23 @@ if not validation_errors:
 else:
     print("Dataset is invalid :(")
  ```
+If you wish to keep the temporary files after the validator has run, you can do this with the ```keep_temporary_files```-parameter:
+```py
+from microdata_validator import validate
 
- **BE CAREFUL:**
-You can set the ```delete_working_directory```-parameter to True, if you want the script to delete the generated files in the working directory after validating. These files will be lost forever.
+validation_errors = validate(
+    "my-dataset-name",
+    input_directory="/my/input/directory",
+    working_directory="/my/working/directory",
+    keep_temporary_files=True
+)
 
+if not validation_errors:
+    print("My dataset is valid")
+else:
+    print("Dataset is invalid :(")
+ ```
+ 
 ## Validate metadata
 What if your data is not yet done, but you want to start generating and validating your metadata?
 You can validate the metadata by itself with the validate_metadata-function:

@@ -7,6 +7,7 @@ from jsonschema import ValidationError
 from pathlib import Path
 import uuid
 import os
+import shutil
 
 logger = logging.getLogger()
 
@@ -14,19 +15,28 @@ logger = logging.getLogger()
 def validate(dataset_name: str,
              working_directory: str = '',
              input_directory: str = '',
-             delete_working_directory: bool = False,
+             keep_temporary_files: bool = False,
              metadata_ref_directory: str = None,
              print_errors_to_file: bool = False) -> bool:
+    """
+    Validate a dataset and return a list of errors. If the dataset is valid, the list will be empty.
+    """
 
+    # Generate working directory if not supplied
     if working_directory:
+        generated_working_directory = False
         working_directory_path = Path(working_directory)
     else:
+        generated_working_directory = True
         working_directory_path = Path(str(uuid.uuid4()))
         os.mkdir(working_directory_path)
+
+    # Make paths for input and ref directory
     input_directory_path = Path(input_directory)
     if metadata_ref_directory is not None:
         metadata_ref_directory = Path(metadata_ref_directory)
 
+    # Run reader and validator
     data_errors = []
     try:
         dataset_reader.run_reader(
@@ -49,23 +59,55 @@ def validate(dataset_name: str,
         # Raise unexpected exceptions to user
         raise e
 
-    if delete_working_directory:
+    # Delete temporary files
+    if not keep_temporary_files:
         generated_files = [
-            working_directory_path / f"{dataset_name}.csv",
-            working_directory_path / f"{dataset_name}.json",
-            working_directory_path / f"{dataset_name}.db"
+            f"{dataset_name}.csv",
+            f"{dataset_name}.json",
+            f"{dataset_name}.db"
         ]
-
-        for file in generated_files:
-            try:
-                os.remove(file)
-            except FileNotFoundError:
-                pass
+        if generated_working_directory:
+            temporary_files = os.listdir(working_directory_path)
+            unknown_files = [
+                file for file in temporary_files
+                if file not in generated_files
+            ]
+            if not unknown_files:
+                try:
+                    shutil.rmtree(working_directory_path)
+                except Exception as e:
+                    logger.error(
+                        "An exception occured while attempting to delete"
+                        "temporary files: {e}"  
+                    )
+                    pass
+            else:
+                try:
+                    os.remove(working_directory_path / file)
+                except FileNotFoundError:
+                    logger.error(
+                        "Could not find file {file} in working directory "
+                        "when attempting to delete temporary files."    
+                    )
+                    pass
+        else:
+            for file in generated_files:
+                try:
+                    os.remove(working_directory_path / file)
+                except FileNotFoundError:
+                    logger.error(
+                        "Could not find file {file} in working directory "
+                        "when attempting to delete temporary files."    
+                    )
+                    pass
     return data_errors
 
 
 def validate_metadata(metadata_file_path: str,
                       metadata_ref_directory: str = None) -> list:
+    """
+    Validate a metadata file and return a list of errors. If the metadata is valid, the list will be empty.
+    """
     try:
         metadata_file_path = Path(metadata_file_path)
         if metadata_ref_directory is None:
@@ -84,6 +126,10 @@ def validate_metadata(metadata_file_path: str,
 
 def inline_metadata(metadata_file_path: str, metadata_ref_directory: str,
                     output_file_path: str = None) -> Path:
+    """
+    Generate a metadata file with inlined references from a supplied metadata file and a reference directory.
+    Returns the path to the generated file. Throws an error if the metadata is invalid.
+    """
     if output_file_path is None:
         output_file_path = Path(
             f"{metadata_file_path.strip('.json')}_inlined.json"
