@@ -32,7 +32,7 @@ def inline_metadata_references(metadata_file_path: Path,
                             recursive_ref_insert(item)
             elif isinstance(value, str) and key == "$ref":
                 print(f"FOUND VALUE: {value}")
-    
+
     if metadata_ref_directory is None:
         raise ParseMetadataError("No supplied reference directory")
     if not os.path.isdir(metadata_ref_directory):
@@ -101,10 +101,11 @@ def read_temp_sqlite_db_data_sorted(db_file: Path) -> Tuple[db.Connection, db.Cu
 
     db_conn = db.connect(db_file)
     cursor = db_conn.cursor()
-    #cursor.execute("PRAGMA synchronous = OFF")
-    #cursor.execute("BEGIN TRANSACTION")
+    # cursor.execute("PRAGMA synchronous = OFF")
+    # cursor.execute("BEGIN TRANSACTION")
     cursor.execute(sql_select_sorted)
     return (db_conn, cursor)
+
 
 class ParseMetadataError(Exception):
     pass
