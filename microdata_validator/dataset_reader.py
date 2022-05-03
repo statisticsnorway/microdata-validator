@@ -1,15 +1,14 @@
 import csv
 import datetime
 import logging
-from shutil import copyfile
 from pathlib import Path
 from microdata_validator import utils
 
 logger = logging.getLogger()
 
 
-def __insert_data_csv_into_sqlite(sqlite_file_path, dataset_data_file,
-                                  field_separator=";") -> None:
+def _insert_data_csv_into_sqlite(sqlite_file_path, dataset_data_file,
+                                 field_separator=";") -> None:
     db_conn, cursor = utils.create_temp_sqlite_db_file(
         sqlite_file_path
     )
@@ -29,10 +28,10 @@ def __insert_data_csv_into_sqlite(sqlite_file_path, dataset_data_file,
     )
 
 
-def __read_and_process_data(data_file_path: Path,
-                            enriched_data_file_path: Path,
-                            field_separator: str = ";",
-                            data_error_limit: int = 100) -> dict:
+def _read_and_process_data(data_file_path: Path,
+                           enriched_data_file_path: Path,
+                           field_separator: str = ";",
+                           data_error_limit: int = 100) -> dict:
     data_errors = []  # used for error-reporting
     start_dates = []
     stop_dates = []
@@ -42,6 +41,16 @@ def __read_and_process_data(data_file_path: Path,
         f'Validate datafile "{data_file_path}"'
     )
     data_file_with_row_numbers = open(enriched_data_file_path, 'w')
+
+    with open(file=data_file_path, newline='', encoding='utf-8', errors="strict") as f:
+        csv_sniffer = csv.Sniffer()
+        csv_file_separator = csv_sniffer.sniff(f.read(5000)).delimiter
+        if csv_file_separator != field_separator:
+            error_message = (
+                f'Invalid field separator "{csv_file_separator}". Use ";".'
+            )
+            raise InvalidDataException(error_message, [error_message])
+
     with open(file=data_file_path, newline='', encoding='utf-8', errors="strict") as f:
         reader = csv.reader(f, delimiter=field_separator)
         try:
@@ -55,7 +64,8 @@ def __read_and_process_data(data_file_path: Path,
                         f"{str(rows_validated)} rows validated"
                     )
                     raise InvalidDataException(
-                        f'Invalid data found while reading data file', data_errors
+                        'Invalid data found while reading data file',
+                        data_errors
                     )
 
                 if not data_row:
@@ -94,7 +104,9 @@ def __read_and_process_data(data_file_path: Path,
                     if start not in (None, ""):
                         try:
                             datetime.datetime(
-                                int(start[:4]), int(start[5:7]), int(start[8:10])
+                                int(start[:4]),
+                                int(start[5:7]),
+                                int(start[8:10])
                             )
                         except Exception:
                             data_errors.append(
@@ -118,7 +130,6 @@ def __read_and_process_data(data_file_path: Path,
                     stop_dates.append(str(stop).strip('"'))
             data_file_with_row_numbers.close()
         except UnicodeDecodeError as ue:
-            # See https://stackoverflow.com/questions/3269293/how-to-write-a-check-in-python-to-see-if-file-is-valid-utf-8
             logger.error(
                 f'ERROR (csv.reader error). Data file not UTF-8 encoded. '
                 f'File {data_file_path}, near row {reader.line_num}: {ue}'
@@ -141,7 +152,7 @@ def __read_and_process_data(data_file_path: Path,
         logger.debug(f"ERROR in file - {data_file_path}")
         logger.debug(f"{str(rows_validated)} rows validated")
         raise InvalidDataException(
-            f'Invalid data found while reading data file', data_errors
+            'Invalid data found while reading data file', data_errors
         )
     else:
         logger.debug(f"{str(rows_validated)} rows validated")
@@ -152,8 +163,8 @@ def __read_and_process_data(data_file_path: Path,
         }
 
 
-def __metadata_update_temporal_coverage(metadata: dict,
-                                        temporal_data: dict) -> None:
+def _metadata_update_temporal_coverage(metadata: dict,
+                                       temporal_data: dict) -> None:
     logger.debug(
         'Append temporal coverage (start, stop, status dates) to metadata'
     )
@@ -192,10 +203,10 @@ def run_reader(working_directory: Path, input_directory: Path,
     enriched_data_file_path = working_directory.joinpath(
         f'{dataset_name}.csv'
     )
-    temporal_data = __read_and_process_data(
+    temporal_data = _read_and_process_data(
         data_file_path, enriched_data_file_path
     )
-    
+
     logger.debug(f'Reading metadata from file "{metadata_file_path}"')
     if metadata_ref_directory is None:
         metadata_dict = utils.load_json(metadata_file_path)
@@ -203,8 +214,8 @@ def run_reader(working_directory: Path, input_directory: Path,
         metadata_dict = utils.inline_metadata_references(
             metadata_file_path, metadata_ref_directory
         )
-    
-    __metadata_update_temporal_coverage(metadata_dict, temporal_data)
+
+    _metadata_update_temporal_coverage(metadata_dict, temporal_data)
 
     logger.debug('Writing inlined metadata JSON file to working directory')
     inlined_metadata_file_path = working_directory.joinpath(
@@ -216,7 +227,7 @@ def run_reader(working_directory: Path, input_directory: Path,
     utils.validate_json_with_schema(metadata_dict)
 
     sqlite_file_path = working_directory.joinpath(f'{dataset_name}.db')
-    __insert_data_csv_into_sqlite(sqlite_file_path, enriched_data_file_path)
+    _insert_data_csv_into_sqlite(sqlite_file_path, enriched_data_file_path)
 
     logger.debug(f'OK - reading dataset "{dataset_name}"')
 
