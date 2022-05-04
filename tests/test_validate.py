@@ -11,12 +11,14 @@ VALID_DATASET_NAMES = [
 ]
 VALID_DATASET_REF = 'SYNT_BEFOLKNING_KJOENN'
 NO_SUCH_DATASET_NAME = 'NO_SUCH_DATASET'
+WRONG_DELIMITER_DATASET_NAME = 'WRONG_DELIMITER_DATASET'
 MISSING_IDENTIFIER_DATASET_NAME = 'MISSING_IDENTIFIER_DATASET'
 INVALID_DATES_DATASET_NAME = 'INVALID_DATES_DATASET'
 INVALID_DATE_RANGES_DATASET_NAME = 'INVALID_DATE_RANGES_DATASET'
 INPUT_DIRECTORY = 'tests/resources/input_directory'
 WORKING_DIRECTORY = 'tests/resources/working_directory'
 REF_DIRECTORY = 'tests/resources/ref_directory'
+
 
 def test_validate_valid_dataset():
     for valid_dataset_name in VALID_DATASET_NAMES:
@@ -35,6 +37,16 @@ def test_validate_valid_dataset():
         assert not data_errors
         for file in expected_files:
             assert file in actual_files
+
+
+def test_validate_valid_dataset_wrong_delimiter():
+    data_errors = validate(
+        WRONG_DELIMITER_DATASET_NAME,
+        working_directory=WORKING_DIRECTORY,
+        keep_temporary_files=True,
+        input_directory=INPUT_DIRECTORY
+    )
+    assert data_errors == ['Invalid field separator ",". Use ";".']
 
 
 def test_validate_valid_dataset_delete_temporary_files():
@@ -134,8 +146,14 @@ def test_invalid_date_ranges():
         input_directory=INPUT_DIRECTORY,
     )
     assert data_errors == [
-        'row 4: Previous STOP-date greater than STOP-date - 1926-02-02 > 1926-02-01',
-        'row 13: Previous STOP-date greater than STOP-date - 1940-01-31 > 1939-02-01'
+        (
+            'row 4: Previous STOP-date greater than STOP-date '
+            '- 1926-02-02 > 1926-02-01'
+        ),
+        (
+            'row 13: Previous STOP-date greater than STOP-date'
+            ' - 1940-01-31 > 1939-02-01'
+        )
     ]
 
 
