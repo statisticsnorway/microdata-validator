@@ -131,7 +131,7 @@ This dataset describes a group of persons gross income accumulated yearly. The c
 * Stop: end of time period
 * Empty column (This column is reserved for an extra attribute variable if that is considered necessary. As there is no need here, it remains empty.)
 
-### GENERAL VALIDATIONRULES FOR DATA
+### GENERAL VALIDATION RULES FOR DATA
 * There can be no empty rows in the dataset
 * There can be no more than 5 elements in a row
 * Every row must have a non-empty identifier
@@ -139,19 +139,20 @@ This dataset describes a group of persons gross income accumulated yearly. The c
 * Values in the stop- and start-columns must be formatted correctly: "YYYY-MM-DD". Example "2020-12-31".
 * The data file must be utf-8 encoded
 
-### VALIDATIONRULES BY TEMPORALITY TYPE
+### VALIDATION RULES BY TEMPORALITY TYPE
 * **FIXED** (Constant value, ex.: place of birth)
     - All rows must have an unique identifier. (No repeating identifiers within a dataset)
+    - All rows must have a stop date
 * **STATUS** (measurement taken at a certain point in time. (cross section))
-    - Must have a start date
-    - Must have a stop date
+    - All rows must have a start date
+    - All rows must have a stop date
     - Start and stop date must be equal for any given row
 * **ACCUMULATED** (Accumulated over a period. Ex.: yearly income)
-    - Must have a start date
-    - Must have a stop date
+    - All rows must have a start date
+    - All rows must have a stop date
     - Start can not be later than stop
     - Time periods for the same identifiers must not intersect
 * **EVENT** (data state for validity period)
-    - Must have a start date
-    - Start can not be later than stop, if there is a non empty stop column in the same row
+    - All rows must have a start date
+    - If there is a non-empty value in the stop column for a given row; start can not be later than stop
     - Time periods for the same identifiers must not intersect (A row without a stop date is considered an ongoing event, and will intersect with all timespans after its start date)

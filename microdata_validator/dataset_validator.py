@@ -137,7 +137,6 @@ def _is_data_row_consistent(temporality_type: str, data_row: tuple,
                 f"temporalityType is {temporality_type}"
             )
         if not (start is None or str(start).strip() == ""):
-            print(start)
             return (
                 f"row {row_number}: There should be no START-date "
                 f"when temporalityType is {temporality_type}"
@@ -147,7 +146,7 @@ def _is_data_row_consistent(temporality_type: str, data_row: tuple,
 
 def _is_data_row_consistent_with_metadata(data_type: str,
                                           code_list_with_missing_values: list,
-                                          data_row: tuple) -> Union[tuple, None]:
+                                          data_row: tuple) -> Union[str, None]:
     row_number = data_row[0]
     # unit_id = data_row[1]
     value = data_row[2]
