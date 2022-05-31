@@ -74,14 +74,16 @@ def validate_json_with_schema(metadata_json: dict) -> None:
     )
 
 
-def create_temp_sqlite_db_file(db_file: Path) -> Tuple[db.Connection, db.Cursor]:
+def create_temp_sqlite_db_file(
+    db_file: Path
+) -> Tuple[db.Connection, db.Cursor]:
     sql_create_table = """
         CREATE TABLE temp_dataset (
             row_number INT NOT NULL,
-            unit_id TEXT NOT NULL, 
-            value TEXT NOT NULL, 
-            start TEXT, 
-            stop TEXT, 
+            unit_id TEXT NOT NULL,
+            value TEXT NOT NULL,
+            start TEXT,
+            stop TEXT,
             attributes TEXT) """
 
     db_conn = db.connect(db_file)
@@ -93,7 +95,9 @@ def create_temp_sqlite_db_file(db_file: Path) -> Tuple[db.Connection, db.Cursor]
     return (db_conn, cursor)
 
 
-def read_temp_sqlite_db_data_sorted(db_file: Path) -> Tuple[db.Connection, db.Cursor]:
+def read_temp_sqlite_db_data_sorted(
+    db_file: Path
+) -> Tuple[db.Connection, db.Cursor]:
     sql_select_sorted = """\
         SELECT row_number, unit_id, value, start, stop, attributes
         FROM temp_dataset
