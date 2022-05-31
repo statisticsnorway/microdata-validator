@@ -1,6 +1,8 @@
+from typing import Union
 from microdata_validator import dataset_reader
 from microdata_validator import dataset_validator
 from microdata_validator import utils
+from microdata_validator import unit_types
 from microdata_validator.dataset_reader import InvalidDataException
 import logging
 from jsonschema import ValidationError
@@ -87,7 +89,7 @@ def validate(dataset_name: str,
                 except FileNotFoundError:
                     logger.error(
                         "Could not find file {file} in working directory "
-                        "when attempting to delete temporary files."    
+                        "when attempting to delete temporary files."
                     )
                     pass
         else:
@@ -141,7 +143,7 @@ def inline_metadata(metadata_file_path: str, metadata_ref_directory: str,
             f"File already exists at '{output_file_path}'. "
             f"Can not overwrite existing file."
         )
-    
+
     metadata_file_path = Path(metadata_file_path)
     metadata_ref_directory = Path(metadata_ref_directory)
     metadata_dict = utils.inline_metadata_references(
@@ -151,6 +153,15 @@ def inline_metadata(metadata_file_path: str, metadata_ref_directory: str,
 
     utils.write_json(output_file_path, metadata_dict)
     return output_file_path
+
+
+def unit_id_type_for_unit_id(unit_id: str) -> Union[str, None]:
+    """
+    Returns the unitIdType for the supplied unitType. Returns None
+    if supplied unitType has no attached unitIdType.
+    Raises a KeyError on unfamiliar unitType.
+    """
+    return unit_types.get_unit_id_type_for_unit_type(unit_id)
 
 
 __all__ = ['validate', 'validate_metadata', 'inline_metadata']

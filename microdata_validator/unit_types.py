@@ -1,9 +1,11 @@
 from typing import Union
 
-
+# When updating this dictionary remember to also
+# updating the DatasetMetadataSchema with the
+# same key value in the enum for unitTypeType
 UNIT_ID_TYPE_FOR_UNIT_TYPE = {
     "JOBB": "JOBBID_1",
-    "KJORETOY": "KJORETOY_ID",	
+    "KJORETOY": "KJORETOY_ID",
     "FAMILIE": "FNR",
     "FORETAK": "ORGNR",
     "HUSHOLDNING": "FNR",
@@ -12,10 +14,6 @@ UNIT_ID_TYPE_FOR_UNIT_TYPE = {
     "PERSON": "FNR",
     "VIRKSOMHET": "ORGNR"
 }
-
-
-def is_valid_unit_type(unit_type: str) -> bool:
-    return unit_type in UNIT_ID_TYPE_FOR_UNIT_TYPE
 
 
 def get_unit_id_type_for_unit_type(unit_type: str) -> Union[str, None]:
