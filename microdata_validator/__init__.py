@@ -163,7 +163,7 @@ def inline_metadata(metadata_file_path: str, metadata_ref_directory: str,
     return output_file_path
 
 
-def get_unit_id_type_for_unit_id(unit_id: str) -> Union[str, None]:
+def get_unit_id_type_for_unit_type(unit_id: str) -> Union[str, None]:
     """
     Returns the unitIdType for the supplied unitType. Returns None
     if supplied unitType has no attached unitIdType.
@@ -176,5 +176,5 @@ __all__ = [
     "validate",
     "validate_metadata",
     "inline_metadata",
-    "get_unit_id_type_for_unit_id",
+    "get_unit_id_type_for_unit_type",
 ]
