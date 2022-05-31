@@ -1,11 +1,11 @@
+import os
 import json
 import logging
 import sqlite3 as db
-import os
-
 from pathlib import Path
 from typing import Tuple
 from jsonschema import validate
+
 
 logger = logging.getLogger()
 

@@ -1,15 +1,20 @@
-from typing import Union
-from microdata_validator import dataset_reader
-from microdata_validator import dataset_validator
-from microdata_validator import utils
-from microdata_validator import unit_types
-from microdata_validator.dataset_reader import InvalidDataException
-import logging
-from jsonschema import ValidationError
-from pathlib import Path
 import uuid
 import os
 import shutil
+import logging
+from typing import Union
+from pathlib import Path
+
+from jsonschema import ValidationError
+from microdata_validator.dataset_reader import InvalidDataException
+
+from microdata_validator import (
+    dataset_reader,
+    dataset_validator,
+    utils,
+    unit_types
+)
+
 
 logger = logging.getLogger()
 

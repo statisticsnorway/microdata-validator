@@ -2,7 +2,9 @@ import datetime
 from typing import Union
 import logging
 from pathlib import Path
+
 from microdata_validator import utils
+
 
 logger = logging.getLogger()
 
