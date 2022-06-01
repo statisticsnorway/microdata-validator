@@ -167,7 +167,7 @@ def get_unit_id_type_for_unit_type(unit_id: str) -> Union[str, None]:
     """
     Returns the unitIdType for the supplied unitType. Returns None
     if supplied unitType has no attached unitIdType.
-    Raises a KeyError on unfamiliar unitType.
+    Raises a UnregisteredUnitTypeError on unregistered unitType.
     """
     return unit_types.get_unit_id_type_for_unit_type(unit_id)
 

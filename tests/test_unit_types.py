@@ -15,8 +15,8 @@ def test_none_for_unit_type():
 
 
 def test_get_unit_id_type_for_unknown_unit_type():
-    with pytest.raises(KeyError) as e:
+    with pytest.raises(unit_types.UnregisteredUnitTypeError) as e:
         unit_types.get_unit_id_type_for_unit_type(
             "SOMETHING"
         )
-    assert "KeyError('SOMETHING')" in str(e)
+    assert "No such unit type" in str(e)
