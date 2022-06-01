@@ -2,7 +2,9 @@ import csv
 import datetime
 import logging
 from pathlib import Path
+
 from microdata_validator import utils
+
 
 logger = logging.getLogger()
 
@@ -42,7 +44,8 @@ def _read_and_process_data(data_file_path: Path,
     )
     data_file_with_row_numbers = open(enriched_data_file_path, 'w')
 
-    with open(file=data_file_path, newline='', encoding='utf-8', errors="strict") as f:
+    with open(file=data_file_path, newline='', encoding='utf-8',
+              errors="strict") as f:
         csv_sniffer = csv.Sniffer()
         csv_file_separator = csv_sniffer.sniff(f.read(5000)).delimiter
         if csv_file_separator != field_separator:
@@ -51,7 +54,8 @@ def _read_and_process_data(data_file_path: Path,
             )
             raise InvalidDataException(error_message, [error_message])
 
-    with open(file=data_file_path, newline='', encoding='utf-8', errors="strict") as f:
+    with open(file=data_file_path, newline='', encoding='utf-8',
+              errors="strict") as f:
         reader = csv.reader(f, delimiter=field_separator)
         try:
             for data_row in reader:
@@ -89,7 +93,8 @@ def _read_and_process_data(data_file_path: Path,
                     stop = data_row[3].strip('"')
                     # TODO: attributes = data_row[4]
                     data_file_with_row_numbers.write(
-                        f"{reader.line_num};{unit_id};{value};{start};{stop};\n"
+                        f"{reader.line_num};{unit_id};{value};"
+                        f"{start};{stop};\n"
                     )
                     if unit_id is None or str(unit_id).strip(" ") == "":
                         data_errors.append(
