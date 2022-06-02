@@ -4,10 +4,10 @@ import shutil
 import logging
 from typing import Union
 from pathlib import Path
-
 from jsonschema import ValidationError
-from microdata_validator.dataset_reader import InvalidDataException
 
+from microdata_validator.dataset_reader import InvalidDataException
+from microdata_validator.metadata_model import Metadata, PatchingError
 from microdata_validator import (
     dataset_reader,
     dataset_validator,
@@ -177,4 +177,6 @@ __all__ = [
     "validate_metadata",
     "inline_metadata",
     "get_unit_id_type_for_unit_type",
+    "Metadata",
+    "PatchingError"
 ]
