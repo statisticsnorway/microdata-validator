@@ -1,0 +1,82 @@
+{
+  "name": "KREFTREG_DS",
+  "temporality": "STATUS",
+  "languageCode": "no",
+  "populationDescription": "new value",
+  "subjectFields": ["Helse", "Helsetjenester"],
+  "temporalCoverage": { "start": 16436, "stop": 18627 },
+  "measureVariable": {
+    "name": "KREFTREG_DS",
+    "label": "Diagnosens sikkerhet",
+    "dataType": "String",
+    "variableRole": "Measure",
+    "representedVariables": [
+      {
+        "description": "new value",
+        "validPeriod": { "start": 16436, "stop": 18627 },
+        "valueDomain": {
+          "description": "Verdier for diagnosens sikkerhet",
+          "unitOfMeasure": "N/A"
+        }
+      }
+    ]
+  },
+  "identifierVariables": [
+    {
+      "name": "SYKDOMSTILFELLENUMMER",
+      "label": "Sykdomstilfelle-nummer",
+      "dataType": "String",
+      "variableRole": "Identifier",
+      "representedVariables": [
+        {
+          "description": "new value",
+          "validPeriod": { "start": 16436, "stop": 18627 },
+          "valueDomain": {
+            "description": "Pseudonymisert sykdomstilfellenummer",
+            "unitOfMeasure": "N/A"
+          }
+        }
+      ],
+      "format": "RandomUInt48",
+      "keyType": {
+        "name": "SYKDOMSTILFELLE",
+        "label": "new value",
+        "description": "Sykdomstilfelle(r) for personer."
+      }
+    }
+  ],
+  "attributeVariables": [
+    {
+      "name": "START",
+      "label": "Startdato",
+      "dataType": "Instant",
+      "variableRole": "START_TIME",
+      "representedVariables": [
+        {
+          "description": "new value",
+          "validPeriod": { "start": 16436, "stop": 18627 },
+          "valueDomain": {
+            "description": "Dato oppgitt i dager siden 1970-01-01",
+            "unitOfMeasure": "N/A"
+          }
+        }
+      ]
+    },
+    {
+      "name": "STOP",
+      "label": "Stoppdato",
+      "dataType": "Instant",
+      "variableRole": "STOP_TIME",
+      "representedVariables": [
+        {
+          "description": "new value",
+          "validPeriod": { "start": 16436, "stop": 18627 },
+          "valueDomain": {
+            "description": "Dato oppgitt i dager siden 1970-01-01",
+            "unitOfMeasure": "N/A"
+          }
+        }
+      ]
+    }
+  ]
+}
