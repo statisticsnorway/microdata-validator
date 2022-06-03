@@ -21,7 +21,7 @@
               "code": "0"
             },
             {
-              "category": "Det foreligger svulst uten p\u00e5vist malignitet, men sikker topografi",
+              "category": "NEW DESCRIPTION",
               "code": "1"
             },
             {
@@ -60,7 +60,7 @@
         "valueDomain": {
           "codeList": [
             {
-              "category": "Det foreligger svulst med usikker malignitet og usikker topografi",
+              "category": "NEW DESCRIPTION",
               "code": "0"
             },
             {
@@ -80,7 +80,7 @@
               "code": "5"
             },
             {
-              "category": "Det foreligger klinisk sikker kreft og sikker topografi",
+              "category": "NEW DESCRIPTION",
               "code": "6"
             },
             {

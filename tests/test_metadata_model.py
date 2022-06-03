@@ -14,18 +14,23 @@ with open(f'{RESOURCE_DIR}/KREFTREG_DS_enumerated_update.json') as f:
     ENUMERATED_UPDATED_METADATA = json.load(f)
 with open(f'{RESOURCE_DIR}/KREFTREG_DS_enumerated_patched.json') as f:
     PATCHED_ENUMERATED_METADATA = json.load(f)
-with open(f'{RESOURCE_DIR}/KREFTREG_DS_described_illegal_update.json') as f:
-    ILLEGALLY_UPDATED_METADATA = json.load(f)
-with open(f'{RESOURCE_DIR}/KREFTREG_DS_described_deleted_object.json') as f:
-    DELETED_OBJECT_METADATA = json.load(f)
 with open(f'{RESOURCE_DIR}/KREFTREG_DS_described_patched.json') as f:
     PATCHED_METADATA = json.load(f)
+
+with open(f'{RESOURCE_DIR}/KREFTREG_DS_described_illegal_update.json') as f:
+    # New variable name on line 18
+    ILLEGALLY_UPDATED_METADATA = json.load(f)
+with open(f'{RESOURCE_DIR}/KREFTREG_DS_described_deleted_object.json') as f:
+    # Deleted keyType object line 34
+    DELETED_OBJECT_METADATA = json.load(f)
 
 
 def test_object():
     transformed_metadata = Metadata(TRANSFORMED_METADATA)
-    assert transformed_metadata.get_identifier_key_type() == 'SYKDOMSTILFELLE'
-    print(transformed_metadata.to_dict())
+    assert (
+        transformed_metadata.get_identifier_key_type_name()
+        == 'SYKDOMSTILFELLE'
+    )
     assert transformed_metadata.to_dict() == TRANSFORMED_METADATA
 
 

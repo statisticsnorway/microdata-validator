@@ -6,6 +6,10 @@ class PatchingError(Exception):
     pass
 
 
+class MetadataException(Exception):
+    pass
+
+
 class TimePeriod:
     start: int
     stop: int
@@ -49,7 +53,7 @@ class KeyType:
                 f'"{self.name}" to "{other.name}"'
             )
         self.label = other.label
-        self.descritpion = other.description
+        self.description = other.description
 
 
 class CodeListItem:
@@ -73,43 +77,73 @@ class CodeListItem:
                 'Can not change CodeListItem code from '
                 f'"{self.code}" to "{other.code}"'
             )
-        self.category == other.category
+        self.category = other.category
 
 
 class ValueDomain:
     description: str
     unit_of_measure: str
     code_list: List[CodeListItem]
-    missing_values: str
+    missing_values: List[str]
+    is_described_value_domain: bool
+    is_enumerated_value_domain: bool
 
     def __init__(self, value_domain_dict: dict):
-        self.description = value_domain_dict.get("description", None)
-        self.unit_of_measure = value_domain_dict.get("unitOfMeasure", None)
-
-        self.code_list = []
-        if "codeList" in value_domain_dict:
-            self.code_list = [
-                CodeListItem(item["category"], item["code"])
-                for item in value_domain_dict["codeList"]
-            ]
-
-        self.missing_values = []
-        if "missingValues" in value_domain_dict:
-            self.missing_values = [
-                missing_value for missing_value
-                in value_domain_dict["missingValues"]
-            ]
+        self.is_enumerated_value_domain = (
+            "codeList" in value_domain_dict
+            and "description" not in value_domain_dict
+            and "unitOfMeasure" not in value_domain_dict
+        )
+        self.is_described_value_domain = (
+            "description" in value_domain_dict
+            and "codeList" not in value_domain_dict
+            and "missingValues" not in value_domain_dict
+        )
+        if self.is_described_value_domain:
+            self.description = value_domain_dict.get("description")
+            self.unit_of_measure = value_domain_dict.get("unitOfMeasure", None)
+            self.code_list = None
+            self.missing_values = None
+        elif self.is_enumerated_value_domain:
+            self.code_list = []
+            if "codeList" in value_domain_dict:
+                self.code_list = [
+                    CodeListItem(item["category"], item["code"])
+                    for item in value_domain_dict["codeList"]
+                ]
+            self.missing_values = []
+            if "missingValues" in value_domain_dict:
+                self.missing_values = [
+                    missing_value for missing_value
+                    in value_domain_dict["missingValues"]
+                ]
+            self.code_list = None if self.code_list == [] else self.code_list
+            self.missing_values = (
+                None if self.missing_values == [] else self.missing_values
+            )
+            self.description = None
+            self.unit_of_measure = None
+        else:
+            raise MetadataException('Invalid ValueDomain')
 
     def to_dict(self) -> dict:
-        dict_representation = {
-            "description": self.description,
-            "unitOfMeasure": self.unit_of_measure,
-            "codeList": [code_item.to_dict() for code_item in self.code_list],
-            "missingValues": self.missing_values
-        }
+        if self.is_described_value_domain:
+            dict_representation = {
+                "description": self.description,
+                "unitOfMeasure": self.unit_of_measure,
+            }
+        elif self.is_enumerated_value_domain:
+            dict_representation = {
+                "codeList": [
+                    code_item.to_dict() for code_item in self.code_list
+                ],
+                "missingValues": [
+                    missing_value for missing_value in self.missing_values
+                ]
+            }
         return {
             key: value for key, value in dict_representation.items()
-            if value not in [[], None]
+            if value not in [None]
         }
 
     def patch(self, other: 'ValueDomain'):
@@ -117,19 +151,23 @@ class ValueDomain:
             raise PatchingError(
                 'Can not delete ValueDomain'
             )
-        if self.unit_of_measure != other.unit_of_measure:
-            raise PatchingError(
-                'Can not change ValueDomain unitOfMeasure from '
-                f'"{self.unit_of_measure}" to "{other.unit_of_measure}"'
-            )
-        if self.missing_values != other.missing_values:
-            raise PatchingError(
-                'Can not change ValueDomain missingValues from '
-                f'"{self.missing_values}" to "{other.missing_values}"'
-            )
-        if self.description is not None:
-            self.description == other.description
-        else:
+        if self.is_described_value_domain:
+            self.description = other.description
+            if self.unit_of_measure != other.unit_of_measure:
+                raise PatchingError(
+                    'Can not change ValueDomain unitOfMeasure from '
+                    f'"{self.unit_of_measure}" to "{other.unit_of_measure}"'
+                )
+        elif self.is_enumerated_value_domain:
+            if other.code_list is None:
+                raise PatchingError(
+                    'Can not delete code list'
+                )
+            if self.missing_values != other.missing_values:
+                raise PatchingError(
+                    'Can not change ValueDomain missingValues from '
+                    f'"{self.missing_values}" to "{other.missing_values}"'
+                )
             if len(self.code_list) != len(other.code_list):
                 raise PatchingError(
                     'Can not add or remove codes from ValueDomain codeList'
@@ -194,7 +232,7 @@ class Variable:
             in variable_dict["representedVariables"]
         ]
 
-    def get_key_type(self):
+    def get_key_type_name(self):
         return None if self.key_type is None else self.key_type.name
 
     def to_dict(self) -> dict:
@@ -229,7 +267,7 @@ class Variable:
                 'Illegal change to one of these variable fields: '
                 '[name, dataType, format, variableRole]]'
             )
-        self.label == other.label
+        self.label = other.label
         if self.key_type is None and other.key_type is not None:
             raise PatchingError(
                 'Can not change keyType'
@@ -301,11 +339,11 @@ class Metadata:
             )
         )
 
-    def get_identifier_key_type(self):
-        return self.identifier_variable.get_key_type()
+    def get_identifier_key_type_name(self):
+        return self.identifier_variable.get_key_type_name()
 
-    def get_measure_key_type(self):
-        return self.measure_variable.get_key_type()
+    def get_measure_key_type_name(self):
+        return self.measure_variable.get_key_type_name()
 
     def patch(self, other: 'Metadata'):
         if other is None:
@@ -315,14 +353,14 @@ class Metadata:
         if (
             self.name != other.name or
             self.temporality != other.temporality or
-            self.language_code != other.language_code or
-            self.subject_fields != other.subject_fields
+            self.language_code != other.language_code
         ):
             raise PatchingError(
                 'Can not change these metadata fields '
-                '[name, temporality, languageCode, subjectFields]'
+                '[name, temporality, languageCode]'
             )
         self.population_description = other.population_description
+        self.subject_fields = other.subject_fields
         self.measure_variable.patch(other.measure_variable)
         self.identifier_variable.patch(other.identifier_variable)
         self.start_variable.patch(other.start_variable)
