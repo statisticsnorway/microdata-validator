@@ -39,6 +39,10 @@ class KeyType:
         }
 
     def patch(self, other: 'KeyType'):
+        if other is None:
+            raise PatchingError(
+                'Can not delete KeyType'
+            )
         if self.name != other.name:
             raise PatchingError(
                 'Can not change keyType name from '
@@ -60,6 +64,10 @@ class CodeListItem:
         return {"category": self.category, "code": self.code}
 
     def patch(self, other: 'CodeListItem'):
+        if other is None:
+            raise PatchingError(
+                'Can not delete CodeListItem'
+            )
         if self.code != other.code:
             raise PatchingError(
                 'Can not change CodeListItem code from '
@@ -105,6 +113,10 @@ class ValueDomain:
         }
 
     def patch(self, other: 'ValueDomain'):
+        if other is None:
+            raise PatchingError(
+                'Can not delete ValueDomain'
+            )
         if self.unit_of_measure != other.unit_of_measure:
             raise PatchingError(
                 'Can not change ValueDomain unitOfMeasure from '
@@ -149,6 +161,10 @@ class RepresentedVariable:
         }
 
     def patch(self, other: 'RepresentedVariable'):
+        if other is None:
+            raise PatchingError(
+                'Can not delete RepresentedVariable'
+            )
         self.description = other.description
         self.value_domain.patch(other.value_domain)
 
@@ -199,6 +215,10 @@ class Variable:
         return dict_representation
 
     def patch(self, other: 'Variable'):
+        if other is None:
+            raise PatchingError(
+                'Can not delete Variable'
+            )
         if (
             self.name != other.name or
             self.data_type != other.data_type or
@@ -210,6 +230,10 @@ class Variable:
                 '[name, dataType, format, variableRole]]'
             )
         self.label == other.label
+        if self.key_type is None and other.key_type is not None:
+            raise PatchingError(
+                'Can not change keyType'
+            )
         if self.key_type is not None:
             self.key_type.patch(other.key_type)
         if len(self.represented_variables) != len(other.represented_variables):
@@ -284,6 +308,10 @@ class Metadata:
         return self.measure_variable.get_key_type()
 
     def patch(self, other: 'Metadata'):
+        if other is None:
+            raise PatchingError(
+                'Can not patch with NoneType Metadata'
+            )
         if (
             self.name != other.name or
             self.temporality != other.temporality or

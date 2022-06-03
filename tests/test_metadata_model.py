@@ -16,6 +16,8 @@ with open(f'{RESOURCE_DIR}/KREFTREG_DS_enumerated_patched.json') as f:
     PATCHED_ENUMERATED_METADATA = json.load(f)
 with open(f'{RESOURCE_DIR}/KREFTREG_DS_described_illegal_update.json') as f:
     ILLEGALLY_UPDATED_METADATA = json.load(f)
+with open(f'{RESOURCE_DIR}/KREFTREG_DS_described_deleted_object.json') as f:
+    DELETED_OBJECT_METADATA = json.load(f)
 with open(f'{RESOURCE_DIR}/KREFTREG_DS_described_patched.json') as f:
     PATCHED_METADATA = json.load(f)
 
@@ -39,6 +41,21 @@ def test_patch_enumerated():
     updated_metadata = Metadata(ENUMERATED_UPDATED_METADATA)
     transformed_metadata.patch(updated_metadata)
     assert transformed_metadata.to_dict() == PATCHED_ENUMERATED_METADATA
+
+
+def test_patch_with_deleted_object():
+    with pytest.raises(PatchingError) as e:
+        transformed_metadata = Metadata(TRANSFORMED_METADATA)
+        updated_metadata = Metadata(DELETED_OBJECT_METADATA)
+        transformed_metadata.patch(updated_metadata)
+    assert 'Can not delete KeyType' in str(e)
+
+
+def test_patch_with_None():
+    with pytest.raises(PatchingError) as e:
+        transformed_metadata = Metadata(TRANSFORMED_METADATA)
+        transformed_metadata.patch(None)
+    assert 'Can not patch with NoneType Metadata' in str(e)
 
 
 def test_illegaly_patch():
