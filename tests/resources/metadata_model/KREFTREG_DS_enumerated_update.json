@@ -1,0 +1,194 @@
+{
+    "name": "KREFTREG_DS",
+    "populationDescription": "NEW DESCRIPTION",
+    "languageCode": "no",
+    "temporality": "STATUS",
+    "subjectFields": [
+      "Helse",
+      "Helsetjenester"
+    ],
+    "temporalCoverage": {
+      "start": 16436,
+      "stop": 18627
+    },
+    "identifierVariables": [
+      {
+        "variableRole": "Identifier",
+        "name": "SYKDOMSTILFELLENUMMER",
+        "label": "Sykdomstilfelle-nummer",
+        "dataType": "String",
+        "representedVariables": [
+          {
+            "description": "NEW DESCRIPTION",
+            "validPeriod": {
+              "start": 16436,
+              "stop": 18627
+            },
+            "valueDomain": {
+              "description": "Pseudonymisert sykdomstilfellenummer",
+              "unitOfMeasure": "N/A"
+            }
+          }
+        ],
+        "format": "RandomUInt48",
+        "keyType": {
+          "name": "SYKDOMSTILFELLE",
+          "label": "Sykdomstilfelle",
+          "description": "Sykdomstilfelle(r) for personer."
+        }
+      }
+    ],
+    "measureVariable": {
+      "variableRole": "Measure",
+      "name": "KREFTREG_DS",
+      "label": "Diagnosens sikkerhet",
+      "dataType": "String",
+      "representedVariables": [
+        {
+          "description": "Hvor p\u00e5litelig diagnosen i meldingen er. P\u00e5liteligheten vurderes ut fra sikkerhet rundt tumors malignitetspotensiale og sikkerhet rundt tumors prim\u00e6re utgangspunkt.",
+          "validPeriod": {
+            "start": -6209,
+            "stop": 18627
+          },
+          "valueDomain": {
+            "codeList": [
+              {
+                "category": "Det foreligger svulst med usikker malignitet og usikker topografi",
+                "code": "0"
+              },
+              {
+                "category": "NEW DESCRIPTION",
+                "code": "1"
+              },
+              {
+                "category": "Det foreligger svulst med sikker malignitet, men usikker topografi (benyttes bare for solide svulster)",
+                "code": "2"
+              },
+              {
+                "category": "Det foreligger svulst med sikker malignitet og sikker topografi",
+                "code": "3"
+              },
+              {
+                "category": "Der foreligger svulst med sikker malignitet og sikker topografi hos pasient som er registrert med premalign tilstand i samme organ mer enn fire hele m\u00e5neder forut for diagnosem\u00e5neden til aktuelle krefttilfelle",
+                "code": "4"
+              },
+              {
+                "category": "Det foreligger klinisk sikker kreft og sikker topografi",
+                "code": "5"
+              },
+              {
+                "category": "Det foreligger klinisk sikker kreft og sikker topografi",
+                "code": "6"
+              },
+              {
+                "category": "Det foreligger histologi-/cytologimelding eller d\u00f8dsattest om svulst med usikker malignitetsgrad (usikkert benign/premalign/malign svulst) og sikker topografi f\u00f8r klinisk melding er registrert",
+                "code": "7"
+              },
+              {
+                "category": "Ugyldig/manglende verdi",
+                "code": "999"
+              },
+              {
+                "category": "Uidentifiserbar verdi",
+                "code": "888"
+              }
+            ],
+            "missingValues": [
+              "999",
+              "888"
+            ]
+          }
+        },
+        {
+          "description": "Hvor p\u00e5litelig diagnosen i meldingen er. P\u00e5liteligheten vurderes ut fra sikkerhet rundt tumors malignitetspotensiale og sikkerhet rundt tumors prim\u00e6re utgangspunkt.",
+          "validPeriod": {
+            "start": 18628
+          },
+          "valueDomain": {
+            "codeList": [
+              {
+                "category": "NEW DESCRIPTION",
+                "code": "0"
+              },
+              {
+                "category": "Det foreligger svulst med sikker malignitet, men usikker topografi (benyttes bare for solide svulster)",
+                "code": "2"
+              },
+              {
+                "category": "Det foreligger svulst med sikker malignitet og sikker topografi",
+                "code": "3"
+              },
+              {
+                "category": "Der foreligger svulst med sikker malignitet og sikker topografi hos pasient som er registrert med premalign tilstand i samme organ mer enn fire hele m\u00e5neder forut for diagnosem\u00e5neden til aktuelle krefttilfelle",
+                "code": "4"
+              },
+              {
+                "category": "Det foreligger klinisk sikker kreft og sikker topografi",
+                "code": "5"
+              },
+              {
+                "category": "NEW DESCRIPTION",
+                "code": "6"
+              },
+              {
+                "category": "Det foreligger histologi-/cytologimelding eller d\u00f8dsattest om svulst med usikker malignitetsgrad (usikkert benign/premalign/malign svulst) og sikker topografi f\u00f8r klinisk melding er registrert",
+                "code": "7"
+              },
+              {
+                "category": "Ugyldig/manglende verdi",
+                "code": "999"
+              },
+              {
+                "category": "Uidentifiserbar verdi",
+                "code": "888"
+              }
+            ],
+            "missingValues": [
+              "999",
+              "888"
+            ]
+          }
+        }
+      ]
+    },
+    "attributeVariables": [
+      {
+        "variableRole": "START_TIME",
+        "name": "START",
+        "label": "Startdato",
+        "dataType": "Instant",
+        "representedVariables": [
+          {
+            "description": "Startdato/m\u00e5letidspunktet for hendelsen",
+            "validPeriod": {
+              "start": 16436,
+              "stop": 18627
+            },
+            "valueDomain": {
+              "description": "Dato oppgitt i dager siden 1970-01-01",
+              "unitOfMeasure": "N/A"
+            }
+          }
+        ]
+      },
+      {
+        "variableRole": "STOP_TIME",
+        "name": "STOP",
+        "label": "Stoppdato",
+        "dataType": "Instant",
+        "representedVariables": [
+          {
+            "description": "Stoppdato/sluttdato for hendelsen",
+            "validPeriod": {
+              "start": 16436,
+              "stop": 18627
+            },
+            "valueDomain": {
+              "description": "Dato oppgitt i dager siden 1970-01-01",
+              "unitOfMeasure": "N/A"
+            }
+          }
+        ]
+      }
+    ]
+  }
