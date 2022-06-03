@@ -305,8 +305,7 @@ class Metadata:
     temporal_coverage: TimePeriod
     measure_variable: MeasureVariable
     identifier_variable: IdentifierVariable
-    start_variable: AttributeVariable
-    stop_variable: AttributeVariable
+    attribute_variables: List[AttributeVariable]
 
     def __init__(self, metadata_dict: dict):
         self.name = metadata_dict["name"]
@@ -326,18 +325,10 @@ class Metadata:
         self.identifier_variable = IdentifierVariable(
             metadata_dict["identifierVariables"][0]
         )
-        self.start_variable = AttributeVariable(
-            next(
-                variable for variable in metadata_dict["attributeVariables"]
-                if variable["variableRole"] == "START_TIME"
-            )
-        )
-        self.stop_variable = AttributeVariable(
-            next(
-                variable for variable in metadata_dict["attributeVariables"]
-                if variable["variableRole"] == "STOP_TIME"
-            )
-        )
+        self.attribute_variables = [
+            AttributeVariable(variable)
+            for variable in metadata_dict["attributeVariables"]
+        ]
 
     def get_identifier_key_type_name(self):
         return self.identifier_variable.get_key_type_name()
@@ -363,8 +354,10 @@ class Metadata:
         self.subject_fields = other.subject_fields
         self.measure_variable.patch(other.measure_variable)
         self.identifier_variable.patch(other.identifier_variable)
-        self.start_variable.patch(other.start_variable)
-        self.stop_variable.patch(other.stop_variable)
+        if len(self.attribute_variables) != len(other.attribute_variables):
+            raise PatchingError('Can not delete or add attributeVariables')
+        for idx in range(len(self.attribute_variables)):
+            self.attribute_variables[idx].patch(other.attribute_variables[idx])
 
     def to_dict(self) -> dict:
         return {
@@ -377,8 +370,7 @@ class Metadata:
             "measureVariable": self.measure_variable.to_dict(),
             "identifierVariables": [self.identifier_variable.to_dict()],
             "attributeVariables": [
-                self.start_variable.to_dict(),
-                self.stop_variable.to_dict()
+                variable.to_dict() for variable in self.attribute_variables
             ]
         }
 
