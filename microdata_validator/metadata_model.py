@@ -153,11 +153,7 @@ class ValueDomain:
             )
         if self.is_described_value_domain:
             self.description = other.description
-            if self.unit_of_measure != other.unit_of_measure:
-                raise PatchingError(
-                    'Can not change ValueDomain unitOfMeasure from '
-                    f'"{self.unit_of_measure}" to "{other.unit_of_measure}"'
-                )
+            self.unit_of_measure = other.unit_of_measure
         elif self.is_enumerated_value_domain:
             if other.code_list is None:
                 raise PatchingError(
