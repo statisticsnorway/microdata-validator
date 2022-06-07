@@ -136,11 +136,12 @@ class ValueDomain:
             dict_representation = {
                 "codeList": [
                     code_item.to_dict() for code_item in self.code_list
-                ],
-                "missingValues": [
-                    missing_value for missing_value in self.missing_values
                 ]
             }
+            if self.missing_values is not None:
+                dict_representation["missingValues"] = [
+                    missing_value for missing_value in self.missing_values
+                ]
         return {
             key: value for key, value in dict_representation.items()
             if value not in [None]
