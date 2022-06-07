@@ -1,0 +1,113 @@
+{
+  "name": "SYNT_BEFOLKNING_KJOENN",
+  "populationDescription": "Kj\u00f8nn for en populasjon",
+  "languageCode": "no",
+  "temporality": "FIXED",
+  "subjectFields": [
+    "Helse",
+    "Helsetjenester"
+  ],
+  "temporalCoverage": {
+    "start": null
+  },
+  "identifierVariables": [
+    {
+      "variableRole": "Identifier",
+      "name": "PERSONID_1",
+      "label": "Personidentifikator",
+      "dataType": "String",
+      "representedVariables": [
+        {
+          "description": "Identifikator for person i Microdata",
+          "validPeriod": {
+            "start": null,
+            "stop": null
+          },
+          "valueDomain": {
+            "description": "Pseudonymisert personnummer",
+            "unitOfMeasure": "N/A"
+          }
+        }
+      ],
+      "format": "RandomUInt48",
+      "keyType": {
+        "name": "PERSON",
+        "label": "Person",
+        "description": "Statistisk enhet er person (individ, enkeltmenenske)"
+      }
+    }
+  ],
+  "measureVariable": {
+    "variableRole": "Measure",
+    "name": "SYNT_BEFOLKNING_KJONN",
+    "label": "Kj\u00f8nn",
+    "dataType": "String",
+    "representedVariables": [
+      {
+        "description": "Rapportert kj\u00f8nn for person",
+        "validPeriod": {
+          "start": -25567
+        },
+        "valueDomain": {
+          "codeList": [
+            {
+              "category": "Mann",
+              "code": "1"
+            },
+            {
+              "category": "Kvinne",
+              "code": "2"
+            },
+            {
+              "category": "Kj\u00f8nn ukjent",
+              "code": "0"
+            }
+          ],
+          "missingValues": [
+            "0"
+          ]
+        }
+      }
+    ]
+  },
+  "attributeVariables": [
+    {
+      "variableRole": "START_TIME",
+      "name": "START",
+      "label": "Startdato",
+      "dataType": "Instant",
+      "representedVariables": [
+        {
+          "description": "Startdato/m\u00e5letidspunktet for hendelsen",
+          "validPeriod": {
+            "start": null,
+            "stop": null
+          },
+          "valueDomain": {
+            "description": "Dato oppgitt i dager siden 1970-01-01",
+            "unitOfMeasure": "N/A"
+          }
+        }
+      ]
+    },
+    {
+      "variableRole": "STOP_TIME",
+      "name": "STOP",
+      "label": "Stoppdato",
+      "dataType": "Instant",
+      "representedVariables": [
+        {
+          "description": "Stoppdato/sluttdato for hendelsen",
+          "validPeriod": {
+            "start": null,
+            "stop": null
+          },
+          "valueDomain": {
+            "description": "Dato oppgitt i dager siden 1970-01-01",
+            "unitOfMeasure": "N/A"
+          }
+        }
+      ]
+    }
+  ]
+}
