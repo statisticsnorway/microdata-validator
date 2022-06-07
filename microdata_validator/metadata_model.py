@@ -90,14 +90,14 @@ class ValueDomain:
 
     def __init__(self, value_domain_dict: dict):
         self.is_enumerated_value_domain = (
-            "codeList" in value_domain_dict
-            and "description" not in value_domain_dict
-            and "unitOfMeasure" not in value_domain_dict
+                "codeList" in value_domain_dict
+                and "description" not in value_domain_dict
+                and "unitOfMeasure" not in value_domain_dict
         )
         self.is_described_value_domain = (
-            "description" in value_domain_dict
-            and "codeList" not in value_domain_dict
-            and "missingValues" not in value_domain_dict
+                "description" in value_domain_dict
+                and "codeList" not in value_domain_dict
+                and "missingValues" not in value_domain_dict
         )
         if self.is_described_value_domain:
             self.description = value_domain_dict.get("description")
@@ -136,11 +136,12 @@ class ValueDomain:
             dict_representation = {
                 "codeList": [
                     code_item.to_dict() for code_item in self.code_list
-                ],
-                "missingValues": [
-                    missing_value for missing_value in self.missing_values
                 ]
             }
+            if self.missing_values is not None:
+                dict_representation["missingValues"] = [
+                    missing_value for missing_value in self.missing_values
+                ]
         return {
             key: value for key, value in dict_representation.items()
             if value not in [None]
@@ -254,10 +255,10 @@ class Variable:
                 'Can not delete Variable'
             )
         if (
-            self.name != other.name or
-            self.data_type != other.data_type or
-            self.format != other.format or
-            self.variable_role != other.variable_role
+                self.name != other.name or
+                self.data_type != other.data_type or
+                self.format != other.format or
+                self.variable_role != other.variable_role
         ):
             raise PatchingError(
                 'Illegal change to one of these variable fields: '
@@ -338,9 +339,9 @@ class Metadata:
                 'Can not patch with NoneType Metadata'
             )
         if (
-            self.name != other.name or
-            self.temporality != other.temporality or
-            self.language_code != other.language_code
+                self.name != other.name or
+                self.temporality != other.temporality or
+                self.language_code != other.language_code
         ):
             raise PatchingError(
                 'Can not change these metadata fields '
