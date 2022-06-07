@@ -4,42 +4,39 @@ import pytest
 
 from microdata_validator import Metadata, PatchingError
 
-PATCH_METADATA_DIR = 'tests/resources/metadata_model'
-WITH_CODE_LIST_DIR = f'{PATCH_METADATA_DIR}/dataset_with_code_list'
-WITHOUT_CODE_LIST_DIR = f'{PATCH_METADATA_DIR}/dataset_without_code_list'
-INVALID_DIR = f'{PATCH_METADATA_DIR}/invalid'
+RESOURCE_DIR = 'tests/resources/metadata_model'
 
 
 def test_patch_metadata_with_code_list():
-    source = load_file(f'{WITH_CODE_LIST_DIR}/source_SYNT_BEFOLKNING_KJOENN.json')
-    destination = load_file(f'{WITH_CODE_LIST_DIR}/destination_SYNT_BEFOLKNING_KJOENN.json')
-    expected = load_file(f'{WITH_CODE_LIST_DIR}/expected_SYNT_BEFOLKNING_KJOENN.json')
+    updated = load_file(f'{RESOURCE_DIR}/SYNT_BEFOLKNING_KJOENN_enumerated_update.json')
+    original = load_file(f'{RESOURCE_DIR}/SYNT_BEFOLKNING_KJOENN_enumerated.json')
+    expected = load_file(f'{RESOURCE_DIR}/SYNT_BEFOLKNING_KJOENN_enumerated_patched.json')
 
-    s = Metadata(destination)
-    s.patch(Metadata(source))
-    assert s.to_dict() == expected
+    orig = Metadata(original)
+    orig.patch(Metadata(updated))
+    assert orig.to_dict() == expected
 
 
 def test_patch_metadata_without_code_list():
-    source = load_file(f'{WITHOUT_CODE_LIST_DIR}/source_SYNT_PERSON_INNTEKT.json')
-    destination = load_file(f'{WITHOUT_CODE_LIST_DIR}/destination_SYNT_PERSON_INNTEKT.json')
-    expected = load_file(f'{WITHOUT_CODE_LIST_DIR}/expected_SYNT_PERSON_INNTEKT.json')
+    updated = load_file(f'{RESOURCE_DIR}/SYNT_PERSON_INNTEKT_described_update.json')
+    original = load_file(f'{RESOURCE_DIR}/SYNT_PERSON_INNTEKT_described.json')
+    expected = load_file(f'{RESOURCE_DIR}/SYNT_PERSON_INNTEKT_described_patched.json')
 
-    s = Metadata(destination)
-    s.patch(Metadata(source))
-    assert s.to_dict() == expected
+    orig = Metadata(original)
+    orig.patch(Metadata(updated))
+    assert orig.to_dict() == expected
 
 
 def test_patch_metadata_illegal_fields_changes():
     """
-    The source contains randomly chosen fields that are not allowed to be changed.
+    The "updated" contains randomly chosen fields that are not allowed to be changed.
     """
-    source = load_file(f'{INVALID_DIR}/source_SYNT_BEFOLKNING_KJOENN.json')
-    destination = load_file(f'{INVALID_DIR}/destination_SYNT_BEFOLKNING_KJOENN.json')
+    updated = load_file(f'{RESOURCE_DIR}/SYNT_BEFOLKNING_KJOENN_enumerated_illegal_update.json')
+    original = load_file(f'{RESOURCE_DIR}/SYNT_BEFOLKNING_KJOENN_enumerated.json')
 
     with pytest.raises(PatchingError) as e:
-        s = Metadata(destination)
-        s.patch(Metadata(source))
+        orig = Metadata(original)
+        orig.patch(Metadata(updated))
 
     assert 'Can not change these metadata fields [name, temporality, languageCode]' in str(e)
 
