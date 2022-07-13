@@ -22,9 +22,9 @@ The metadata files should be in json format. The requirements for the metadata i
 Once you have your metadata and data files ready to go, they should be named and stored like this:
 ```
 my-input-directory/
-    my_dataset_name/
-        my_dataset_name.csv
-        my_dataset_name.json
+    MY_DATASET_NAME/
+        MY_DATASET_NAME.csv
+        MY_DATASET_NAME.json
 ```
 
 
