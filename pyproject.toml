@@ -1,9 +1,11 @@
 [tool.poetry]
 name = "microdata-validator"
-version = "3.1.0"
+version = "3.1.1"
 description = "Python package for validating datasets in the microdata platform"
 authors = ["microdata-developers"]
 license = "Apache-2.0"
+repository = 'https://github.com/statisticsnorway/microdata-validator'
+readme = 'README.md'
 
 [tool.poetry.dependencies]
 python = "^3.7"
