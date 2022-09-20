@@ -1,7 +1,7 @@
 from typing import Union
 
 # When updating this dictionary remember to also
-# updating the DatasetMetadataSchema with the
+# update the DatasetMetadataSchema with the
 # same key value in the enum for unitTypeType
 UNIT_ID_TYPE_FOR_UNIT_TYPE = {
     "JOBB": "JOBBID_1",
@@ -20,7 +20,7 @@ def get_unit_id_type_for_unit_type(unit_type: str) -> Union[str, None]:
     try:
         return UNIT_ID_TYPE_FOR_UNIT_TYPE[unit_type]
     except KeyError as e:
-        raise UnregisteredUnitTypeError(f'No such unit type: {str(e)}')
+        raise UnregisteredUnitTypeError(f'No such unit type: {str(e)}') from e
 
 
 class UnregisteredUnitTypeError(Exception):

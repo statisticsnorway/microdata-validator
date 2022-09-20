@@ -42,8 +42,9 @@ def _read_and_process_data(data_file_path: Path,
     logger.debug(
         f'Validate datafile "{data_file_path}"'
     )
-    data_file_with_row_numbers = open(enriched_data_file_path, 'w')
-
+    data_file_with_row_numbers = open(
+        enriched_data_file_path, 'w', encoding='utf-8'
+    )
     with open(file=data_file_path, newline='', encoding='utf-8',
               errors="strict") as f:
         csv_sniffer = csv.Sniffer()
@@ -60,7 +61,7 @@ def _read_and_process_data(data_file_path: Path,
         try:
             for data_row in reader:
                 if reader.line_num % 1000000 == 0:
-                    logger.debug(".. now reading row: " + str(reader.line_num))
+                    logger.debug(f".. now reading row: {reader.line_num}")
                 rows_validated += 1
                 if len(data_errors) >= data_error_limit:
                     logger.debug(
@@ -91,7 +92,7 @@ def _read_and_process_data(data_file_path: Path,
                     value = data_row[1].strip('"')
                     start = data_row[2].strip('"')
                     stop = data_row[3].strip('"')
-                    # TODO: attributes = data_row[4]
+                    # attributes = data_row[4]
                     data_file_with_row_numbers.write(
                         f"{reader.line_num};{unit_id};{value};"
                         f"{start};{stop};\n"
@@ -128,21 +129,22 @@ def _read_and_process_data(data_file_path: Path,
                                 f"row {reader.line_num}: "
                                 f"STOP date not valid - '{start}'"
                             )
-                    # TODO: validate "attributes"?
+                    # validate "attributes" here
 
                     # find temporalCoverage from datafile
                     start_dates.append(str(start).strip('"'))
                     stop_dates.append(str(stop).strip('"'))
             data_file_with_row_numbers.close()
-        except UnicodeDecodeError as ue:
+        except UnicodeDecodeError as e:
             logger.error(
                 f'ERROR (csv.reader error). Data file not UTF-8 encoded. '
-                f'File {data_file_path}, near row {reader.line_num}: {ue}'
+                f'File {data_file_path}, near row {reader.line_num}: {e}'
             )
             raise InvalidDataException(
                 f'ERROR (csv.reader error). Data file not UTF-8 encoded. '
-                f'File {data_file_path}, near row {reader.line_num}: {ue}'
-            )
+                f'File {data_file_path}, near row {reader.line_num}: {e}',
+                []
+            ) from e
         except csv.Error as e:
             logger.error(
                 f'ERROR (csv.reader error) in file {data_file_path}, '
@@ -150,8 +152,9 @@ def _read_and_process_data(data_file_path: Path,
             )
             raise InvalidDataException(
                 f'ERROR (csv.reader error) in file {data_file_path}, '
-                f'near row {reader.line_num}: {e}'
-            )
+                f'near row {reader.line_num}: {e}',
+                []
+            ) from e
 
     if data_errors:
         logger.debug(f"ERROR in file - {data_file_path}")
@@ -188,10 +191,10 @@ def _metadata_update_temporal_coverage(metadata: dict,
             temporal_data["latest"]
         )
     elif metadata["temporalityType"] == "STATUS":
-        temporalStatusDatesList = temporal_data["status_list"]
-        temporalStatusDatesList.sort()
+        temporal_status_dates_list = temporal_data["status_list"]
+        temporal_status_dates_list.sort()
         metadata["dataRevision"]["temporalStatusDates"] = (
-            temporalStatusDatesList
+            temporal_status_dates_list
         )
 
 
@@ -238,6 +241,7 @@ def run_reader(working_directory: Path, input_directory: Path,
 
 
 class InvalidDataException(Exception):
+
     def __init__(self, message: str, data_errors: list):
         self.data_errors = data_errors
         Exception.__init__(self, message)
