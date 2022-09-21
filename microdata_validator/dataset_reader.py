@@ -92,7 +92,6 @@ def _read_and_process_data(data_file_path: Path,
                     value = data_row[1].strip('"')
                     start = data_row[2].strip('"')
                     stop = data_row[3].strip('"')
-                    # attributes = data_row[4]
                     data_file_with_row_numbers.write(
                         f"{reader.line_num};{unit_id};{value};"
                         f"{start};{stop};\n"
@@ -129,8 +128,6 @@ def _read_and_process_data(data_file_path: Path,
                                 f"row {reader.line_num}: "
                                 f"STOP date not valid - '{start}'"
                             )
-                    # validate "attributes" here
-
                     # find temporalCoverage from datafile
                     start_dates.append(str(start).strip('"'))
                     stop_dates.append(str(stop).strip('"'))
