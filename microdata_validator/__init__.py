@@ -7,7 +7,6 @@ from pathlib import Path
 from jsonschema import ValidationError
 
 from microdata_validator.dataset_reader import InvalidDataException
-from microdata_validator.metadata_model import Metadata, PatchingError
 from microdata_validator import (
     dataset_reader,
     dataset_validator,
@@ -87,7 +86,6 @@ def validate(dataset_name: str,
                         "An exception occured while attempting to delete"
                         f"temporary files: {e}"
                     )
-                    pass
             else:
                 for file in generated_files:
                     try:
@@ -106,7 +104,6 @@ def validate(dataset_name: str,
                         f"Could not find file {file} in working directory "
                         "when attempting to delete temporary files."
                     )
-                    pass
     return data_errors
 
 
@@ -176,7 +173,5 @@ __all__ = [
     "validate",
     "validate_metadata",
     "inline_metadata",
-    "get_unit_id_type_for_unit_type",
-    "Metadata",
-    "PatchingError"
+    "get_unit_id_type_for_unit_type"
 ]

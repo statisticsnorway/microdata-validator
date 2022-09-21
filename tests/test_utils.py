@@ -40,6 +40,7 @@ def test_inline_invalid_ref_dir():
         )
     assert "Supplied reference directory is invalid" in str(e)
 
+
 def test_inline_invalid_metadata_file_path():
     with pytest.raises(FileNotFoundError):
         utils.inline_metadata_references(

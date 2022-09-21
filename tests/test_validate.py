@@ -1,7 +1,10 @@
 import os
 import logging
-from microdata_validator import validate
+
 import pytest
+
+from microdata_validator import validate
+
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)

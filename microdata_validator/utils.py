@@ -12,11 +12,11 @@ logger = logging.getLogger()
 
 def inline_metadata_references(metadata_file_path: Path,
                                metadata_ref_directory: Path) -> dict:
-    def recursive_ref_insert(object: dict):
-        for key, value in object.items():
+    def recursive_ref_insert(metadata_object: dict):
+        for key, value in metadata_object.items():
             if isinstance(value, dict):
                 if "$ref" in value:
-                    object[key] = load_json(
+                    metadata_object[key] = load_json(
                         metadata_ref_directory / Path(value["$ref"])
                     )
                 else:
@@ -56,7 +56,7 @@ def load_json(filepath: Path) -> dict:
 
 
 def write_json(filepath: Path, content: dict) -> None:
-    with open(filepath, 'w') as json_file:
+    with open(filepath, 'w', encoding='utf-8') as json_file:
         json.dump(
             content, json_file, indent=4, ensure_ascii=False
         )

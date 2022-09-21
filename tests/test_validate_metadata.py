@@ -1,6 +1,9 @@
 import logging
-from microdata_validator import validate_metadata
+
 import pytest
+
+from microdata_validator import validate_metadata
+
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -63,6 +66,4 @@ def test_validate_empty_codelist():
 
 def test_validate_metadata_does_not_exist():
     with pytest.raises(FileNotFoundError):
-        validate_metadata(
-            NO_SUCH_METADATA_FILE
-        )
+        validate_metadata(NO_SUCH_METADATA_FILE)

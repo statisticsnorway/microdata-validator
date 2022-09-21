@@ -1,9 +1,11 @@
+import os
+from pathlib import Path
+
+import pytest
+
 from microdata_validator import inline_metadata
 from microdata_validator import utils
 from microdata_validator.utils import ParseMetadataError
-from pathlib import Path
-import pytest
-import os
 
 
 RESOURCES_DIR = "tests/resources/inline_metadata"
@@ -16,8 +18,12 @@ KJOENN_DEFAULT_OUTPUT_PATH = (
     "tests/resources/input_directory/"
     "SYNT_BEFOLKNING_KJOENN/SYNT_BEFOLKNING_KJOENN_inlined.json"
 )
-KJOENN_INLINED_FILE_PATH = f"{RESOURCES_DIR}/SYNT_BEFOLKNING_KJOENN_inlined.json"
-SIVSTAND_REFERENCED_FILE_PATH = f"{RESOURCES_DIR}/synt_sivstand_referenced.json"
+KJOENN_INLINED_FILE_PATH = (
+    f"{RESOURCES_DIR}/SYNT_BEFOLKNING_KJOENN_inlined.json"
+)
+SIVSTAND_REFERENCED_FILE_PATH = (
+    f"{RESOURCES_DIR}/synt_sivstand_referenced.json"
+)
 SIVSTAND_INLINE_FILE_PATH = f"{RESOURCES_DIR}/synt_sivstand_inlined.json"
 NONEXISTENT_FILE_PATH = f"{RESOURCES_DIR}/does-not-exist.json"
 REF_DIR = "tests/resources/ref_directory"
@@ -30,9 +36,10 @@ def test_inline_full_dataset():
         output_file_path=OUTPUT_FILE_PATH
     )
     actual_inlined = utils.load_json(result_file_path)
-    actual_inlined == utils.load_json(
+    assert actual_inlined == utils.load_json(
         Path(SIVSTAND_INLINE_FILE_PATH)
     )
+
 
 def test_inline_full_dataset_no_overwite():
     with pytest.raises(FileExistsError):
@@ -47,9 +54,9 @@ def test_inline_full_dataset_default_output_path():
         KJOENN_FILE_PATH,
         REF_DIR
     )
-    assert str(result_file_path) == KJOENN_DEFAULT_OUTPUT_PATH  
+    assert str(result_file_path) == KJOENN_DEFAULT_OUTPUT_PATH
     actual_inlined = utils.load_json(result_file_path)
-    actual_inlined == utils.load_json(
+    assert actual_inlined == utils.load_json(
         Path(KJOENN_INLINED_FILE_PATH)
     )
 
@@ -71,9 +78,9 @@ def test_inline_invalid_ref_dir():
 def teardown_function():
     try:
         os.remove(OUTPUT_FILE_PATH)
-    except:
+    except Exception:
         pass
     try:
         os.remove(KJOENN_DEFAULT_OUTPUT_PATH)
-    except:
-        pass 
+    except Exception:
+        pass
