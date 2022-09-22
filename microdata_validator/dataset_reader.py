@@ -224,6 +224,10 @@ def run_reader(
         metadata_dict = utils.inline_metadata_references(
             metadata_file_path, metadata_ref_directory
         )
+
+    logger.debug('Validating metadata JSON with JSON schema')
+    utils.validate_json_with_schema(metadata_dict)
+
     temporality_type = metadata_dict['temporalityType']
     metadata_dict['attributeVariables'] = [
         temporal_attributes.generate_start_time_attribute(temporality_type),
@@ -236,9 +240,6 @@ def run_reader(
         f'{dataset_name}.json'
     )
     utils.write_json(inlined_metadata_file_path, metadata_dict)
-
-    logger.debug('Validating metadata JSON with JSON schema')
-    utils.validate_json_with_schema(metadata_dict)
 
     sqlite_file_path = working_directory.joinpath(f'{dataset_name}.db')
     _insert_data_csv_into_sqlite(sqlite_file_path, enriched_data_file_path)
