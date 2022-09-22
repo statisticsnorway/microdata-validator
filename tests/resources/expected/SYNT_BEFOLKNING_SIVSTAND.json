@@ -1,0 +1,287 @@
+{
+    "shortName": "SYNT_BEFOLKNING_SIVSTAND",
+    "temporalityType": "EVENT",
+    "populationDescription": [
+        {
+            "languageCode": "no",
+            "value": "Alle personer registrert bosatt i Norge"
+        }
+    ],
+    "spatialCoverageDescription": [
+        {
+            "languageCode": "no",
+            "value": "Norge"
+        }
+    ],
+    "dataRevision": {
+        "description": [
+            {
+                "languageCode": "no",
+                "value": "F\u00f8rste publisering."
+            }
+        ],
+        "temporalEndOfSeries": false,
+        "temporalCoverageStart": "1920-01-01",
+        "temporalCoverageLatest": "1951-01-01"
+    },
+    "identifierVariables": [
+        {
+            "shortName": "PERSONID_1",
+            "name": [
+                {
+                    "languageCode": "no",
+                    "value": "Personidentifikator"
+                }
+            ],
+            "description": [
+                {
+                    "languageCode": "no",
+                    "value": "Identifikator for person i Microdata"
+                }
+            ],
+            "dataType": "STRING",
+            "unitType": {
+                "shortName": "PERSON",
+                "name": [
+                    {
+                        "languageCode": "no",
+                        "value": "Person"
+                    }
+                ],
+                "description": [
+                    {
+                        "languageCode": "no",
+                        "value": "Statistisk enhet er person (individ, enkeltmenenske)"
+                    }
+                ]
+            },
+            "format": "RandomUInt48",
+            "valueDomain": {
+                "shortName": "PERSONID_1",
+                "description": [
+                    {
+                        "languageCode": "no",
+                        "value": "Pseudonymisert personnummer"
+                    }
+                ]
+            }
+        }
+    ],
+    "measureVariables": [
+        {
+            "shortName": "SYNT_BEFOLKNING_SIVSTAND",
+            "name": [
+                {
+                    "languageCode": "no",
+                    "value": "Sivilstand"
+                }
+            ],
+            "description": [
+                {
+                    "languageCode": "no",
+                    "value": "Sivilstand i forhold til ekteskapslovgivningen"
+                }
+            ],
+            "subjectFields": [
+                {
+                    "shortName": "BEFOLKNING",
+                    "name": [
+                        {
+                            "languageCode": "no",
+                            "value": "Befolkning"
+                        }
+                    ],
+                    "description": [
+                        {
+                            "languageCode": "no",
+                            "value": "Befolkning"
+                        }
+                    ]
+                }
+            ],
+            "dataType": "STRING",
+            "uriDefinition": [
+                "https://www.ssb.no/a/metadata/conceptvariable/vardok/91/nb"
+            ],
+            "valueDomain": {
+                "uriDefinition": [
+                    "https://www.ssb.no/klass/klassifikasjoner/19"
+                ],
+                "codeList": {
+                    "codeItems": [
+                        {
+                            "code": "1",
+                            "categoryTitle": [
+                                {
+                                    "languageCode": "no",
+                                    "value": "Ugift"
+                                }
+                            ],
+                            "validFrom": "1926-01-01"
+                        },
+                        {
+                            "code": "2",
+                            "categoryTitle": [
+                                {
+                                    "languageCode": "no",
+                                    "value": "Gift"
+                                }
+                            ],
+                            "validFrom": "1926-01-01"
+                        },
+                        {
+                            "code": "3",
+                            "categoryTitle": [
+                                {
+                                    "languageCode": "no",
+                                    "value": "Enke/Enkemann"
+                                }
+                            ],
+                            "validFrom": "1926-01-01"
+                        },
+                        {
+                            "code": "4",
+                            "categoryTitle": [
+                                {
+                                    "languageCode": "no",
+                                    "value": "Skilt"
+                                }
+                            ],
+                            "validFrom": "1926-01-01"
+                        },
+                        {
+                            "code": "5",
+                            "categoryTitle": [
+                                {
+                                    "languageCode": "no",
+                                    "value": "Separert"
+                                }
+                            ],
+                            "validFrom": "1926-01-01"
+                        },
+                        {
+                            "code": "6",
+                            "categoryTitle": [
+                                {
+                                    "languageCode": "no",
+                                    "value": "Registrert partner"
+                                }
+                            ],
+                            "validFrom": "1927-07-01"
+                        },
+                        {
+                            "code": "7",
+                            "categoryTitle": [
+                                {
+                                    "languageCode": "no",
+                                    "value": "Separert partner"
+                                }
+                            ],
+                            "validFrom": "1927-07-01"
+                        },
+                        {
+                            "code": "8",
+                            "categoryTitle": [
+                                {
+                                    "languageCode": "no",
+                                    "value": "Skilt partner"
+                                }
+                            ],
+                            "validFrom": "1927-07-01"
+                        },
+                        {
+                            "code": "9",
+                            "categoryTitle": [
+                                {
+                                    "languageCode": "no",
+                                    "value": "Gjenlevende partner"
+                                }
+                            ],
+                            "validFrom": "1927-07-01"
+                        }
+                    ]
+                },
+                "sentinelAndMissingValues": [
+                    {
+                        "code": "0",
+                        "categoryTitle": [
+                            {
+                                "languageCode": "no",
+                                "value": "Siviltand ukjent"
+                            }
+                        ],
+                        "validFrom": "1900-01-01"
+                    }
+                ]
+            }
+        }
+    ],
+    "attributeVariables": [
+        {
+            "variableRole": "START_TIME",
+            "shortName": "START",
+            "dataType": "DATE",
+            "valueDomain": {
+                "description": [
+                    {
+                        "languageCode": "no",
+                        "value": "Dato oppgitt i dager siden 1970-01-01"
+                    }
+                ]
+            },
+            "description": [
+                {
+                    "languageCode": "no",
+                    "value": "Startdato/m\u00e5letidspunktet for hendelsen"
+                },
+                {
+                    "languageCode": "en",
+                    "value": "Startdato/m\u00e5letidspunktet for hendelsen"
+                }
+            ],
+            "name": [
+                {
+                    "languageCode": "no",
+                    "value": "Startdato"
+                },
+                {
+                    "languageCode": "en",
+                    "value": "Start date"
+                }
+            ]
+        },
+        {
+            "variableRole": "STOP_TIME",
+            "shortName": "STOP",
+            "dataType": "DATE",
+            "valueDomain": {
+                "description": [
+                    {
+                        "languageCode": "no",
+                        "value": "Dato oppgitt i dager siden 1970-01-01"
+                    }
+                ]
+            },
+            "description": [
+                {
+                    "languageCode": "no",
+                    "value": "Startdato/m\u00e5letidspunktet for hendelsen"
+                },
+                {
+                    "languageCode": "en",
+                    "value": "Startdato/m\u00e5letidspunktet for hendelsen"
+                }
+            ],
+            "name": [
+                {
+                    "languageCode": "no",
+                    "value": "Stoppdato"
+                },
+                {
+                    "languageCode": "en",
+                    "value": "Stop date"
+                }
+            ]
+        }
+    ]
+}

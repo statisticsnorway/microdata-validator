@@ -4,6 +4,7 @@ import logging
 from pathlib import Path
 
 from microdata_validator import utils
+from microdata_validator import temporal_attributes
 
 
 logger = logging.getLogger()
@@ -195,8 +196,12 @@ def _metadata_update_temporal_coverage(metadata: dict,
         )
 
 
-def run_reader(working_directory: Path, input_directory: Path,
-               metadata_ref_directory: Path, dataset_name: str) -> None:
+def run_reader(
+    working_directory: Path,
+    input_directory: Path,
+    metadata_ref_directory: Path,
+    dataset_name: str
+) -> None:
     metadata_file_path: Path = (
         input_directory / dataset_name / f"{dataset_name}.json"
     )
@@ -220,6 +225,14 @@ def run_reader(working_directory: Path, input_directory: Path,
             metadata_file_path, metadata_ref_directory
         )
 
+    logger.debug('Validating metadata JSON with JSON schema')
+    utils.validate_json_with_schema(metadata_dict)
+
+    temporality_type = metadata_dict['temporalityType']
+    metadata_dict['attributeVariables'] = [
+        temporal_attributes.generate_start_time_attribute(temporality_type),
+        temporal_attributes.generate_stop_time_attribute(temporality_type)
+    ] + metadata_dict.get('attributeVariables', [])
     _metadata_update_temporal_coverage(metadata_dict, temporal_data)
 
     logger.debug('Writing inlined metadata JSON file to working directory')
@@ -227,9 +240,6 @@ def run_reader(working_directory: Path, input_directory: Path,
         f'{dataset_name}.json'
     )
     utils.write_json(inlined_metadata_file_path, metadata_dict)
-
-    logger.debug('Validating metadata JSON with JSON schema')
-    utils.validate_json_with_schema(metadata_dict)
 
     sqlite_file_path = working_directory.joinpath(f'{dataset_name}.db')
     _insert_data_csv_into_sqlite(sqlite_file_path, enriched_data_file_path)

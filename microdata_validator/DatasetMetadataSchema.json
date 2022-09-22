@@ -216,15 +216,10 @@
       }
     },
     "attributeVariables": {
-      "minItems": 2,
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "variableRole": {
-            "type": "string",
-            "enum": ["START_TIME", "STOP_TIME", "ATTRIBUTE"]
-          },
           "shortName": { "type": "string" },
           "name": { "$ref": "#/definitions/multilingualStringType" },
           "description": { "$ref": "#/definitions/multilingualStringType" },
@@ -259,7 +254,6 @@
     "populationDescription",
     "identifierVariables",
     "measureVariables",
-    "attributeVariables",
     "spatialCoverageDescription",
     "dataRevision"
   ]

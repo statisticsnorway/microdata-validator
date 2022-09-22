@@ -1,0 +1,207 @@
+{
+    "shortName": "SYNT_PERSON_INNTEKT",
+    "temporalityType": "ACCUMULATED",
+    "populationDescription": [
+        {
+            "languageCode": "no",
+            "value": "Alle rapporterte personinntekter i norge fra \u00e5r 1234 til \u00e5r 4321"
+        }
+    ],
+    "spatialCoverageDescription": [
+        {
+            "languageCode": "no",
+            "value": "Norge"
+        }
+    ],
+    "dataRevision": {
+        "description": [
+            {
+                "languageCode": "no",
+                "value": "F\u00f8rste publisering."
+            }
+        ],
+        "temporalEndOfSeries": false,
+        "temporalCoverageStart": "1970-01-01",
+        "temporalCoverageLatest": "2020-12-31"
+    },
+    "identifierVariables": [
+        {
+            "shortName": "PERSONID_1",
+            "name": [
+                {
+                    "languageCode": "no",
+                    "value": "Personidentifikator"
+                }
+            ],
+            "description": [
+                {
+                    "languageCode": "no",
+                    "value": "Identifikator for person i Microdata"
+                }
+            ],
+            "dataType": "STRING",
+            "unitType": {
+                "shortName": "PERSON",
+                "name": [
+                    {
+                        "languageCode": "no",
+                        "value": "Person"
+                    }
+                ],
+                "description": [
+                    {
+                        "languageCode": "no",
+                        "value": "Statistisk enhet er person (individ, enkeltmenenske)"
+                    }
+                ]
+            },
+            "format": "RandomUInt48",
+            "valueDomain": {
+                "shortName": "PERSONID_1",
+                "description": [
+                    {
+                        "languageCode": "no",
+                        "value": "Pseudonymisert personnummer"
+                    }
+                ]
+            }
+        }
+    ],
+    "measureVariables": [
+        {
+            "shortName": "SYNT_PERSON_INNTEKT",
+            "name": [
+                {
+                    "languageCode": "no",
+                    "value": "Personens inntekt"
+                }
+            ],
+            "description": [
+                {
+                    "languageCode": "no",
+                    "value": "Personens rapporterte inntekt"
+                }
+            ],
+            "subjectFields": [
+                {
+                    "shortName": "OEKONOMI",
+                    "name": [
+                        {
+                            "languageCode": "no",
+                            "value": "\u00d8konomi"
+                        }
+                    ],
+                    "description": [
+                        {
+                            "languageCode": "no",
+                            "value": "\u00d8konomi"
+                        }
+                    ]
+                },
+                {
+                    "shortName": "SAMFUNN",
+                    "name": [
+                        {
+                            "languageCode": "no",
+                            "value": "Samfunn"
+                        }
+                    ],
+                    "description": [
+                        {
+                            "languageCode": "no",
+                            "value": "Samfunn"
+                        }
+                    ]
+                }
+            ],
+            "dataType": "STRING",
+            "uriDefinition": [
+                ""
+            ],
+            "valueDomain": {
+                "uriDefinition": [],
+                "description": [
+                    {
+                        "languageCode": "no",
+                        "value": "\u00c5rlig personinntekt"
+                    }
+                ],
+                "measurementType": "CURRENCY",
+                "measurementUnitDescription": [
+                    {
+                        "languageCode": "no",
+                        "value": "Norske Kroner"
+                    }
+                ]
+            }
+        }
+    ],
+    "attributeVariables": [
+        {
+            "variableRole": "START_TIME",
+            "shortName": "START",
+            "dataType": "DATE",
+            "valueDomain": {
+                "description": [
+                    {
+                        "languageCode": "no",
+                        "value": "Dato oppgitt i dager siden 1970-01-01"
+                    }
+                ]
+            },
+            "description": [
+                {
+                    "languageCode": "no",
+                    "value": "Startdato/m\u00e5letidspunktet for hendelsen"
+                },
+                {
+                    "languageCode": "en",
+                    "value": "Startdato/m\u00e5letidspunktet for hendelsen"
+                }
+            ],
+            "name": [
+                {
+                    "languageCode": "no",
+                    "value": "Startdato"
+                },
+                {
+                    "languageCode": "en",
+                    "value": "Start date"
+                }
+            ]
+        },
+        {
+            "variableRole": "STOP_TIME",
+            "shortName": "STOP",
+            "dataType": "DATE",
+            "valueDomain": {
+                "description": [
+                    {
+                        "languageCode": "no",
+                        "value": "Dato oppgitt i dager siden 1970-01-01"
+                    }
+                ]
+            },
+            "description": [
+                {
+                    "languageCode": "no",
+                    "value": "Startdato/m\u00e5letidspunktet for hendelsen"
+                },
+                {
+                    "languageCode": "en",
+                    "value": "Startdato/m\u00e5letidspunktet for hendelsen"
+                }
+            ],
+            "name": [
+                {
+                    "languageCode": "no",
+                    "value": "Stoppdato"
+                },
+                {
+                    "languageCode": "en",
+                    "value": "Stop date"
+                }
+            ]
+        }
+    ]
+}
