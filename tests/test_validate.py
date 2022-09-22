@@ -1,3 +1,4 @@
+import json
 import os
 import logging
 
@@ -10,7 +11,8 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 VALID_DATASET_NAMES = [
-    'SYNT_BEFOLKNING_SIVSTAND', 'SYNT_PERSON_INNTEKT'
+    'SYNT_BEFOLKNING_SIVSTAND',
+    'SYNT_PERSON_INNTEKT'
 ]
 VALID_DATASET_REF = 'SYNT_BEFOLKNING_KJOENN'
 NO_SUCH_DATASET_NAME = 'NO_SUCH_DATASET'
@@ -21,26 +23,36 @@ INVALID_DATE_RANGES_DATASET_NAME = 'INVALID_DATE_RANGES_DATASET'
 INVALID_UNIT_TYPE_DATASET_NAME = 'INVALID_UNIT_TYPE_DATASET'
 INPUT_DIRECTORY = 'tests/resources/input_directory'
 WORKING_DIRECTORY = 'tests/resources/working_directory'
+EXPECTED_DIRECTORY = 'tests/resources/expected'
 REF_DIRECTORY = 'tests/resources/ref_directory'
 
 
 def test_validate_valid_dataset():
-    for valid_dataset_name in VALID_DATASET_NAMES:
+    for dataset_name in VALID_DATASET_NAMES:
         data_errors = validate(
-            valid_dataset_name,
+            dataset_name,
             working_directory=WORKING_DIRECTORY,
             keep_temporary_files=True,
             input_directory=INPUT_DIRECTORY
         )
         actual_files = get_working_directory_files()
         expected_files = [
-            f'{valid_dataset_name}.db',
-            f'{valid_dataset_name}.json',
-            f'{valid_dataset_name}.csv'
+            f'{dataset_name}.db',
+            f'{dataset_name}.json',
+            f'{dataset_name}.csv'
         ]
         assert not data_errors
         for file in expected_files:
             assert file in actual_files
+        with open(
+            f'{WORKING_DIRECTORY}/{dataset_name}.json', 'r', encoding='utf-8'
+        ) as f:
+            actual_metadata = json.load(f)
+        with open(
+            f'{EXPECTED_DIRECTORY}/{dataset_name}.json', 'r', encoding='utf-8'
+        ) as f:
+            expected_metadata = json.load(f)
+        assert actual_metadata == expected_metadata
 
 
 def test_validate_valid_dataset_wrong_delimiter():
