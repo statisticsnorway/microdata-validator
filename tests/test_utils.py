@@ -1,5 +1,6 @@
 from microdata_validator import utils
 from microdata_validator.utils import ParseMetadataError
+from microdata_validator.repository import local_storage
 from pathlib import Path
 import pytest
 
@@ -15,7 +16,7 @@ def test_inline_simple():
     actual_inlined = utils.inline_metadata_references(
         SIMPLE_JSON, REF_DIR
     )
-    assert actual_inlined == utils.load_json(
+    assert actual_inlined == local_storage.load_json(
        SIMPLE_JSON_INLINED
     )
 

@@ -8,15 +8,16 @@ repository = 'https://github.com/statisticsnorway/microdata-validator'
 readme = 'README.md'
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.10"
 jsonschema = "^4.2.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
 pytest-cov = "^3.0.0"
 pytest-dotenv = "^0.5.2"
-flake8 = "^4.0.1"
 black = {version = "^22.3.0", allow-prereleases = true}
+pylint = "^2.15.3"
+pycodestyle = "^2.9.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

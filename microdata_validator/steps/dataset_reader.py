@@ -6,13 +6,15 @@ from pathlib import Path
 from microdata_validator import utils
 from microdata_validator import temporal_attributes
 from microdata_validator.schema import validate_with_schema
+from microdata_validator.repository import local_storage
+
 
 logger = logging.getLogger()
 
 
 def _insert_data_csv_into_sqlite(sqlite_file_path, dataset_data_file,
                                  field_separator=";") -> None:
-    db_conn, cursor = utils.create_temp_sqlite_db_file(
+    db_conn, cursor = local_storage.create_temp_sqlite_db_file(
         sqlite_file_path
     )
     with open(file=dataset_data_file, newline='', encoding='utf-8') as f:
@@ -219,7 +221,7 @@ def run_reader(
 
     logger.debug(f'Reading metadata from file "{metadata_file_path}"')
     if metadata_ref_directory is None:
-        metadata_dict = utils.load_json(metadata_file_path)
+        metadata_dict = local_storage.load_json(metadata_file_path)
     else:
         metadata_dict = utils.inline_metadata_references(
             metadata_file_path, metadata_ref_directory
@@ -239,7 +241,7 @@ def run_reader(
     inlined_metadata_file_path = working_directory.joinpath(
         f'{dataset_name}.json'
     )
-    utils.write_json(inlined_metadata_file_path, metadata_dict)
+    local_storage.write_json(inlined_metadata_file_path, metadata_dict)
 
     sqlite_file_path = working_directory.joinpath(f'{dataset_name}.db')
     _insert_data_csv_into_sqlite(sqlite_file_path, enriched_data_file_path)
