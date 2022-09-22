@@ -5,7 +5,7 @@ from pathlib import Path
 
 from microdata_validator import utils
 from microdata_validator import temporal_attributes
-
+from microdata_validator.schema import validate_with_schema
 
 logger = logging.getLogger()
 
@@ -226,7 +226,7 @@ def run_reader(
         )
 
     logger.debug('Validating metadata JSON with JSON schema')
-    utils.validate_json_with_schema(metadata_dict)
+    validate_with_schema(metadata_dict)
 
     temporality_type = metadata_dict['temporalityType']
     metadata_dict['attributeVariables'] = [

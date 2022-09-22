@@ -4,7 +4,6 @@ import logging
 import sqlite3 as db
 from pathlib import Path
 from typing import Tuple
-from jsonschema import validate
 
 
 logger = logging.getLogger()
@@ -60,18 +59,6 @@ def write_json(filepath: Path, content: dict) -> None:
         json.dump(
             content, json_file, indent=4, ensure_ascii=False
         )
-
-
-def validate_json_with_schema(metadata_json: dict) -> None:
-    json_schema_file = Path(__file__).parent.joinpath(
-        "DatasetMetadataSchema.json"
-    )
-    with open(json_schema_file, mode="r", encoding="utf-8") as schema:
-        metadata_schema = json.load(schema)
-    validate(
-        instance=metadata_json,
-        schema=metadata_schema
-    )
 
 
 def create_temp_sqlite_db_file(

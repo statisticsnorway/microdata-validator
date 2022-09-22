@@ -11,6 +11,7 @@ from microdata_validator import utils, unit_types
 from microdata_validator import (
     dataset_reader, dataset_validator
 )
+from microdata_validator.schema import validate_with_schema
 
 
 logger = logging.getLogger()
@@ -120,7 +121,7 @@ def validate_metadata(metadata_file_path: str,
             metadata_dict = utils.inline_metadata_references(
                 metadata_file_path, metadata_ref_directory
             )
-        utils.validate_json_with_schema(metadata_dict)
+        validate_with_schema(metadata_dict)
         return []
     except ValidationError as e:
         schema_path = ".".join([str(path) for path in e.relative_schema_path])
@@ -152,7 +153,7 @@ def inline_metadata(metadata_file_path: str, metadata_ref_directory: str,
     metadata_dict = utils.inline_metadata_references(
         metadata_file_path, metadata_ref_directory
     )
-    utils.validate_json_with_schema(metadata_dict)
+    validate_with_schema(metadata_dict)
 
     utils.write_json(output_file_path, metadata_dict)
     return output_file_path
