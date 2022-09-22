@@ -7,7 +7,8 @@ from pathlib import Path
 from jsonschema import ValidationError
 
 from microdata_validator.steps.dataset_reader import InvalidDataException
-from microdata_validator import utils, unit_types
+from microdata_validator import utils
+from microdata_validator.components import unit_types
 from microdata_validator.steps import (
     dataset_reader, dataset_validator
 )

@@ -4,7 +4,7 @@ import logging
 from pathlib import Path
 
 from microdata_validator import utils
-from microdata_validator import temporal_attributes
+from microdata_validator.components import temporal_attributes
 from microdata_validator.schema import validate_with_schema
 from microdata_validator.repository import local_storage
 
