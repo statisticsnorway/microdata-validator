@@ -4,6 +4,7 @@ import logging
 from pathlib import Path
 
 from microdata_validator import utils
+from microdata_validator import temporal_attributes
 
 
 logger = logging.getLogger()
@@ -195,8 +196,12 @@ def _metadata_update_temporal_coverage(metadata: dict,
         )
 
 
-def run_reader(working_directory: Path, input_directory: Path,
-               metadata_ref_directory: Path, dataset_name: str) -> None:
+def run_reader(
+    working_directory: Path,
+    input_directory: Path,
+    metadata_ref_directory: Path,
+    dataset_name: str
+) -> None:
     metadata_file_path: Path = (
         input_directory / dataset_name / f"{dataset_name}.json"
     )
@@ -219,7 +224,11 @@ def run_reader(working_directory: Path, input_directory: Path,
         metadata_dict = utils.inline_metadata_references(
             metadata_file_path, metadata_ref_directory
         )
-
+    temporality_type = metadata_dict['temporalityType']
+    metadata_dict['attributeVariables'] = [
+        temporal_attributes.generate_start_time_attribute(temporality_type),
+        temporal_attributes.generate_stop_time_attribute(temporality_type)
+    ] + metadata_dict.get('attributeVariables', [])
     _metadata_update_temporal_coverage(metadata_dict, temporal_data)
 
     logger.debug('Writing inlined metadata JSON file to working directory')
