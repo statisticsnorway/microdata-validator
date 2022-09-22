@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 DESCRIPTIONS = {
     "FIXED": {
         "START": {
@@ -166,12 +168,12 @@ STOP_VARIABLE_DEFINITION = {
 
 
 def generate_start_time_attribute(temporality_type: str):
-    start_attribute = START_VARIABLE_DEFINITION.copy()
+    start_attribute = deepcopy(START_VARIABLE_DEFINITION)
     start_attribute.update(DESCRIPTIONS[temporality_type]["START"])
     return start_attribute
 
 
 def generate_stop_time_attribute(temporality_type: str):
-    stop_attribute = STOP_VARIABLE_DEFINITION.copy()
+    stop_attribute = deepcopy(STOP_VARIABLE_DEFINITION)
     stop_attribute.update(DESCRIPTIONS[temporality_type]["STOP"])
     return stop_attribute
