@@ -6,9 +6,9 @@ from typing import Union
 from pathlib import Path
 from jsonschema import ValidationError
 
-from microdata_validator.dataset_reader import InvalidDataException
+from microdata_validator.steps.dataset_reader import InvalidDataException
 from microdata_validator import utils, unit_types
-from microdata_validator import (
+from microdata_validator.steps import (
     dataset_reader, dataset_validator
 )
 from microdata_validator.schema import validate_with_schema
