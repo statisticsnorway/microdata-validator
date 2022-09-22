@@ -5,6 +5,8 @@ from pathlib import Path
 
 from jsonschema import validate
 from microdata_validator.repository import local_storage
+from microdata_validator.exceptions import ParseMetadataError
+
 
 logger = logging.getLogger()
 
@@ -55,7 +57,3 @@ def inline_metadata_references(metadata_file_path: Path,
     metadata: dict = local_storage.load_json(metadata_file_path)
     recursive_ref_insert(metadata)
     return metadata
-
-
-class ParseMetadataError(Exception):
-    pass

@@ -7,7 +7,6 @@ from pathlib import Path
 from jsonschema import ValidationError
 
 from microdata_validator.steps.dataset_reader import InvalidDataException
-from microdata_validator import utils
 from microdata_validator.components import unit_types
 from microdata_validator.steps import (
     dataset_reader, dataset_validator
@@ -154,7 +153,7 @@ def inline_metadata(metadata_file_path: str, metadata_ref_directory: str,
 
     metadata_file_path = Path(metadata_file_path)
     metadata_ref_directory = Path(metadata_ref_directory)
-    metadata_dict = utils.inline_metadata_references(
+    metadata_dict = inline_metadata_references(
         metadata_file_path, metadata_ref_directory
     )
     validate_with_schema(metadata_dict)

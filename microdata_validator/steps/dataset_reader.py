@@ -3,12 +3,13 @@ import datetime
 import logging
 from pathlib import Path
 
+from microdata_validator.exceptions import InvalidDataException
+from microdata_validator.repository import local_storage
 from microdata_validator.components import temporal_attributes
 from microdata_validator.schema import (
     validate_with_schema,
     inline_metadata_references
 )
-from microdata_validator.repository import local_storage
 
 
 logger = logging.getLogger()
@@ -249,10 +250,3 @@ def run_reader(
     _insert_data_csv_into_sqlite(sqlite_file_path, enriched_data_file_path)
 
     logger.debug(f'OK - reading dataset "{dataset_name}"')
-
-
-class InvalidDataException(Exception):
-
-    def __init__(self, message: str, data_errors: list):
-        self.data_errors = data_errors
-        Exception.__init__(self, message)
