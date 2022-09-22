@@ -12,7 +12,10 @@ from microdata_validator.components import unit_types
 from microdata_validator.steps import (
     dataset_reader, dataset_validator
 )
-from microdata_validator.schema import validate_with_schema
+from microdata_validator.schema import (
+    validate_with_schema,
+    inline_metadata_references
+)
 from microdata_validator.repository import local_storage
 
 logger = logging.getLogger()
@@ -119,7 +122,7 @@ def validate_metadata(metadata_file_path: str,
             metadata_dict = local_storage.load_json(Path(metadata_file_path))
         else:
             metadata_ref_directory = Path(metadata_ref_directory)
-            metadata_dict = utils.inline_metadata_references(
+            metadata_dict = inline_metadata_references(
                 metadata_file_path, metadata_ref_directory
             )
         validate_with_schema(metadata_dict)

@@ -5,8 +5,9 @@ import pytest
 
 from microdata_validator import inline_metadata
 from microdata_validator.repository import local_storage
-from microdata_validator import utils
-from microdata_validator.utils import ParseMetadataError
+from microdata_validator.schema import (
+    inline_metadata_references, ParseMetadataError
+)
 
 
 RESOURCES_DIR = "tests/resources/inline_metadata"
@@ -64,13 +65,13 @@ def test_inline_full_dataset_default_output_path():
 
 def test_inline_invalid_ref_dir():
     with pytest.raises(ParseMetadataError) as e:
-        utils.inline_metadata_references(
+        inline_metadata_references(
             SIVSTAND_REFERENCED_FILE_PATH, None
         )
     assert "No supplied reference directory" in str(e)
 
     with pytest.raises(ParseMetadataError) as e:
-        utils.inline_metadata_references(
+        inline_metadata_references(
             SIVSTAND_REFERENCED_FILE_PATH, SIVSTAND_REFERENCED_FILE_PATH
         )
     assert "Supplied reference directory is invalid" in str(e)

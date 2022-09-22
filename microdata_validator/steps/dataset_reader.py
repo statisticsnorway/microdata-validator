@@ -3,9 +3,11 @@ import datetime
 import logging
 from pathlib import Path
 
-from microdata_validator import utils
 from microdata_validator.components import temporal_attributes
-from microdata_validator.schema import validate_with_schema
+from microdata_validator.schema import (
+    validate_with_schema,
+    inline_metadata_references
+)
 from microdata_validator.repository import local_storage
 
 
@@ -223,7 +225,7 @@ def run_reader(
     if metadata_ref_directory is None:
         metadata_dict = local_storage.load_json(metadata_file_path)
     else:
-        metadata_dict = utils.inline_metadata_references(
+        metadata_dict = inline_metadata_references(
             metadata_file_path, metadata_ref_directory
         )
 
