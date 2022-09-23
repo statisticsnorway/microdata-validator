@@ -7,24 +7,7 @@
     "description": [{"languageCode": "no","value": "Første publisering."}],
     "temporalEndOfSeries": false
   },
-  "identifierVariables": [
-    {
-      "shortName": "PERSONID_1",
-      "name": [{"languageCode": "no", "value": "Personidentifikator"}],
-      "description": [{"languageCode": "no","value": "Identifikator for person i Microdata"}],
-      "dataType": "STRING",
-      "unitType": {
-        "shortName": "PERSON",
-        "name": [{"languageCode": "no", "value": "Person"}],
-        "description": [{"languageCode": "no", "value": "Statistisk enhet er person (individ, enkeltmenenske)"}]
-      },
-      "format": "RandomUInt48",
-      "valueDomain": {
-        "shortName": "PERSONID_1",
-        "description": [{"languageCode": "no", "value":"Pseudonymisert personnummer"}]
-      }
-    }
-  ], 
+  "identifierVariables": [{"type": "PERSON"}], 
   "measureVariables": [
     {
       "shortName": "SYNT_PERSON_INNTEKT",

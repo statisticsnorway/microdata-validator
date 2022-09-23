@@ -20,7 +20,6 @@ WRONG_DELIMITER_DATASET_NAME = 'WRONG_DELIMITER_DATASET'
 MISSING_IDENTIFIER_DATASET_NAME = 'MISSING_IDENTIFIER_DATASET'
 INVALID_DATES_DATASET_NAME = 'INVALID_DATES_DATASET'
 INVALID_DATE_RANGES_DATASET_NAME = 'INVALID_DATE_RANGES_DATASET'
-INVALID_UNIT_TYPE_DATASET_NAME = 'INVALID_UNIT_TYPE_DATASET'
 INPUT_DIRECTORY = 'tests/resources/input_directory'
 WORKING_DIRECTORY = 'tests/resources/working_directory'
 EXPECTED_DIRECTORY = 'tests/resources/expected'
@@ -152,23 +151,6 @@ def test_validate_invalid_dates():
     assert data_errors == [
         "row 4: STOP date not valid - '1926-01-01'",
         "row 15: STOP date not valid - '1940-02-01'"
-    ]
-
-
-def test_validate_invalid_unit_type():
-    data_errors = validate(
-        INVALID_UNIT_TYPE_DATASET_NAME,
-        working_directory=WORKING_DIRECTORY,
-        input_directory=INPUT_DIRECTORY,
-    )
-    assert data_errors == [
-        (
-            "properties.identifierVariables.items.properties.unitType."
-            "properties.shortName.enum: "
-            "'SOMETHING' is not one of ['JOBB', 'KJORETOY', 'FAMILIE', "
-            "'FORETAK', 'HUSHOLDNING', 'KOMMUNE', 'KURS', 'PERSON', "
-            "'VIRKSOMHET']"
-        )
     ]
 
 

@@ -7,11 +7,7 @@
     "description": [{"languageCode": "no","value": "Første publisering."}],
     "temporalEndOfSeries": false
   },
-  "identifierVariables": [
-    {
-      "$ref": "identifiers/personidentifikator.json"
-    }
-  ],
+  "identifierVariables": [{"type": "PERSON"}],
   "measureVariables": [
     {
       "variableRole": "MEASURE",
@@ -20,9 +16,7 @@
       "description": [{"languageCode": "no", "value": "Rapportert kjønn for person"}],
       "subjectFields": [
         {
-          "shortName": "HELSE",
-          "name": [{"languageCode": "no", "value": "Helse"}],
-          "description": [{"languageCode": "no", "value": "Helse"}]
+          "$ref": "subjectfields/helse.json"
         },
         {
           "shortName": "HELSETJENESTER",

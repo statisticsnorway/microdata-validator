@@ -155,29 +155,22 @@
       "items": {
         "type": "object",
         "properties": {
-          "shortName": { "type": "string" },
-          "name": { "$ref": "#/definitions/multilingualStringType" },
-          "description": { "$ref": "#/definitions/multilingualStringType" },
-          "dataType": { "type": "string", "enum": ["STRING", "LONG"] },
-          "unitType": { "$ref": "#/definitions/unitTypeType" },
-          "valueDomain": { "$ref": "#/definitions/valueDomainType" },
-          "uriDefinition": {
-            "type": "array",
-            "items": { "type": ["string", "null"] }
-          },
-          "format": {
+          "type": {
             "type": "string",
-            "$comment": "E.g. a regular expression or a specific type like RandomUInt48."
+            "enum": [
+              "JOBB",
+              "KJORETOY",
+              "FAMILIE",
+              "FORETAK",
+              "HUSHOLDNING",
+              "KOMMUNE",
+              "KURS",
+              "PERSON",
+              "VIRKSOMHET"
+            ]
           }
         },
-        "required": [
-          "shortName",
-          "name",
-          "description",
-          "dataType",
-          "valueDomain",
-          "unitType"
-        ]
+        "required": ["type"]
       }
     },
     "measureVariables": {

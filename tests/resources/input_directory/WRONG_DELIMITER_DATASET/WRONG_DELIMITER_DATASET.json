@@ -7,11 +7,7 @@
       "description": [{"languageCode": "no","value": "Første publisering."}],
       "temporalEndOfSeries": false
     },
-    "identifierVariables": [
-      {
-        "$ref": "identifiers/personidentifikator.json"
-      }
-    ],
+    "identifierVariables": [{"type": "PERSON"}],
     "measureVariables": [
       {
         "variableRole": "MEASURE",
