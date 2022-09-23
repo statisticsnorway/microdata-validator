@@ -1,5 +1,8 @@
 from copy import deepcopy
 
+from microdata_validator.exceptions import InvalidTemporalityType
+
+
 DESCRIPTIONS = {
     "FIXED": {
         "START": {
@@ -168,12 +171,18 @@ STOP_VARIABLE_DEFINITION = {
 
 
 def generate_start_time_attribute(temporality_type: str):
-    start_attribute = deepcopy(START_VARIABLE_DEFINITION)
-    start_attribute.update(DESCRIPTIONS[temporality_type]["START"])
-    return start_attribute
+    try:
+        start_attribute = deepcopy(START_VARIABLE_DEFINITION)
+        start_attribute.update(DESCRIPTIONS[temporality_type]["START"])
+        return start_attribute
+    except KeyError as e:
+        raise InvalidTemporalityType(temporality_type) from e
 
 
 def generate_stop_time_attribute(temporality_type: str):
-    stop_attribute = deepcopy(STOP_VARIABLE_DEFINITION)
-    stop_attribute.update(DESCRIPTIONS[temporality_type]["STOP"])
-    return stop_attribute
+    try:
+        stop_attribute = deepcopy(STOP_VARIABLE_DEFINITION)
+        stop_attribute.update(DESCRIPTIONS[temporality_type]["STOP"])
+        return stop_attribute
+    except KeyError as e:
+        raise InvalidTemporalityType(temporality_type) from e

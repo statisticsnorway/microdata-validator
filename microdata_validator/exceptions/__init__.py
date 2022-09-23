@@ -1,9 +1,13 @@
 class UnregisteredUnitTypeError(Exception):
-    pass
+    ...
 
 
 class ParseMetadataError(Exception):
-    pass
+    ...
+
+
+class InvalidTemporalityType(Exception):
+    ...
 
 
 class InvalidDataException(Exception):
