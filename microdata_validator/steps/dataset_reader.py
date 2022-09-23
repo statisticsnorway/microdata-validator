@@ -15,27 +15,6 @@ from microdata_validator.schema import (
 logger = logging.getLogger()
 
 
-def _insert_data_csv_into_sqlite(sqlite_file_path, dataset_data_file,
-                                 field_separator=";") -> None:
-    db_conn, cursor = local_storage.create_temp_sqlite_db_file(
-        sqlite_file_path
-    )
-    with open(file=dataset_data_file, newline='', encoding='utf-8') as f:
-        reader = csv.reader(f, delimiter=field_separator)
-        cursor.executemany(
-            "INSERT INTO temp_dataset "
-            "(row_number, unit_id, value, start, stop, attributes) "
-            "VALUES (?, ?, ?, ?, ?, ?)",
-            reader
-        )
-    db_conn.commit()
-    db_conn.close()
-    logger.debug(
-        f'Done reading datafile "{dataset_data_file}" '
-        'into temp Sqlite database table.'
-    )
-
-
 def _read_and_process_data(data_file_path: Path,
                            enriched_data_file_path: Path,
                            field_separator: str = ";",
@@ -247,6 +226,8 @@ def run_reader(
     local_storage.write_json(inlined_metadata_file_path, metadata_dict)
 
     sqlite_file_path = working_directory.joinpath(f'{dataset_name}.db')
-    _insert_data_csv_into_sqlite(sqlite_file_path, enriched_data_file_path)
+    local_storage.insert_data_csv_into_sqlite(
+        sqlite_file_path, enriched_data_file_path
+    )
 
     logger.debug(f'OK - reading dataset "{dataset_name}"')

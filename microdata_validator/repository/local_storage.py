@@ -1,3 +1,4 @@
+import csv
 import json
 import logging
 import sqlite3 as db
@@ -24,7 +25,7 @@ def write_json(filepath: Path, content: dict) -> None:
         )
 
 
-def create_temp_sqlite_db_file(
+def _create_temp_sqlite_db_file(
     db_file: Path
 ) -> Tuple[db.Connection, db.Cursor]:
     sql_create_table = """
@@ -45,13 +46,36 @@ def create_temp_sqlite_db_file(
     return (db_conn, cursor)
 
 
+def insert_data_csv_into_sqlite(
+    sqlite_file_path, dataset_data_file, field_separator=";"
+) -> None:
+    db_conn, cursor = _create_temp_sqlite_db_file(
+        sqlite_file_path
+    )
+    with open(file=dataset_data_file, newline='', encoding='utf-8') as f:
+        reader = csv.reader(f, delimiter=field_separator)
+        cursor.executemany(
+            "INSERT INTO temp_dataset "
+            "(row_number, unit_id, value, start, stop, attributes) "
+            "VALUES (?, ?, ?, ?, ?, ?)",
+            reader
+        )
+    db_conn.commit()
+    db_conn.close()
+    logger.debug(
+        f'Done reading datafile "{dataset_data_file}" '
+        'into temp Sqlite database table.'
+    )
+
+
 def read_temp_sqlite_db_data_sorted(
     db_file: Path
 ) -> Tuple[db.Connection, db.Cursor]:
-    sql_select_sorted = """\
+    sql_select_sorted = """
         SELECT row_number, unit_id, value, start, stop, attributes
         FROM temp_dataset
-        ORDER BY unit_id, start, stop """
+        ORDER BY unit_id, start, stop
+    """
 
     db_conn = db.connect(db_file)
     cursor = db_conn.cursor()
