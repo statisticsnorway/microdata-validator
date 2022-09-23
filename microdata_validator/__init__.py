@@ -6,22 +6,27 @@ from typing import Union
 from pathlib import Path
 from jsonschema import ValidationError
 
-from microdata_validator.dataset_reader import InvalidDataException
-from microdata_validator import utils, unit_types
-from microdata_validator import (
+from microdata_validator.steps.dataset_reader import InvalidDataException
+from microdata_validator.components import unit_types
+from microdata_validator.steps import (
     dataset_reader, dataset_validator
 )
-
+from microdata_validator.schema import (
+    validate_with_schema,
+    inline_metadata_references
+)
+from microdata_validator.repository import local_storage
 
 logger = logging.getLogger()
 
 
-def validate(dataset_name: str,
-             working_directory: str = "",
-             input_directory: str = "",
-             keep_temporary_files: bool = False,
-             metadata_ref_directory: str = None,
-             print_errors_to_file: bool = False) -> bool:
+def validate(
+    dataset_name: str,
+    working_directory: str = "",
+    input_directory: str = "",
+    keep_temporary_files: bool = False,
+    metadata_ref_directory: str = None
+) -> bool:
     """
     Validate a dataset and return a list of errors.
     If the dataset is valid, the list will be empty.
@@ -53,8 +58,6 @@ def validate(dataset_name: str,
         data_errors = dataset_validator.run_validator(
             working_directory_path, dataset_name
         )
-        if print_errors_to_file:
-            print("errors to file")
     except InvalidDataException as e:
         data_errors = e.data_errors
     except ValidationError as e:
@@ -114,13 +117,13 @@ def validate_metadata(metadata_file_path: str,
     try:
         metadata_file_path = Path(metadata_file_path)
         if metadata_ref_directory is None:
-            metadata_dict = utils.load_json(Path(metadata_file_path))
+            metadata_dict = local_storage.load_json(Path(metadata_file_path))
         else:
             metadata_ref_directory = Path(metadata_ref_directory)
-            metadata_dict = utils.inline_metadata_references(
+            metadata_dict = inline_metadata_references(
                 metadata_file_path, metadata_ref_directory
             )
-        utils.validate_json_with_schema(metadata_dict)
+        validate_with_schema(metadata_dict)
         return []
     except ValidationError as e:
         schema_path = ".".join([str(path) for path in e.relative_schema_path])
@@ -149,12 +152,12 @@ def inline_metadata(metadata_file_path: str, metadata_ref_directory: str,
 
     metadata_file_path = Path(metadata_file_path)
     metadata_ref_directory = Path(metadata_ref_directory)
-    metadata_dict = utils.inline_metadata_references(
+    metadata_dict = inline_metadata_references(
         metadata_file_path, metadata_ref_directory
     )
-    utils.validate_json_with_schema(metadata_dict)
+    validate_with_schema(metadata_dict)
 
-    utils.write_json(output_file_path, metadata_dict)
+    local_storage.write_json(output_file_path, metadata_dict)
     return output_file_path
 
 
