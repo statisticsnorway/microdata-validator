@@ -5,7 +5,10 @@ from pathlib import Path
 
 from microdata_validator.exceptions import InvalidDataException
 from microdata_validator.repository import local_storage
-from microdata_validator.components import temporal_attributes
+from microdata_validator.components import (
+    temporal_attributes,
+    identifier_variables
+)
 from microdata_validator.schema import (
     validate_with_schema,
     inline_metadata_references
@@ -205,6 +208,9 @@ def run_reader(
     logger.debug('Validating metadata JSON with JSON schema')
     validate_with_schema(metadata_dict)
 
+    metadata_dict['identifierVariables'] = [identifier_variables.get_from_type(
+        metadata_dict['identifierVariables'][0]['type']
+    )]
     temporality_type = metadata_dict['temporalityType']
     metadata_dict['attributeVariables'] = [
         temporal_attributes.generate_start_time_attribute(temporality_type),

@@ -26,11 +26,11 @@
     },
     "identifierVariables": [
         {
-            "shortName": "PERSONID_1",
+            "shortName": "PERSON",
             "name": [
                 {
                     "languageCode": "no",
-                    "value": "Personidentifikator"
+                    "value": "Person"
                 }
             ],
             "description": [
@@ -51,13 +51,12 @@
                 "description": [
                     {
                         "languageCode": "no",
-                        "value": "Statistisk enhet er person (individ, enkeltmenenske)"
+                        "value": "Statistisk enhet er person (individ, enkeltmenneske)"
                     }
                 ]
             },
             "format": "RandomUInt48",
             "valueDomain": {
-                "shortName": "PERSONID_1",
                 "description": [
                     {
                         "languageCode": "no",
