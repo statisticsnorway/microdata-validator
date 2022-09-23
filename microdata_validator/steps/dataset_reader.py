@@ -15,10 +15,12 @@ from microdata_validator.schema import (
 logger = logging.getLogger()
 
 
-def _read_and_process_data(data_file_path: Path,
-                           enriched_data_file_path: Path,
-                           field_separator: str = ";",
-                           data_error_limit: int = 100) -> dict:
+def _read_and_process_data(
+    data_file_path: Path,
+    enriched_data_file_path: Path,
+    field_separator: str = ";",
+    data_error_limit: int = 100
+) -> dict:
     data_errors = []  # used for error-reporting
     start_dates = []
     stop_dates = []
@@ -62,15 +64,13 @@ def _read_and_process_data(data_file_path: Path,
                     data_errors.append(
                         f"row {reader.line_num}: "
                         "Empty data row. Expected row with fields "
-                        "UNIT_ID, VALUE, (START), (STOP), (ATTRIBUTES))",
-                        None
+                        "UNIT_ID, VALUE, (START), (STOP), (ATTRIBUTES))"
                     )
                 elif len(data_row) > 5:
                     data_errors.append(
                         f"row {reader.line_num}: "
                         "Too many elements. Expected row with fields "
-                        "UNIT_ID, VALUE, (START), (STOP), (ATTRIBUTES))",
-                        None
+                        "UNIT_ID, VALUE, (START), (STOP), (ATTRIBUTES))"
                     )
                 else:
                     unit_id = data_row[0].strip('"')
@@ -118,24 +118,22 @@ def _read_and_process_data(data_file_path: Path,
                     stop_dates.append(str(stop).strip('"'))
             data_file_with_row_numbers.close()
         except UnicodeDecodeError as e:
-            logger.error(
+            error_message = (
                 f'ERROR (csv.reader error). Data file not UTF-8 encoded. '
                 f'File {data_file_path}, near row {reader.line_num}: {e}'
             )
+            logger.error(error_message)
             raise InvalidDataException(
-                f'ERROR (csv.reader error). Data file not UTF-8 encoded. '
-                f'File {data_file_path}, near row {reader.line_num}: {e}',
-                []
+                error_message, ['UTF-8 encoding error']
             ) from e
         except csv.Error as e:
-            logger.error(
+            error_message = (
                 f'ERROR (csv.reader error) in file {data_file_path}, '
                 f'near row {reader.line_num}: {e}'
             )
+            logger.error(error_message)
             raise InvalidDataException(
-                f'ERROR (csv.reader error) in file {data_file_path}, '
-                f'near row {reader.line_num}: {e}',
-                []
+                error_message, ['CSV reader error']
             ) from e
 
     if data_errors:
@@ -158,24 +156,24 @@ def _metadata_update_temporal_coverage(metadata: dict,
     logger.debug(
         'Append temporal coverage (start, stop, status dates) to metadata'
     )
-    if metadata["temporalityType"] in ("EVENT", "ACCUMULATED"):
-        metadata["dataRevision"]["temporalCoverageStart"] = (
+    if metadata['temporalityType'] in ('EVENT', 'ACCUMULATED'):
+        metadata['dataRevision']['temporalCoverageStart'] = (
             temporal_data["start"]
         )
-        metadata["dataRevision"]["temporalCoverageLatest"] = (
-            temporal_data["latest"]
+        metadata['dataRevision']['temporalCoverageLatest'] = (
+            temporal_data['latest']
         )
-    elif metadata["temporalityType"] == "FIXED":
-        metadata["dataRevision"]["temporalCoverageStart"] = (
-            "1900-01-01"
+    elif metadata['temporalityType'] == 'FIXED':
+        metadata['dataRevision']['temporalCoverageStart'] = (
+            '1900-01-01'
         )
-        metadata["dataRevision"]["temporalCoverageLatest"] = (
-            temporal_data["latest"]
+        metadata['dataRevision']['temporalCoverageLatest'] = (
+            temporal_data['latest']
         )
-    elif metadata["temporalityType"] == "STATUS":
-        temporal_status_dates_list = temporal_data["status_list"]
+    elif metadata['temporalityType'] == 'STATUS':
+        temporal_status_dates_list = temporal_data['status_list']
         temporal_status_dates_list.sort()
-        metadata["dataRevision"]["temporalStatusDates"] = (
+        metadata['dataRevision']['temporalStatusDates'] = (
             temporal_status_dates_list
         )
 
@@ -186,27 +184,22 @@ def run_reader(
     metadata_ref_directory: Path,
     dataset_name: str
 ) -> None:
-    metadata_file_path: Path = (
-        input_directory / dataset_name / f"{dataset_name}.json"
-    )
-    data_file_path: Path = (
-        input_directory / dataset_name / f"{dataset_name}.csv"
-    )
+    input_dataset_dir = input_directory / dataset_name
+    input_metadata_path = input_dataset_dir / f"{dataset_name}.json"
+    input_data_path = input_dataset_dir / f"{dataset_name}.csv"
 
     logger.debug(f'Start reading dataset "{dataset_name}"')
-    enriched_data_file_path = working_directory.joinpath(
-        f'{dataset_name}.csv'
-    )
+    processed_data_path = working_directory / f'{dataset_name}.csv'
     temporal_data = _read_and_process_data(
-        data_file_path, enriched_data_file_path
+        input_data_path, processed_data_path
     )
 
-    logger.debug(f'Reading metadata from file "{metadata_file_path}"')
+    logger.debug(f'Reading metadata from file "{input_metadata_path}"')
     if metadata_ref_directory is None:
-        metadata_dict = local_storage.load_json(metadata_file_path)
+        metadata_dict = local_storage.load_json(input_metadata_path)
     else:
         metadata_dict = inline_metadata_references(
-            metadata_file_path, metadata_ref_directory
+            input_metadata_path, metadata_ref_directory
         )
 
     logger.debug('Validating metadata JSON with JSON schema')
@@ -220,14 +213,12 @@ def run_reader(
     _metadata_update_temporal_coverage(metadata_dict, temporal_data)
 
     logger.debug('Writing inlined metadata JSON file to working directory')
-    inlined_metadata_file_path = working_directory.joinpath(
-        f'{dataset_name}.json'
-    )
-    local_storage.write_json(inlined_metadata_file_path, metadata_dict)
+    inlined_metadata_path = working_directory / f'{dataset_name}.json'
+    local_storage.write_json(inlined_metadata_path, metadata_dict)
 
     sqlite_file_path = working_directory.joinpath(f'{dataset_name}.db')
     local_storage.insert_data_csv_into_sqlite(
-        sqlite_file_path, enriched_data_file_path
+        sqlite_file_path, processed_data_path
     )
 
     logger.debug(f'OK - reading dataset "{dataset_name}"')

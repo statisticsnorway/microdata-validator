@@ -60,8 +60,11 @@ def _validate_data(sqlite_db_file_path: str, metadata: dict) -> int:
     return [error for error in data_errors if error is not None]
 
 
-def _is_data_row_consistent(temporality_type: str, data_row: tuple,
-                            previous_data_row: tuple) -> Union[tuple, None]:
+def _is_data_row_consistent(
+    temporality_type: str,
+    data_row: tuple,
+    previous_data_row: tuple
+) -> Union[tuple, None]:
     """Validate consistency and event-history (unit_id * start * stop)
        and check for row duplicates.
     """
@@ -72,7 +75,7 @@ def _is_data_row_consistent(temporality_type: str, data_row: tuple,
     stop = data_row[4]
     # attributes = data_row[5]
 
-    # prev_row_number = previous_data_row[0]
+    prev_row_number = previous_data_row[0]
     prev_unit_id = previous_data_row[1]
     # prev_value = previous_data_row[2]
     prev_start = previous_data_row[3]
@@ -94,7 +97,7 @@ def _is_data_row_consistent(temporality_type: str, data_row: tuple,
         if start is None or str(start).strip() == "":
             return (
                 f"row {row_number}: Expected START-date when "
-                "temporalityType is {temporality_type}"
+                f"temporalityType is {temporality_type}"
             )
         if (stop not in (None, "")) and (start > stop):
             return (
@@ -118,7 +121,7 @@ def _is_data_row_consistent(temporality_type: str, data_row: tuple,
             if unit_id == prev_unit_id and not prev_stop:
                 return (
                     f"row {row_number}: previous event not ended "
-                    "(missing STOP-date in line/row {prev_row_number})"
+                    f"(missing STOP-date in line/row {prev_row_number})"
                 )
             if (unit_id == prev_unit_id) and (start < prev_stop):
                 return (
@@ -142,7 +145,6 @@ def _is_data_row_consistent(temporality_type: str, data_row: tuple,
                 f"row {row_number}: There should be no START-date "
                 f"when temporalityType is {temporality_type}"
             )
-    return None
 
 
 def _is_data_row_consistent_with_metadata(data_type: str,
@@ -169,7 +171,7 @@ def _is_data_row_consistent_with_metadata(data_type: str,
     if data_type == "LONG":
         try:
             int(str(value).strip('"'))
-        except Exception:
+        except ValueError:
             return (
                 f"row {row_number}: "
                 f"'{value}' not of type LONG"
@@ -177,7 +179,7 @@ def _is_data_row_consistent_with_metadata(data_type: str,
     elif data_type == "DOUBLE":
         try:
             float(str(value).strip('"'))
-        except Exception:
+        except ValueError:
             return (
                 f"row {row_number}: "
                 f"'{value}' not of type DOUBLE"
@@ -187,28 +189,23 @@ def _is_data_row_consistent_with_metadata(data_type: str,
             datetime.datetime(
                 int(value[:4]), int(value[5:7]), int(value[8:10])
             )
-        except Exception:
+        except ValueError:
             return (
                 f"row {row_number}: "
                 f"'{value}' not of type DATE (YYYY-MM-DD)"
             )
-    return None
 
 
 def run_validator(working_directory: Path, dataset_name: str) -> list:
-    metadata_file_path: Path = (
-        working_directory.joinpath(f'{dataset_name}.json')
-    )
-    sqlite_file_path: Path = (
-        working_directory.joinpath(f"{dataset_name}.db")
-    )
+    metadata_path = working_directory / f'{dataset_name}.json'
+    sqlite_path = working_directory / f"{dataset_name}.db"
     logger.debug(
         f'Dataset "{dataset_name}" - validate consistency between '
         'data and metadata, event-history (unit_id * start * stop)'
         'and check for row duplicates'
     )
-    metadata = local_storage.load_json(metadata_file_path)
-    data_errors = _validate_data(sqlite_file_path, metadata)
+    metadata = local_storage.load_json(metadata_path)
+    data_errors = _validate_data(sqlite_path, metadata)
     if len(data_errors) > 0:
         logger.debug('Found data consistency error(s)')
         return data_errors

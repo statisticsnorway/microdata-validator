@@ -20,12 +20,13 @@ from microdata_validator.repository import local_storage
 logger = logging.getLogger()
 
 
-def validate(dataset_name: str,
-             working_directory: str = "",
-             input_directory: str = "",
-             keep_temporary_files: bool = False,
-             metadata_ref_directory: str = None,
-             print_errors_to_file: bool = False) -> bool:
+def validate(
+    dataset_name: str,
+    working_directory: str = "",
+    input_directory: str = "",
+    keep_temporary_files: bool = False,
+    metadata_ref_directory: str = None
+) -> bool:
     """
     Validate a dataset and return a list of errors.
     If the dataset is valid, the list will be empty.
@@ -57,8 +58,6 @@ def validate(dataset_name: str,
         data_errors = dataset_validator.run_validator(
             working_directory_path, dataset_name
         )
-        if print_errors_to_file:
-            print("errors to file")
     except InvalidDataException as e:
         data_errors = e.data_errors
     except ValidationError as e:
