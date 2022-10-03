@@ -1,0 +1,61 @@
+{
+  "shortName": "KJORETOY_ID",
+  "name": [
+    {
+      "languageCode": "no",
+      "value": "Kjøretøysidentifikator"
+    },
+    {
+      "languageCode": "en",
+      "value": "Vehicle identifier"
+    }
+  ],
+  "description": [
+    {
+      "languageCode": "no",
+      "value": "Identifikator for kjøretøy i Microdata"
+    },
+    {
+      "languageCode": "no",
+      "value": "Identifier for vehicles in Microdata"
+    }
+  ],
+  "dataType": "LONG",
+  "unitType": {
+    "pseudonymized": true,
+    "shortName": "KJORETOY",
+    "name": [
+      {
+        "languageCode": "no",
+        "value": "Kjøretøy"
+      },
+      {
+        "languageCode": "en",
+        "value": "Vehicle"
+      }
+    ],
+    "description": [
+      {
+        "languageCode": "no",
+        "value": "Et kjøretøy er en innretning som er bestemt til å kjøre på bakken."
+      },
+      {
+        "languageCode": "en",
+        "value": "A vehicle is a thing used to drive on land."
+      }
+    ]
+  },
+  "format": "RandomUInt48",
+  "valueDomain": {
+    "description": [
+      {
+        "languageCode": "no",
+        "value": "Pseudonymisert kombinasjon av personnummer og registreringsnummer for kjøretøy"
+      },
+      {
+        "languageCode": "en",
+        "value": "Pseudonymized combination of personnummer and registreringsnummer for vehicles"
+      }
+    ]
+  }
+}

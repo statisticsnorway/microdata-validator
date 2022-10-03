@@ -1,0 +1,61 @@
+{
+  "shortName": "FORETAK_ID",
+  "name": [
+    {
+      "languageCode": "no",
+      "value": "Foretaksidentifikator"
+    },
+    {
+      "languageCode": "en",
+      "value": "Enterprise identifier"
+    }
+  ],
+  "description": [
+    {
+      "languageCode": "no",
+      "value": "Identifikator for foretak i Microdata"
+    },
+    {
+      "languageCode": "en",
+      "value": "Identifier for enterprise in Microdata"
+    }
+  ],
+  "dataType": "LONG",
+  "unitType": {
+    "shortName": "FORETAK",
+    "pseudonymized": true,
+    "name": [
+      {
+        "languageCode": "no",
+        "value": "Foretak"
+      },
+      {
+        "languageCode": "en",
+        "value": "Enterprise"
+      }
+    ],
+    "description": [
+      {
+        "languageCode": "no",
+        "value": "Virksomhet/bedrift er definert som en lokalt avgrenset funksjonell enhet som hovedsakelig driver virksomhet innenfor en bestemt næringsgruppe (Standard for næringsgruppering)."
+      },
+      {
+        "languageCode": "en",
+        "value": ""
+      }
+    ]
+  },
+  "format": "RandomUInt48",
+  "valueDomain": {
+    "description": [
+      {
+        "languageCode": "no",
+        "value": "Pseudonymisert organisasjonsnummer"
+      },
+      {
+        "languageCode": "en",
+        "value": "Pseudonymized organisasjonsnummer"
+      }
+    ]
+  }
+}
