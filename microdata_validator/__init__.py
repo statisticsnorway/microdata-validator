@@ -26,7 +26,7 @@ def validate(
     input_directory: str = "",
     keep_temporary_files: bool = False,
     metadata_ref_directory: str = None
-) -> List(str):
+) -> List[str]:
     """
     Validate a dataset and return a list of errors.
     If the dataset is valid, the list will be empty.

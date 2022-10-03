@@ -24,9 +24,7 @@
         "uriDefinition": ["https://www.ssb.no/a/metadata/conceptvariable/vardok/91/nb"],
         "valueDomain": {
           "uriDefinition": ["https://www.ssb.no/klass/klassifikasjoner/19"],
-          "codeList": {
-            "codeItems": []
-          }
+          "codeList": []
         }
       }
     ]

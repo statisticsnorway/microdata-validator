@@ -58,7 +58,7 @@ def test_validate_empty_codelist():
     assert data_errors == [
         (
             'properties.measureVariables.items.properties'
-            '.valueDomain.properties.codeList.properties.codeItems.minItems: '
+            '.valueDomain.properties.codeList.minItems: '
             '[] is too short'
         )
     ]

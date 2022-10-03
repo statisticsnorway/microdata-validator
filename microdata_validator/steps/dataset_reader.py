@@ -7,7 +7,7 @@ from microdata_validator.exceptions import InvalidDataException
 from microdata_validator.repository import local_storage
 from microdata_validator.components import (
     temporal_attributes,
-    identifier_variables
+    unit_type_variables
 )
 from microdata_validator.schema import (
     validate_with_schema,
@@ -208,7 +208,7 @@ def run_reader(
     logger.debug('Validating metadata JSON with JSON schema')
     validate_with_schema(metadata_dict)
 
-    metadata_dict['identifierVariables'] = [identifier_variables.get_from_type(
+    metadata_dict['identifierVariables'] = [unit_type_variables.get(
         metadata_dict['identifierVariables'][0]['type']
     )]
     temporality_type = metadata_dict['temporalityType']
@@ -217,6 +217,8 @@ def run_reader(
         temporal_attributes.generate_stop_time_attribute(temporality_type)
     ] + metadata_dict.get('attributeVariables', [])
     _metadata_update_temporal_coverage(metadata_dict, temporal_data)
+    metadata_dict['shortName'] = dataset_name
+    metadata_dict['measureVariables'][0]['shortName'] = dataset_name
 
     logger.debug('Writing inlined metadata JSON file to working directory')
     inlined_metadata_path = working_directory / f'{dataset_name}.json'

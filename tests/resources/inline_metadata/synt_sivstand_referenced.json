@@ -1,37 +1,57 @@
 {
-    "shortName": "SYNT_BEFOLKNING_SIVSTAND",
-    "temporalityType": "EVENT",
-    "populationDescription": [{"languageCode": "no", "value": "Alle personer registrert bosatt i Norge"}],
-    "spatialCoverageDescription": [{"languageCode": "no", "value": "Norge"}],
-    "dataRevision": {
-      "description": [{"languageCode": "no","value": "Første publisering."}],
-      "temporalEndOfSeries": false
-    },
-    "identifierVariables": [{"type": "PERSON"}],
-    "measureVariables": [
+  "temporalityType": "EVENT",
+  "populationDescription": [
+    {
+      "languageCode": "no",
+      "value": "Alle personer registrert bosatt i Norge"
+    }
+  ],
+  "spatialCoverageDescription": [
+    {
+      "languageCode": "no",
+      "value": "Norge"
+    }
+  ],
+  "dataRevision": {
+    "description": [
       {
-        "shortName": "SYNT_BEFOLKNING_SIVSTAND",
-        "name": [{"languageCode": "no", "value": "Sivilstand"}],
-        "description": [{"languageCode": "no", "value": "Sivilstand i forhold til ekteskapslovgivningen"}],
-        "subjectFields": [
-          {
-            "$ref": "subjectfields/befolkning.json"
-          }
-        ],
-        "dataType": "STRING",
-        "uriDefinition": ["https://www.ssb.no/a/metadata/conceptvariable/vardok/91/nb"],
-        "valueDomain": {
-          "$ref": "valuedomains/sivstand.json"
-        }
+        "languageCode": "no",
+        "value": "Første publisering."
       }
     ],
-    "attributeVariables": [
-      {
-          "$ref": "attributes/start.json"
-      },
-      {
-          "$ref": "attributes/stop.json"
+    "temporalEndOfSeries": false
+  },
+  "identifierVariables": [
+    {
+      "type": "PERSON"
+    }
+  ],
+  "measureVariables": [
+    {
+      "name": [
+        {
+          "languageCode": "no",
+          "value": "Sivilstand"
+        }
+      ],
+      "description": [
+        {
+          "languageCode": "no",
+          "value": "Sivilstand i forhold til ekteskapslovgivningen"
+        }
+      ],
+      "subjectFields": [
+        {
+          "$ref": "subjectfields/befolkning.json"
+        }
+      ],
+      "dataType": "STRING",
+      "uriDefinition": [
+        "https://www.ssb.no/a/metadata/conceptvariable/vardok/91/nb"
+      ],
+      "valueDomain": {
+        "$ref": "valuedomains/sivstand.json"
       }
-    ]
-  }
-  
+    }
+  ]
+}

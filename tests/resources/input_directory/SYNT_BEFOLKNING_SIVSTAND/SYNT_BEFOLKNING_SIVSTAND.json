@@ -3,6 +3,13 @@
   "temporalityType": "EVENT",
   "populationDescription": [{"languageCode": "no", "value": "Alle personer registrert bosatt i Norge"}],
   "spatialCoverageDescription": [{"languageCode": "no", "value": "Norge"}],
+  "subjectFields": [
+    {
+      "shortName": "BEFOLKNING",
+      "name": [{"languageCode": "no", "value": "Befolkning"}],
+      "description": [{"languageCode": "no", "value": "Befolkning"}]
+    }
+  ],
   "dataRevision": {
     "description": [{"languageCode": "no","value": "Første publisering."}],
     "temporalEndOfSeries": false
@@ -13,19 +20,11 @@
       "shortName": "SYNT_BEFOLKNING_SIVSTAND",
       "name": [{"languageCode": "no", "value": "Sivilstand"}],
       "description": [{"languageCode": "no", "value": "Sivilstand i forhold til ekteskapslovgivningen"}],
-      "subjectFields": [
-        {
-          "shortName": "BEFOLKNING",
-          "name": [{"languageCode": "no", "value": "Befolkning"}],
-          "description": [{"languageCode": "no", "value": "Befolkning"}]
-        }
-      ],
       "dataType": "STRING",
       "uriDefinition": ["https://www.ssb.no/a/metadata/conceptvariable/vardok/91/nb"],
       "valueDomain": {
         "uriDefinition": ["https://www.ssb.no/klass/klassifikasjoner/19"],
-        "codeList": {
-          "codeItems": [
+        "codeList": [
             {
               "code": "1",
               "categoryTitle": [{"languageCode": "no", "value": "Ugift"}],
@@ -71,8 +70,7 @@
               "categoryTitle": [{"languageCode": "no", "value": "Gjenlevende partner"}],
               "validFrom": "1927-07-01"
             }
-          ]
-        },
+          ],
         "sentinelAndMissingValues" : [
           {
             "code": "0",

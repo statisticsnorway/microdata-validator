@@ -1,109 +1,111 @@
 {
-    "shortName": "SYNT_BEFOLKNING_KJOENN",
-    "temporalityType": "FIXED",
-    "populationDescription": [
-        {
-            "languageCode": "no",
-            "value": "Kj\u00f8nn for en populasjon"
-        }
+  "shortName": "SYNT_BEFOLKNING_KJOENN",
+  "temporalityType": "FIXED",
+  "populationDescription": [
+    {
+      "languageCode": "no",
+      "value": "Kjønn for en populasjon"
+    }
+  ],
+  "spatialCoverageDescription": [
+    {
+      "languageCode": "no",
+      "value": "Norge"
+    }
+  ],
+  "dataRevision": {
+    "description": [
+      {
+        "languageCode": "no",
+        "value": "Første publisering."
+      }
     ],
-    "spatialCoverageDescription": [
+    "temporalEndOfSeries": false
+  },
+  "identifierVariables": [
+    {
+      "type": "PERSON"
+    }
+  ],
+  "measureVariables": [
+    {
+      "variableRole": "MEASURE",
+      "shortName": "SYNT_BEFOLKNING_KJONN",
+      "name": [
         {
-            "languageCode": "no",
-            "value": "Norge"
+          "languageCode": "no",
+          "value": "Kjønn"
         }
-    ],
-    "dataRevision": {
-        "description": [
+      ],
+      "description": [
+        {
+          "languageCode": "no",
+          "value": "Rapportert kjønn for person"
+        }
+      ],
+      "subjectFields": [
+        {
+          "shortName": "HELSE",
+          "name": [
             {
-                "languageCode": "no",
-                "value": "F\u00f8rste publisering."
+              "languageCode": "no",
+              "value": "Helse"
             }
-        ],
-        "temporalEndOfSeries": false
-    },
-    "identifierVariables": [{"type": "PERSON"}],
-    "measureVariables": [
+          ],
+          "description": [
+            {
+              "languageCode": "no",
+              "value": "Helse"
+            }
+          ]
+        },
         {
-            "variableRole": "MEASURE",
-            "shortName": "SYNT_BEFOLKNING_KJONN",
-            "name": [
-                {
-                    "languageCode": "no",
-                    "value": "Kj\u00f8nn"
-                }
-            ],
-            "description": [
-                {
-                    "languageCode": "no",
-                    "value": "Rapportert kj\u00f8nn for person"
-                }
-            ],
-            "subjectFields": [
-                {
-                    "shortName": "HELSE",
-                    "name": [
-                        {
-                            "languageCode": "no",
-                            "value": "Helse"
-                        }
-                    ],
-                    "description": [
-                        {
-                            "languageCode": "no",
-                            "value": "Helse"
-                        }
-                    ]
-                },
-                {
-                    "shortName": "HELSETJENESTER",
-                    "name": [
-                        {
-                            "languageCode": "no",
-                            "value": "Helsetjenester"
-                        }
-                    ],
-                    "description": [
-                        {
-                            "languageCode": "no",
-                            "value": "Helsetjenester"
-                        }
-                    ]
-                }
-            ],
-            "dataType": "STRING",
-            "uriDefinition": [
-                ""
-            ],
-            "valueDomain": {
-                "uriDefinition": [
-                    ""
-                ],
-                "codeList": {
-                    "codeItems": [
-                        {
-                            "code": "1",
-                            "categoryTitle": [
-                                {
-                                    "languageCode": "no",
-                                    "value": "Mann"
-                                }
-                            ],
-                            "validFrom": "1900-01-01"
-                        },
-                        {
-                            "code": "2",
-                            "categoryTitle": [
-                                {
-                                    "languageCode": "no",
-                                    "value": "Kvinne"
-                                }
-                            ],
-                            "validFrom": "1900-01-01"
-                        }
-                    ]
-                }
+          "shortName": "HELSETJENESTER",
+          "name": [
+            {
+              "languageCode": "no",
+              "value": "Helsetjenester"
             }
+          ],
+          "description": [
+            {
+              "languageCode": "no",
+              "value": "Helsetjenester"
+            }
+          ]
         }
-    ]
+      ],
+      "dataType": "STRING",
+      "uriDefinition": [
+        ""
+      ],
+      "valueDomain": {
+        "uriDefinition": [
+          ""
+        ],
+        "codeList": [
+          {
+            "code": "1",
+            "categoryTitle": [
+              {
+                "languageCode": "no",
+                "value": "Mann"
+              }
+            ],
+            "validFrom": "1900-01-01"
+          },
+          {
+            "code": "2",
+            "categoryTitle": [
+              {
+                "languageCode": "no",
+                "value": "Kvinne"
+              }
+            ],
+            "validFrom": "1900-01-01"
+          }
+        ]
+      }
+    }
+  ]
 }
