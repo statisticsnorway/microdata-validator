@@ -1,15 +1,6 @@
-{
-    "shortName": "HELSE",
-    "name": [
-        {
-            "languageCode": "no",
-            "value": "Helse"
-        }
-    ],
-    "description": [
-        {
-            "languageCode": "no",
-            "value": "Helse"
-        }
-    ]
-}
+[
+    {
+        "languageCode": "no",
+        "value": "Helse"
+    }
+]

@@ -14,11 +14,7 @@
         "name": [{"languageCode": "no", "value": "Sivilstand"}],
         "description": [{"languageCode": "no", "value": "Sivilstand i forhold til ekteskapslovgivningen"}],
         "subjectFields": [
-          {
-            "shortName": "BEFOLKNING",
-            "name": [{"languageCode": "no", "value": "Befolkning"}],
-            "description": [{"languageCode": "no", "value": "Befolkning"}]
-          }
+          [{"languageCode": "no", "value": "Befolkning"}]
         ],
         "dataType": "STRING",
         "uriDefinition": ["https://www.ssb.no/a/metadata/conceptvariable/vardok/91/nb"],

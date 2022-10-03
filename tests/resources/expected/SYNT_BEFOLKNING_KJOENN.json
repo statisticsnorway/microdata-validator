@@ -1,19 +1,11 @@
 {
-  "shortName": "SYNT_BEFOLKNING_SIVSTAND",
-  "temporalityType": "EVENT",
+  "shortName": "SYNT_BEFOLKNING_KJOENN",
+  "temporalityType": "FIXED",
   "populationDescription": [
     {
       "languageCode": "no",
-      "value": "Alle personer registrert bosatt i Norge"
+      "value": "Kj\u00f8nn for en populasjon"
     }
-  ],
-  "subjectFields": [
-    [
-      {
-        "languageCode": "no",
-        "value": "Befolkning"
-      }
-    ]
   ],
   "spatialCoverageDescription": [
     {
@@ -25,13 +17,27 @@
     "description": [
       {
         "languageCode": "no",
-        "value": "Første publisering."
+        "value": "F\u00f8rste publisering."
       }
     ],
     "temporalEndOfSeries": false,
-    "temporalCoverageStart": "1920-01-01",
-    "temporalCoverageLatest": "1951-01-01"
+    "temporalCoverageStart": "1900-01-01",
+    "temporalCoverageLatest": "2021-01-01"
   },
+  "subjectFields": [
+    [
+      {
+        "languageCode": "no",
+        "value": "Helse"
+      }
+    ],
+    [
+      {
+        "languageCode": "no",
+        "value": "Helsetjenester"
+      }
+    ]
+  ],
   "identifierVariables": [
     {
       "shortName": "PERSONID_1",
@@ -57,8 +63,8 @@
       ],
       "dataType": "LONG",
       "unitType": {
-        "pseudonymized": true,
         "shortName": "PERSON",
+        "pseudonymized": true,
         "name": [
           {
             "languageCode": "no",
@@ -97,26 +103,27 @@
   ],
   "measureVariables": [
     {
-      "shortName": "SYNT_BEFOLKNING_SIVSTAND",
+      "variableRole": "MEASURE",
+      "shortName": "SYNT_BEFOLKNING_KJOENN",
       "name": [
         {
           "languageCode": "no",
-          "value": "Sivilstand"
+          "value": "Kj\u00f8nn"
         }
       ],
       "description": [
         {
           "languageCode": "no",
-          "value": "Sivilstand i forhold til ekteskapslovgivningen"
+          "value": "Rapportert kj\u00f8nn for person"
         }
       ],
       "dataType": "STRING",
       "uriDefinition": [
-        "https://www.ssb.no/a/metadata/conceptvariable/vardok/91/nb"
+        ""
       ],
       "valueDomain": {
         "uriDefinition": [
-          "https://www.ssb.no/klass/klassifikasjoner/19"
+          ""
         ],
         "codeList": [
           {
@@ -124,99 +131,17 @@
             "categoryTitle": [
               {
                 "languageCode": "no",
-                "value": "Ugift"
+                "value": "Mann"
               }
             ],
-            "validFrom": "1926-01-01"
+            "validFrom": "1900-01-01"
           },
           {
             "code": "2",
             "categoryTitle": [
               {
                 "languageCode": "no",
-                "value": "Gift"
-              }
-            ],
-            "validFrom": "1926-01-01"
-          },
-          {
-            "code": "3",
-            "categoryTitle": [
-              {
-                "languageCode": "no",
-                "value": "Enke/Enkemann"
-              }
-            ],
-            "validFrom": "1926-01-01"
-          },
-          {
-            "code": "4",
-            "categoryTitle": [
-              {
-                "languageCode": "no",
-                "value": "Skilt"
-              }
-            ],
-            "validFrom": "1926-01-01"
-          },
-          {
-            "code": "5",
-            "categoryTitle": [
-              {
-                "languageCode": "no",
-                "value": "Separert"
-              }
-            ],
-            "validFrom": "1926-01-01"
-          },
-          {
-            "code": "6",
-            "categoryTitle": [
-              {
-                "languageCode": "no",
-                "value": "Registrert partner"
-              }
-            ],
-            "validFrom": "1927-07-01"
-          },
-          {
-            "code": "7",
-            "categoryTitle": [
-              {
-                "languageCode": "no",
-                "value": "Separert partner"
-              }
-            ],
-            "validFrom": "1927-07-01"
-          },
-          {
-            "code": "8",
-            "categoryTitle": [
-              {
-                "languageCode": "no",
-                "value": "Skilt partner"
-              }
-            ],
-            "validFrom": "1927-07-01"
-          },
-          {
-            "code": "9",
-            "categoryTitle": [
-              {
-                "languageCode": "no",
-                "value": "Gjenlevende partner"
-              }
-            ],
-            "validFrom": "1927-07-01"
-          }
-        ],
-        "sentinelAndMissingValues": [
-          {
-            "code": "0",
-            "categoryTitle": [
-              {
-                "languageCode": "no",
-                "value": "Siviltand ukjent"
+                "value": "Kvinne"
               }
             ],
             "validFrom": "1900-01-01"

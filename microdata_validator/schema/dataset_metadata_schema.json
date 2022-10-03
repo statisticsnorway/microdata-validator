@@ -165,25 +165,7 @@
     "subjectFieldsType": {
       "type": "array",
       "items": [
-        {
-          "type": "object",
-          "properties": {
-            "shortName": {
-              "type": "string"
-            },
-            "name": {
-              "$ref": "#/definitions/multilingualStringType"
-            },
-            "description": {
-              "$ref": "#/definitions/multilingualStringType"
-            }
-          },
-          "required": [
-            "shortName",
-            "name",
-            "description"
-          ]
-        }
+        { "$ref": "#/definitions/multilingualStringType" }
       ]
     }
   },

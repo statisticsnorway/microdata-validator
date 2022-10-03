@@ -15,16 +15,8 @@
         "name": [{"languageCode": "no", "value": "Kjønn"}],
         "description": [{"languageCode": "no", "value": "Rapportert kjønn for person"}],
         "subjectFields": [
-          {
-            "shortName": "HELSE",
-            "name": [{"languageCode": "no", "value": "Helse"}],
-            "description": [{"languageCode": "no", "value": "Helse"}]
-          },
-          {
-            "shortName": "HELSETJENESTER",
-            "name": [{"languageCode": "no", "value": "Helsetjenester"}],
-            "description": [{"languageCode": "no", "value": "Helsetjenester"}]
-          }
+          [{"languageCode": "no", "value": "Helse"}],
+          [{"languageCode": "no", "value": "Helsetjenester"}]
         ],
         "dataType": "STRING",
         "uriDefinition": [""],

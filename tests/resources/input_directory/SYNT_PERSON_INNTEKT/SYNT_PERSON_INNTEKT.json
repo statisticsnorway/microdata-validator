@@ -1,55 +1,76 @@
 {
   "temporalityType": "ACCUMULATED",
-  "populationDescription": [{"languageCode": "no", "value": "Bosatte i Norge"}],
-  "spatialCoverageDescription": [{"languageCode": "no", "value": "Norge"}],
-  "subjectFields": [
+  "populationDescription": [
     {
-        "shortName": "OEKONOMI",
-        "name": [
-            {
-                "languageCode": "no",
-                "value": "Økonomi"
-            }
-        ],
-        "description": [
-            {
-                "languageCode": "no",
-                "value": "Økonomi"
-            }
-        ]
-    },
-    {
-        "shortName": "SAMFUNN",
-        "name": [
-            {
-                "languageCode": "no",
-                "value": "Samfunn"
-            }
-        ],
-        "description": [
-            {
-                "languageCode": "no",
-                "value": "Samfunn"
-            }
-        ]
+      "languageCode": "no",
+      "value": "Bosatte i Norge"
     }
-],
+  ],
+  "spatialCoverageDescription": [
+    {
+      "languageCode": "no",
+      "value": "Norge"
+    }
+  ],
+  "subjectFields": [
+    [
+      {
+        "languageCode": "no",
+        "value": "Økonomi"
+      }
+    ],
+    [
+      {
+        "languageCode": "no",
+        "value": "Samfunn"
+      }
+    ]
+  ],
   "dataRevision": {
-    "description": [{"languageCode": "no","value": "Første publisering."}],
+    "description": [
+      {
+        "languageCode": "no",
+        "value": "Første publisering."
+      }
+    ],
     "temporalEndOfSeries": false
   },
-  "identifierVariables": [{"type": "PERSON"}],
+  "identifierVariables": [
+    {
+      "type": "PERSON"
+    }
+  ],
   "measureVariables": [
     {
-      "name": [{"languageCode": "no", "value": "Personens inntekt"}],
-      "description": [{"languageCode": "no", "value": "Personens rapporterte inntekt"}],
+      "name": [
+        {
+          "languageCode": "no",
+          "value": "Personens inntekt"
+        }
+      ],
+      "description": [
+        {
+          "languageCode": "no",
+          "value": "Personens rapporterte inntekt"
+        }
+      ],
       "dataType": "LONG",
       "uriDefinition": [],
       "valueDomain": {
         "uriDefinition": [],
-        "description": [{"languageCode": "no", "value":"Årlig personinntekt"}],
+        "description": [
+          {
+            "languageCode": "no",
+            "value": "Årlig personinntekt"
+          }
+        ],
         "measurementType": "CURRENCY",
-        "measurementUnitDescription": [{"languageCode": "no", "value": "Norske Kroner"}]
+        "measurementUnitDescription": [
+          {
+            "languageCode": "no",
+            "value": "Norske Kroner"
+          }
+        ]
       }
     }
   ]

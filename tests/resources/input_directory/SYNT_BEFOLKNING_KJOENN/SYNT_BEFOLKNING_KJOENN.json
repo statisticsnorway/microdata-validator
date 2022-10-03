@@ -7,6 +7,12 @@
     "description": [{"languageCode": "no","value": "Første publisering."}],
     "temporalEndOfSeries": false
   },
+  "subjectFields": [
+    {
+      "$ref": "subjectfields/helse.json"
+    },
+    [{"languageCode": "no", "value": "Helsetjenester"}]
+  ],
   "identifierVariables": [{"type": "PERSON"}],
   "measureVariables": [
     {
@@ -14,16 +20,6 @@
       "shortName": "SYNT_BEFOLKNING_KJONN",
       "name": [{"languageCode": "no", "value": "Kjønn"}],
       "description": [{"languageCode": "no", "value": "Rapportert kjønn for person"}],
-      "subjectFields": [
-        {
-          "$ref": "subjectfields/helse.json"
-        },
-        {
-          "shortName": "HELSETJENESTER",
-          "name": [{"languageCode": "no", "value": "Helsetjenester"}],
-          "description": [{"languageCode": "no", "value": "Helsetjenester"}]
-        }
-      ],
       "dataType": "STRING",
       "uriDefinition": [""],
       "valueDomain": {

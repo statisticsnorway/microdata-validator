@@ -4,11 +4,7 @@
   "populationDescription": [{"languageCode": "no", "value": "Alle personer registrert bosatt i Norge"}],
   "spatialCoverageDescription": [{"languageCode": "no", "value": "Norge"}],
   "subjectFields": [
-    {
-      "shortName": "BEFOLKNING",
-      "name": [{"languageCode": "no", "value": "Befolkning"}],
-      "description": [{"languageCode": "no", "value": "Befolkning"}]
-    }
+    [{"languageCode": "no", "value": "Befolkning"}]
   ],
   "dataRevision": {
     "description": [{"languageCode": "no","value": "Første publisering."}],

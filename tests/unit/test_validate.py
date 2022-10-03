@@ -105,6 +105,19 @@ def test_validate_valid_dataset_ref():
         f'{VALID_DATASET_REF}.json',
         f'{VALID_DATASET_REF}.csv'
     ]
+    with open(
+        f'{WORKING_DIRECTORY}/{VALID_DATASET_REF}.json',
+        'r',
+        encoding='utf-8'
+    ) as f:
+        actual_metadata = json.load(f)
+    with open(
+        f'{EXPECTED_DIRECTORY}/{VALID_DATASET_REF}.json',
+        'r',
+        encoding='utf-8'
+    ) as f:
+        expected_metadata = json.load(f)
+    assert expected_metadata == actual_metadata
     assert not data_errors
     for file in expected_files:
         assert file in actual_files
@@ -173,7 +186,7 @@ def test_invalid_date_ranges():
 
 
 def get_working_directory_files() -> list:
-    return [file for file in os.listdir(WORKING_DIRECTORY)]
+    return os.listdir(WORKING_DIRECTORY)
 
 
 def teardown_function():

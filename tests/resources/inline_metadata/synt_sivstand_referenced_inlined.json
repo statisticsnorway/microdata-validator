@@ -43,21 +43,12 @@
         }
       ],
       "subjectFields": [
-        {
-          "shortName": "BEFOLKNING",
-          "name": [
-            {
-              "languageCode": "no",
-              "value": "Befolkning"
-            }
-          ],
-          "description": [
+        [
             {
               "languageCode": "no",
               "value": "Befolkning"
             }
           ]
-        }
       ],
       "dataType": "STRING",
       "uriDefinition": [
