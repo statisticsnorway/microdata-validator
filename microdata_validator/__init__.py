@@ -2,12 +2,12 @@ import uuid
 import os
 import shutil
 import logging
-from typing import Union
+from typing import List, Union
 from pathlib import Path
 from jsonschema import ValidationError
 
 from microdata_validator.steps.dataset_reader import InvalidDataException
-from microdata_validator.components import unit_types
+from microdata_validator.components import unit_id_types
 from microdata_validator.steps import (
     dataset_reader, dataset_validator
 )
@@ -26,7 +26,7 @@ def validate(
     input_directory: str = "",
     keep_temporary_files: bool = False,
     metadata_ref_directory: str = None
-) -> bool:
+) -> List(str):
     """
     Validate a dataset and return a list of errors.
     If the dataset is valid, the list will be empty.
@@ -167,7 +167,7 @@ def get_unit_id_type_for_unit_type(unit_id: str) -> Union[str, None]:
     if supplied unitType has no attached unitIdType.
     Raises a UnregisteredUnitTypeError on unregistered unitType.
     """
-    return unit_types.get_unit_id_type_for_unit_type(unit_id)
+    return unit_id_types.get_unit_id_type_for_unit_type(unit_id)
 
 
 __all__ = [
