@@ -6,16 +6,16 @@ from typing import List, Union
 from pathlib import Path
 from jsonschema import ValidationError
 
-from microdata_validator.steps.dataset_reader import InvalidDataException
+from microdata_validator import schema
+from microdata_validator.repository import local_storage
 from microdata_validator.components import unit_id_types
 from microdata_validator.steps import (
     dataset_reader, dataset_validator
 )
-from microdata_validator.schema import (
-    validate_with_schema,
-    inline_metadata_references
+from microdata_validator.exceptions import (
+    InvalidDataException,
+    InvalidDatasetName
 )
-from microdata_validator.repository import local_storage
 
 logger = logging.getLogger()
 
@@ -31,6 +31,10 @@ def validate(
     Validate a dataset and return a list of errors.
     If the dataset is valid, the list will be empty.
     """
+    try:
+        validate_dataset_name(dataset_name)
+    except InvalidDatasetName as e:
+        return [str(e)]
 
     # Generate working directory if not supplied
     if working_directory:
@@ -115,19 +119,23 @@ def validate_metadata(metadata_file_path: str,
     If the metadata is valid, the list will be empty.
     """
     try:
+        dataset_name = metadata_file_path.split('/')[-1][:-5]
+        validate_dataset_name(dataset_name)
         metadata_file_path = Path(metadata_file_path)
         if metadata_ref_directory is None:
             metadata_dict = local_storage.load_json(Path(metadata_file_path))
         else:
             metadata_ref_directory = Path(metadata_ref_directory)
-            metadata_dict = inline_metadata_references(
+            metadata_dict = schema.inline_metadata_references(
                 metadata_file_path, metadata_ref_directory
             )
-        validate_with_schema(metadata_dict)
+        schema.validate_with_schema(metadata_dict)
         return []
     except ValidationError as e:
         schema_path = ".".join([str(path) for path in e.relative_schema_path])
         return [f"{schema_path}: {e.message}"]
+    except InvalidDatasetName as e:
+        return [str(e)]
 
 
 def inline_metadata(metadata_file_path: str, metadata_ref_directory: str,
@@ -138,6 +146,8 @@ def inline_metadata(metadata_file_path: str, metadata_ref_directory: str,
     Returns the path to the generated file.
     Throws an error if the metadata is invalid.
     """
+    dataset_name = metadata_file_path.split('/')[-1][:-5]
+    validate_dataset_name(dataset_name)
     if output_file_path is None:
         output_file_path = Path(
             f"{metadata_file_path.strip('.json')}_inlined.json"
@@ -152,10 +162,10 @@ def inline_metadata(metadata_file_path: str, metadata_ref_directory: str,
 
     metadata_file_path = Path(metadata_file_path)
     metadata_ref_directory = Path(metadata_ref_directory)
-    metadata_dict = inline_metadata_references(
+    metadata_dict = schema.inline_metadata_references(
         metadata_file_path, metadata_ref_directory
     )
-    validate_with_schema(metadata_dict)
+    schema.validate_with_schema(metadata_dict)
 
     local_storage.write_json(output_file_path, metadata_dict)
     return output_file_path
@@ -170,9 +180,18 @@ def get_unit_id_type_for_unit_type(unit_id: str) -> Union[str, None]:
     return unit_id_types.get_unit_id_type_for_unit_type(unit_id)
 
 
+def validate_dataset_name(dataset_name: str) -> None:
+    """
+    Validates that the name of the dataset only contains valid
+    characters (uppercase A-Z, numbers 0-9 and _)
+    """
+    schema.validate_dataset_name(dataset_name)
+
+
 __all__ = [
     "validate",
     "validate_metadata",
+    "validate_dataset_name",
     "inline_metadata",
     "get_unit_id_type_for_unit_type"
 ]
