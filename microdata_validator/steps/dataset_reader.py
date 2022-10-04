@@ -1,3 +1,4 @@
+from copy import deepcopy
 import csv
 import datetime
 import logging
@@ -181,6 +182,23 @@ def _metadata_update_temporal_coverage(metadata: dict,
         )
 
 
+def _insert_centralized_variable_definitions(metadata: dict):
+    metadata['identifierVariables'] = [unit_type_variables.get(
+        metadata['identifierVariables'][0]['unitType']
+    )]
+    measure_variable = metadata['measureVariables'][0]
+    if 'unitType' in measure_variable:
+        insert_measure = unit_type_variables.get(measure_variable['unitType'])
+        insert_measure['name'] = measure_variable['name']
+        insert_measure['description'] = measure_variable['description']
+        metadata['measureVariables'] = [insert_measure]
+    temporality_type = metadata['temporalityType']
+    metadata['attributeVariables'] = [
+        temporal_attributes.generate_start_time_attribute(temporality_type),
+        temporal_attributes.generate_stop_time_attribute(temporality_type)
+    ] + metadata.get('attributeVariables', [])
+
+
 def run_reader(
     working_directory: Path,
     input_directory: Path,
@@ -208,14 +226,7 @@ def run_reader(
     logger.debug('Validating metadata JSON with JSON schema')
     validate_with_schema(metadata_dict)
 
-    metadata_dict['identifierVariables'] = [unit_type_variables.get(
-        metadata_dict['identifierVariables'][0]['unitType']
-    )]
-    temporality_type = metadata_dict['temporalityType']
-    metadata_dict['attributeVariables'] = [
-        temporal_attributes.generate_start_time_attribute(temporality_type),
-        temporal_attributes.generate_stop_time_attribute(temporality_type)
-    ] + metadata_dict.get('attributeVariables', [])
+    _insert_centralized_variable_definitions(metadata_dict)
     _metadata_update_temporal_coverage(metadata_dict, temporal_data)
     metadata_dict['shortName'] = dataset_name
     metadata_dict['measureVariables'][0]['shortName'] = dataset_name
