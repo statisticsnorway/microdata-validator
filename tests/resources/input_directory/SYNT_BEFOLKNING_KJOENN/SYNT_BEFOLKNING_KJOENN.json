@@ -13,7 +13,7 @@
     },
     [{"languageCode": "no", "value": "Helsetjenester"}]
   ],
-  "identifierVariables": [{"type": "PERSON"}],
+  "identifierVariables": [{"unitType": "PERSON"}],
   "measureVariables": [
     {
       "variableRole": "MEASURE",

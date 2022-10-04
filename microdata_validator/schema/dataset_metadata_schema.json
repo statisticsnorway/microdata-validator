@@ -133,9 +133,6 @@
       ]
     },
     "unitTypeType": {
-      "type": "object",
-      "properties": {
-        "shortName": {
           "type": "string",
           "enum": [
             "JOBB",
@@ -148,19 +145,6 @@
             "PERSON",
             "VIRKSOMHET"
           ]
-        },
-        "name": {
-          "$ref": "#/definitions/multilingualStringType"
-        },
-        "description": {
-          "$ref": "#/definitions/multilingualStringType"
-        }
-      },
-      "required": [
-        "shortName",
-        "name",
-        "description"
-      ]
     },
     "subjectFieldsType": {
       "type": "array",
@@ -208,23 +192,12 @@
       "items": {
         "type": "object",
         "properties": {
-          "type": {
-            "type": "string",
-            "enum": [
-              "JOBB",
-              "KJORETOY",
-              "FAMILIE",
-              "FORETAK",
-              "HUSHOLDNING",
-              "KOMMUNE",
-              "KURS",
-              "PERSON",
-              "VIRKSOMHET"
-            ]
+          "unitType": {
+            "$ref": "#/definitions/unitTypeType"
           }
         },
         "required": [
-          "type"
+          "unitType"
         ]
       }
     },
@@ -273,11 +246,22 @@
             "$comment": "E.g. a regular expression or a specific type like RandomUInt48."
           }
         },
-        "required": [
-          "name",
-          "description",
-          "dataType",
-          "valueDomain"
+        "anyOf": [
+          {
+            "required": [
+              "name",
+              "description",
+              "dataType",
+              "valueDomain"
+            ]
+          },
+          {
+            "required": [
+              "unitType",
+              "name",
+              "description"
+            ]
+          }
         ]
       }
     },

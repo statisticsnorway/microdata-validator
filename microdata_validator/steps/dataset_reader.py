@@ -209,7 +209,7 @@ def run_reader(
     validate_with_schema(metadata_dict)
 
     metadata_dict['identifierVariables'] = [unit_type_variables.get(
-        metadata_dict['identifierVariables'][0]['type']
+        metadata_dict['identifierVariables'][0]['unitType']
     )]
     temporality_type = metadata_dict['temporalityType']
     metadata_dict['attributeVariables'] = [

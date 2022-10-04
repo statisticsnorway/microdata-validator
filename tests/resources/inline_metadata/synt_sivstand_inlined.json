@@ -23,7 +23,7 @@
   },
   "identifierVariables": [
     {
-      "type": "PERSON"
+      "unitType": "PERSON"
     }
   ],
   "measureVariables": [

@@ -7,7 +7,7 @@
       "description": [{"languageCode": "no","value": "Første publisering."}],
       "temporalEndOfSeries": false
     },
-    "identifierVariables": [{"type": "PERSON"}],
+    "identifierVariables": [{"unitType": "PERSON"}],
     "measureVariables": [
       {
         "variableRole": "MEASURE",
