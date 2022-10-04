@@ -150,7 +150,7 @@ def inline_metadata(metadata_file_path: str, metadata_ref_directory: str,
     validate_dataset_name(dataset_name)
     if output_file_path is None:
         output_file_path = Path(
-            f"{metadata_file_path.strip('.json')}_inlined.json"
+            f"{metadata_file_path.strip('.json')}_INLINED.json"
         )
     else:
         output_file_path = Path(output_file_path)
