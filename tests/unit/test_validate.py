@@ -21,6 +21,7 @@ WRONG_DELIMITER_DATASET_NAME = 'WRONG_DELIMITER_DATASET'
 MISSING_IDENTIFIER_DATASET_NAME = 'MISSING_IDENTIFIER_DATASET'
 INVALID_DATES_DATASET_NAME = 'INVALID_DATES_DATASET'
 INVALID_DATE_RANGES_DATASET_NAME = 'INVALID_DATE_RANGES_DATASET'
+INVALID_UNIT_TYPE_DATASET = 'INVALID_UNIT_TYPE_DATASET'
 INPUT_DIRECTORY = 'tests/resources/input_directory'
 WORKING_DIRECTORY = 'tests/resources/working_directory'
 EXPECTED_DIRECTORY = 'tests/resources/expected'
@@ -63,6 +64,17 @@ def test_validate_valid_dataset_wrong_delimiter():
         input_directory=INPUT_DIRECTORY
     )
     assert data_errors == ['Invalid field separator ",". Use ";".']
+
+
+def test_validate_invalid_unit_type_dataset():
+    data_errors = validate(
+        INVALID_UNIT_TYPE_DATASET,
+        working_directory=WORKING_DIRECTORY,
+        keep_temporary_files=True,
+        input_directory=INPUT_DIRECTORY
+    )
+    assert len(data_errors) == 1
+    assert "'IKKE_EN_UNIT_TYPE' is not one of " in data_errors[0]
 
 
 def test_validate_valid_dataset_delete_temporary_files():
