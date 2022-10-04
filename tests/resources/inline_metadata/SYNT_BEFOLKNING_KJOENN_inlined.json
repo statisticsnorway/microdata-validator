@@ -1,5 +1,4 @@
 {
-  "shortName": "SYNT_BEFOLKNING_KJOENN",
   "temporalityType": "FIXED",
   "populationDescription": [
     {
@@ -43,8 +42,6 @@
   ],
   "measureVariables": [
     {
-      "variableRole": "MEASURE",
-      "shortName": "SYNT_BEFOLKNING_KJONN",
       "name": [
         {
           "languageCode": "no",

@@ -1,5 +1,4 @@
 {
-  "shortName": "SYNT_BEFOLKNING_SIVSTAND",
   "temporalityType": "EVENT",
   "populationDescription": [{"languageCode": "no", "value": "Alle personer registrert bosatt i Norge"}],
   "spatialCoverageDescription": [{"languageCode": "no", "value": "Norge"}],
@@ -10,7 +9,6 @@
   "identifierVariables": [{"unitType": "PERSON"}],
   "measureVariables": [
     {
-      "shortName": "SYNT_BEFOLKNING_SIVSTAND",
       "name": [{"languageCode": "no", "value": "Sivilstand"}],
       "description": [{"languageCode": "no", "value": "Sivilstand i forhold til ekteskapslovgivningen"}],
       "subjectFields": [

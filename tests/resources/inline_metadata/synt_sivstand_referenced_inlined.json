@@ -1,5 +1,4 @@
 {
-  "shortName": "SYNT_BEFOLKNING_SIVSTAND",
   "temporalityType": "EVENT",
   "populationDescription": [
     {
@@ -29,7 +28,6 @@
   ],
   "measureVariables": [
     {
-      "shortName": "SYNT_BEFOLKNING_SIVSTAND",
       "name": [
         {
           "languageCode": "no",
