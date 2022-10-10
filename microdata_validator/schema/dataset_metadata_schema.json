@@ -153,6 +153,7 @@
       ]
     }
   },
+
   "type": "object",
   "properties": {
     "temporalityType": {
@@ -162,6 +163,15 @@
         "STATUS",
         "ACCUMULATED",
         "EVENT"
+      ]
+    },
+    "sensitivityLevel": {
+      "type": "string",
+      "enum": [
+        "PERSON_GENERAL",
+        "PERSON_SPECIAL",
+        "PUBLIC",
+        "NONPUBLIC"
       ]
     },
     "populationDescription": {
@@ -318,6 +328,7 @@
   },
   "required": [
     "temporalityType",
+    "sensitivityLevel",
     "populationDescription",
     "identifierVariables",
     "measureVariables",
