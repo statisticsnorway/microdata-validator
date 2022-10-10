@@ -1,7 +1,6 @@
 {
   "uriDefinition": ["https://www.ssb.no/klass/klassifikasjoner/19"],
-  "codeList": {
-    "codeItems": [
+  "codeList": [
       {
         "code": "1",
         "categoryTitle": [{"languageCode": "no", "value": "Ugift"}],
@@ -47,8 +46,7 @@
         "categoryTitle": [{"languageCode": "no", "value": "Gjenlevende partner"}],
         "validFrom": "1927-07-01"
       }
-    ]
-  },
+    ],
   "sentinelAndMissingValues" : [
     {
       "code": "0",

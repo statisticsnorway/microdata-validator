@@ -1,5 +1,4 @@
 {
-  "shortName": "SYNT_BEFOLKNING_SIVSTAND",
   "temporalityType": "EVENT",
   "populationDescription": [{"languageCode": "no", "value": "Alle personer registrert bosatt i Norge"}],
   "spatialCoverageDescription": [{"languageCode": "no", "value": "Norge"}],
@@ -7,42 +6,19 @@
     "description": [{"languageCode": "no","value": "Første publisering."}],
     "temporalEndOfSeries": false
   },
-  "identifierVariables": [
-    {
-      "shortName": "PERSONID_1",
-      "name": [{"languageCode": "no", "value": "Personidentifikator"}],
-      "description": [{"languageCode": "no","value": "Identifikator for person i Microdata"}],
-      "dataType": "STRING",
-      "unitType": {
-        "shortName": "PERSON",
-        "name": [{"languageCode": "no", "value": "Person"}],
-        "description": [{"languageCode": "no", "value": "Statistisk enhet er person (individ, enkeltmenenske)"}]
-      },
-      "format": "RandomUInt48",
-      "valueDomain": {
-        "shortName": "PERSONID_1",
-        "description": [{"languageCode": "no", "value":"Pseudonymisert personnummer"}]
-      }
-    }
-  ],
+  "identifierVariables": [{"unitType": "PERSON"}],
   "measureVariables": [
     {
-      "shortName": "SYNT_BEFOLKNING_SIVSTAND",
       "name": [{"languageCode": "no", "value": "Sivilstand"}],
       "description": [{"languageCode": "no", "value": "Sivilstand i forhold til ekteskapslovgivningen"}],
       "subjectFields": [
-        {
-          "shortName": "BEFOLKNING",
-          "name": [{"languageCode": "no", "value": "Befolkning"}],
-          "description": [{"languageCode": "no", "value": "Befolkning"}]
-        }
+        [{"languageCode": "no", "value": "Befolkning"}]
       ],
       "dataType": "STRING",
       "uriDefinition": ["https://www.ssb.no/a/metadata/conceptvariable/vardok/91/nb"],
       "valueDomain": {
         "uriDefinition": ["https://www.ssb.no/klass/klassifikasjoner/19"],
-        "codeList": {
-          "codeItems": [
+        "codeList": [
             {
               "code": "1",
               "categoryTitle": [{"languageCode": "no", "value": "Ugift"}],
@@ -88,8 +64,7 @@
               "categoryTitle": [{"languageCode": "no", "value": "Gjenlevende partner"}],
               "validFrom": "1927-07-01"
             }
-          ]
-        },
+          ],
         "sentinelAndMissingValues" : [
           {
             "code": "0",

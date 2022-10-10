@@ -18,7 +18,7 @@ def _get_code_list_with_missing_values(metadata: dict) -> Union[list, None]:
     value_domain = metadata["measureVariables"][0]["valueDomain"]
     if "codeList" in value_domain:
         meta_value_domain_codes = [
-            item["code"] for item in value_domain["codeList"]["codeItems"]
+            item["code"] for item in value_domain["codeList"]
         ]
     if "sentinelAndMissingValues" in value_domain:
         meta_value_domain_codes += [

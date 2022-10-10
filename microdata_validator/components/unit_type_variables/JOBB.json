@@ -1,0 +1,57 @@
+{
+  "shortName": "JOBBID_1",
+  "name": [
+    {
+      "languageCode": "no",
+      "value": "Jobbidentifikator"
+    },
+    {
+      "languageCode": "en",
+      "value": "Job identifier"
+    }
+  ],
+  "description": [
+    {
+      "languageCode": "no",
+      "value": "Identifikator for jobb i Microdata"
+    },
+    {
+      "languageCode": "en",
+      "value": "Identifier for job in Microdata"
+    }
+  ],
+  "dataType": "LONG",
+  "unitType": {
+    "pseudonymized": true,
+    "shortName": "JOBB",
+    "name": [
+      {
+        "languageCode": "no",
+        "value": "Jobb"
+      },
+      {
+        "languageCode": "en",
+        "value": "Job"
+      }
+    ],
+    "description": [
+      {
+        "languageCode": "no",
+        "value": "En jobb er betegnelse for en persons arbeidsforhold i en virksomhet. En person kan ha flere arbeidsforhold, også innenfor en periode."
+      }
+    ]
+  },
+  "format": "RandomUInt48",
+  "valueDomain": {
+    "description": [
+      {
+        "languageCode": "no",
+        "value": "Pseudonymisert kombinasjon av personnummer og organisasjonsnummer"
+      },
+      {
+        "languageCode": "en",
+        "value": "Pseudonymized combination of personnummer and organisasjonsnummer"
+      }
+    ]
+  }
+}

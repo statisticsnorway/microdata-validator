@@ -1,0 +1,61 @@
+{
+  "shortName": "KURSID_1",
+  "name": [
+    {
+      "languageCode": "no",
+      "value": "Kursidentifikator"
+    },
+    {
+      "languageCode": "en",
+      "value": "Course"
+    }
+  ],
+  "description": [
+    {
+      "languageCode": "no",
+      "value": "Identifikator for kurs i Microdata"
+    },
+    {
+      "languageCode": "en",
+      "value": "Identifier for course in Microdata"
+    }
+  ],
+  "dataType": "LONG",
+  "unitType": {
+    "pseudonymized": true,
+    "shortName": "KURS",
+    "name": [
+      {
+        "languageCode": "no",
+        "value": "Kurs"
+      },
+      {
+        "languageCode": "en",
+        "value": "Course"
+      }
+    ],
+    "description": [
+      {
+        "languageCode": "no",
+        "value": "Et kurs er en utdanningsaktivitet."
+      },
+      {
+        "languageCode": "en",
+        "value": "A course is an educational acitivity."
+      }
+    ]
+  },
+  "format": "RandomUInt48",
+  "valueDomain": {
+    "description": [
+      {
+        "languageCode": "no",
+        "value": "Pseudonymisert kombinasjon av personnummer og NUDB kursnummer"
+      },
+      {
+        "languageCode": "no",
+        "value": "Pseudonymized combination of personnummer and NUDB course number"
+      }
+    ]
+  }
+}

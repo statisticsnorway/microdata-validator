@@ -4,8 +4,22 @@
     "populationDescription": [
         {
             "languageCode": "no",
-            "value": "Alle rapporterte personinntekter i norge fra \u00e5r 1234 til \u00e5r 4321"
+            "value": "Bosatte i Norge"
         }
+    ],
+    "subjectFields": [
+        [
+            {
+                "languageCode": "no",
+                "value": "Økonomi"
+            }
+        ],
+        [
+            {
+                "languageCode": "no",
+                "value": "Samfunn"
+            }
+        ]
     ],
     "spatialCoverageDescription": [
         {
@@ -17,7 +31,7 @@
         "description": [
             {
                 "languageCode": "no",
-                "value": "F\u00f8rste publisering."
+                "value": "Første publisering."
             }
         ],
         "temporalEndOfSeries": false,
@@ -31,37 +45,57 @@
                 {
                     "languageCode": "no",
                     "value": "Personidentifikator"
+                },
+                {
+                    "languageCode": "en",
+                    "value": "Person identifier"
                 }
             ],
             "description": [
                 {
                     "languageCode": "no",
                     "value": "Identifikator for person i Microdata"
+                },
+                {
+                    "languageCode": "en",
+                    "value": "Identifier for person in Microdata"
                 }
             ],
-            "dataType": "STRING",
+            "dataType": "LONG",
             "unitType": {
+                "pseudonymized": true,
                 "shortName": "PERSON",
                 "name": [
                     {
                         "languageCode": "no",
+                        "value": "Person"
+                    },
+                    {
+                        "languageCode": "en",
                         "value": "Person"
                     }
                 ],
                 "description": [
                     {
                         "languageCode": "no",
-                        "value": "Statistisk enhet er person (individ, enkeltmenenske)"
+                        "value": "Statistisk enhet er person (individ, enkeltmenneske)"
+                    },
+                    {
+                        "languageCode": "en",
+                        "value": "Statistical unit is person (individual person)"
                     }
                 ]
             },
             "format": "RandomUInt48",
             "valueDomain": {
-                "shortName": "PERSONID_1",
                 "description": [
                     {
                         "languageCode": "no",
                         "value": "Pseudonymisert personnummer"
+                    },
+                    {
+                        "languageCode": "en",
+                        "value": "Pseudonymized personnummer"
                     }
                 ]
             }
@@ -82,48 +116,14 @@
                     "value": "Personens rapporterte inntekt"
                 }
             ],
-            "subjectFields": [
-                {
-                    "shortName": "OEKONOMI",
-                    "name": [
-                        {
-                            "languageCode": "no",
-                            "value": "\u00d8konomi"
-                        }
-                    ],
-                    "description": [
-                        {
-                            "languageCode": "no",
-                            "value": "\u00d8konomi"
-                        }
-                    ]
-                },
-                {
-                    "shortName": "SAMFUNN",
-                    "name": [
-                        {
-                            "languageCode": "no",
-                            "value": "Samfunn"
-                        }
-                    ],
-                    "description": [
-                        {
-                            "languageCode": "no",
-                            "value": "Samfunn"
-                        }
-                    ]
-                }
-            ],
-            "dataType": "STRING",
-            "uriDefinition": [
-                ""
-            ],
+            "dataType": "LONG",
+            "uriDefinition": [],
             "valueDomain": {
                 "uriDefinition": [],
                 "description": [
                     {
                         "languageCode": "no",
-                        "value": "\u00c5rlig personinntekt"
+                        "value": "Årlig personinntekt"
                     }
                 ],
                 "measurementType": "CURRENCY",
@@ -152,11 +152,11 @@
             "description": [
                 {
                     "languageCode": "no",
-                    "value": "Startdato/m\u00e5letidspunktet for hendelsen"
+                    "value": "Startdato/måletidspunktet for hendelsen"
                 },
                 {
                     "languageCode": "en",
-                    "value": "Startdato/m\u00e5letidspunktet for hendelsen"
+                    "value": "Startdato/måletidspunktet for hendelsen"
                 }
             ],
             "name": [
@@ -185,11 +185,11 @@
             "description": [
                 {
                     "languageCode": "no",
-                    "value": "Startdato/m\u00e5letidspunktet for hendelsen"
+                    "value": "Startdato/måletidspunktet for hendelsen"
                 },
                 {
                     "languageCode": "en",
-                    "value": "Startdato/m\u00e5letidspunktet for hendelsen"
+                    "value": "Startdato/måletidspunktet for hendelsen"
                 }
             ],
             "name": [

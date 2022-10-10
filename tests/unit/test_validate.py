@@ -12,7 +12,8 @@ logger.setLevel(logging.INFO)
 
 VALID_DATASET_NAMES = [
     'SYNT_BEFOLKNING_SIVSTAND',
-    'SYNT_PERSON_INNTEKT'
+    'SYNT_PERSON_INNTEKT',
+    'SYNT_PERSON_MOR'
 ]
 VALID_DATASET_REF = 'SYNT_BEFOLKNING_KJOENN'
 NO_SUCH_DATASET_NAME = 'NO_SUCH_DATASET'
@@ -20,7 +21,7 @@ WRONG_DELIMITER_DATASET_NAME = 'WRONG_DELIMITER_DATASET'
 MISSING_IDENTIFIER_DATASET_NAME = 'MISSING_IDENTIFIER_DATASET'
 INVALID_DATES_DATASET_NAME = 'INVALID_DATES_DATASET'
 INVALID_DATE_RANGES_DATASET_NAME = 'INVALID_DATE_RANGES_DATASET'
-INVALID_UNIT_TYPE_DATASET_NAME = 'INVALID_UNIT_TYPE_DATASET'
+INVALID_UNIT_TYPE_DATASET = 'INVALID_UNIT_TYPE_DATASET'
 INPUT_DIRECTORY = 'tests/resources/input_directory'
 WORKING_DIRECTORY = 'tests/resources/working_directory'
 EXPECTED_DIRECTORY = 'tests/resources/expected'
@@ -65,6 +66,17 @@ def test_validate_valid_dataset_wrong_delimiter():
     assert data_errors == ['Invalid field separator ",". Use ";".']
 
 
+def test_validate_invalid_unit_type_dataset():
+    data_errors = validate(
+        INVALID_UNIT_TYPE_DATASET,
+        working_directory=WORKING_DIRECTORY,
+        keep_temporary_files=True,
+        input_directory=INPUT_DIRECTORY
+    )
+    assert len(data_errors) == 1
+    assert "'IKKE_EN_UNIT_TYPE' is not one of " in data_errors[0]
+
+
 def test_validate_valid_dataset_delete_temporary_files():
     for valid_dataset_name in VALID_DATASET_NAMES:
         data_errors = validate(
@@ -106,6 +118,19 @@ def test_validate_valid_dataset_ref():
         f'{VALID_DATASET_REF}.json',
         f'{VALID_DATASET_REF}.csv'
     ]
+    with open(
+        f'{WORKING_DIRECTORY}/{VALID_DATASET_REF}.json',
+        'r',
+        encoding='utf-8'
+    ) as f:
+        actual_metadata = json.load(f)
+    with open(
+        f'{EXPECTED_DIRECTORY}/{VALID_DATASET_REF}.json',
+        'r',
+        encoding='utf-8'
+    ) as f:
+        expected_metadata = json.load(f)
+    assert expected_metadata == actual_metadata
     assert not data_errors
     for file in expected_files:
         assert file in actual_files
@@ -155,23 +180,6 @@ def test_validate_invalid_dates():
     ]
 
 
-def test_validate_invalid_unit_type():
-    data_errors = validate(
-        INVALID_UNIT_TYPE_DATASET_NAME,
-        working_directory=WORKING_DIRECTORY,
-        input_directory=INPUT_DIRECTORY,
-    )
-    assert data_errors == [
-        (
-            "properties.identifierVariables.items.properties.unitType."
-            "properties.shortName.enum: "
-            "'SOMETHING' is not one of ['JOBB', 'KJORETOY', 'FAMILIE', "
-            "'FORETAK', 'HUSHOLDNING', 'KOMMUNE', 'KURS', 'PERSON', "
-            "'VIRKSOMHET']"
-        )
-    ]
-
-
 def test_invalid_date_ranges():
     data_errors = validate(
         INVALID_DATE_RANGES_DATASET_NAME,
@@ -191,7 +199,7 @@ def test_invalid_date_ranges():
 
 
 def get_working_directory_files() -> list:
-    return [file for file in os.listdir(WORKING_DIRECTORY)]
+    return os.listdir(WORKING_DIRECTORY)
 
 
 def teardown_function():

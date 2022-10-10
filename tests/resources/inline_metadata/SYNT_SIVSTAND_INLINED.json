@@ -1,19 +1,10 @@
 {
-  "shortName": "SYNT_BEFOLKNING_SIVSTAND",
   "temporalityType": "EVENT",
   "populationDescription": [
     {
       "languageCode": "no",
       "value": "Alle personer registrert bosatt i Norge"
     }
-  ],
-  "subjectFields": [
-    [
-      {
-        "languageCode": "no",
-        "value": "Befolkning"
-      }
-    ]
   ],
   "spatialCoverageDescription": [
     {
@@ -28,76 +19,15 @@
         "value": "Første publisering."
       }
     ],
-    "temporalEndOfSeries": false,
-    "temporalCoverageStart": "1920-01-01",
-    "temporalCoverageLatest": "1951-01-01"
+    "temporalEndOfSeries": false
   },
   "identifierVariables": [
     {
-      "shortName": "PERSONID_1",
-      "name": [
-        {
-          "languageCode": "no",
-          "value": "Personidentifikator"
-        },
-        {
-          "languageCode": "en",
-          "value": "Person identifier"
-        }
-      ],
-      "description": [
-        {
-          "languageCode": "no",
-          "value": "Identifikator for person i Microdata"
-        },
-        {
-          "languageCode": "en",
-          "value": "Identifier for person in Microdata"
-        }
-      ],
-      "dataType": "LONG",
-      "unitType": {
-        "pseudonymized": true,
-        "shortName": "PERSON",
-        "name": [
-          {
-            "languageCode": "no",
-            "value": "Person"
-          },
-          {
-            "languageCode": "en",
-            "value": "Person"
-          }
-        ],
-        "description": [
-          {
-            "languageCode": "no",
-            "value": "Statistisk enhet er person (individ, enkeltmenneske)"
-          },
-          {
-            "languageCode": "en",
-            "value": "Statistical unit is person (individual person)"
-          }
-        ]
-      },
-      "format": "RandomUInt48",
-      "valueDomain": {
-        "description": [
-          {
-            "languageCode": "no",
-            "value": "Pseudonymisert personnummer"
-          },
-          {
-            "languageCode": "en",
-            "value": "Pseudonymized personnummer"
-          }
-        ]
-      }
+      "unitType": "PERSON"
     }
   ],
   "measureVariables": [
     {
-      "shortName": "SYNT_BEFOLKNING_SIVSTAND",
       "name": [
         {
           "languageCode": "no",
@@ -109,6 +39,14 @@
           "languageCode": "no",
           "value": "Sivilstand i forhold til ekteskapslovgivningen"
         }
+      ],
+      "subjectFields": [
+        [
+            {
+              "languageCode": "no",
+              "value": "Befolkning"
+            }
+          ]
       ],
       "dataType": "STRING",
       "uriDefinition": [
@@ -216,81 +154,13 @@
             "categoryTitle": [
               {
                 "languageCode": "no",
-                "value": "Siviltand ukjent"
+                "value": "Sivilstand ukjent"
               }
             ],
             "validFrom": "1900-01-01"
           }
         ]
       }
-    }
-  ],
-  "attributeVariables": [
-    {
-      "variableRole": "START_TIME",
-      "shortName": "START",
-      "dataType": "DATE",
-      "valueDomain": {
-        "description": [
-          {
-            "languageCode": "no",
-            "value": "Dato oppgitt i dager siden 1970-01-01"
-          }
-        ]
-      },
-      "description": [
-        {
-          "languageCode": "no",
-          "value": "Startdato/m\u00e5letidspunktet for hendelsen"
-        },
-        {
-          "languageCode": "en",
-          "value": "Startdato/m\u00e5letidspunktet for hendelsen"
-        }
-      ],
-      "name": [
-        {
-          "languageCode": "no",
-          "value": "Startdato"
-        },
-        {
-          "languageCode": "en",
-          "value": "Start date"
-        }
-      ]
-    },
-    {
-      "variableRole": "STOP_TIME",
-      "shortName": "STOP",
-      "dataType": "DATE",
-      "valueDomain": {
-        "description": [
-          {
-            "languageCode": "no",
-            "value": "Dato oppgitt i dager siden 1970-01-01"
-          }
-        ]
-      },
-      "description": [
-        {
-          "languageCode": "no",
-          "value": "Startdato/m\u00e5letidspunktet for hendelsen"
-        },
-        {
-          "languageCode": "en",
-          "value": "Startdato/m\u00e5letidspunktet for hendelsen"
-        }
-      ],
-      "name": [
-        {
-          "languageCode": "no",
-          "value": "Stoppdato"
-        },
-        {
-          "languageCode": "en",
-          "value": "Stop date"
-        }
-      ]
     }
   ]
 }

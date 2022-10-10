@@ -1,0 +1,61 @@
+{
+  "shortName": "PERSONID_1",
+  "name": [
+    {
+      "languageCode": "no",
+      "value": "Personidentifikator"
+    },
+    {
+      "languageCode": "en",
+      "value": "Person identifier"
+    }
+  ],
+  "description": [
+    {
+      "languageCode": "no",
+      "value": "Identifikator for person i Microdata"
+    },
+    {
+      "languageCode": "en",
+      "value": "Identifier for person in Microdata"
+    }
+  ],
+  "dataType": "LONG",
+  "unitType": {
+    "shortName": "PERSON",
+    "pseudonymized": true,
+    "name": [
+      {
+        "languageCode": "no",
+        "value": "Person"
+      },
+      {
+        "languageCode": "en",
+        "value": "Person"
+      }
+    ],
+    "description": [
+      {
+        "languageCode": "no",
+        "value": "Statistisk enhet er person (individ, enkeltmenneske)"
+      },
+      {
+        "languageCode": "en",
+        "value": "Statistical unit is person (individual person)"
+      }
+    ]
+  },
+  "format": "RandomUInt48",
+  "valueDomain": {
+    "description": [
+      {
+        "languageCode": "no",
+        "value": "Pseudonymisert personnummer"
+      },
+      {
+        "languageCode": "en",
+        "value": "Pseudonymized personnummer"
+      }
+    ]
+  }
+}

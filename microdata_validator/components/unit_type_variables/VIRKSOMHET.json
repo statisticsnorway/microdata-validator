@@ -1,0 +1,61 @@
+{
+  "shortName": "VIRKSOMHET_ID",
+  "name": [
+    {
+      "languageCode": "no",
+      "value": "Virksomhetsidentifikator"
+    },
+    {
+      "languageCode": "en",
+      "value": "Business identifier"
+    }
+  ],
+  "description": [
+    {
+      "languageCode": "no",
+      "value": "Identifikator for virksomhet i Microdata"
+    },
+    {
+      "languageCode": "en",
+      "value": "Identifier for business in Microdata"
+    }
+  ],
+  "dataType": "LONG",
+  "unitType": {
+    "pseudonymized": true,
+    "shortName": "VIRKSOMHET",
+    "name": [
+      {
+        "languageCode": "no",
+        "value": "Virksomhet"
+      },
+      {
+        "languageCode": "en",
+        "value": "Business"
+      }
+    ],
+    "description": [
+      {
+        "languageCode": "no",
+        "value": "Virksomhet/bedrift er definert som en lokalt avgrenset funksjonell enhet som hovedsakelig driver virksomhet innenfor en bestemt næringsgruppe (Standard for næringsgruppering)."
+      },
+      {
+        "languageCode": "en",
+        "value": ""
+      }
+    ]
+  },
+  "format": "RandomUInt48",
+  "valueDomain": {
+    "description": [
+      {
+        "languageCode": "no",
+        "value": "Pseudonymisert organisasjonsnummer"
+      },
+      {
+        "languageCode": "en",
+        "value": "Pseudonymized organisasjonsnummer"
+      }
+    ]
+  }
+}

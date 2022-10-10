@@ -1,7 +1,6 @@
 {
     "uriDefinition": [""],
-    "codeList": {
-        "codeItems": [
+    "codeList": [
             {
                 "code": "1",
                 "categoryTitle": [{"languageCode": "no", "value": "Mann"}],
@@ -13,5 +12,4 @@
                 "validFrom": "1900-01-01"
             }
         ]
-    }
 }

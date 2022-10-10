@@ -1,0 +1,4478 @@
+{
+  "shortName": "KOMMUNEID",
+  "name": [
+    {
+      "languageCode": "no",
+      "value": "Kommune"
+    },
+    {
+      "languageCode": "en",
+      "value": "Kommune"
+    }
+  ],
+  "description": [
+    {
+      "languageCode": "no",
+      "value": "Identifikator for kommune i Microdata"
+    },
+    {
+      "languageCode": "en",
+      "value": "Identifier for kommune in Microdata"
+    }
+  ],
+  "dataType": "STRING",
+  "unitType": {
+    "pseudonymized": false,
+    "shortName": "KOMMUNE",
+    "name": [
+      {
+        "languageCode": "no",
+        "value": "Kommune"
+      },
+      {
+        "languageCode": "en",
+        "value": "Kommune"
+      }
+    ],
+    "description": [
+      {
+        "languageCode": "no",
+        "value": "Kommunene utgjør en administrativ inndeling av Norge. Kommune er betegnelsen både på et politisk og forvaltningsmessig nivå, og på et regionalt nivå."
+      }
+    ]
+  },
+  "valueDomain": {
+    "uriDefinition": [
+      "https://www.ssb.no/klass/klassifikasjoner/131/"
+    ],
+    "codeList": [
+      {
+        "code": "2111",
+        "categoryTitle": "Spitsbergen",
+        "validFrom": "1900-01-01"
+      },
+      {
+        "code": "0101",
+        "categoryTitle": "Halden",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0104",
+        "categoryTitle": "Moss",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0105",
+        "categoryTitle": "Sarpsborg",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0106",
+        "categoryTitle": "Fredrikstad",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0111",
+        "categoryTitle": "Hvaler",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0118",
+        "categoryTitle": "Aremark",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0119",
+        "categoryTitle": "Marker",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0121",
+        "categoryTitle": "Rømskog",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0122",
+        "categoryTitle": "Trøgstad",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0123",
+        "categoryTitle": "Spydeberg",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0124",
+        "categoryTitle": "Askim",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0125",
+        "categoryTitle": "Eidsberg",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0127",
+        "categoryTitle": "Skiptvet",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0128",
+        "categoryTitle": "Rakkestad",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0135",
+        "categoryTitle": "Råde",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0136",
+        "categoryTitle": "Rygge",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0137",
+        "categoryTitle": "Våler",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0138",
+        "categoryTitle": "Hobøl",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0211",
+        "categoryTitle": "Vestby",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0213",
+        "categoryTitle": "Ski",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0214",
+        "categoryTitle": "Ås",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0215",
+        "categoryTitle": "Frogn",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0216",
+        "categoryTitle": "Nesodden",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0217",
+        "categoryTitle": "Oppegård",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0219",
+        "categoryTitle": "Bærum",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0220",
+        "categoryTitle": "Asker",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0221",
+        "categoryTitle": "Aurskog-Høland",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0226",
+        "categoryTitle": "Sørum",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0227",
+        "categoryTitle": "Fet",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0228",
+        "categoryTitle": "Rælingen",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0229",
+        "categoryTitle": "Enebakk",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0230",
+        "categoryTitle": "Lørenskog",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0231",
+        "categoryTitle": "Skedsmo",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0233",
+        "categoryTitle": "Nittedal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0234",
+        "categoryTitle": "Gjerdrum",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0235",
+        "categoryTitle": "Ullensaker",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0236",
+        "categoryTitle": "Nes",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0237",
+        "categoryTitle": "Eidsvoll",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0238",
+        "categoryTitle": "Nannestad",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0239",
+        "categoryTitle": "Hurdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0301",
+        "categoryTitle": "Oslo",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "0402",
+        "categoryTitle": "Kongsvinger",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0403",
+        "categoryTitle": "Hamar",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0412",
+        "categoryTitle": "Ringsaker",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0415",
+        "categoryTitle": "Løten",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0417",
+        "categoryTitle": "Stange",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0418",
+        "categoryTitle": "Nord-Odal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0419",
+        "categoryTitle": "Sør-Odal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0420",
+        "categoryTitle": "Eidskog",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0423",
+        "categoryTitle": "Grue",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0425",
+        "categoryTitle": "Åsnes",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0426",
+        "categoryTitle": "Våler",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0427",
+        "categoryTitle": "Elverum",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0428",
+        "categoryTitle": "Trysil",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0429",
+        "categoryTitle": "Åmot",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0430",
+        "categoryTitle": "Stor-Elvdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0432",
+        "categoryTitle": "Rendalen",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0434",
+        "categoryTitle": "Engerdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0436",
+        "categoryTitle": "Tolga",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0437",
+        "categoryTitle": "Tynset",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0438",
+        "categoryTitle": "Alvdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0439",
+        "categoryTitle": "Folldal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0441",
+        "categoryTitle": "Os",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0501",
+        "categoryTitle": "Lillehammer",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0502",
+        "categoryTitle": "Gjøvik",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0511",
+        "categoryTitle": "Dovre",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0512",
+        "categoryTitle": "Lesja",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0513",
+        "categoryTitle": "Skjåk",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0514",
+        "categoryTitle": "Lom",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0515",
+        "categoryTitle": "Vågå",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0516",
+        "categoryTitle": "Nord-Fron",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0517",
+        "categoryTitle": "Sel",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0519",
+        "categoryTitle": "Sør-Fron",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0520",
+        "categoryTitle": "Ringebu",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0521",
+        "categoryTitle": "Øyer",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0522",
+        "categoryTitle": "Gausdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0528",
+        "categoryTitle": "Østre Toten",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0529",
+        "categoryTitle": "Vestre Toten",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0532",
+        "categoryTitle": "Jevnaker",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0533",
+        "categoryTitle": "Lunner",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0534",
+        "categoryTitle": "Gran",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0536",
+        "categoryTitle": "Søndre Land",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0538",
+        "categoryTitle": "Nordre Land",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0540",
+        "categoryTitle": "Sør-Aurdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0541",
+        "categoryTitle": "Etnedal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0542",
+        "categoryTitle": "Nord-Aurdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0543",
+        "categoryTitle": "Vestre Slidre",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0544",
+        "categoryTitle": "Øystre Slidre",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0545",
+        "categoryTitle": "Vang",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0602",
+        "categoryTitle": "Drammen",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0604",
+        "categoryTitle": "Kongsberg",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0605",
+        "categoryTitle": "Ringerike",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0612",
+        "categoryTitle": "Hole",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0615",
+        "categoryTitle": "Flå",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0616",
+        "categoryTitle": "Nes",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0617",
+        "categoryTitle": "Gol",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0618",
+        "categoryTitle": "Hemsedal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0619",
+        "categoryTitle": "Ål",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0620",
+        "categoryTitle": "Hol",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0621",
+        "categoryTitle": "Sigdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0622",
+        "categoryTitle": "Krødsherad",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0623",
+        "categoryTitle": "Modum",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0624",
+        "categoryTitle": "Øvre Eiker",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0625",
+        "categoryTitle": "Nedre Eiker",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0626",
+        "categoryTitle": "Lier",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0627",
+        "categoryTitle": "Røyken",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0628",
+        "categoryTitle": "Hurum",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0631",
+        "categoryTitle": "Flesberg",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0632",
+        "categoryTitle": "Rollag",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0633",
+        "categoryTitle": "Nore og Uvdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0701",
+        "categoryTitle": "Horten",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0702",
+        "categoryTitle": "Holmestrand",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "0704",
+        "categoryTitle": "Tønsberg",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0706",
+        "categoryTitle": "Sandefjord",
+        "validFrom": "2014-01-01",
+        "validUntil": "2016-12-31"
+      },
+      {
+        "code": "0709",
+        "categoryTitle": "Larvik",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "0710",
+        "categoryTitle": "Sandefjord",
+        "validFrom": "2017-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0711",
+        "categoryTitle": "Svelvik",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0712",
+        "categoryTitle": "Larvik",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0713",
+        "categoryTitle": "Sande",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0714",
+        "categoryTitle": "Hof",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "0715",
+        "categoryTitle": "Holmestrand",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0716",
+        "categoryTitle": "Re",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0719",
+        "categoryTitle": "Andebu",
+        "validFrom": "2014-01-01",
+        "validUntil": "2016-12-31"
+      },
+      {
+        "code": "0720",
+        "categoryTitle": "Stokke",
+        "validFrom": "2014-01-01",
+        "validUntil": "2016-12-31"
+      },
+      {
+        "code": "0722",
+        "categoryTitle": "Nøtterøy",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "0723",
+        "categoryTitle": "Tjøme",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "0728",
+        "categoryTitle": "Lardal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "0729",
+        "categoryTitle": "Færder",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0805",
+        "categoryTitle": "Porsgrunn",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0806",
+        "categoryTitle": "Skien",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0807",
+        "categoryTitle": "Notodden",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0811",
+        "categoryTitle": "Siljan",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0814",
+        "categoryTitle": "Bamble",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0815",
+        "categoryTitle": "Kragerø",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0817",
+        "categoryTitle": "Drangedal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0819",
+        "categoryTitle": "Nome",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0821",
+        "categoryTitle": "Bø",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0822",
+        "categoryTitle": "Sauherad",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0826",
+        "categoryTitle": "Tinn",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0827",
+        "categoryTitle": "Hjartdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0828",
+        "categoryTitle": "Seljord",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0829",
+        "categoryTitle": "Kviteseid",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0830",
+        "categoryTitle": "Nissedal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0831",
+        "categoryTitle": "Fyresdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0833",
+        "categoryTitle": "Tokke",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0834",
+        "categoryTitle": "Vinje",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0901",
+        "categoryTitle": "Risør",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0904",
+        "categoryTitle": "Grimstad",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0906",
+        "categoryTitle": "Arendal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0911",
+        "categoryTitle": "Gjerstad",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0912",
+        "categoryTitle": "Vegårshei",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0914",
+        "categoryTitle": "Tvedestrand",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0919",
+        "categoryTitle": "Froland",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0926",
+        "categoryTitle": "Lillesand",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0928",
+        "categoryTitle": "Birkenes",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0929",
+        "categoryTitle": "Åmli",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0935",
+        "categoryTitle": "Iveland",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0937",
+        "categoryTitle": "Evje og Hornnes",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0938",
+        "categoryTitle": "Bygland",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0940",
+        "categoryTitle": "Valle",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "0941",
+        "categoryTitle": "Bykle",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1001",
+        "categoryTitle": "Kristiansand",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1002",
+        "categoryTitle": "Mandal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1003",
+        "categoryTitle": "Farsund",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1004",
+        "categoryTitle": "Flekkefjord",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1014",
+        "categoryTitle": "Vennesla",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1017",
+        "categoryTitle": "Songdalen",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1018",
+        "categoryTitle": "Søgne",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1021",
+        "categoryTitle": "Marnardal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1026",
+        "categoryTitle": "Åseral",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1027",
+        "categoryTitle": "Audnedal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1029",
+        "categoryTitle": "Lindesnes",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1032",
+        "categoryTitle": "Lyngdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1034",
+        "categoryTitle": "Hægebostad",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1037",
+        "categoryTitle": "Kvinesdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1046",
+        "categoryTitle": "Sirdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1101",
+        "categoryTitle": "Eigersund",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1102",
+        "categoryTitle": "Sandnes",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1103",
+        "categoryTitle": "Stavanger",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1106",
+        "categoryTitle": "Haugesund",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1108",
+        "categoryTitle": "Sandnes",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1111",
+        "categoryTitle": "Sokndal",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1112",
+        "categoryTitle": "Lund",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1114",
+        "categoryTitle": "Bjerkreim",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1119",
+        "categoryTitle": "Hå",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1120",
+        "categoryTitle": "Klepp",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1121",
+        "categoryTitle": "Time",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1122",
+        "categoryTitle": "Gjesdal",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1124",
+        "categoryTitle": "Sola",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1127",
+        "categoryTitle": "Randaberg",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1129",
+        "categoryTitle": "Forsand",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1130",
+        "categoryTitle": "Strand",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1133",
+        "categoryTitle": "Hjelmeland",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1134",
+        "categoryTitle": "Suldal",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1135",
+        "categoryTitle": "Sauda",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1141",
+        "categoryTitle": "Finnøy",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1142",
+        "categoryTitle": "Rennesøy",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1144",
+        "categoryTitle": "Kvitsøy",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1145",
+        "categoryTitle": "Bokn",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1146",
+        "categoryTitle": "Tysvær",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1149",
+        "categoryTitle": "Karmøy",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1151",
+        "categoryTitle": "Utsira",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1160",
+        "categoryTitle": "Vindafjord",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1201",
+        "categoryTitle": "Bergen",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1211",
+        "categoryTitle": "Etne",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1216",
+        "categoryTitle": "Sveio",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1219",
+        "categoryTitle": "Bømlo",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1221",
+        "categoryTitle": "Stord",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1222",
+        "categoryTitle": "Fitjar",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1223",
+        "categoryTitle": "Tysnes",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1224",
+        "categoryTitle": "Kvinnherad",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1227",
+        "categoryTitle": "Jondal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1228",
+        "categoryTitle": "Odda",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1231",
+        "categoryTitle": "Ullensvang",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1232",
+        "categoryTitle": "Eidfjord",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1233",
+        "categoryTitle": "Ulvik",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1234",
+        "categoryTitle": "Granvin",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1235",
+        "categoryTitle": "Voss",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1238",
+        "categoryTitle": "Kvam",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1241",
+        "categoryTitle": "Fusa",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1242",
+        "categoryTitle": "Samnanger",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1243",
+        "categoryTitle": "Os",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1244",
+        "categoryTitle": "Austevoll",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1245",
+        "categoryTitle": "Sund",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1246",
+        "categoryTitle": "Fjell",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1247",
+        "categoryTitle": "Askøy",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1251",
+        "categoryTitle": "Vaksdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1252",
+        "categoryTitle": "Modalen",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1253",
+        "categoryTitle": "Osterøy",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1256",
+        "categoryTitle": "Meland",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1259",
+        "categoryTitle": "Øygarden",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1260",
+        "categoryTitle": "Radøy",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1263",
+        "categoryTitle": "Lindås",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1264",
+        "categoryTitle": "Austrheim",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1265",
+        "categoryTitle": "Fedje",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1266",
+        "categoryTitle": "Masfjorden",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1401",
+        "categoryTitle": "Flora",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1411",
+        "categoryTitle": "Gulen",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1412",
+        "categoryTitle": "Solund",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1413",
+        "categoryTitle": "Hyllestad",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1416",
+        "categoryTitle": "Høyanger",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1417",
+        "categoryTitle": "Vik",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1418",
+        "categoryTitle": "Balestrand",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1419",
+        "categoryTitle": "Leikanger",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1420",
+        "categoryTitle": "Sogndal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1421",
+        "categoryTitle": "Aurland",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1422",
+        "categoryTitle": "Lærdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1424",
+        "categoryTitle": "Årdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1426",
+        "categoryTitle": "Luster",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1428",
+        "categoryTitle": "Askvoll",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1429",
+        "categoryTitle": "Fjaler",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1430",
+        "categoryTitle": "Gaular",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1431",
+        "categoryTitle": "Jølster",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1432",
+        "categoryTitle": "Førde",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1433",
+        "categoryTitle": "Naustdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1438",
+        "categoryTitle": "Bremanger",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1439",
+        "categoryTitle": "Vågsøy",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1441",
+        "categoryTitle": "Selje",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1443",
+        "categoryTitle": "Eid",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1444",
+        "categoryTitle": "Hornindal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1445",
+        "categoryTitle": "Gloppen",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1449",
+        "categoryTitle": "Stryn",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1502",
+        "categoryTitle": "Molde",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1504",
+        "categoryTitle": "Ålesund",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1505",
+        "categoryTitle": "Kristiansund",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1506",
+        "categoryTitle": "Molde",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1507",
+        "categoryTitle": "Ålesund",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1511",
+        "categoryTitle": "Vanylven",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1514",
+        "categoryTitle": "Sande",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1515",
+        "categoryTitle": "Herøy",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1515",
+        "categoryTitle": "Herøy (Møre og Romsdal)",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1516",
+        "categoryTitle": "Ulstein",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1517",
+        "categoryTitle": "Hareid",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1519",
+        "categoryTitle": "Volda",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1520",
+        "categoryTitle": "Ørsta",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1523",
+        "categoryTitle": "Ørskog",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1524",
+        "categoryTitle": "Norddal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1525",
+        "categoryTitle": "Stranda",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1526",
+        "categoryTitle": "Stordal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1528",
+        "categoryTitle": "Sykkylven",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1529",
+        "categoryTitle": "Skodje",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1531",
+        "categoryTitle": "Sula",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1532",
+        "categoryTitle": "Giske",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1534",
+        "categoryTitle": "Haram",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1535",
+        "categoryTitle": "Vestnes",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1539",
+        "categoryTitle": "Rauma",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1543",
+        "categoryTitle": "Nesset",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1545",
+        "categoryTitle": "Midsund",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1546",
+        "categoryTitle": "Sandøy",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1547",
+        "categoryTitle": "Aukra",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1548",
+        "categoryTitle": "Fræna",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1551",
+        "categoryTitle": "Eide",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1554",
+        "categoryTitle": "Averøy",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1557",
+        "categoryTitle": "Gjemnes",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1560",
+        "categoryTitle": "Tingvoll",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1563",
+        "categoryTitle": "Sunndal",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1566",
+        "categoryTitle": "Surnadal",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1567",
+        "categoryTitle": "Rindal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2018-12-31"
+      },
+      {
+        "code": "1571",
+        "categoryTitle": "Halsa",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1573",
+        "categoryTitle": "Smøla",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1576",
+        "categoryTitle": "Aure",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1577",
+        "categoryTitle": "Volda",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1578",
+        "categoryTitle": "Fjord",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1579",
+        "categoryTitle": "Hustadvika",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1601",
+        "categoryTitle": "Trondheim",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1612",
+        "categoryTitle": "Hemne",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1613",
+        "categoryTitle": "Snillfjord",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1617",
+        "categoryTitle": "Hitra",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1620",
+        "categoryTitle": "Frøya",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1621",
+        "categoryTitle": "Ørland",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1622",
+        "categoryTitle": "Agdenes",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1624",
+        "categoryTitle": "Rissa",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1627",
+        "categoryTitle": "Bjugn",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1630",
+        "categoryTitle": "Åfjord",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1632",
+        "categoryTitle": "Roan",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1633",
+        "categoryTitle": "Osen",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1634",
+        "categoryTitle": "Oppdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1635",
+        "categoryTitle": "Rennebu",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1636",
+        "categoryTitle": "Meldal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1638",
+        "categoryTitle": "Orkdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1640",
+        "categoryTitle": "Røros",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1644",
+        "categoryTitle": "Holtålen",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1648",
+        "categoryTitle": "Midtre Gauldal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1653",
+        "categoryTitle": "Melhus",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1657",
+        "categoryTitle": "Skaun",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1662",
+        "categoryTitle": "Klæbu",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1663",
+        "categoryTitle": "Malvik",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1664",
+        "categoryTitle": "Selbu",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1665",
+        "categoryTitle": "Tydal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1702",
+        "categoryTitle": "Steinkjer",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1703",
+        "categoryTitle": "Namsos",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1711",
+        "categoryTitle": "Meråker",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1714",
+        "categoryTitle": "Stjørdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1717",
+        "categoryTitle": "Frosta",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1718",
+        "categoryTitle": "Leksvik",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1719",
+        "categoryTitle": "Levanger",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1721",
+        "categoryTitle": "Verdal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1724",
+        "categoryTitle": "Verran",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1725",
+        "categoryTitle": "Namdalseid",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1736",
+        "categoryTitle": "Snåase - Snåsa",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1738",
+        "categoryTitle": "Lierne",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1739",
+        "categoryTitle": "Raarvihke - Røyrvik",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1740",
+        "categoryTitle": "Namsskogan",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1742",
+        "categoryTitle": "Grong",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1743",
+        "categoryTitle": "Høylandet",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1744",
+        "categoryTitle": "Overhalla",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1748",
+        "categoryTitle": "Fosnes",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1749",
+        "categoryTitle": "Flatanger",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1750",
+        "categoryTitle": "Vikna",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1751",
+        "categoryTitle": "Nærøy",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1755",
+        "categoryTitle": "Leka",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1756",
+        "categoryTitle": "Inderøy",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1804",
+        "categoryTitle": "Bodø",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1805",
+        "categoryTitle": "Narvik",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1806",
+        "categoryTitle": "Narvik",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1811",
+        "categoryTitle": "Bindal",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1812",
+        "categoryTitle": "Sømna",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1813",
+        "categoryTitle": "Brønnøy",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1815",
+        "categoryTitle": "Vega",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1816",
+        "categoryTitle": "Vevelstad",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1818",
+        "categoryTitle": "Herøy (Nordland)",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1818",
+        "categoryTitle": "Herøy",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1820",
+        "categoryTitle": "Alstahaug",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1822",
+        "categoryTitle": "Leirfjord",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1824",
+        "categoryTitle": "Vefsn",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1825",
+        "categoryTitle": "Grane",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1826",
+        "categoryTitle": "Aarborte - Hattfjelldal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1826",
+        "categoryTitle": "Hattfjelldal",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1827",
+        "categoryTitle": "Dønna",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1828",
+        "categoryTitle": "Nesna",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1832",
+        "categoryTitle": "Hemnes",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1833",
+        "categoryTitle": "Rana",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1834",
+        "categoryTitle": "Lurøy",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1835",
+        "categoryTitle": "Træna",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1836",
+        "categoryTitle": "Rødøy",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1837",
+        "categoryTitle": "Meløy",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1838",
+        "categoryTitle": "Gildeskål",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1839",
+        "categoryTitle": "Beiarn",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1840",
+        "categoryTitle": "Saltdal",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1841",
+        "categoryTitle": "Fauske - Fuossko",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1841",
+        "categoryTitle": "Fauske",
+        "validFrom": "2014-01-01",
+        "validUntil": "2016-12-31"
+      },
+      {
+        "code": "1841",
+        "categoryTitle": "Fauske - Fuosko",
+        "validFrom": "2017-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1845",
+        "categoryTitle": "Sørfold",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1848",
+        "categoryTitle": "Steigen",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1849",
+        "categoryTitle": "Hábmer - Hamarøy",
+        "validFrom": "2014-01-01",
+        "validUntil": "2016-12-31"
+      },
+      {
+        "code": "1849",
+        "categoryTitle": "Hamarøy - Hábmer",
+        "validFrom": "2017-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1850",
+        "categoryTitle": "Divtasvuodna - Tysfjord",
+        "validFrom": "2017-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1850",
+        "categoryTitle": "Divtasvuodna Tysfjord",
+        "validFrom": "2014-01-01",
+        "validUntil": "2016-12-31"
+      },
+      {
+        "code": "1851",
+        "categoryTitle": "Lødingen",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1852",
+        "categoryTitle": "Tjeldsund",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1853",
+        "categoryTitle": "Evenes",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1854",
+        "categoryTitle": "Ballangen",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1856",
+        "categoryTitle": "Røst",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1857",
+        "categoryTitle": "Værøy",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1859",
+        "categoryTitle": "Flakstad",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1860",
+        "categoryTitle": "Vestvågøy",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1865",
+        "categoryTitle": "Vågan",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1866",
+        "categoryTitle": "Hadsel",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1867",
+        "categoryTitle": "Bø",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1868",
+        "categoryTitle": "Øksnes",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1870",
+        "categoryTitle": "Sortland - Suortá",
+        "validFrom": "2017-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1870",
+        "categoryTitle": "Sortland",
+        "validFrom": "2014-01-01",
+        "validUntil": "2016-12-31"
+      },
+      {
+        "code": "1870",
+        "categoryTitle": "Sortland",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1871",
+        "categoryTitle": "Andøy",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1874",
+        "categoryTitle": "Moskenes",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1875",
+        "categoryTitle": "Hamarøy - Hábmer",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "1902",
+        "categoryTitle": "Tromsø",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1903",
+        "categoryTitle": "Harstad - Hárstták",
+        "validFrom": "2017-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1903",
+        "categoryTitle": "Harstad",
+        "validFrom": "2014-01-01",
+        "validUntil": "2016-12-31"
+      },
+      {
+        "code": "1911",
+        "categoryTitle": "Kvæfjord",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1913",
+        "categoryTitle": "Skånland",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1917",
+        "categoryTitle": "Ibestad",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1919",
+        "categoryTitle": "Gratangen",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1920",
+        "categoryTitle": "Loabák - Lavangen",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1922",
+        "categoryTitle": "Bardu",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1923",
+        "categoryTitle": "Salangen",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1924",
+        "categoryTitle": "Målselv",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1925",
+        "categoryTitle": "Sørreisa",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1926",
+        "categoryTitle": "Dyrøy",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1927",
+        "categoryTitle": "Tranøy",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1928",
+        "categoryTitle": "Torsken",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1929",
+        "categoryTitle": "Berg",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1931",
+        "categoryTitle": "Lenvik",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1933",
+        "categoryTitle": "Balsfjord",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1936",
+        "categoryTitle": "Karlsøy",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1938",
+        "categoryTitle": "Lyngen",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1939",
+        "categoryTitle": "Storfjord - Omasvuotna - Omasvuono",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1940",
+        "categoryTitle": "Gáivuotna - Kåfjord - Kaivuono",
+        "validFrom": "2017-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1940",
+        "categoryTitle": "Gáivuotna - Kåfjord",
+        "validFrom": "2014-01-01",
+        "validUntil": "2016-12-31"
+      },
+      {
+        "code": "1941",
+        "categoryTitle": "Skjervøy",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1942",
+        "categoryTitle": "Nordreisa",
+        "validFrom": "2014-01-01",
+        "validUntil": "2017-12-31"
+      },
+      {
+        "code": "1942",
+        "categoryTitle": "Nordreisa - Ráisa - Raisi",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "1943",
+        "categoryTitle": "Kvænangen",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "2002",
+        "categoryTitle": "Vardø",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "2003",
+        "categoryTitle": "Vadsø",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "2004",
+        "categoryTitle": "Hammerfest",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "2011",
+        "categoryTitle": "Guovdageaidnu - Kautokeino",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "2012",
+        "categoryTitle": "Alta",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "2014",
+        "categoryTitle": "Loppa",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "2015",
+        "categoryTitle": "Hasvik",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "2017",
+        "categoryTitle": "Kvalsund",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "2018",
+        "categoryTitle": "Måsøy",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "2019",
+        "categoryTitle": "Nordkapp",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "2020",
+        "categoryTitle": "Porsanger - Porsángu - Porsanki",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "2021",
+        "categoryTitle": "Kárá?johka - Karasjok",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "2022",
+        "categoryTitle": "Lebesby",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "2023",
+        "categoryTitle": "Gamvik",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "2024",
+        "categoryTitle": "Berlevåg",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "2025",
+        "categoryTitle": "Deatnu - Tana",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "2027",
+        "categoryTitle": "Unjárga - Nesseby",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "2028",
+        "categoryTitle": "Båtsfjord",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "2030",
+        "categoryTitle": "Sør-Varanger",
+        "validFrom": "2014-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "3001",
+        "categoryTitle": "Halden",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3002",
+        "categoryTitle": "Moss",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3003",
+        "categoryTitle": "Sarpsborg",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3004",
+        "categoryTitle": "Fredrikstad",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3005",
+        "categoryTitle": "Drammen",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3006",
+        "categoryTitle": "Kongsberg",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3007",
+        "categoryTitle": "Ringerike",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3011",
+        "categoryTitle": "Hvaler",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3012",
+        "categoryTitle": "Aremark",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3013",
+        "categoryTitle": "Marker",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3014",
+        "categoryTitle": "Indre Østfold",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3015",
+        "categoryTitle": "Skiptvet",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3016",
+        "categoryTitle": "Rakkestad",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3017",
+        "categoryTitle": "Råde",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3018",
+        "categoryTitle": "Våler (Viken)",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3019",
+        "categoryTitle": "Vestby",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3020",
+        "categoryTitle": "Nordre Follo",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3021",
+        "categoryTitle": "Ås",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3022",
+        "categoryTitle": "Frogn",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3023",
+        "categoryTitle": "Nesodden",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3024",
+        "categoryTitle": "Bærum",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3025",
+        "categoryTitle": "Asker",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3026",
+        "categoryTitle": "Aurskog-Høland",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3027",
+        "categoryTitle": "Rælingen",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3028",
+        "categoryTitle": "Enebakk",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3029",
+        "categoryTitle": "Lørenskog",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3030",
+        "categoryTitle": "Lillestrøm",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3031",
+        "categoryTitle": "Nittedal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3032",
+        "categoryTitle": "Gjerdrum",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3033",
+        "categoryTitle": "Ullensaker",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3034",
+        "categoryTitle": "Nes",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3035",
+        "categoryTitle": "Eidsvoll",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3036",
+        "categoryTitle": "Nannestad",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3037",
+        "categoryTitle": "Hurdal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3038",
+        "categoryTitle": "Hole",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3039",
+        "categoryTitle": "Flå",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3040",
+        "categoryTitle": "Nesbyen",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3041",
+        "categoryTitle": "Gol",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3042",
+        "categoryTitle": "Hemsedal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3043",
+        "categoryTitle": "Ål",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3044",
+        "categoryTitle": "Hol",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3045",
+        "categoryTitle": "Sigdal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3046",
+        "categoryTitle": "Krødsherad",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3047",
+        "categoryTitle": "Modum",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3048",
+        "categoryTitle": "Øvre Eiker",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3049",
+        "categoryTitle": "Lier",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3050",
+        "categoryTitle": "Flesberg",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3051",
+        "categoryTitle": "Rollag",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3052",
+        "categoryTitle": "Nore og Uvdal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3053",
+        "categoryTitle": "Jevnaker",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3054",
+        "categoryTitle": "Lunner",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3401",
+        "categoryTitle": "Kongsvinger",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3403",
+        "categoryTitle": "Hamar",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3405",
+        "categoryTitle": "Lillehammer",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3407",
+        "categoryTitle": "Gjøvik",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3411",
+        "categoryTitle": "Ringsaker",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3412",
+        "categoryTitle": "Løten",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3413",
+        "categoryTitle": "Stange",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3414",
+        "categoryTitle": "Nord-Odal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3415",
+        "categoryTitle": "Sør-Odal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3416",
+        "categoryTitle": "Eidskog",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3417",
+        "categoryTitle": "Grue",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3418",
+        "categoryTitle": "Åsnes",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3419",
+        "categoryTitle": "Våler (Innlandet)",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3420",
+        "categoryTitle": "Elverum",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3421",
+        "categoryTitle": "Trysil",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3422",
+        "categoryTitle": "Åmot",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3423",
+        "categoryTitle": "Stor-Elvdal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3424",
+        "categoryTitle": "Rendalen",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3425",
+        "categoryTitle": "Engerdal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3426",
+        "categoryTitle": "Tolga",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3427",
+        "categoryTitle": "Tynset",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3428",
+        "categoryTitle": "Alvdal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3429",
+        "categoryTitle": "Folldal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3430",
+        "categoryTitle": "Os",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3431",
+        "categoryTitle": "Dovre",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3432",
+        "categoryTitle": "Lesja",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3433",
+        "categoryTitle": "Skjåk",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3434",
+        "categoryTitle": "Lom",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3435",
+        "categoryTitle": "Vågå",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3436",
+        "categoryTitle": "Nord-Fron",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3437",
+        "categoryTitle": "Sel",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3438",
+        "categoryTitle": "Sør-Fron",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3439",
+        "categoryTitle": "Ringebu",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3440",
+        "categoryTitle": "Øyer",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3441",
+        "categoryTitle": "Gausdal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3442",
+        "categoryTitle": "Østre Toten",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3443",
+        "categoryTitle": "Vestre Toten",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3446",
+        "categoryTitle": "Gran",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3447",
+        "categoryTitle": "Søndre Land",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3448",
+        "categoryTitle": "Nordre Land",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3449",
+        "categoryTitle": "Sør-Aurdal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3450",
+        "categoryTitle": "Etnedal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3451",
+        "categoryTitle": "Nord-Aurdal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3452",
+        "categoryTitle": "Vestre Slidre",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3453",
+        "categoryTitle": "Øystre Slidre",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3454",
+        "categoryTitle": "Vang",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3801",
+        "categoryTitle": "Horten",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3802",
+        "categoryTitle": "Holmestrand",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3803",
+        "categoryTitle": "Tønsberg",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3804",
+        "categoryTitle": "Sandefjord",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3805",
+        "categoryTitle": "Larvik",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3806",
+        "categoryTitle": "Porsgrunn",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3807",
+        "categoryTitle": "Skien",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3808",
+        "categoryTitle": "Notodden",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3811",
+        "categoryTitle": "Færder",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3812",
+        "categoryTitle": "Siljan",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3813",
+        "categoryTitle": "Bamble",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3814",
+        "categoryTitle": "Kragerø",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3815",
+        "categoryTitle": "Drangedal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3816",
+        "categoryTitle": "Nome",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3817",
+        "categoryTitle": "Midt-Telemark",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3818",
+        "categoryTitle": "Tinn",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3819",
+        "categoryTitle": "Hjartdal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3820",
+        "categoryTitle": "Seljord",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3821",
+        "categoryTitle": "Kviteseid",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3822",
+        "categoryTitle": "Nissedal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3823",
+        "categoryTitle": "Fyresdal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3824",
+        "categoryTitle": "Tokke",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "3825",
+        "categoryTitle": "Vinje",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4201",
+        "categoryTitle": "Risør",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4202",
+        "categoryTitle": "Grimstad",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4203",
+        "categoryTitle": "Arendal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4204",
+        "categoryTitle": "Kristiansand",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4205",
+        "categoryTitle": "Lindesnes",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4206",
+        "categoryTitle": "Farsund",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4207",
+        "categoryTitle": "Flekkefjord",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4211",
+        "categoryTitle": "Gjerstad",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4212",
+        "categoryTitle": "Vegårshei",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4213",
+        "categoryTitle": "Tvedestrand",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4214",
+        "categoryTitle": "Froland",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4215",
+        "categoryTitle": "Lillesand",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4216",
+        "categoryTitle": "Birkenes",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4217",
+        "categoryTitle": "Åmli",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4218",
+        "categoryTitle": "Iveland",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4219",
+        "categoryTitle": "Evje og Hornnes",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4220",
+        "categoryTitle": "Bygland",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4221",
+        "categoryTitle": "Valle",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4222",
+        "categoryTitle": "Bykle",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4223",
+        "categoryTitle": "Vennesla",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4224",
+        "categoryTitle": "Åseral",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4225",
+        "categoryTitle": "Lyngdal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4226",
+        "categoryTitle": "Hægebostad",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4227",
+        "categoryTitle": "Kvinesdal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4228",
+        "categoryTitle": "Sirdal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4601",
+        "categoryTitle": "Bergen",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4602",
+        "categoryTitle": "Kinn",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4611",
+        "categoryTitle": "Etne",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4612",
+        "categoryTitle": "Sveio",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4613",
+        "categoryTitle": "Bømlo",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4614",
+        "categoryTitle": "Stord",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4615",
+        "categoryTitle": "Fitjar",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4616",
+        "categoryTitle": "Tysnes",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4617",
+        "categoryTitle": "Kvinnherad",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4618",
+        "categoryTitle": "Ullensvang",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4619",
+        "categoryTitle": "Eidfjord",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4620",
+        "categoryTitle": "Ulvik",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4621",
+        "categoryTitle": "Voss",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4622",
+        "categoryTitle": "Kvam",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4623",
+        "categoryTitle": "Samnanger",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4624",
+        "categoryTitle": "Bjørnafjorden",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4625",
+        "categoryTitle": "Austevoll",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4626",
+        "categoryTitle": "Øygarden",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4627",
+        "categoryTitle": "Askøy",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4628",
+        "categoryTitle": "Vaksdal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4629",
+        "categoryTitle": "Modalen",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4630",
+        "categoryTitle": "Osterøy",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4631",
+        "categoryTitle": "Alver",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4632",
+        "categoryTitle": "Austrheim",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4633",
+        "categoryTitle": "Fedje",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4634",
+        "categoryTitle": "Masfjorden",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4635",
+        "categoryTitle": "Gulen",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4636",
+        "categoryTitle": "Solund",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4637",
+        "categoryTitle": "Hyllestad",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4638",
+        "categoryTitle": "Høyanger",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4639",
+        "categoryTitle": "Vik",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4640",
+        "categoryTitle": "Sogndal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4641",
+        "categoryTitle": "Aurland",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4642",
+        "categoryTitle": "Lærdal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4643",
+        "categoryTitle": "Årdal",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4644",
+        "categoryTitle": "Luster",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4645",
+        "categoryTitle": "Askvoll",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4646",
+        "categoryTitle": "Fjaler",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4647",
+        "categoryTitle": "Sunnfjord",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4648",
+        "categoryTitle": "Bremanger",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4649",
+        "categoryTitle": "Stad",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4650",
+        "categoryTitle": "Gloppen",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "4651",
+        "categoryTitle": "Stryn",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5001",
+        "categoryTitle": "Trondheim",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5004",
+        "categoryTitle": "Steinkjer",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "5005",
+        "categoryTitle": "Namsos",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "5006",
+        "categoryTitle": "Steinkjer",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5007",
+        "categoryTitle": "Namsos",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5011",
+        "categoryTitle": "Hemne",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "5012",
+        "categoryTitle": "Snillfjord",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "5013",
+        "categoryTitle": "Hitra",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "5014",
+        "categoryTitle": "Frøya",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5015",
+        "categoryTitle": "Ørland",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "5016",
+        "categoryTitle": "Agdenes",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "5017",
+        "categoryTitle": "Bjugn",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "5018",
+        "categoryTitle": "Åfjord",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "5019",
+        "categoryTitle": "Roan",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "5020",
+        "categoryTitle": "Osen",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5021",
+        "categoryTitle": "Oppdal",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5022",
+        "categoryTitle": "Rennebu",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5023",
+        "categoryTitle": "Meldal",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "5024",
+        "categoryTitle": "Orkdal",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "5025",
+        "categoryTitle": "Røros",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5026",
+        "categoryTitle": "Holtålen",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5027",
+        "categoryTitle": "Midtre Gauldal",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5028",
+        "categoryTitle": "Melhus",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5029",
+        "categoryTitle": "Skaun",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5030",
+        "categoryTitle": "Klæbu",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "5031",
+        "categoryTitle": "Malvik",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5032",
+        "categoryTitle": "Selbu",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5033",
+        "categoryTitle": "Tydal",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5034",
+        "categoryTitle": "Meråker",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5035",
+        "categoryTitle": "Stjørdal",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5036",
+        "categoryTitle": "Frosta",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5037",
+        "categoryTitle": "Levanger",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5038",
+        "categoryTitle": "Verdal",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5039",
+        "categoryTitle": "Verran",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "5040",
+        "categoryTitle": "Namdalseid",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "5041",
+        "categoryTitle": "Snåase - Snåsa",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5042",
+        "categoryTitle": "Lierne",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5043",
+        "categoryTitle": "Raarvihke - Røyrvik",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5044",
+        "categoryTitle": "Namsskogan",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5045",
+        "categoryTitle": "Grong",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5046",
+        "categoryTitle": "Høylandet",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5047",
+        "categoryTitle": "Overhalla",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5048",
+        "categoryTitle": "Fosnes",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "5049",
+        "categoryTitle": "Flatanger",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5050",
+        "categoryTitle": "Vikna",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "5051",
+        "categoryTitle": "Nærøy",
+        "validFrom": "2018-01-01",
+        "validUntil": "2019-12-31"
+      },
+      {
+        "code": "5052",
+        "categoryTitle": "Leka",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5053",
+        "categoryTitle": "Inderøy",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5054",
+        "categoryTitle": "Indre Fosen",
+        "validFrom": "2018-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5055",
+        "categoryTitle": "Heim",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5056",
+        "categoryTitle": "Hitra",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5057",
+        "categoryTitle": "Ørland",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5058",
+        "categoryTitle": "Åfjord",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5059",
+        "categoryTitle": "Orkland",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5060",
+        "categoryTitle": "Nærøysund",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5061",
+        "categoryTitle": "Rindal",
+        "validFrom": "2019-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5401",
+        "categoryTitle": "Tromsø",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5402",
+        "categoryTitle": "Harstad - Hárstták",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5403",
+        "categoryTitle": "Alta",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5404",
+        "categoryTitle": "Vardø",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5405",
+        "categoryTitle": "Vadsø",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5406",
+        "categoryTitle": "Hammerfest",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5411",
+        "categoryTitle": "Kvæfjord",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5412",
+        "categoryTitle": "Tjeldsund",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5413",
+        "categoryTitle": "Ibestad",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5414",
+        "categoryTitle": "Gratangen",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5415",
+        "categoryTitle": "Loabák - Lavangen",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5416",
+        "categoryTitle": "Bardu",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5417",
+        "categoryTitle": "Salangen",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5418",
+        "categoryTitle": "Målselv",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5419",
+        "categoryTitle": "Sørreisa",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5420",
+        "categoryTitle": "Dyrøy",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5421",
+        "categoryTitle": "Senja",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5422",
+        "categoryTitle": "Balsfjord",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5423",
+        "categoryTitle": "Karlsøy",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5424",
+        "categoryTitle": "Lyngen",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5425",
+        "categoryTitle": "Storfjord - Omasvuotna - Omasvuono",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5426",
+        "categoryTitle": "Gáivuotna - Kåfjord - Kaivuono",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5427",
+        "categoryTitle": "Skjervøy",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5428",
+        "categoryTitle": "Nordreisa - Ráisa - Raisi",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5429",
+        "categoryTitle": "Kvænangen",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5430",
+        "categoryTitle": "Guovdageaidnu - Kautokeino",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5432",
+        "categoryTitle": "Loppa",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5433",
+        "categoryTitle": "Hasvik",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5434",
+        "categoryTitle": "Måsøy",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5435",
+        "categoryTitle": "Nordkapp",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5436",
+        "categoryTitle": "Porsanger - Porsá?gu - Porsanki",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5437",
+        "categoryTitle": "Kárá?johka - Karasjok",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5438",
+        "categoryTitle": "Lebesby",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5439",
+        "categoryTitle": "Gamvik",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5440",
+        "categoryTitle": "Berlevåg",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5441",
+        "categoryTitle": "Deatnu - Tana",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5442",
+        "categoryTitle": "Unjárga - Nesseby",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5443",
+        "categoryTitle": "Båtsfjord",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "5444",
+        "categoryTitle": "Sør-Varanger",
+        "validFrom": "2020-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "9999",
+        "categoryTitle": "Uoppgitt",
+        "validFrom": "2014-01-01",
+        "validUntil": null
+      },
+      {
+        "code": "2580",
+        "categoryTitle": "Utdanning i utlandet",
+        "validFrom": "1900-01-01",
+        "validUntil": null
+      }
+    ]
+  }
+}
