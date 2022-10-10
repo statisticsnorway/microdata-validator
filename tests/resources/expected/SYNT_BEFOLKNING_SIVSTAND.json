@@ -1,5 +1,6 @@
 {
   "shortName": "SYNT_BEFOLKNING_SIVSTAND",
+  "sensitivityLevel": "PERSON_GENERAL",
   "temporalityType": "EVENT",
   "populationDescription": [
     {

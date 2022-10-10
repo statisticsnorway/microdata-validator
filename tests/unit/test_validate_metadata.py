@@ -20,6 +20,9 @@ NO_SUCH_METADATA_FILE = 'NO/SUCH/FILE'
 MISSING_IDENTIFIER_METADATA_FILE_PATH = (
     f'{INPUT_DIR}/MISSING_IDENTIFIER_DATASET/MISSING_IDENTIFIER_DATASET.json'
 )
+INVALID_SENSITIVITY_METADATA_FILE_PATH = (
+    f'{INPUT_DIR}/INVALID_SENSITIVITY_DATASET/INVALID_SENSITIVITY_DATASET.json'
+)
 EMPTY_CODELIST_METADATA_FILE_PATH = (
     f'{INPUT_DIR}/EMPTY_CODELIST_DATASET/EMPTY_CODELIST_DATASET.json'
 )
@@ -32,6 +35,14 @@ def test_validate_valid_metadata():
             metadata_file_path
         )
         assert not data_errors
+
+
+def test_invalid_sensitivity():
+    data_errors = validate_metadata(
+        INVALID_SENSITIVITY_METADATA_FILE_PATH
+    )
+    assert len(data_errors) == 1
+    assert "'UNKNOWN' is not one of" in data_errors[0]
 
 
 def test_validate_valid_metadata_ref():

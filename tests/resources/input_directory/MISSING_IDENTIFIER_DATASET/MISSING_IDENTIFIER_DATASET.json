@@ -1,5 +1,6 @@
 {
     "temporalityType": "ACCUMULATED",
+    "sensitivityLevel": "PERSON_GENERAL",
     "populationDescription": [{"languageCode": "no", "value": "Alle rapporterte personinntekter i norge fra år 1234 til år 4321"}],
     "spatialCoverageDescription": [{"languageCode": "no", "value": "Norge"}],
     "dataRevision": {

@@ -1,5 +1,6 @@
 {
     "shortName": "SYNT_PERSON_INNTEKT",
+    "sensitivityLevel": "PERSON_GENERAL",
     "temporalityType": "ACCUMULATED",
     "populationDescription": [
         {

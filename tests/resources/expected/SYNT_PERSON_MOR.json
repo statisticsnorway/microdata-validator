@@ -1,5 +1,6 @@
 {
     "shortName": "SYNT_PERSON_MOR",
+    "sensitivityLevel": "PERSON_GENERAL",
     "temporalityType": "FIXED",
     "populationDescription": [
       {
