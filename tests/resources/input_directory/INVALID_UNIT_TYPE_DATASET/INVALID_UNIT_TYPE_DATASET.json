@@ -1,5 +1,6 @@
 {
     "temporalityType": "ACCUMULATED",
+    "sensitivityLevel": "PERSON_GENERAL",
     "populationDescription": [
       {
         "languageCode": "no",

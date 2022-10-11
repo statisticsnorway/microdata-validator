@@ -1,5 +1,6 @@
 {
   "temporalityType": "FIXED",
+  "sensitivityLevel": "PERSON_GENERAL",
   "populationDescription": [
     {
       "languageCode": "no",

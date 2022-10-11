@@ -1,5 +1,6 @@
 {
   "shortName": "SYNT_BEFOLKNING_KJOENN",
+  "sensitivityLevel": "PERSON_GENERAL",
   "temporalityType": "FIXED",
   "populationDescription": [
     {

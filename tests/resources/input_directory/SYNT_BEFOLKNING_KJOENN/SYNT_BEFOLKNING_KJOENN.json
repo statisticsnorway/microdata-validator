@@ -1,5 +1,6 @@
 {
   "temporalityType": "FIXED",
+  "sensitivityLevel": "PERSON_GENERAL",
   "populationDescription": [{"languageCode": "no", "value": "Kjønn for en populasjon"}],
   "spatialCoverageDescription": [{"languageCode": "no", "value": "Norge"}],
   "dataRevision": {
