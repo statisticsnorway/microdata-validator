@@ -26,7 +26,7 @@ my-input-directory/
         MY_DATASET_NAME.csv
         MY_DATASET_NAME.json
 ```
-Note that the filename only allows upper case A-Z number 0-9 and underscores.
+Note that the filename only allows upper case letters A-Z, number 0-9 and underscores.
 
 
 Then use pip to install microdata-validator:
