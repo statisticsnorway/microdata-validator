@@ -30,7 +30,7 @@ Description of the measure column of the dataset. It is represented as a list in
 
 
 ### MEASURE VARIABLES (with unitType)
-You might find that some of your datasets contain a unitType in the measure column as well. Let's say you have a dataset PERSON_MOR where the identifier-column is a population of unitType "PERSON", and the measure column is a population of unitType "PERSON". The measure here is representing the populations mothers. Then you may define it as such:
+You might find that some of your datasets contain a unitType in the measure column as well. Let's say you have a dataset PERSON_MOR where the identifier column is a population of unitType "PERSON", and the measure column is a population of unitType "PERSON". The measure here is representing the populations mothers. Then you may define it as such:
 * **unitType**: The unitType for this dataset measure column. Must be one of: FAMILIE, FORETAK, HUSHOLDNING, JOBB, KJORETOY, KOMMUNE, KURS, PERSON or VIRKSOMHET.
 * **name**: Human readable name(Label) of the measure column. This should be similar to your dataset name. Example for PERSON_MOR.json: "Person mor".
 * **description**: Description of the column contents. Example: "Personens registrerte biologiske mor... "
@@ -87,15 +87,15 @@ We expect all values in this dataset to be either "1" or "2", as this dataset on
 
 
 ### UNIT TYPES
-* **PERSON**: Representation of a person in the microdata platform. Columns with this unit type should contain FNR.
-* **FAMILIE**: Representation of a family in the microdata platform. Columns with this unit type should contain FNR.
-* **FORETAK**: Representation of a foretak in the microdata platform. Columns with this unit type should contain ORGNR.
-* **VIRKSOMHET**: Representation of a virksomhet in the microdata platform. Columns with this unit type should contain ORGNR.
-* **HUSHOLDNING**: Representation of a husholdning in the microdata platform. Columns with this unit type should contain FNR.
-* **JOBB**: Representation of a job in the microdata platform. Columns with this unit type should contain FNR_ORGNR. FNR belongs to the employee and ORGNR belongs to the employer.
-* **KOMMUNE**: Representation of a kommune in the microdata platform. Columns with this unit type should contain a valid kommune number.
-* **KURS**: Representation of a course in the microdata platform. Columns with this unit type should contain FNR_KURSID. Where FNR belongs to the participant and KURSID is the NUDB course id.
-* **KJORETOY**: Representation of a vehicle in the microdata platform. Columns with this unit type should contain FNR_REGNR. Where FNR is the owner of the vehicle, and REGNR is the registration number for the vehicle.
+* **PERSON**: Representation of a person in the microdata.no platform. Columns with this unit type should contain FNR.
+* **FAMILIE**: Representation of a family in the microdata.no platform. Columns with this unit type should contain FNR.
+* **FORETAK**: Representation of a foretak in the microdata.no platform. Columns with this unit type should contain ORGNR.
+* **VIRKSOMHET**: Representation of a virksomhet in the microdata.no platform. Columns with this unit type should contain ORGNR.
+* **HUSHOLDNING**: Representation of a husholdning in the microdata.no platform. Columns with this unit type should contain FNR.
+* **JOBB**: Representation of a job in the microdata.no platform. Columns with this unit type should contain FNR_ORGNR. FNR belongs to the employee and ORGNR belongs to the employer.
+* **KOMMUNE**: Representation of a kommune in the microdata.no platform. Columns with this unit type should contain a valid kommune number.
+* **KURS**: Representation of a course in the microdata.no platform. Columns with this unit type should contain FNR_KURSID. Where FNR belongs to the participant and KURSID is the NUDB course id.
+* **KJORETOY**: Representation of a vehicle in the microdata.no platform. Columns with this unit type should contain FNR_REGNR. Where FNR is the owner of the vehicle, and REGNR is the registration number for the vehicle.
 
 ## VALIDATION
 

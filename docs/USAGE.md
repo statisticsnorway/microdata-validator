@@ -122,7 +122,7 @@ This will only check if all required fields are present, and that the metadata f
 ```
 Only use this functionality when you feel comfortable with building datasets without it, and feel like it is necessary to improve your workflow.
 ```
-When creating metadatafiles for the microdata platform, you might find that you end up repeating yourself in each dataset.
+When creating metadatafiles for the microdata.no platform, you might find that you end up repeating yourself in each dataset.
 As an example, BEFOLKNING_KJOENN and BEFOLKNING_SIVSTAND in the [examples folder](/docs/examples) has these same subject fields:
 ```json
 "subjectFields": [
@@ -185,7 +185,7 @@ validation_errors = validate_metadata(
 ```
 
 **IMPORTANT!**
-Remember that if you are done generating your dataset, and you want to import them into the microdata platform, we need the inlined files.
+Remember that if you are done generating your dataset, and you want to import them into the microdata.no platform, we need the inlined files.
 You can build an inlined file by using this function:
 ```py
 from microdata_validator import inline_metadata
