@@ -28,9 +28,9 @@ import microdata_validator
 Once you have your metadata and data files ready to go, they should be named and stored like this:
 ```
 my-input-directory/
-    my_dataset_name/
-        my_dataset_name.csv
-        my_dataset_name.json
+    MY_DATASET_NAME/
+        MY_DATASET_NAME.csv
+        MY_DATASET_NAME.json
 ```
 
 
@@ -38,7 +38,7 @@ Import microdata-validator in your script and validate your files:
 ```py
 from microdata_validator import validate
 
-validation_errors = validate("my-dataset-name")
+validation_errors = validate("MY_DATASET_NAME")
 
 if not validation_errors:
     print("My dataset is valid")
@@ -57,7 +57,7 @@ If you wish to use a different directory, you can use the ```input_directory```-
 from microdata_validator import validate
 
 validation_errors = validate(
-    "my-dataset-name",
+    "MY_DATASET_NAME",
     input_directory="/my/input/directory",
 )
 
@@ -88,7 +88,7 @@ If you wish to keep the temporary files after the validator has run, you can do 
 from microdata_validator import validate
 
 validation_errors = validate(
-    "my-dataset-name",
+    "MY_DATASET_NAME",
     input_directory="/my/input/directory",
     working_directory="/my/working/directory",
     keep_temporary_files=True
@@ -107,7 +107,7 @@ You can validate the metadata by itself with the validate_metadata-function:
 from microdata_validator import validate_metadata
 
 validation_errors = validate_metadata(
-    "path/to/metadata-file.json"
+    "path/to/METADATA_FILE.json"
 )
 
 if not validation_errors:
@@ -119,102 +119,48 @@ This will only check if all required fields are present, and that the metadata f
 
 
 ## Use metadata references
-When creating metadatafiles for the microdata platform, you might find that you end up repeating yourself in each dataset.
-As an example, each of the files in the [examples folder](/docs/examples) has these same attribute variables:
-```json
-"attributeVariables": [
-    {
-      "variableRole": "START_TIME",
-      "shortName": "START",
-      "name": [
-        {"languageCode": "no", "value": "Startdato"},
-        {"languageCode": "en", "value": "Start date"}
-      ],
-      "description": [{"languageCode": "no", "value": "Startdato/måletidspunktet for hendelsen"}
-      ],
-      "dataType": "DATE",
-      "valueDomain": {
-        "description": [{"languageCode": "no", "value": "Dato oppgitt i dager siden 1970-01-01"}]
-      }
-    },
-    {
-      "variableRole": "STOP_TIME",
-      "shortName": "STOP",
-      "name": [
-        {"languageCode": "no", "value": "Stoppdato"},
-        {"languageCode": "en", "value": "Stop date"}
-      ],
-      "description": [
-        {"languageCode": "no", "value": "Stoppdato/sluttdato for hendelsen"},
-        {"languageCode": "en", "value": "Event stop/end date"}
-      ],
-      "dataType": "DATE",
-      "valueDomain": {
-        "description": [{"languageCode": "no", "value": "Dato oppgitt i dager siden 1970-01-01"}
-        ]
-      }
-    }
-]
 ```
-Imagine a scenario where you are managing 50+ datasets. The repetition is not only tedious, but a source of errors. Let's create a new directory ```/metadata_ref```, and place two files there:
+Only use this functionality when you feel comfortable with building datasets without it, and feel like it is necessary to improve your workflow.
+```
+When creating metadatafiles for the microdata.no platform, you might find that you end up repeating yourself in each dataset.
+As an example, BEFOLKNING_KJOENN and BEFOLKNING_SIVSTAND in the [examples folder](/docs/examples) has these same subject fields:
 ```json
-// start.json
-{
-    "variableRole": "START_TIME",
-    "shortName": "START",
-    "name": [
-      {"languageCode": "no", "value": "Startdato"},
-      {"languageCode": "en", "value": "Start date"}
-    ],
-    "description": [{"languageCode": "no", "value": "Startdato/måletidspunktet for hendelsen"}
-    ],
-    "dataType": "DATE",
-    "valueDomain": {
-    "description": [{"languageCode": "no", "value": "Dato oppgitt i dager siden 1970-01-01"}]
-    }
-}
+"subjectFields": [
+        [{"languageCode": "no", "value": "BEFOLKNING"}],
+        [{"languageCode": "no", "value": "SAMFUNN"}]
+      ]
+```
+Imagine a scenario where you are managing 50+ datasets, and find that you are repeating yourself a lot. The repetion of these fields might lead to typing errors. Let's create a new directory ```/metadata_ref```, and place two files there:
+```json
+//befolkning.json
+[{"languageCode": "no", "value": "BEFOLKNING"}]
 ```
 
 ```json
-// stop.json
-{
-    "variableRole": "STOP_TIME",
-    "shortName": "STOP",
-    "name": [
-      {"languageCode": "no", "value": "Stoppdato"},
-      {"languageCode": "en", "value": "Stop date"}
-    ],
-    "description": [
-      {"languageCode": "no", "value": "Stoppdato/sluttdato for hendelsen"},
-      {"languageCode": "en", "value": "Event stop/end date"}
-    ],
-    "dataType": "DATE",
-    "valueDomain": {
-    "description": [{"languageCode": "no", "value": "Dato oppgitt i dager siden 1970-01-01"}
-    ]
-}
+// samfunn.json
+[{"languageCode": "no", "value": "SAMFUNN"}]
 ```
 
 Now we can reference these files in our main dataset file:
 ```json
-"attributeVariables": [
+"subjectFields": [
     {
-      "$ref": "stop.json"
+      "$ref": "befolkning.json"
     },
     {
-      "$ref": "start.json"
+      "$ref": "samfunn.json"
     }
 ]
 ```
 By using "$ref" as the key, we can refer to a ref-file from our ref-directory. Keep in mind that we can only do this with objects, and the reference will overwrite other existing fields that may be present:
 ```json
-"attributeVariables": [
+"subjectFields": [
     {
-      "$ref": "stop.json",
+      "$ref": "befolkning.json",
       "otherfield": "this will be overwritten by the referenced file"
     },
     {
-      "$ref": "start.json"
+      "$ref": "sammfunn.json"
     }
 ]
 ```
@@ -225,7 +171,7 @@ But for the validator to know about our ref directory we need to tell it about t
 from microdata_validator import validate
 
 validation_errors = validate(
-    "my-dataset-name",
+    "MY_DATASET_NAME",
     metadata_ref_directory="metadata_ref"    
 )
 
@@ -233,21 +179,21 @@ validation_errors = validate(
 from microdata_validator import validate_metadata
 
 validation_errors = validate_metadata(
-    "path/to/metadata-file.json",
+    "path/to/MY_DATASET_NAME.json",
     metadata_ref_directory="metadata_ref"
 )
 ```
 
 **IMPORTANT!**
-Remember that if you are done generating your dataset, and you want to import them into the microdata platform, we need the inlined files.
+Remember that if you are done generating your dataset, and you want to import them into the microdata.no platform, we need the inlined files.
 You can build an inlined file by using this function:
 ```py
 from microdata_validator import inline_metadata
 
 result_file_path = validate_metadata(
-    "path/to/metadata-file.json",
+    "path/to/MY_DATASET_NAME.json",
     metadata_ref_directory="metadata_ref",
-    output_file_path="path/to/inlined-metadata.json"
+    output_file_path="path/to/INLINED_DATASET.json"
 )
 ```
 If you do not provide an output_file_path, the package will try to use the original path, but changing ".json" to "_inlined.json".

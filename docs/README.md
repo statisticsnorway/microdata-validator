@@ -1,10 +1,11 @@
 ## THE METADATA MODEL
 _______
 In addition to the examples of metadata json files present in this repository, this document briefly describes the fields in the metadata model.
+
 ### ROOT LEVEL FIELDS
 These fields describe the dataset as a whole.
-* **shortName**: Name of the dataset
-* **temporalityType**: The temporality type of the dataset. Must be one of FIXED, ACCUMULATED, STATUS og EVENT.
+* **temporalityType**: The temporality type of the dataset. Must be one of FIXED, ACCUMULATED, STATUS or EVENT.
+* **sensitivityLevel**: The sensitivity of the data in the dataset. Must be one of: PERSON_GENERAL, PERSON_SPECIAL, PUBLIC or NONPUBLIC
 * **spatialCoverageDescription**: The geographic area relevant to the data.
 * **populationDescription**: Description of the dataset's population.
 
@@ -12,41 +13,27 @@ These fields describe the dataset as a whole.
 ### DATAREVISION
 These fields describe the current version of the dataset.
 * **description**: Description of this version of the dataset.
-* **temporalEndOfSeries**: Is this the final updates for this dataset? [True | False]
+* **temporalEndOfSeries**: Is this the final update for this dataset? [True | False]
 
 ### IDENTIFIER VARIABLES
-Description of the indentifier column of the dataset. It is represented as a list in the metadata model, but currently only one identifier is allowed per dataset.
-* **shortName**: Machine readable name for the identifier column. Example: "PERSONID_1".
-* **name**: Human readable name for the identifier colum. Example: "Personidentifikator".
-* **description**: Description of the column contents. Example: "Pseudonymisert fødselsnummer"
-* **dataType**: DataType for the values in the column. One of: ["STRING", "LONG"]
-* **format**: More detailed description of the values. For example a regular expression.
-* **uriDefinition**: Link to external resource describing the identifier.
-* **unitType**: See definition below.
-* **valueDomain**: See definition below.
+Description of the indentifier column of the dataset. It is represented as a list in the metadata model, but currently only one identifier is allowed per dataset. The identifiers are always based on a unit. A unit is centrally defined to make joining datasets across datastores easy.
+* **unitType**: The unitType for this dataset identifier column. Must be one of: FAMILIE, FORETAK, HUSHOLDNING, JOBB, KJORETOY, KOMMUNE, KURS, PERSON or VIRKSOMHET.
 
 ### MEASURE VARIABLES
 Description of the measure column of the dataset. It is represented as a list in the metadata model, but currently only one measure is allowed per dataset.
-* **shortName**: Machine readable name for the measure. Is also used as variable name in the ROSE client. Example: INNTEKT_AKSJEUTBYTTE.
-* **name**: Human readable name(Label) of the measure column. Used as the column label in the ROSE client. Example: "Aksjeutbytte".
+* **name**: Human readable name(Label) of the measure column. This should be similar to your dataset name. Example for PERSON_INNTEKT.json: "Person inntekt".
 * **description**: Description of the column contents. Example: "Skattepliktig og skattefritt utbytte i... "
 * **dataType**: DataType for the values in the column. One of: ["STRING", "LONG", "DOUBLE", "DATE"]
-* **format**: More detailed description of the values. For example a regular expression.
-* **uriDefinition**: Link to external resource describing the measure.
-* **unitType**: See definition below.
+* **format (Optional)**: More detailed description of the values. For example a regular expression.
+* **uriDefinition (Optional)**: Link to external resource describing the measure.
 * **valueDomain**: See definition below.
 
-### ATTRIBUTE VARIABLES
-Description of the attribute columns. For now the only valid values are START_TIME og STOP_TIME
-* **variableRole**: One of: ["START_TIME", "STOP_TIME"]
-* **shortName**: Machine readable name for the measure. 
-* **name**: Human readable name(Label) of the attribute column. Used as the column label in the ROSE client. Example: "Startdato".
-* **description**: Description of the column contents.
-* **dataType**: DataType for the values in the column. One of: ["STRING", "LONG", "DOUBLE", "DATE"]
-* **format**: More detailed description of the values. For example a regular expression.
-* **uriDefinition**: Link to external resource describing the measure.
-* **unitType**: See definition below.
-* **valueDomain**: See definition below.
+
+### MEASURE VARIABLES (with unitType)
+You might find that some of your datasets contain a unitType in the measure column as well. Let's say you have a dataset PERSON_MOR where the identifier column is a population of unitType "PERSON", and the measure column is a population of unitType "PERSON". The measure here is representing the populations mothers. Then you may define it as such:
+* **unitType**: The unitType for this dataset measure column. Must be one of: FAMILIE, FORETAK, HUSHOLDNING, JOBB, KJORETOY, KOMMUNE, KURS, PERSON or VIRKSOMHET.
+* **name**: Human readable name(Label) of the measure column. This should be similar to your dataset name. Example for PERSON_MOR.json: "Person mor".
+* **description**: Description of the column contents. Example: "Personens registrerte biologiske mor... "
 
 
 ### VALUE DOMAIN
@@ -99,12 +86,16 @@ The second example belongs to the measure variable of a dataset where the measur
 We expect all values in this dataset to be either "1" or "2", as this dataset only considers "Male" or "Female". But we also expect a code "0" to be present in the dataset, where it represents "Unknown". A row with "0" as measure is therefore not considered invalid. A value domain with a code list like this is what we would call an __enumerated value domain.
 
 
-### UNIT TYPE
-Description of the unit the data describes. A "fødselsnummer" can be used to identify a PERSON. Another example would be an "organisasjonsnummer" that would be used to identify a "FORETAK".
-* **shortName**: Machine readable name.
-* **name**: Human readable name.
-* **description**: Description of the unit type.
-
+### UNIT TYPES
+* **PERSON**: Representation of a person in the microdata.no platform. Columns with this unit type should contain FNR.
+* **FAMILIE**: Representation of a family in the microdata.no platform. Columns with this unit type should contain FNR.
+* **FORETAK**: Representation of a foretak in the microdata.no platform. Columns with this unit type should contain ORGNR.
+* **VIRKSOMHET**: Representation of a virksomhet in the microdata.no platform. Columns with this unit type should contain ORGNR.
+* **HUSHOLDNING**: Representation of a husholdning in the microdata.no platform. Columns with this unit type should contain FNR.
+* **JOBB**: Representation of a job in the microdata.no platform. Columns with this unit type should contain FNR_ORGNR. FNR belongs to the employee and ORGNR belongs to the employer.
+* **KOMMUNE**: Representation of a kommune in the microdata.no platform. Columns with this unit type should contain a valid kommune number.
+* **KURS**: Representation of a course in the microdata.no platform. Columns with this unit type should contain FNR_KURSID. Where FNR belongs to the participant and KURSID is the NUDB course id.
+* **KJORETOY**: Representation of a vehicle in the microdata.no platform. Columns with this unit type should contain FNR_REGNR. Where FNR is the owner of the vehicle, and REGNR is the registration number for the vehicle.
 
 ## VALIDATION
 
@@ -125,7 +116,7 @@ Example:
 ```
 
 This dataset describes a group of persons gross income accumulated yearly. The columns can be described like this:
-* Identifier: fødselsnummer
+* Identifier: FNR
 * Measure: Accumulated gross income for the time period
 * Start: start of time period
 * Stop: end of time period

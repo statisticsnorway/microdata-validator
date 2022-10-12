@@ -1,79 +1,25 @@
 {
-  "shortName": "SYNT_PERSON_INNTEKT",
   "temporalityType": "ACCUMULATED",
-  "populationDescription": [{"languageCode": "no", "value": "Alle rapporterte personinntekter i norge fra år 1234 til år 4321"}],
+  "populationDescription": [{"languageCode": "no", "value": "Alle personer registrert bosatt i Norge"}],
   "spatialCoverageDescription": [{"languageCode": "no", "value": "Norge"}],
+  "subjectFields": [
+    [{"languageCode": "no", "value": "ØKONOMI"}],
+    [{"languageCode": "no", "value": "SAMFUNN"}]
+  ],
   "dataRevision": {
     "description": [{"languageCode": "no","value": "Første publisering."}],
     "temporalEndOfSeries": false
   },
-  "identifierVariables": [
-    {
-      "shortName": "PERSONID_1",
-      "name": [{"languageCode": "no", "value": "Personidentifikator"}],
-      "description": [{"languageCode": "no","value": "Identifikator for person i Microdata"}],
-      "dataType": "STRING",
-      "unitType": {
-        "shortName": "PERSON",
-        "name": [{"languageCode": "no", "value": "Person"}],
-        "description": [{"languageCode": "no", "value": "Statistisk enhet er person (individ, enkeltmenenske)"}]
-      },
-      "format": "RandomUInt48",
-      "valueDomain": {
-        "shortName": "PERSONID_1",
-        "description": [{"languageCode": "no", "value":"Pseudonymisert personnummer"}]
-      }
-    }
-  ], 
+  "identifierVariables": [{"unitType": "PERSON"}], 
   "measureVariables": [
     {
-      "shortName": "SYNT_PERSON_INNTEKT",
       "name": [{"languageCode": "no", "value": "Personens inntekt"}],
       "description": [{"languageCode": "no", "value": "Personens rapporterte inntekt"}],
-      "subjectFields": [
-        [{"languageCode": "no", "value": "Økonomi"}],
-        [{"languageCode": "no", "value": "Samfunn"}]
-      ],
       "dataType": "STRING",
-      "uriDefinition": [""],
       "valueDomain": {
-        "uriDefinition": [],
         "description": [{"languageCode": "no", "value":"Årlig personinntekt"}],
         "measurementType": "CURRENCY",
         "measurementUnitDescription": [{"languageCode": "no", "value": "Norske Kroner"}]
-      }
-    }
-  ],
-  "attributeVariables": [
-    {
-      "variableRole": "START_TIME",
-      "shortName": "START",
-      "name": [
-        {"languageCode": "no", "value": "Startdato"},
-        {"languageCode": "en", "value": "Start date"}
-      ],
-      "description": [{"languageCode": "no", "value": "Startdato/måletidspunktet for hendelsen"}
-      ],
-      "dataType": "DATE",
-      "valueDomain": {
-        "description": [{"languageCode": "no", "value": "Dato oppgitt i dager siden 1970-01-01"}]
-      }
-    },
-    {
-      "variableRole": "STOP_TIME",
-      "shortName": "STOP",
-      "name": [
-        {"languageCode": "no", "value": "Stoppdato"},
-        {"languageCode": "en", "value": "Stop date"}
-      ],
-      "description": [
-        {"languageCode": "no", "value": "Stoppdato/sluttdato for hendelsen"},
-        {"languageCode": "en", "value": "Event stop/end date"}
-      ],
-      "dataType": "DATE",
-      "valueDomain": {
-        "description": [{"languageCode": "no", "value": "Dato oppgitt i dager siden 1970-01-01"}
-        ]
       }
     }
   ]
