@@ -24,7 +24,7 @@ INVALID_DATE_RANGES_DATASET_NAME = 'INVALID_DATE_RANGES_DATASET'
 INVALID_UNIT_TYPE_DATASET = 'INVALID_UNIT_TYPE_DATASET'
 INPUT_DIRECTORY = 'tests/resources/input_directory'
 WORKING_DIRECTORY = 'tests/resources/working_directory'
-EXPECTED_DIRECTORY = 'tests/resources/expected'
+EXPECTED_DIRECTORY = 'tests/resources/expected/validate'
 REF_DIRECTORY = 'tests/resources/ref_directory'
 
 
@@ -175,8 +175,8 @@ def test_validate_invalid_dates():
         input_directory=INPUT_DIRECTORY,
     )
     assert data_errors == [
-        "row 4: STOP date not valid - '1926-01-01'",
-        "row 15: STOP date not valid - '1940-02-01'"
+        'row 4: STOP date not valid - "1926-01-01"',
+        'row 15: STOP date not valid - "1940-02-01"'
     ]
 
 
