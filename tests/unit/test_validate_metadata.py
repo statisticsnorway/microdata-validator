@@ -9,63 +9,45 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 INPUT_DIR = 'tests/resources/input_directory'
-VALID_METADATA_FILE_PATHS = [
-    f'{INPUT_DIR}/SYNT_BEFOLKNING_SIVSTAND/SYNT_BEFOLKNING_SIVSTAND.json',
-    f'{INPUT_DIR}/SYNT_PERSON_INNTEKT/SYNT_PERSON_INNTEKT.json'
-]
-VALID_METADATA_REF_PATH = (
-    f'{INPUT_DIR}/SYNT_BEFOLKNING_KJOENN/SYNT_BEFOLKNING_KJOENN.json'
-)
-NO_SUCH_METADATA_FILE = 'NO/SUCH/FILE'
-MISSING_IDENTIFIER_METADATA_FILE_PATH = (
-    f'{INPUT_DIR}/MISSING_IDENTIFIER_DATASET/MISSING_IDENTIFIER_DATASET.json'
-)
-INVALID_SENSITIVITY_METADATA_FILE_PATH = (
-    f'{INPUT_DIR}/INVALID_SENSITIVITY_DATASET/INVALID_SENSITIVITY_DATASET.json'
-)
-EMPTY_CODELIST_METADATA_FILE_PATH = (
-    f'{INPUT_DIR}/EMPTY_CODELIST_DATASET/EMPTY_CODELIST_DATASET.json'
-)
+VALID_METADATA = ['SYNT_BEFOLKNING_SIVSTAND', 'SYNT_PERSON_INNTEKT']
+VALID_METADATA_REF = 'SYNT_BEFOLKNING_KJOENN'
+NO_SUCH_METADATA = 'NO_SUCH_METADATA'
+MISSING_IDENTIFIER_METADATA = 'MISSING_IDENTIFIER_DATASET'
+INVALID_SENSITIVITY_METADATA = 'INVALID_SENSITIVITY_DATASET'
+EMPTY_CODELIST_METADATA = 'EMPTY_CODELIST_DATASET'
 REF_DIRECTORY = 'tests/resources/ref_directory'
 
 
 def test_validate_valid_metadata():
-    for metadata_file_path in VALID_METADATA_FILE_PATHS:
-        data_errors = validate_metadata(
-            metadata_file_path
-        )
+    for metadata in VALID_METADATA:
+        data_errors = validate_metadata(metadata, INPUT_DIR)
         assert not data_errors
 
 
 def test_invalid_sensitivity():
-    data_errors = validate_metadata(
-        INVALID_SENSITIVITY_METADATA_FILE_PATH
-    )
+    data_errors = validate_metadata(INVALID_SENSITIVITY_METADATA, INPUT_DIR)
     assert len(data_errors) == 1
     assert "'UNKNOWN' is not one of" in data_errors[0]
 
 
 def test_validate_valid_metadata_ref():
     data_errors = validate_metadata(
-        VALID_METADATA_REF_PATH,
+        VALID_METADATA_REF,
+        INPUT_DIR,
         metadata_ref_directory=REF_DIRECTORY
     )
     assert not data_errors
 
 
 def test_validate_invalid_metadata():
-    data_errors = validate_metadata(
-        MISSING_IDENTIFIER_METADATA_FILE_PATH
-    )
+    data_errors = validate_metadata(MISSING_IDENTIFIER_METADATA, INPUT_DIR)
     assert data_errors == [
         "required: 'identifierVariables' is a required property"
     ]
 
 
 def test_validate_empty_codelist():
-    data_errors = validate_metadata(
-        EMPTY_CODELIST_METADATA_FILE_PATH
-    )
+    data_errors = validate_metadata(EMPTY_CODELIST_METADATA, INPUT_DIR)
     assert data_errors == [
         (
             'properties.measureVariables.items.properties'
@@ -77,4 +59,4 @@ def test_validate_empty_codelist():
 
 def test_validate_metadata_does_not_exist():
     with pytest.raises(FileNotFoundError):
-        validate_metadata(NO_SUCH_METADATA_FILE)
+        validate_metadata(NO_SUCH_METADATA, INPUT_DIR)
