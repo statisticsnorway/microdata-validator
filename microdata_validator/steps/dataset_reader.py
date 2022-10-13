@@ -16,14 +16,12 @@ def _read_and_process_data(
     field_separator: str = ";",
     data_error_limit: int = 100
 ) -> dict:
-    data_errors = []  # used for error-reporting
+    data_errors = []
     start_dates = []
     stop_dates = []
     rows_validated = 0
 
-    logger.debug(
-        f'Validate datafile "{data_file_path}"'
-    )
+    logger.debug(f'Validate datafile "{data_file_path}"')
     data_file_with_row_numbers = open(
         enriched_data_file_path, 'w', encoding='utf-8'
     )
@@ -73,18 +71,18 @@ def _read_and_process_data(
                     start = data_row[2].strip('"')
                     stop = data_row[3].strip('"')
                     data_file_with_row_numbers.write(
-                        f"{reader.line_num};{unit_id};{value};"
-                        f"{start};{stop};\n"
+                        f'{reader.line_num};{unit_id};{value};'
+                        f'{start};{stop};\n'
                     )
                     if unit_id is None or str(unit_id).strip(" ") == "":
                         data_errors.append(
-                            f"row {reader.line_num}: "
-                            f"identifier missing or null - '{unit_id}'"
+                            f'row {reader.line_num}: '
+                            f'identifier missing or null - "{unit_id}"'
                         )
                     if value is None or str(value).strip(" ") == "":
                         data_errors.append(
-                            f"row {reader.line_num}: "
-                            f"measure missing or null - '{value}'"
+                            f'row {reader.line_num}: '
+                            f'measure missing or null - "{value}"'
                         )
                     if start not in (None, ""):
                         try:
@@ -95,8 +93,8 @@ def _read_and_process_data(
                             )
                         except Exception:
                             data_errors.append(
-                                f"row {reader.line_num}: "
-                                f"START date not valid - '{start}'"
+                                f'row {reader.line_num}: '
+                                f'START date not valid - "{start}"'
                             )
                     if stop not in (None, ""):
                         try:
@@ -105,8 +103,8 @@ def _read_and_process_data(
                             )
                         except Exception:
                             data_errors.append(
-                                f"row {reader.line_num}: "
-                                f"STOP date not valid - '{start}'"
+                                f'row {reader.line_num}: '
+                                f'STOP date not valid - "{start}"'
                             )
                     # find temporalCoverage from datafile
                     start_dates.append(str(start).strip('"'))
@@ -132,17 +130,17 @@ def _read_and_process_data(
             ) from e
 
     if data_errors:
-        logger.debug(f"ERROR in file - {data_file_path}")
-        logger.debug(f"{str(rows_validated)} rows validated")
+        logger.debug(f'ERROR in file - {data_file_path}')
+        logger.debug(f'{str(rows_validated)} rows validated')
         raise InvalidDataException(
             'Invalid data found while reading data file', data_errors
         )
     else:
-        logger.debug(f"{str(rows_validated)} rows validated")
+        logger.debug(f'{str(rows_validated)} rows validated')
         return {
-            "start": min(start_dates),
-            "latest": max(stop_dates),
-            "status_list": list(set(start_dates + stop_dates))
+            'start': min(start_dates),
+            'latest': max(stop_dates),
+            'status_list': list(set(start_dates + stop_dates))
         }
 
 

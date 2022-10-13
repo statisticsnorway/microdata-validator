@@ -88,7 +88,7 @@ def validate_metadata(
     keep_temporary_files: bool = False
 ) -> list:
     """
-    Validate a metadata file and return a list of errors.
+    Validate metadata and return a list of errors.
     If the metadata is valid, the list will be empty.
     """
     data_errors = []
