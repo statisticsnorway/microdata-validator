@@ -5,14 +5,6 @@ from pathlib import Path
 
 from microdata_validator.exceptions import InvalidDataException
 from microdata_validator.repository import local_storage
-from microdata_validator.components import (
-    temporal_attributes,
-    unit_type_variables
-)
-from microdata_validator.schema import (
-    validate_with_schema,
-    inline_metadata_references
-)
 
 
 logger = logging.getLogger()
@@ -181,62 +173,29 @@ def _metadata_update_temporal_coverage(metadata: dict,
         )
 
 
-def _insert_centralized_variable_definitions(metadata: dict):
-    metadata['identifierVariables'] = [unit_type_variables.get(
-        metadata['identifierVariables'][0]['unitType']
-    )]
-    measure_variable = metadata['measureVariables'][0]
-    if 'unitType' in measure_variable:
-        insert_measure = unit_type_variables.get(measure_variable['unitType'])
-        insert_measure['name'] = measure_variable['name']
-        insert_measure['description'] = measure_variable['description']
-        metadata['measureVariables'] = [insert_measure]
-    temporality_type = metadata['temporalityType']
-    metadata['attributeVariables'] = [
-        temporal_attributes.generate_start_time_attribute(temporality_type),
-        temporal_attributes.generate_stop_time_attribute(temporality_type)
-    ] + metadata.get('attributeVariables', [])
-
-
 def run_reader(
+    dataset_name: str,
     working_directory: Path,
-    input_directory: Path,
-    metadata_ref_directory: Path,
-    dataset_name: str
+    input_directory: Path
 ) -> None:
     input_dataset_dir = input_directory / dataset_name
-    input_metadata_path = input_dataset_dir / f"{dataset_name}.json"
-    input_data_path = input_dataset_dir / f"{dataset_name}.csv"
+    input_data_path = input_dataset_dir / f'{dataset_name}.csv'
+    metadata_path = working_directory / f'{dataset_name}.json'
 
     logger.debug(f'Start reading dataset "{dataset_name}"')
     processed_data_path = working_directory / f'{dataset_name}.csv'
     temporal_data = _read_and_process_data(
         input_data_path, processed_data_path
     )
-
-    logger.debug(f'Reading metadata from file "{input_metadata_path}"')
-    if metadata_ref_directory is None:
-        metadata_dict = local_storage.load_json(input_metadata_path)
-    else:
-        metadata_dict = inline_metadata_references(
-            input_metadata_path, metadata_ref_directory
-        )
-
-    logger.debug('Validating metadata JSON with JSON schema')
-    validate_with_schema(metadata_dict)
-
-    _insert_centralized_variable_definitions(metadata_dict)
+    logger.debug('Enriching metadata with temporal coverage')
+    metadata_dict = local_storage.load_json(metadata_path)
     _metadata_update_temporal_coverage(metadata_dict, temporal_data)
-    metadata_dict['shortName'] = dataset_name
-    metadata_dict['measureVariables'][0]['shortName'] = dataset_name
 
-    logger.debug('Writing inlined metadata JSON file to working directory')
-    inlined_metadata_path = working_directory / f'{dataset_name}.json'
-    local_storage.write_json(inlined_metadata_path, metadata_dict)
+    logger.debug('Writing updated metadata JSON file to working directory')
+    local_storage.write_json(metadata_path, metadata_dict)
 
     sqlite_file_path = working_directory.joinpath(f'{dataset_name}.db')
     local_storage.insert_data_csv_into_sqlite(
         sqlite_file_path, processed_data_path
     )
-
     logger.debug(f'OK - reading dataset "{dataset_name}"')
