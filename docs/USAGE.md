@@ -31,6 +31,8 @@ my-input-directory/
     MY_DATASET_NAME/
         MY_DATASET_NAME.csv
         MY_DATASET_NAME.json
+    MY_OTHER_DATASET/
+        MY_OTHER_DATASET.json
 ```
 
 
@@ -101,13 +103,14 @@ else:
  ```
  
 ## Validate metadata
-What if your data is not yet done, but you want to start generating and validating your metadata?
-You can validate the metadata by itself with the validate_metadata-function:
+What if your data is not yet done, but you want to start generating and validating your metadata? Keep your files in the same directory structure as described above, minus the csv file.
+You can validate the metadata by itself with the validate_metadata function:
 ```py
 from microdata_validator import validate_metadata
 
 validation_errors = validate_metadata(
-    "path/to/METADATA_FILE.json"
+    "MY_DATASET_NAME",
+    input_directory="my/input/directory"
 )
 
 if not validation_errors:

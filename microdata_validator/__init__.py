@@ -1,6 +1,4 @@
-import uuid
 import os
-import shutil
 import logging
 from typing import List, Union
 from pathlib import Path
@@ -10,7 +8,7 @@ from microdata_validator import schema
 from microdata_validator.repository import local_storage
 from microdata_validator.components import unit_id_types
 from microdata_validator.steps import (
-    dataset_reader, dataset_validator
+    dataset_reader, dataset_validator, metadata_reader
 )
 from microdata_validator.exceptions import (
     InvalidDataException,
@@ -22,8 +20,8 @@ logger = logging.getLogger()
 
 def validate(
     dataset_name: str,
-    working_directory: str = "",
-    input_directory: str = "",
+    working_directory: str = '',
+    input_directory: str = '',
     keep_temporary_files: bool = False,
     metadata_ref_directory: str = None
 ) -> List[str]:
@@ -31,33 +29,34 @@ def validate(
     Validate a dataset and return a list of errors.
     If the dataset is valid, the list will be empty.
     """
+    # validate dataset name
     try:
         validate_dataset_name(dataset_name)
     except InvalidDatasetName as e:
         return [str(e)]
 
     # Generate working directory if not supplied
-    if working_directory:
-        generated_working_directory = False
-        working_directory_path = Path(working_directory)
-    else:
-        generated_working_directory = True
-        working_directory_path = Path(str(uuid.uuid4()))
-        os.mkdir(working_directory_path)
-
+    working_directory_path, working_directory_was_generated = (
+         local_storage.resolve_working_directory(working_directory)
+    )
     # Make paths for input and ref directory
     input_directory_path = Path(input_directory)
     if metadata_ref_directory is not None:
         metadata_ref_directory = Path(metadata_ref_directory)
 
-    # Run reader and validator
+    # Run readers and validator
     data_errors = []
     try:
-        dataset_reader.run_reader(
+        metadata_reader.run_reader(
+            dataset_name,
             working_directory_path,
             input_directory_path,
-            metadata_ref_directory,
+            metadata_ref_directory
+        )
+        dataset_reader.run_reader(
             dataset_name,
+            working_directory_path,
+            input_directory_path
         )
         data_errors = dataset_validator.run_validator(
             working_directory_path, dataset_name
@@ -70,76 +69,72 @@ def validate(
     except Exception as e:
         # Raise unexpected exceptions to user
         raise e
-
-    # Delete temporary files
-    if not keep_temporary_files:
-        generated_files = [
-            f"{dataset_name}.csv",
-            f"{dataset_name}.json",
-            f"{dataset_name}.db",
-        ]
-        if generated_working_directory:
-            temporary_files = os.listdir(working_directory_path)
-            unknown_files = [
-                file for file in temporary_files if file not in generated_files
-            ]
-            if not unknown_files:
-                try:
-                    shutil.rmtree(working_directory_path)
-                except Exception as e:
-                    logger.error(
-                        "An exception occured while attempting to delete"
-                        f"temporary files: {e}"
-                    )
-            else:
-                for file in generated_files:
-                    try:
-                        os.remove(working_directory_path / file)
-                    except FileNotFoundError:
-                        logger.error(
-                            f"Could not find file {file} in working directory "
-                            "when attempting to delete temporary files."
-                        )
-        else:
-            for file in generated_files:
-                try:
-                    os.remove(working_directory_path / file)
-                except FileNotFoundError:
-                    logger.error(
-                        f"Could not find file {file} in working directory "
-                        "when attempting to delete temporary files."
-                    )
+    finally:
+        # Delete temporary files
+        if not keep_temporary_files:
+            local_storage.clean_up_temporary_files(
+                dataset_name,
+                working_directory_path,
+                delete_working_directory=working_directory_was_generated
+            )
     return data_errors
 
 
-def validate_metadata(metadata_file_path: str,
-                      metadata_ref_directory: str = None) -> list:
+def validate_metadata(
+    dataset_name: str,
+    input_directory: str = '',
+    metadata_ref_directory: str = None,
+    working_directory: str = '',
+    keep_temporary_files: bool = False
+) -> list:
     """
-    Validate a metadata file and return a list of errors.
+    Validate metadata and return a list of errors.
     If the metadata is valid, the list will be empty.
     """
+    data_errors = []
+
+    # validate dataset name
     try:
-        dataset_name = metadata_file_path.split('/')[-1][:-5]
         validate_dataset_name(dataset_name)
-        metadata_file_path = Path(metadata_file_path)
-        if metadata_ref_directory is None:
-            metadata_dict = local_storage.load_json(Path(metadata_file_path))
-        else:
-            metadata_ref_directory = Path(metadata_ref_directory)
-            metadata_dict = schema.inline_metadata_references(
-                metadata_file_path, metadata_ref_directory
-            )
-        schema.validate_with_schema(metadata_dict)
-        return []
-    except ValidationError as e:
-        schema_path = ".".join([str(path) for path in e.relative_schema_path])
-        return [f"{schema_path}: {e.message}"]
     except InvalidDatasetName as e:
         return [str(e)]
 
+    # Generate working directory if not supplied
+    working_directory_path, working_directory_was_generated = (
+         local_storage.resolve_working_directory(working_directory)
+    )
 
-def inline_metadata(metadata_file_path: str, metadata_ref_directory: str,
-                    output_file_path: str = None) -> Path:
+    try:
+        metadata_reader.run_reader(
+            dataset_name,
+            working_directory_path,
+            Path(input_directory),
+            metadata_ref_directory
+        )
+    except ValidationError as e:
+        schema_path = ".".join([str(path) for path in e.relative_schema_path])
+        data_errors = [f"{schema_path}: {e.message}"]
+    except InvalidDatasetName as e:
+        data_errors = [str(e)]
+    except Exception as e:
+        # Raise unexpected exceptions to user
+        raise e
+    finally:
+        # Delete temporary files
+        if not keep_temporary_files:
+            local_storage.clean_up_temporary_files(
+                dataset_name,
+                working_directory_path,
+                delete_working_directory=working_directory_was_generated
+            )
+    return data_errors
+
+
+def inline_metadata(
+    metadata_file_path: str,
+    metadata_ref_directory: str,
+    output_file_path: str = None
+) -> Path:
     """
     Generate a metadata file with inlined references from a supplied
     metadata file and a reference directory.

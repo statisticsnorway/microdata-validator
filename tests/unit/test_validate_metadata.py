@@ -1,4 +1,7 @@
+import os
+import json
 import logging
+from pathlib import Path
 
 import pytest
 
@@ -8,38 +11,47 @@ from microdata_validator import validate_metadata
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-INPUT_DIR = 'tests/resources/input_directory'
-VALID_METADATA_FILE_PATHS = [
-    f'{INPUT_DIR}/SYNT_BEFOLKNING_SIVSTAND/SYNT_BEFOLKNING_SIVSTAND.json',
-    f'{INPUT_DIR}/SYNT_PERSON_INNTEKT/SYNT_PERSON_INNTEKT.json'
-]
-VALID_METADATA_REF_PATH = (
-    f'{INPUT_DIR}/SYNT_BEFOLKNING_KJOENN/SYNT_BEFOLKNING_KJOENN.json'
-)
-NO_SUCH_METADATA_FILE = 'NO/SUCH/FILE'
-MISSING_IDENTIFIER_METADATA_FILE_PATH = (
-    f'{INPUT_DIR}/MISSING_IDENTIFIER_DATASET/MISSING_IDENTIFIER_DATASET.json'
-)
-INVALID_SENSITIVITY_METADATA_FILE_PATH = (
-    f'{INPUT_DIR}/INVALID_SENSITIVITY_DATASET/INVALID_SENSITIVITY_DATASET.json'
-)
-EMPTY_CODELIST_METADATA_FILE_PATH = (
-    f'{INPUT_DIR}/EMPTY_CODELIST_DATASET/EMPTY_CODELIST_DATASET.json'
-)
+INPUT_DIRECTORY = 'tests/resources/input_directory'
+WORKING_DIRECTORY = 'tests/resources/working_directory'
+EXPECTED_DIRECTORY = 'tests/resources/expected/validate_metadata'
+
+VALID_METADATA = ['SYNT_BEFOLKNING_SIVSTAND', 'SYNT_PERSON_INNTEKT']
+VALID_METADATA_REF = 'SYNT_BEFOLKNING_KJOENN'
+
+NO_SUCH_METADATA = 'NO_SUCH_METADATA'
+MISSING_IDENTIFIER_METADATA = 'MISSING_IDENTIFIER_DATASET'
+INVALID_SENSITIVITY_METADATA = 'INVALID_SENSITIVITY_DATASET'
+EMPTY_CODELIST_METADATA = 'EMPTY_CODELIST_DATASET'
 REF_DIRECTORY = 'tests/resources/ref_directory'
 
 
 def test_validate_valid_metadata():
-    for metadata_file_path in VALID_METADATA_FILE_PATHS:
+    for metadata in VALID_METADATA:
         data_errors = validate_metadata(
-            metadata_file_path
+            metadata,
+            input_directory=INPUT_DIRECTORY,
+            working_directory=WORKING_DIRECTORY,
+            keep_temporary_files=True
         )
+        with open(
+            Path(WORKING_DIRECTORY) / f'{metadata}.json',
+            'r',
+            encoding='utf-8'
+        ) as f:
+            actual_metadata = json.load(f)
+        with open(
+            Path(EXPECTED_DIRECTORY) / f'{metadata}.json',
+            'r',
+            encoding='utf-8'
+        ) as f:
+            expected_metadata = json.load(f)
+        assert actual_metadata == expected_metadata
         assert not data_errors
 
 
 def test_invalid_sensitivity():
     data_errors = validate_metadata(
-        INVALID_SENSITIVITY_METADATA_FILE_PATH
+        INVALID_SENSITIVITY_METADATA, INPUT_DIRECTORY
     )
     assert len(data_errors) == 1
     assert "'UNKNOWN' is not one of" in data_errors[0]
@@ -47,15 +59,32 @@ def test_invalid_sensitivity():
 
 def test_validate_valid_metadata_ref():
     data_errors = validate_metadata(
-        VALID_METADATA_REF_PATH,
-        metadata_ref_directory=REF_DIRECTORY
+        VALID_METADATA_REF,
+        input_directory=INPUT_DIRECTORY,
+        working_directory=WORKING_DIRECTORY,
+        metadata_ref_directory=REF_DIRECTORY,
+        keep_temporary_files=True
     )
+    with open(
+        Path(WORKING_DIRECTORY) / f'{VALID_METADATA_REF}.json',
+        'r',
+        encoding='utf-8'
+    ) as f:
+        actual_metadata = json.load(f)
+    with open(
+        Path(EXPECTED_DIRECTORY) / f'{VALID_METADATA_REF}.json',
+        'r',
+        encoding='utf-8'
+    ) as f:
+        expected_metadata = json.load(f)
+    assert actual_metadata == expected_metadata
     assert not data_errors
 
 
 def test_validate_invalid_metadata():
     data_errors = validate_metadata(
-        MISSING_IDENTIFIER_METADATA_FILE_PATH
+        MISSING_IDENTIFIER_METADATA,
+        input_directory=INPUT_DIRECTORY
     )
     assert data_errors == [
         "required: 'identifierVariables' is a required property"
@@ -64,7 +93,8 @@ def test_validate_invalid_metadata():
 
 def test_validate_empty_codelist():
     data_errors = validate_metadata(
-        EMPTY_CODELIST_METADATA_FILE_PATH
+        EMPTY_CODELIST_METADATA,
+        input_directory=INPUT_DIRECTORY
     )
     assert data_errors == [
         (
@@ -77,4 +107,14 @@ def test_validate_empty_codelist():
 
 def test_validate_metadata_does_not_exist():
     with pytest.raises(FileNotFoundError):
-        validate_metadata(NO_SUCH_METADATA_FILE)
+        validate_metadata(NO_SUCH_METADATA, INPUT_DIRECTORY)
+
+
+def get_working_directory_files() -> list:
+    return os.listdir(WORKING_DIRECTORY)
+
+
+def teardown_function():
+    for file in get_working_directory_files():
+        if file != '.gitkeep':
+            os.remove(f'{WORKING_DIRECTORY}/{file}')

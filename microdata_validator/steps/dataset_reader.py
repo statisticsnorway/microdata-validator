@@ -5,14 +5,6 @@ from pathlib import Path
 
 from microdata_validator.exceptions import InvalidDataException
 from microdata_validator.repository import local_storage
-from microdata_validator.components import (
-    temporal_attributes,
-    unit_type_variables
-)
-from microdata_validator.schema import (
-    validate_with_schema,
-    inline_metadata_references
-)
 
 
 logger = logging.getLogger()
@@ -24,14 +16,12 @@ def _read_and_process_data(
     field_separator: str = ";",
     data_error_limit: int = 100
 ) -> dict:
-    data_errors = []  # used for error-reporting
+    data_errors = []
     start_dates = []
     stop_dates = []
     rows_validated = 0
 
-    logger.debug(
-        f'Validate datafile "{data_file_path}"'
-    )
+    logger.debug(f'Validate datafile "{data_file_path}"')
     data_file_with_row_numbers = open(
         enriched_data_file_path, 'w', encoding='utf-8'
     )
@@ -81,18 +71,18 @@ def _read_and_process_data(
                     start = data_row[2].strip('"')
                     stop = data_row[3].strip('"')
                     data_file_with_row_numbers.write(
-                        f"{reader.line_num};{unit_id};{value};"
-                        f"{start};{stop};\n"
+                        f'{reader.line_num};{unit_id};{value};'
+                        f'{start};{stop};\n'
                     )
                     if unit_id is None or str(unit_id).strip(" ") == "":
                         data_errors.append(
-                            f"row {reader.line_num}: "
-                            f"identifier missing or null - '{unit_id}'"
+                            f'row {reader.line_num}: '
+                            f'identifier missing or null - "{unit_id}"'
                         )
                     if value is None or str(value).strip(" ") == "":
                         data_errors.append(
-                            f"row {reader.line_num}: "
-                            f"measure missing or null - '{value}'"
+                            f'row {reader.line_num}: '
+                            f'measure missing or null - "{value}"'
                         )
                     if start not in (None, ""):
                         try:
@@ -103,8 +93,8 @@ def _read_and_process_data(
                             )
                         except Exception:
                             data_errors.append(
-                                f"row {reader.line_num}: "
-                                f"START date not valid - '{start}'"
+                                f'row {reader.line_num}: '
+                                f'START date not valid - "{start}"'
                             )
                     if stop not in (None, ""):
                         try:
@@ -113,8 +103,8 @@ def _read_and_process_data(
                             )
                         except Exception:
                             data_errors.append(
-                                f"row {reader.line_num}: "
-                                f"STOP date not valid - '{start}'"
+                                f'row {reader.line_num}: '
+                                f'STOP date not valid - "{start}"'
                             )
                     # find temporalCoverage from datafile
                     start_dates.append(str(start).strip('"'))
@@ -140,17 +130,17 @@ def _read_and_process_data(
             ) from e
 
     if data_errors:
-        logger.debug(f"ERROR in file - {data_file_path}")
-        logger.debug(f"{str(rows_validated)} rows validated")
+        logger.debug(f'ERROR in file - {data_file_path}')
+        logger.debug(f'{str(rows_validated)} rows validated')
         raise InvalidDataException(
             'Invalid data found while reading data file', data_errors
         )
     else:
-        logger.debug(f"{str(rows_validated)} rows validated")
+        logger.debug(f'{str(rows_validated)} rows validated')
         return {
-            "start": min(start_dates),
-            "latest": max(stop_dates),
-            "status_list": list(set(start_dates + stop_dates))
+            'start': min(start_dates),
+            'latest': max(stop_dates),
+            'status_list': list(set(start_dates + stop_dates))
         }
 
 
@@ -181,62 +171,29 @@ def _metadata_update_temporal_coverage(metadata: dict,
         )
 
 
-def _insert_centralized_variable_definitions(metadata: dict):
-    metadata['identifierVariables'] = [unit_type_variables.get(
-        metadata['identifierVariables'][0]['unitType']
-    )]
-    measure_variable = metadata['measureVariables'][0]
-    if 'unitType' in measure_variable:
-        insert_measure = unit_type_variables.get(measure_variable['unitType'])
-        insert_measure['name'] = measure_variable['name']
-        insert_measure['description'] = measure_variable['description']
-        metadata['measureVariables'] = [insert_measure]
-    temporality_type = metadata['temporalityType']
-    metadata['attributeVariables'] = [
-        temporal_attributes.generate_start_time_attribute(temporality_type),
-        temporal_attributes.generate_stop_time_attribute(temporality_type)
-    ] + metadata.get('attributeVariables', [])
-
-
 def run_reader(
+    dataset_name: str,
     working_directory: Path,
-    input_directory: Path,
-    metadata_ref_directory: Path,
-    dataset_name: str
+    input_directory: Path
 ) -> None:
     input_dataset_dir = input_directory / dataset_name
-    input_metadata_path = input_dataset_dir / f"{dataset_name}.json"
-    input_data_path = input_dataset_dir / f"{dataset_name}.csv"
+    input_data_path = input_dataset_dir / f'{dataset_name}.csv'
+    metadata_path = working_directory / f'{dataset_name}.json'
 
     logger.debug(f'Start reading dataset "{dataset_name}"')
     processed_data_path = working_directory / f'{dataset_name}.csv'
     temporal_data = _read_and_process_data(
         input_data_path, processed_data_path
     )
-
-    logger.debug(f'Reading metadata from file "{input_metadata_path}"')
-    if metadata_ref_directory is None:
-        metadata_dict = local_storage.load_json(input_metadata_path)
-    else:
-        metadata_dict = inline_metadata_references(
-            input_metadata_path, metadata_ref_directory
-        )
-
-    logger.debug('Validating metadata JSON with JSON schema')
-    validate_with_schema(metadata_dict)
-
-    _insert_centralized_variable_definitions(metadata_dict)
+    logger.debug('Enriching metadata with temporal coverage')
+    metadata_dict = local_storage.load_json(metadata_path)
     _metadata_update_temporal_coverage(metadata_dict, temporal_data)
-    metadata_dict['shortName'] = dataset_name
-    metadata_dict['measureVariables'][0]['shortName'] = dataset_name
 
-    logger.debug('Writing inlined metadata JSON file to working directory')
-    inlined_metadata_path = working_directory / f'{dataset_name}.json'
-    local_storage.write_json(inlined_metadata_path, metadata_dict)
+    logger.debug('Writing updated metadata JSON file to working directory')
+    local_storage.write_json(metadata_path, metadata_dict)
 
     sqlite_file_path = working_directory.joinpath(f'{dataset_name}.db')
     local_storage.insert_data_csv_into_sqlite(
         sqlite_file_path, processed_data_path
     )
-
     logger.debug(f'OK - reading dataset "{dataset_name}"')
