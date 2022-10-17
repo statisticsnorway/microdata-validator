@@ -14,7 +14,7 @@ def _read_and_process_data(
     data_file_path: Path,
     enriched_data_file_path: Path,
     field_separator: str = ";",
-    data_error_limit: int = 100
+    data_error_limit: int = 50
 ) -> dict:
     data_errors = []
     start_dates = []
@@ -40,7 +40,7 @@ def _read_and_process_data(
         reader = csv.reader(f, delimiter=field_separator)
         try:
             for data_row in reader:
-                if reader.line_num % 1000000 == 0:
+                if reader.line_num % 1_000_000 == 0:
                     logger.debug(f".. now reading row: {reader.line_num}")
                 rows_validated += 1
                 if len(data_errors) >= data_error_limit:
