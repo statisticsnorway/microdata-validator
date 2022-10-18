@@ -15,6 +15,7 @@ VALID_DATASET_NAMES = [
     'SYNT_PERSON_INNTEKT',
     'SYNT_PERSON_MOR'
 ]
+MANY_ERRORS_DATASET = 'SYNT_MANY_ERRORS'
 VALID_DATASET_REF = 'SYNT_BEFOLKNING_KJOENN'
 NO_SUCH_DATASET_NAME = 'NO_SUCH_DATASET'
 WRONG_DELIMITER_DATASET_NAME = 'WRONG_DELIMITER_DATASET'
@@ -54,6 +55,16 @@ def test_validate_valid_dataset():
         ) as f:
             expected_metadata = json.load(f)
         assert actual_metadata == expected_metadata
+
+
+def test_validate_many_errors_threshold():
+    data_errors = validate(
+        MANY_ERRORS_DATASET,
+        working_directory=WORKING_DIRECTORY,
+        keep_temporary_files=True,
+        input_directory=INPUT_DIRECTORY
+    )
+    assert len(data_errors) == 50
 
 
 def test_validate_valid_dataset_wrong_delimiter():

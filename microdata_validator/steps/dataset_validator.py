@@ -2,6 +2,7 @@ import datetime
 from typing import Union
 import logging
 from pathlib import Path
+from microdata_validator.exceptions import InvalidDataException
 
 from microdata_validator.repository import local_storage
 
@@ -28,7 +29,9 @@ def _get_code_list_with_missing_values(metadata: dict) -> Union[list, None]:
     return meta_value_domain_codes
 
 
-def _validate_data(sqlite_db_file_path: str, metadata: dict) -> int:
+def _validate_data(
+    sqlite_db_file_path: str, metadata: dict, error_limit: int = 50
+) -> int:
     """
         Read and validate sorted data rows from the temporary Sqlite
         database file (sorted by unit_id, start, stop)
@@ -54,10 +57,15 @@ def _validate_data(sqlite_db_file_path: str, metadata: dict) -> int:
                 data_type, code_list_with_missing_values, data_row
             )
         ]
-        data_errors += row_errors
+        data_errors += [error for error in row_errors if error is not None]
+        if len(data_errors) >= error_limit:
+            raise InvalidDataException(
+                'Invalid data found found in data file',
+                data_errors
+            )
         previous_data_row = data_row
     db_conn.close()
-    return [error for error in data_errors if error is not None]
+    return data_errors
 
 
 def _is_data_row_consistent(
