@@ -180,6 +180,9 @@
     "spatialCoverageDescription": {
       "$ref": "#/definitions/multilingualStringType"
     },
+    "subjectFields": {
+      "$ref": "#/definitions/subjectFieldsType"
+    },
     "dataRevision": {
       "type": "object",
       "properties": {
@@ -238,9 +241,6 @@
           },
           "valueDomain": {
             "$ref": "#/definitions/valueDomainType"
-          },
-          "subjectFields": {
-            "$ref": "#/definitions/subjectFieldsType"
           },
           "uriDefinition": {
             "type": "array",
@@ -329,6 +329,7 @@
   "required": [
     "temporalityType",
     "sensitivityLevel",
+    "subjectFields",
     "populationDescription",
     "identifierVariables",
     "measureVariables",
