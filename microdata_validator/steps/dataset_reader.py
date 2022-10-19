@@ -149,21 +149,17 @@ def _metadata_update_temporal_coverage(metadata: dict,
     logger.debug(
         'Append temporal coverage (start, stop, status dates) to metadata'
     )
-    if metadata['temporalityType'] in ('EVENT', 'ACCUMULATED'):
-        metadata['dataRevision']['temporalCoverageStart'] = (
-            temporal_data["start"]
-        )
-        metadata['dataRevision']['temporalCoverageLatest'] = (
-            temporal_data['latest']
-        )
-    elif metadata['temporalityType'] == 'FIXED':
+    metadata['dataRevision']['temporalCoverageStart'] = (
+        temporal_data["start"]
+    )
+    metadata['dataRevision']['temporalCoverageLatest'] = (
+        temporal_data['latest']
+    )
+    if metadata['temporalityType'] == 'FIXED':
         metadata['dataRevision']['temporalCoverageStart'] = (
             '1900-01-01'
         )
-        metadata['dataRevision']['temporalCoverageLatest'] = (
-            temporal_data['latest']
-        )
-    elif metadata['temporalityType'] == 'STATUS':
+    if metadata['temporalityType'] == 'STATUS':
         temporal_status_dates_list = temporal_data['status_list']
         temporal_status_dates_list.sort()
         metadata['dataRevision']['temporalStatusDates'] = (
