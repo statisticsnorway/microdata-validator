@@ -1,6 +1,9 @@
 {
   "temporalityType": "FIXED",
   "sensitivityLevel": "PERSON_GENERAL",
+  "subjectFields": [
+    [{"languageCode": "no", "value": "Befolkning"}]
+  ],
   "populationDescription": [
     {
       "languageCode": "no",

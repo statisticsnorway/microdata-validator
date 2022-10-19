@@ -3,6 +3,9 @@
     "sensitivityLevel": "PERSON_GENERAL",
     "populationDescription": [{"languageCode": "no", "value": "Personer med utdannelse i Norge"}],
     "spatialCoverageDescription": [{"languageCode": "no", "value": "Norge"}],
+    "subjectFields": [
+      [{"languageCode": "no", "value": "Befolkning"}]
+    ],
     "dataRevision": {
       "description": [{"languageCode": "no","value": "Første publisering."}],
       "temporalEndOfSeries": false

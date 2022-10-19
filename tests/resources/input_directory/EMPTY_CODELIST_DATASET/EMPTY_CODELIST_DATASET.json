@@ -2,6 +2,9 @@
     "temporalityType": "EVENT",
     "sensitivityLevel": "PERSON_GENERAL",
     "populationDescription": [{"languageCode": "no", "value": "Alle personer registrert bosatt i Norge"}],
+    "subjectFields": [
+      [{"languageCode": "no", "value": "Befolkning"}]
+    ],
     "spatialCoverageDescription": [{"languageCode": "no", "value": "Norge"}],
     "dataRevision": {
       "description": [{"languageCode": "no","value": "Første publisering."}],

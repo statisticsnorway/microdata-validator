@@ -8,6 +8,7 @@
         "value": "Alle personer registrert bosatt i Norge"
       }
     ],
+    "subjectFields": [[{"languageCode": "no", "value": "Befolkning"}]],
     "spatialCoverageDescription": [
       {
         "languageCode": "no",
