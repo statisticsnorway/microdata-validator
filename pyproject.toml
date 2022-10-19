@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "microdata-validator"
-version = "6.1.0"
+version = "7.0.0"
 description = "Python package for validating datasets in the microdata platform"
 authors = ["microdata-developers"]
 license = "Apache-2.0"
