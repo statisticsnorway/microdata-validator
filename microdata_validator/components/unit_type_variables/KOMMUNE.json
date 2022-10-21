@@ -48,4428 +48,4428 @@
     "codeList": [
       {
         "code": "2111",
-        "categoryTitle": "Spitsbergen",
+        "categoryTitle": [{"languageCode": "no", "value": "Spitsbergen"}],
         "validFrom": "1900-01-01"
       },
       {
         "code": "0101",
-        "categoryTitle": "Halden",
+        "categoryTitle": [{"languageCode": "no", "value": "Halden"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0104",
-        "categoryTitle": "Moss",
+        "categoryTitle": [{"languageCode": "no", "value": "Moss"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0105",
-        "categoryTitle": "Sarpsborg",
+        "categoryTitle": [{"languageCode": "no", "value": "Sarpsborg"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0106",
-        "categoryTitle": "Fredrikstad",
+        "categoryTitle": [{"languageCode": "no", "value": "Fredrikstad"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0111",
-        "categoryTitle": "Hvaler",
+        "categoryTitle": [{"languageCode": "no", "value": "Hvaler"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0118",
-        "categoryTitle": "Aremark",
+        "categoryTitle": [{"languageCode": "no", "value": "Aremark"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0119",
-        "categoryTitle": "Marker",
+        "categoryTitle": [{"languageCode": "no", "value": "Marker"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0121",
-        "categoryTitle": "Rømskog",
+        "categoryTitle": [{"languageCode": "no", "value": "Rømskog"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0122",
-        "categoryTitle": "Trøgstad",
+        "categoryTitle": [{"languageCode": "no", "value": "Trøgstad"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0123",
-        "categoryTitle": "Spydeberg",
+        "categoryTitle": [{"languageCode": "no", "value": "Spydeberg"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0124",
-        "categoryTitle": "Askim",
+        "categoryTitle": [{"languageCode": "no", "value": "Askim"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0125",
-        "categoryTitle": "Eidsberg",
+        "categoryTitle": [{"languageCode": "no", "value": "Eidsberg"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0127",
-        "categoryTitle": "Skiptvet",
+        "categoryTitle": [{"languageCode": "no", "value": "Skiptvet"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0128",
-        "categoryTitle": "Rakkestad",
+        "categoryTitle": [{"languageCode": "no", "value": "Rakkestad"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0135",
-        "categoryTitle": "Råde",
+        "categoryTitle": [{"languageCode": "no", "value": "Råde"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0136",
-        "categoryTitle": "Rygge",
+        "categoryTitle": [{"languageCode": "no", "value": "Rygge"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0137",
-        "categoryTitle": "Våler",
+        "categoryTitle": [{"languageCode": "no", "value": "Våler"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0138",
-        "categoryTitle": "Hobøl",
+        "categoryTitle": [{"languageCode": "no", "value": "Hobøl"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0211",
-        "categoryTitle": "Vestby",
+        "categoryTitle": [{"languageCode": "no", "value": "Vestby"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0213",
-        "categoryTitle": "Ski",
+        "categoryTitle": [{"languageCode": "no", "value": "Ski"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0214",
-        "categoryTitle": "Ås",
+        "categoryTitle": [{"languageCode": "no", "value": "Ås"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0215",
-        "categoryTitle": "Frogn",
+        "categoryTitle": [{"languageCode": "no", "value": "Frogn"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0216",
-        "categoryTitle": "Nesodden",
+        "categoryTitle": [{"languageCode": "no", "value": "Nesodden"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0217",
-        "categoryTitle": "Oppegård",
+        "categoryTitle": [{"languageCode": "no", "value": "Oppegård"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0219",
-        "categoryTitle": "Bærum",
+        "categoryTitle": [{"languageCode": "no", "value": "Bærum"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0220",
-        "categoryTitle": "Asker",
+        "categoryTitle": [{"languageCode": "no", "value": "Asker"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0221",
-        "categoryTitle": "Aurskog-Høland",
+        "categoryTitle": [{"languageCode": "no", "value": "Aurskog-Høland"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0226",
-        "categoryTitle": "Sørum",
+        "categoryTitle": [{"languageCode": "no", "value": "Sørum"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0227",
-        "categoryTitle": "Fet",
+        "categoryTitle": [{"languageCode": "no", "value": "Fet"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0228",
-        "categoryTitle": "Rælingen",
+        "categoryTitle": [{"languageCode": "no", "value": "Rælingen"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0229",
-        "categoryTitle": "Enebakk",
+        "categoryTitle": [{"languageCode": "no", "value": "Enebakk"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0230",
-        "categoryTitle": "Lørenskog",
+        "categoryTitle": [{"languageCode": "no", "value": "Lørenskog"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0231",
-        "categoryTitle": "Skedsmo",
+        "categoryTitle": [{"languageCode": "no", "value": "Skedsmo"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0233",
-        "categoryTitle": "Nittedal",
+        "categoryTitle": [{"languageCode": "no", "value": "Nittedal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0234",
-        "categoryTitle": "Gjerdrum",
+        "categoryTitle": [{"languageCode": "no", "value": "Gjerdrum"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0235",
-        "categoryTitle": "Ullensaker",
+        "categoryTitle": [{"languageCode": "no", "value": "Ullensaker"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0236",
-        "categoryTitle": "Nes",
+        "categoryTitle": [{"languageCode": "no", "value": "Nes"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0237",
-        "categoryTitle": "Eidsvoll",
+        "categoryTitle": [{"languageCode": "no", "value": "Eidsvoll"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0238",
-        "categoryTitle": "Nannestad",
+        "categoryTitle": [{"languageCode": "no", "value": "Nannestad"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0239",
-        "categoryTitle": "Hurdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Hurdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0301",
-        "categoryTitle": "Oslo",
+        "categoryTitle": [{"languageCode": "no", "value": "Oslo"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "0402",
-        "categoryTitle": "Kongsvinger",
+        "categoryTitle": [{"languageCode": "no", "value": "Kongsvinger"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0403",
-        "categoryTitle": "Hamar",
+        "categoryTitle": [{"languageCode": "no", "value": "Hamar"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0412",
-        "categoryTitle": "Ringsaker",
+        "categoryTitle": [{"languageCode": "no", "value": "Ringsaker"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0415",
-        "categoryTitle": "Løten",
+        "categoryTitle": [{"languageCode": "no", "value": "Løten"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0417",
-        "categoryTitle": "Stange",
+        "categoryTitle": [{"languageCode": "no", "value": "Stange"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0418",
-        "categoryTitle": "Nord-Odal",
+        "categoryTitle": [{"languageCode": "no", "value": "Nord-Odal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0419",
-        "categoryTitle": "Sør-Odal",
+        "categoryTitle": [{"languageCode": "no", "value": "Sør-Odal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0420",
-        "categoryTitle": "Eidskog",
+        "categoryTitle": [{"languageCode": "no", "value": "Eidskog"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0423",
-        "categoryTitle": "Grue",
+        "categoryTitle": [{"languageCode": "no", "value": "Grue"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0425",
-        "categoryTitle": "Åsnes",
+        "categoryTitle": [{"languageCode": "no", "value": "Åsnes"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0426",
-        "categoryTitle": "Våler",
+        "categoryTitle": [{"languageCode": "no", "value": "Våler"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0427",
-        "categoryTitle": "Elverum",
+        "categoryTitle": [{"languageCode": "no", "value": "Elverum"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0428",
-        "categoryTitle": "Trysil",
+        "categoryTitle": [{"languageCode": "no", "value": "Trysil"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0429",
-        "categoryTitle": "Åmot",
+        "categoryTitle": [{"languageCode": "no", "value": "Åmot"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0430",
-        "categoryTitle": "Stor-Elvdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Stor-Elvdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0432",
-        "categoryTitle": "Rendalen",
+        "categoryTitle": [{"languageCode": "no", "value": "Rendalen"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0434",
-        "categoryTitle": "Engerdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Engerdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0436",
-        "categoryTitle": "Tolga",
+        "categoryTitle": [{"languageCode": "no", "value": "Tolga"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0437",
-        "categoryTitle": "Tynset",
+        "categoryTitle": [{"languageCode": "no", "value": "Tynset"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0438",
-        "categoryTitle": "Alvdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Alvdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0439",
-        "categoryTitle": "Folldal",
+        "categoryTitle": [{"languageCode": "no", "value": "Folldal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0441",
-        "categoryTitle": "Os",
+        "categoryTitle": [{"languageCode": "no", "value": "Os"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0501",
-        "categoryTitle": "Lillehammer",
+        "categoryTitle": [{"languageCode": "no", "value": "Lillehammer"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0502",
-        "categoryTitle": "Gjøvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Gjøvik"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0511",
-        "categoryTitle": "Dovre",
+        "categoryTitle": [{"languageCode": "no", "value": "Dovre"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0512",
-        "categoryTitle": "Lesja",
+        "categoryTitle": [{"languageCode": "no", "value": "Lesja"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0513",
-        "categoryTitle": "Skjåk",
+        "categoryTitle": [{"languageCode": "no", "value": "Skjåk"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0514",
-        "categoryTitle": "Lom",
+        "categoryTitle": [{"languageCode": "no", "value": "Lom"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0515",
-        "categoryTitle": "Vågå",
+        "categoryTitle": [{"languageCode": "no", "value": "Vågå"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0516",
-        "categoryTitle": "Nord-Fron",
+        "categoryTitle": [{"languageCode": "no", "value": "Nord-Fron"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0517",
-        "categoryTitle": "Sel",
+        "categoryTitle": [{"languageCode": "no", "value": "Sel"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0519",
-        "categoryTitle": "Sør-Fron",
+        "categoryTitle": [{"languageCode": "no", "value": "Sør-Fron"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0520",
-        "categoryTitle": "Ringebu",
+        "categoryTitle": [{"languageCode": "no", "value": "Ringebu"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0521",
-        "categoryTitle": "Øyer",
+        "categoryTitle": [{"languageCode": "no", "value": "Øyer"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0522",
-        "categoryTitle": "Gausdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Gausdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0528",
-        "categoryTitle": "Østre Toten",
+        "categoryTitle": [{"languageCode": "no", "value": "Østre Toten"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0529",
-        "categoryTitle": "Vestre Toten",
+        "categoryTitle": [{"languageCode": "no", "value": "Vestre Toten"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0532",
-        "categoryTitle": "Jevnaker",
+        "categoryTitle": [{"languageCode": "no", "value": "Jevnaker"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0533",
-        "categoryTitle": "Lunner",
+        "categoryTitle": [{"languageCode": "no", "value": "Lunner"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0534",
-        "categoryTitle": "Gran",
+        "categoryTitle": [{"languageCode": "no", "value": "Gran"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0536",
-        "categoryTitle": "Søndre Land",
+        "categoryTitle": [{"languageCode": "no", "value": "Søndre Land"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0538",
-        "categoryTitle": "Nordre Land",
+        "categoryTitle": [{"languageCode": "no", "value": "Nordre Land"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0540",
-        "categoryTitle": "Sør-Aurdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Sør-Aurdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0541",
-        "categoryTitle": "Etnedal",
+        "categoryTitle": [{"languageCode": "no", "value": "Etnedal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0542",
-        "categoryTitle": "Nord-Aurdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Nord-Aurdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0543",
-        "categoryTitle": "Vestre Slidre",
+        "categoryTitle": [{"languageCode": "no", "value": "Vestre Slidre"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0544",
-        "categoryTitle": "Øystre Slidre",
+        "categoryTitle": [{"languageCode": "no", "value": "Øystre Slidre"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0545",
-        "categoryTitle": "Vang",
+        "categoryTitle": [{"languageCode": "no", "value": "Vang"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0602",
-        "categoryTitle": "Drammen",
+        "categoryTitle": [{"languageCode": "no", "value": "Drammen"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0604",
-        "categoryTitle": "Kongsberg",
+        "categoryTitle": [{"languageCode": "no", "value": "Kongsberg"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0605",
-        "categoryTitle": "Ringerike",
+        "categoryTitle": [{"languageCode": "no", "value": "Ringerike"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0612",
-        "categoryTitle": "Hole",
+        "categoryTitle": [{"languageCode": "no", "value": "Hole"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0615",
-        "categoryTitle": "Flå",
+        "categoryTitle": [{"languageCode": "no", "value": "Flå"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0616",
-        "categoryTitle": "Nes",
+        "categoryTitle": [{"languageCode": "no", "value": "Nes"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0617",
-        "categoryTitle": "Gol",
+        "categoryTitle": [{"languageCode": "no", "value": "Gol"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0618",
-        "categoryTitle": "Hemsedal",
+        "categoryTitle": [{"languageCode": "no", "value": "Hemsedal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0619",
-        "categoryTitle": "Ål",
+        "categoryTitle": [{"languageCode": "no", "value": "Ål"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0620",
-        "categoryTitle": "Hol",
+        "categoryTitle": [{"languageCode": "no", "value": "Hol"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0621",
-        "categoryTitle": "Sigdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Sigdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0622",
-        "categoryTitle": "Krødsherad",
+        "categoryTitle": [{"languageCode": "no", "value": "Krødsherad"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0623",
-        "categoryTitle": "Modum",
+        "categoryTitle": [{"languageCode": "no", "value": "Modum"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0624",
-        "categoryTitle": "Øvre Eiker",
+        "categoryTitle": [{"languageCode": "no", "value": "Øvre Eiker"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0625",
-        "categoryTitle": "Nedre Eiker",
+        "categoryTitle": [{"languageCode": "no", "value": "Nedre Eiker"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0626",
-        "categoryTitle": "Lier",
+        "categoryTitle": [{"languageCode": "no", "value": "Lier"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0627",
-        "categoryTitle": "Røyken",
+        "categoryTitle": [{"languageCode": "no", "value": "Røyken"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0628",
-        "categoryTitle": "Hurum",
+        "categoryTitle": [{"languageCode": "no", "value": "Hurum"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0631",
-        "categoryTitle": "Flesberg",
+        "categoryTitle": [{"languageCode": "no", "value": "Flesberg"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0632",
-        "categoryTitle": "Rollag",
+        "categoryTitle": [{"languageCode": "no", "value": "Rollag"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0633",
-        "categoryTitle": "Nore og Uvdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Nore og Uvdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0701",
-        "categoryTitle": "Horten",
+        "categoryTitle": [{"languageCode": "no", "value": "Horten"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0702",
-        "categoryTitle": "Holmestrand",
+        "categoryTitle": [{"languageCode": "no", "value": "Holmestrand"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "0704",
-        "categoryTitle": "Tønsberg",
+        "categoryTitle": [{"languageCode": "no", "value": "Tønsberg"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0706",
-        "categoryTitle": "Sandefjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Sandefjord"}],
         "validFrom": "2014-01-01",
         "validUntil": "2016-12-31"
       },
       {
         "code": "0709",
-        "categoryTitle": "Larvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Larvik"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "0710",
-        "categoryTitle": "Sandefjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Sandefjord"}],
         "validFrom": "2017-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0711",
-        "categoryTitle": "Svelvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Svelvik"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0712",
-        "categoryTitle": "Larvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Larvik"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0713",
-        "categoryTitle": "Sande",
+        "categoryTitle": [{"languageCode": "no", "value": "Sande"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0714",
-        "categoryTitle": "Hof",
+        "categoryTitle": [{"languageCode": "no", "value": "Hof"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "0715",
-        "categoryTitle": "Holmestrand",
+        "categoryTitle": [{"languageCode": "no", "value": "Holmestrand"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0716",
-        "categoryTitle": "Re",
+        "categoryTitle": [{"languageCode": "no", "value": "Re"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0719",
-        "categoryTitle": "Andebu",
+        "categoryTitle": [{"languageCode": "no", "value": "Andebu"}],
         "validFrom": "2014-01-01",
         "validUntil": "2016-12-31"
       },
       {
         "code": "0720",
-        "categoryTitle": "Stokke",
+        "categoryTitle": [{"languageCode": "no", "value": "Stokke"}],
         "validFrom": "2014-01-01",
         "validUntil": "2016-12-31"
       },
       {
         "code": "0722",
-        "categoryTitle": "Nøtterøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Nøtterøy"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "0723",
-        "categoryTitle": "Tjøme",
+        "categoryTitle": [{"languageCode": "no", "value": "Tjøme"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "0728",
-        "categoryTitle": "Lardal",
+        "categoryTitle": [{"languageCode": "no", "value": "Lardal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "0729",
-        "categoryTitle": "Færder",
+        "categoryTitle": [{"languageCode": "no", "value": "Færder"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0805",
-        "categoryTitle": "Porsgrunn",
+        "categoryTitle": [{"languageCode": "no", "value": "Porsgrunn"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0806",
-        "categoryTitle": "Skien",
+        "categoryTitle": [{"languageCode": "no", "value": "Skien"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0807",
-        "categoryTitle": "Notodden",
+        "categoryTitle": [{"languageCode": "no", "value": "Notodden"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0811",
-        "categoryTitle": "Siljan",
+        "categoryTitle": [{"languageCode": "no", "value": "Siljan"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0814",
-        "categoryTitle": "Bamble",
+        "categoryTitle": [{"languageCode": "no", "value": "Bamble"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0815",
-        "categoryTitle": "Kragerø",
+        "categoryTitle": [{"languageCode": "no", "value": "Kragerø"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0817",
-        "categoryTitle": "Drangedal",
+        "categoryTitle": [{"languageCode": "no", "value": "Drangedal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0819",
-        "categoryTitle": "Nome",
+        "categoryTitle": [{"languageCode": "no", "value": "Nome"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0821",
-        "categoryTitle": "Bø",
+        "categoryTitle": [{"languageCode": "no", "value": "Bø"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0822",
-        "categoryTitle": "Sauherad",
+        "categoryTitle": [{"languageCode": "no", "value": "Sauherad"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0826",
-        "categoryTitle": "Tinn",
+        "categoryTitle": [{"languageCode": "no", "value": "Tinn"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0827",
-        "categoryTitle": "Hjartdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Hjartdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0828",
-        "categoryTitle": "Seljord",
+        "categoryTitle": [{"languageCode": "no", "value": "Seljord"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0829",
-        "categoryTitle": "Kviteseid",
+        "categoryTitle": [{"languageCode": "no", "value": "Kviteseid"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0830",
-        "categoryTitle": "Nissedal",
+        "categoryTitle": [{"languageCode": "no", "value": "Nissedal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0831",
-        "categoryTitle": "Fyresdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Fyresdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0833",
-        "categoryTitle": "Tokke",
+        "categoryTitle": [{"languageCode": "no", "value": "Tokke"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0834",
-        "categoryTitle": "Vinje",
+        "categoryTitle": [{"languageCode": "no", "value": "Vinje"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0901",
-        "categoryTitle": "Risør",
+        "categoryTitle": [{"languageCode": "no", "value": "Risør"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0904",
-        "categoryTitle": "Grimstad",
+        "categoryTitle": [{"languageCode": "no", "value": "Grimstad"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0906",
-        "categoryTitle": "Arendal",
+        "categoryTitle": [{"languageCode": "no", "value": "Arendal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0911",
-        "categoryTitle": "Gjerstad",
+        "categoryTitle": [{"languageCode": "no", "value": "Gjerstad"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0912",
-        "categoryTitle": "Vegårshei",
+        "categoryTitle": [{"languageCode": "no", "value": "Vegårshei"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0914",
-        "categoryTitle": "Tvedestrand",
+        "categoryTitle": [{"languageCode": "no", "value": "Tvedestrand"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0919",
-        "categoryTitle": "Froland",
+        "categoryTitle": [{"languageCode": "no", "value": "Froland"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0926",
-        "categoryTitle": "Lillesand",
+        "categoryTitle": [{"languageCode": "no", "value": "Lillesand"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0928",
-        "categoryTitle": "Birkenes",
+        "categoryTitle": [{"languageCode": "no", "value": "Birkenes"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0929",
-        "categoryTitle": "Åmli",
+        "categoryTitle": [{"languageCode": "no", "value": "Åmli"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0935",
-        "categoryTitle": "Iveland",
+        "categoryTitle": [{"languageCode": "no", "value": "Iveland"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0937",
-        "categoryTitle": "Evje og Hornnes",
+        "categoryTitle": [{"languageCode": "no", "value": "Evje og Hornnes"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0938",
-        "categoryTitle": "Bygland",
+        "categoryTitle": [{"languageCode": "no", "value": "Bygland"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0940",
-        "categoryTitle": "Valle",
+        "categoryTitle": [{"languageCode": "no", "value": "Valle"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "0941",
-        "categoryTitle": "Bykle",
+        "categoryTitle": [{"languageCode": "no", "value": "Bykle"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1001",
-        "categoryTitle": "Kristiansand",
+        "categoryTitle": [{"languageCode": "no", "value": "Kristiansand"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1002",
-        "categoryTitle": "Mandal",
+        "categoryTitle": [{"languageCode": "no", "value": "Mandal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1003",
-        "categoryTitle": "Farsund",
+        "categoryTitle": [{"languageCode": "no", "value": "Farsund"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1004",
-        "categoryTitle": "Flekkefjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Flekkefjord"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1014",
-        "categoryTitle": "Vennesla",
+        "categoryTitle": [{"languageCode": "no", "value": "Vennesla"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1017",
-        "categoryTitle": "Songdalen",
+        "categoryTitle": [{"languageCode": "no", "value": "Songdalen"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1018",
-        "categoryTitle": "Søgne",
+        "categoryTitle": [{"languageCode": "no", "value": "Søgne"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1021",
-        "categoryTitle": "Marnardal",
+        "categoryTitle": [{"languageCode": "no", "value": "Marnardal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1026",
-        "categoryTitle": "Åseral",
+        "categoryTitle": [{"languageCode": "no", "value": "Åseral"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1027",
-        "categoryTitle": "Audnedal",
+        "categoryTitle": [{"languageCode": "no", "value": "Audnedal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1029",
-        "categoryTitle": "Lindesnes",
+        "categoryTitle": [{"languageCode": "no", "value": "Lindesnes"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1032",
-        "categoryTitle": "Lyngdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Lyngdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1034",
-        "categoryTitle": "Hægebostad",
+        "categoryTitle": [{"languageCode": "no", "value": "Hægebostad"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1037",
-        "categoryTitle": "Kvinesdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Kvinesdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1046",
-        "categoryTitle": "Sirdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Sirdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1101",
-        "categoryTitle": "Eigersund",
+        "categoryTitle": [{"languageCode": "no", "value": "Eigersund"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1102",
-        "categoryTitle": "Sandnes",
+        "categoryTitle": [{"languageCode": "no", "value": "Sandnes"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1103",
-        "categoryTitle": "Stavanger",
+        "categoryTitle": [{"languageCode": "no", "value": "Stavanger"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1106",
-        "categoryTitle": "Haugesund",
+        "categoryTitle": [{"languageCode": "no", "value": "Haugesund"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1108",
-        "categoryTitle": "Sandnes",
+        "categoryTitle": [{"languageCode": "no", "value": "Sandnes"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "1111",
-        "categoryTitle": "Sokndal",
+        "categoryTitle": [{"languageCode": "no", "value": "Sokndal"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1112",
-        "categoryTitle": "Lund",
+        "categoryTitle": [{"languageCode": "no", "value": "Lund"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1114",
-        "categoryTitle": "Bjerkreim",
+        "categoryTitle": [{"languageCode": "no", "value": "Bjerkreim"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1119",
-        "categoryTitle": "Hå",
+        "categoryTitle": [{"languageCode": "no", "value": "Hå"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1120",
-        "categoryTitle": "Klepp",
+        "categoryTitle": [{"languageCode": "no", "value": "Klepp"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1121",
-        "categoryTitle": "Time",
+        "categoryTitle": [{"languageCode": "no", "value": "Time"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1122",
-        "categoryTitle": "Gjesdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Gjesdal"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1124",
-        "categoryTitle": "Sola",
+        "categoryTitle": [{"languageCode": "no", "value": "Sola"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1127",
-        "categoryTitle": "Randaberg",
+        "categoryTitle": [{"languageCode": "no", "value": "Randaberg"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1129",
-        "categoryTitle": "Forsand",
+        "categoryTitle": [{"languageCode": "no", "value": "Forsand"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1130",
-        "categoryTitle": "Strand",
+        "categoryTitle": [{"languageCode": "no", "value": "Strand"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1133",
-        "categoryTitle": "Hjelmeland",
+        "categoryTitle": [{"languageCode": "no", "value": "Hjelmeland"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1134",
-        "categoryTitle": "Suldal",
+        "categoryTitle": [{"languageCode": "no", "value": "Suldal"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1135",
-        "categoryTitle": "Sauda",
+        "categoryTitle": [{"languageCode": "no", "value": "Sauda"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1141",
-        "categoryTitle": "Finnøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Finnøy"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1142",
-        "categoryTitle": "Rennesøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Rennesøy"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1144",
-        "categoryTitle": "Kvitsøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Kvitsøy"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1145",
-        "categoryTitle": "Bokn",
+        "categoryTitle": [{"languageCode": "no", "value": "Bokn"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1146",
-        "categoryTitle": "Tysvær",
+        "categoryTitle": [{"languageCode": "no", "value": "Tysvær"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1149",
-        "categoryTitle": "Karmøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Karmøy"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1151",
-        "categoryTitle": "Utsira",
+        "categoryTitle": [{"languageCode": "no", "value": "Utsira"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1160",
-        "categoryTitle": "Vindafjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Vindafjord"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1201",
-        "categoryTitle": "Bergen",
+        "categoryTitle": [{"languageCode": "no", "value": "Bergen"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1211",
-        "categoryTitle": "Etne",
+        "categoryTitle": [{"languageCode": "no", "value": "Etne"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1216",
-        "categoryTitle": "Sveio",
+        "categoryTitle": [{"languageCode": "no", "value": "Sveio"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1219",
-        "categoryTitle": "Bømlo",
+        "categoryTitle": [{"languageCode": "no", "value": "Bømlo"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1221",
-        "categoryTitle": "Stord",
+        "categoryTitle": [{"languageCode": "no", "value": "Stord"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1222",
-        "categoryTitle": "Fitjar",
+        "categoryTitle": [{"languageCode": "no", "value": "Fitjar"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1223",
-        "categoryTitle": "Tysnes",
+        "categoryTitle": [{"languageCode": "no", "value": "Tysnes"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1224",
-        "categoryTitle": "Kvinnherad",
+        "categoryTitle": [{"languageCode": "no", "value": "Kvinnherad"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1227",
-        "categoryTitle": "Jondal",
+        "categoryTitle": [{"languageCode": "no", "value": "Jondal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1228",
-        "categoryTitle": "Odda",
+        "categoryTitle": [{"languageCode": "no", "value": "Odda"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1231",
-        "categoryTitle": "Ullensvang",
+        "categoryTitle": [{"languageCode": "no", "value": "Ullensvang"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1232",
-        "categoryTitle": "Eidfjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Eidfjord"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1233",
-        "categoryTitle": "Ulvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Ulvik"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1234",
-        "categoryTitle": "Granvin",
+        "categoryTitle": [{"languageCode": "no", "value": "Granvin"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1235",
-        "categoryTitle": "Voss",
+        "categoryTitle": [{"languageCode": "no", "value": "Voss"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1238",
-        "categoryTitle": "Kvam",
+        "categoryTitle": [{"languageCode": "no", "value": "Kvam"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1241",
-        "categoryTitle": "Fusa",
+        "categoryTitle": [{"languageCode": "no", "value": "Fusa"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1242",
-        "categoryTitle": "Samnanger",
+        "categoryTitle": [{"languageCode": "no", "value": "Samnanger"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1243",
-        "categoryTitle": "Os",
+        "categoryTitle": [{"languageCode": "no", "value": "Os"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1244",
-        "categoryTitle": "Austevoll",
+        "categoryTitle": [{"languageCode": "no", "value": "Austevoll"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1245",
-        "categoryTitle": "Sund",
+        "categoryTitle": [{"languageCode": "no", "value": "Sund"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1246",
-        "categoryTitle": "Fjell",
+        "categoryTitle": [{"languageCode": "no", "value": "Fjell"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1247",
-        "categoryTitle": "Askøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Askøy"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1251",
-        "categoryTitle": "Vaksdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Vaksdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1252",
-        "categoryTitle": "Modalen",
+        "categoryTitle": [{"languageCode": "no", "value": "Modalen"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1253",
-        "categoryTitle": "Osterøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Osterøy"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1256",
-        "categoryTitle": "Meland",
+        "categoryTitle": [{"languageCode": "no", "value": "Meland"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1259",
-        "categoryTitle": "Øygarden",
+        "categoryTitle": [{"languageCode": "no", "value": "Øygarden"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1260",
-        "categoryTitle": "Radøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Radøy"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1263",
-        "categoryTitle": "Lindås",
+        "categoryTitle": [{"languageCode": "no", "value": "Lindås"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1264",
-        "categoryTitle": "Austrheim",
+        "categoryTitle": [{"languageCode": "no", "value": "Austrheim"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1265",
-        "categoryTitle": "Fedje",
+        "categoryTitle": [{"languageCode": "no", "value": "Fedje"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1266",
-        "categoryTitle": "Masfjorden",
+        "categoryTitle": [{"languageCode": "no", "value": "Masfjorden"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1401",
-        "categoryTitle": "Flora",
+        "categoryTitle": [{"languageCode": "no", "value": "Flora"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1411",
-        "categoryTitle": "Gulen",
+        "categoryTitle": [{"languageCode": "no", "value": "Gulen"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1412",
-        "categoryTitle": "Solund",
+        "categoryTitle": [{"languageCode": "no", "value": "Solund"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1413",
-        "categoryTitle": "Hyllestad",
+        "categoryTitle": [{"languageCode": "no", "value": "Hyllestad"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1416",
-        "categoryTitle": "Høyanger",
+        "categoryTitle": [{"languageCode": "no", "value": "Høyanger"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1417",
-        "categoryTitle": "Vik",
+        "categoryTitle": [{"languageCode": "no", "value": "Vik"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1418",
-        "categoryTitle": "Balestrand",
+        "categoryTitle": [{"languageCode": "no", "value": "Balestrand"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1419",
-        "categoryTitle": "Leikanger",
+        "categoryTitle": [{"languageCode": "no", "value": "Leikanger"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1420",
-        "categoryTitle": "Sogndal",
+        "categoryTitle": [{"languageCode": "no", "value": "Sogndal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1421",
-        "categoryTitle": "Aurland",
+        "categoryTitle": [{"languageCode": "no", "value": "Aurland"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1422",
-        "categoryTitle": "Lærdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Lærdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1424",
-        "categoryTitle": "Årdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Årdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1426",
-        "categoryTitle": "Luster",
+        "categoryTitle": [{"languageCode": "no", "value": "Luster"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1428",
-        "categoryTitle": "Askvoll",
+        "categoryTitle": [{"languageCode": "no", "value": "Askvoll"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1429",
-        "categoryTitle": "Fjaler",
+        "categoryTitle": [{"languageCode": "no", "value": "Fjaler"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1430",
-        "categoryTitle": "Gaular",
+        "categoryTitle": [{"languageCode": "no", "value": "Gaular"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1431",
-        "categoryTitle": "Jølster",
+        "categoryTitle": [{"languageCode": "no", "value": "Jølster"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1432",
-        "categoryTitle": "Førde",
+        "categoryTitle": [{"languageCode": "no", "value": "Førde"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1433",
-        "categoryTitle": "Naustdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Naustdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1438",
-        "categoryTitle": "Bremanger",
+        "categoryTitle": [{"languageCode": "no", "value": "Bremanger"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1439",
-        "categoryTitle": "Vågsøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Vågsøy"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1441",
-        "categoryTitle": "Selje",
+        "categoryTitle": [{"languageCode": "no", "value": "Selje"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1443",
-        "categoryTitle": "Eid",
+        "categoryTitle": [{"languageCode": "no", "value": "Eid"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1444",
-        "categoryTitle": "Hornindal",
+        "categoryTitle": [{"languageCode": "no", "value": "Hornindal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1445",
-        "categoryTitle": "Gloppen",
+        "categoryTitle": [{"languageCode": "no", "value": "Gloppen"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1449",
-        "categoryTitle": "Stryn",
+        "categoryTitle": [{"languageCode": "no", "value": "Stryn"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1502",
-        "categoryTitle": "Molde",
+        "categoryTitle": [{"languageCode": "no", "value": "Molde"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1504",
-        "categoryTitle": "Ålesund",
+        "categoryTitle": [{"languageCode": "no", "value": "Ålesund"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1505",
-        "categoryTitle": "Kristiansund",
+        "categoryTitle": [{"languageCode": "no", "value": "Kristiansund"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1506",
-        "categoryTitle": "Molde",
+        "categoryTitle": [{"languageCode": "no", "value": "Molde"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "1507",
-        "categoryTitle": "Ålesund",
+        "categoryTitle": [{"languageCode": "no", "value": "Ålesund"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "1511",
-        "categoryTitle": "Vanylven",
+        "categoryTitle": [{"languageCode": "no", "value": "Vanylven"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1514",
-        "categoryTitle": "Sande",
+        "categoryTitle": [{"languageCode": "no", "value": "Sande"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1515",
-        "categoryTitle": "Herøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Herøy"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1515",
-        "categoryTitle": "Herøy (Møre og Romsdal)",
+        "categoryTitle": [{"languageCode": "no", "value": "Herøy (Møre og Romsdal)"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "1516",
-        "categoryTitle": "Ulstein",
+        "categoryTitle": [{"languageCode": "no", "value": "Ulstein"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1517",
-        "categoryTitle": "Hareid",
+        "categoryTitle": [{"languageCode": "no", "value": "Hareid"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1519",
-        "categoryTitle": "Volda",
+        "categoryTitle": [{"languageCode": "no", "value": "Volda"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1520",
-        "categoryTitle": "Ørsta",
+        "categoryTitle": [{"languageCode": "no", "value": "Ørsta"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1523",
-        "categoryTitle": "Ørskog",
+        "categoryTitle": [{"languageCode": "no", "value": "Ørskog"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1524",
-        "categoryTitle": "Norddal",
+        "categoryTitle": [{"languageCode": "no", "value": "Norddal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1525",
-        "categoryTitle": "Stranda",
+        "categoryTitle": [{"languageCode": "no", "value": "Stranda"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1526",
-        "categoryTitle": "Stordal",
+        "categoryTitle": [{"languageCode": "no", "value": "Stordal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1528",
-        "categoryTitle": "Sykkylven",
+        "categoryTitle": [{"languageCode": "no", "value": "Sykkylven"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1529",
-        "categoryTitle": "Skodje",
+        "categoryTitle": [{"languageCode": "no", "value": "Skodje"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1531",
-        "categoryTitle": "Sula",
+        "categoryTitle": [{"languageCode": "no", "value": "Sula"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1532",
-        "categoryTitle": "Giske",
+        "categoryTitle": [{"languageCode": "no", "value": "Giske"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1534",
-        "categoryTitle": "Haram",
+        "categoryTitle": [{"languageCode": "no", "value": "Haram"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1535",
-        "categoryTitle": "Vestnes",
+        "categoryTitle": [{"languageCode": "no", "value": "Vestnes"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1539",
-        "categoryTitle": "Rauma",
+        "categoryTitle": [{"languageCode": "no", "value": "Rauma"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1543",
-        "categoryTitle": "Nesset",
+        "categoryTitle": [{"languageCode": "no", "value": "Nesset"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1545",
-        "categoryTitle": "Midsund",
+        "categoryTitle": [{"languageCode": "no", "value": "Midsund"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1546",
-        "categoryTitle": "Sandøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Sandøy"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1547",
-        "categoryTitle": "Aukra",
+        "categoryTitle": [{"languageCode": "no", "value": "Aukra"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1548",
-        "categoryTitle": "Fræna",
+        "categoryTitle": [{"languageCode": "no", "value": "Fræna"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1551",
-        "categoryTitle": "Eide",
+        "categoryTitle": [{"languageCode": "no", "value": "Eide"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1554",
-        "categoryTitle": "Averøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Averøy"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1557",
-        "categoryTitle": "Gjemnes",
+        "categoryTitle": [{"languageCode": "no", "value": "Gjemnes"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1560",
-        "categoryTitle": "Tingvoll",
+        "categoryTitle": [{"languageCode": "no", "value": "Tingvoll"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1563",
-        "categoryTitle": "Sunndal",
+        "categoryTitle": [{"languageCode": "no", "value": "Sunndal"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1566",
-        "categoryTitle": "Surnadal",
+        "categoryTitle": [{"languageCode": "no", "value": "Surnadal"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1567",
-        "categoryTitle": "Rindal",
+        "categoryTitle": [{"languageCode": "no", "value": "Rindal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2018-12-31"
       },
       {
         "code": "1571",
-        "categoryTitle": "Halsa",
+        "categoryTitle": [{"languageCode": "no", "value": "Halsa"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1573",
-        "categoryTitle": "Smøla",
+        "categoryTitle": [{"languageCode": "no", "value": "Smøla"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1576",
-        "categoryTitle": "Aure",
+        "categoryTitle": [{"languageCode": "no", "value": "Aure"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1577",
-        "categoryTitle": "Volda",
+        "categoryTitle": [{"languageCode": "no", "value": "Volda"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "1578",
-        "categoryTitle": "Fjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Fjord"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "1579",
-        "categoryTitle": "Hustadvika",
+        "categoryTitle": [{"languageCode": "no", "value": "Hustadvika"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "1601",
-        "categoryTitle": "Trondheim",
+        "categoryTitle": [{"languageCode": "no", "value": "Trondheim"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1612",
-        "categoryTitle": "Hemne",
+        "categoryTitle": [{"languageCode": "no", "value": "Hemne"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1613",
-        "categoryTitle": "Snillfjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Snillfjord"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1617",
-        "categoryTitle": "Hitra",
+        "categoryTitle": [{"languageCode": "no", "value": "Hitra"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1620",
-        "categoryTitle": "Frøya",
+        "categoryTitle": [{"languageCode": "no", "value": "Frøya"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1621",
-        "categoryTitle": "Ørland",
+        "categoryTitle": [{"languageCode": "no", "value": "Ørland"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1622",
-        "categoryTitle": "Agdenes",
+        "categoryTitle": [{"languageCode": "no", "value": "Agdenes"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1624",
-        "categoryTitle": "Rissa",
+        "categoryTitle": [{"languageCode": "no", "value": "Rissa"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1627",
-        "categoryTitle": "Bjugn",
+        "categoryTitle": [{"languageCode": "no", "value": "Bjugn"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1630",
-        "categoryTitle": "Åfjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Åfjord"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1632",
-        "categoryTitle": "Roan",
+        "categoryTitle": [{"languageCode": "no", "value": "Roan"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1633",
-        "categoryTitle": "Osen",
+        "categoryTitle": [{"languageCode": "no", "value": "Osen"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1634",
-        "categoryTitle": "Oppdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Oppdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1635",
-        "categoryTitle": "Rennebu",
+        "categoryTitle": [{"languageCode": "no", "value": "Rennebu"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1636",
-        "categoryTitle": "Meldal",
+        "categoryTitle": [{"languageCode": "no", "value": "Meldal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1638",
-        "categoryTitle": "Orkdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Orkdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1640",
-        "categoryTitle": "Røros",
+        "categoryTitle": [{"languageCode": "no", "value": "Røros"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1644",
-        "categoryTitle": "Holtålen",
+        "categoryTitle": [{"languageCode": "no", "value": "Holtålen"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1648",
-        "categoryTitle": "Midtre Gauldal",
+        "categoryTitle": [{"languageCode": "no", "value": "Midtre Gauldal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1653",
-        "categoryTitle": "Melhus",
+        "categoryTitle": [{"languageCode": "no", "value": "Melhus"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1657",
-        "categoryTitle": "Skaun",
+        "categoryTitle": [{"languageCode": "no", "value": "Skaun"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1662",
-        "categoryTitle": "Klæbu",
+        "categoryTitle": [{"languageCode": "no", "value": "Klæbu"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1663",
-        "categoryTitle": "Malvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Malvik"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1664",
-        "categoryTitle": "Selbu",
+        "categoryTitle": [{"languageCode": "no", "value": "Selbu"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1665",
-        "categoryTitle": "Tydal",
+        "categoryTitle": [{"languageCode": "no", "value": "Tydal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1702",
-        "categoryTitle": "Steinkjer",
+        "categoryTitle": [{"languageCode": "no", "value": "Steinkjer"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1703",
-        "categoryTitle": "Namsos",
+        "categoryTitle": [{"languageCode": "no", "value": "Namsos"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1711",
-        "categoryTitle": "Meråker",
+        "categoryTitle": [{"languageCode": "no", "value": "Meråker"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1714",
-        "categoryTitle": "Stjørdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Stjørdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1717",
-        "categoryTitle": "Frosta",
+        "categoryTitle": [{"languageCode": "no", "value": "Frosta"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1718",
-        "categoryTitle": "Leksvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Leksvik"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1719",
-        "categoryTitle": "Levanger",
+        "categoryTitle": [{"languageCode": "no", "value": "Levanger"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1721",
-        "categoryTitle": "Verdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Verdal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1724",
-        "categoryTitle": "Verran",
+        "categoryTitle": [{"languageCode": "no", "value": "Verran"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1725",
-        "categoryTitle": "Namdalseid",
+        "categoryTitle": [{"languageCode": "no", "value": "Namdalseid"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1736",
-        "categoryTitle": "Snåase - Snåsa",
+        "categoryTitle": [{"languageCode": "no", "value": "Snåase - Snåsa"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1738",
-        "categoryTitle": "Lierne",
+        "categoryTitle": [{"languageCode": "no", "value": "Lierne"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1739",
-        "categoryTitle": "Raarvihke - Røyrvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Raarvihke - Røyrvik"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1740",
-        "categoryTitle": "Namsskogan",
+        "categoryTitle": [{"languageCode": "no", "value": "Namsskogan"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1742",
-        "categoryTitle": "Grong",
+        "categoryTitle": [{"languageCode": "no", "value": "Grong"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1743",
-        "categoryTitle": "Høylandet",
+        "categoryTitle": [{"languageCode": "no", "value": "Høylandet"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1744",
-        "categoryTitle": "Overhalla",
+        "categoryTitle": [{"languageCode": "no", "value": "Overhalla"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1748",
-        "categoryTitle": "Fosnes",
+        "categoryTitle": [{"languageCode": "no", "value": "Fosnes"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1749",
-        "categoryTitle": "Flatanger",
+        "categoryTitle": [{"languageCode": "no", "value": "Flatanger"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1750",
-        "categoryTitle": "Vikna",
+        "categoryTitle": [{"languageCode": "no", "value": "Vikna"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1751",
-        "categoryTitle": "Nærøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Nærøy"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1755",
-        "categoryTitle": "Leka",
+        "categoryTitle": [{"languageCode": "no", "value": "Leka"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1756",
-        "categoryTitle": "Inderøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Inderøy"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1804",
-        "categoryTitle": "Bodø",
+        "categoryTitle": [{"languageCode": "no", "value": "Bodø"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1805",
-        "categoryTitle": "Narvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Narvik"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1806",
-        "categoryTitle": "Narvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Narvik"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "1811",
-        "categoryTitle": "Bindal",
+        "categoryTitle": [{"languageCode": "no", "value": "Bindal"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1812",
-        "categoryTitle": "Sømna",
+        "categoryTitle": [{"languageCode": "no", "value": "Sømna"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1813",
-        "categoryTitle": "Brønnøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Brønnøy"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1815",
-        "categoryTitle": "Vega",
+        "categoryTitle": [{"languageCode": "no", "value": "Vega"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1816",
-        "categoryTitle": "Vevelstad",
+        "categoryTitle": [{"languageCode": "no", "value": "Vevelstad"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1818",
-        "categoryTitle": "Herøy (Nordland)",
+        "categoryTitle": [{"languageCode": "no", "value": "Herøy (Nordland)"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "1818",
-        "categoryTitle": "Herøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Herøy"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1820",
-        "categoryTitle": "Alstahaug",
+        "categoryTitle": [{"languageCode": "no", "value": "Alstahaug"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1822",
-        "categoryTitle": "Leirfjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Leirfjord"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1824",
-        "categoryTitle": "Vefsn",
+        "categoryTitle": [{"languageCode": "no", "value": "Vefsn"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1825",
-        "categoryTitle": "Grane",
+        "categoryTitle": [{"languageCode": "no", "value": "Grane"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1826",
-        "categoryTitle": "Aarborte - Hattfjelldal",
+        "categoryTitle": [{"languageCode": "no", "value": "Aarborte - Hattfjelldal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "1826",
-        "categoryTitle": "Hattfjelldal",
+        "categoryTitle": [{"languageCode": "no", "value": "Hattfjelldal"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1827",
-        "categoryTitle": "Dønna",
+        "categoryTitle": [{"languageCode": "no", "value": "Dønna"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1828",
-        "categoryTitle": "Nesna",
+        "categoryTitle": [{"languageCode": "no", "value": "Nesna"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1832",
-        "categoryTitle": "Hemnes",
+        "categoryTitle": [{"languageCode": "no", "value": "Hemnes"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1833",
-        "categoryTitle": "Rana",
+        "categoryTitle": [{"languageCode": "no", "value": "Rana"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1834",
-        "categoryTitle": "Lurøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Lurøy"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1835",
-        "categoryTitle": "Træna",
+        "categoryTitle": [{"languageCode": "no", "value": "Træna"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1836",
-        "categoryTitle": "Rødøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Rødøy"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1837",
-        "categoryTitle": "Meløy",
+        "categoryTitle": [{"languageCode": "no", "value": "Meløy"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1838",
-        "categoryTitle": "Gildeskål",
+        "categoryTitle": [{"languageCode": "no", "value": "Gildeskål"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1839",
-        "categoryTitle": "Beiarn",
+        "categoryTitle": [{"languageCode": "no", "value": "Beiarn"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1840",
-        "categoryTitle": "Saltdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Saltdal"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1841",
-        "categoryTitle": "Fauske - Fuossko",
+        "categoryTitle": [{"languageCode": "no", "value": "Fauske - Fuossko"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "1841",
-        "categoryTitle": "Fauske",
+        "categoryTitle": [{"languageCode": "no", "value": "Fauske"}],
         "validFrom": "2014-01-01",
         "validUntil": "2016-12-31"
       },
       {
         "code": "1841",
-        "categoryTitle": "Fauske - Fuosko",
+        "categoryTitle": [{"languageCode": "no", "value": "Fauske - Fuosko"}],
         "validFrom": "2017-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1845",
-        "categoryTitle": "Sørfold",
+        "categoryTitle": [{"languageCode": "no", "value": "Sørfold"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1848",
-        "categoryTitle": "Steigen",
+        "categoryTitle": [{"languageCode": "no", "value": "Steigen"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1849",
-        "categoryTitle": "Hábmer - Hamarøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Hábmer - Hamarøy"}],
         "validFrom": "2014-01-01",
         "validUntil": "2016-12-31"
       },
       {
         "code": "1849",
-        "categoryTitle": "Hamarøy - Hábmer",
+        "categoryTitle": [{"languageCode": "no", "value": "Hamarøy - Hábmer"}],
         "validFrom": "2017-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1850",
-        "categoryTitle": "Divtasvuodna - Tysfjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Divtasvuodna - Tysfjord"}],
         "validFrom": "2017-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1850",
-        "categoryTitle": "Divtasvuodna Tysfjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Divtasvuodna Tysfjord"}],
         "validFrom": "2014-01-01",
         "validUntil": "2016-12-31"
       },
       {
         "code": "1851",
-        "categoryTitle": "Lødingen",
+        "categoryTitle": [{"languageCode": "no", "value": "Lødingen"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1852",
-        "categoryTitle": "Tjeldsund",
+        "categoryTitle": [{"languageCode": "no", "value": "Tjeldsund"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1853",
-        "categoryTitle": "Evenes",
+        "categoryTitle": [{"languageCode": "no", "value": "Evenes"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1854",
-        "categoryTitle": "Ballangen",
+        "categoryTitle": [{"languageCode": "no", "value": "Ballangen"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1856",
-        "categoryTitle": "Røst",
+        "categoryTitle": [{"languageCode": "no", "value": "Røst"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1857",
-        "categoryTitle": "Værøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Værøy"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1859",
-        "categoryTitle": "Flakstad",
+        "categoryTitle": [{"languageCode": "no", "value": "Flakstad"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1860",
-        "categoryTitle": "Vestvågøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Vestvågøy"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1865",
-        "categoryTitle": "Vågan",
+        "categoryTitle": [{"languageCode": "no", "value": "Vågan"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1866",
-        "categoryTitle": "Hadsel",
+        "categoryTitle": [{"languageCode": "no", "value": "Hadsel"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1867",
-        "categoryTitle": "Bø",
+        "categoryTitle": [{"languageCode": "no", "value": "Bø"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1868",
-        "categoryTitle": "Øksnes",
+        "categoryTitle": [{"languageCode": "no", "value": "Øksnes"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1870",
-        "categoryTitle": "Sortland - Suortá",
+        "categoryTitle": [{"languageCode": "no", "value": "Sortland - Suortá"}],
         "validFrom": "2017-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1870",
-        "categoryTitle": "Sortland",
+        "categoryTitle": [{"languageCode": "no", "value": "Sortland"}],
         "validFrom": "2014-01-01",
         "validUntil": "2016-12-31"
       },
       {
         "code": "1870",
-        "categoryTitle": "Sortland",
+        "categoryTitle": [{"languageCode": "no", "value": "Sortland"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "1871",
-        "categoryTitle": "Andøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Andøy"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1874",
-        "categoryTitle": "Moskenes",
+        "categoryTitle": [{"languageCode": "no", "value": "Moskenes"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "1875",
-        "categoryTitle": "Hamarøy - Hábmer",
+        "categoryTitle": [{"languageCode": "no", "value": "Hamarøy - Hábmer"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "1902",
-        "categoryTitle": "Tromsø",
+        "categoryTitle": [{"languageCode": "no", "value": "Tromsø"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1903",
-        "categoryTitle": "Harstad - Hárstták",
+        "categoryTitle": [{"languageCode": "no", "value": "Harstad - Hárstták"}],
         "validFrom": "2017-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1903",
-        "categoryTitle": "Harstad",
+        "categoryTitle": [{"languageCode": "no", "value": "Harstad"}],
         "validFrom": "2014-01-01",
         "validUntil": "2016-12-31"
       },
       {
         "code": "1911",
-        "categoryTitle": "Kvæfjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Kvæfjord"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1913",
-        "categoryTitle": "Skånland",
+        "categoryTitle": [{"languageCode": "no", "value": "Skånland"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1917",
-        "categoryTitle": "Ibestad",
+        "categoryTitle": [{"languageCode": "no", "value": "Ibestad"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1919",
-        "categoryTitle": "Gratangen",
+        "categoryTitle": [{"languageCode": "no", "value": "Gratangen"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1920",
-        "categoryTitle": "Loabák - Lavangen",
+        "categoryTitle": [{"languageCode": "no", "value": "Loabák - Lavangen"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1922",
-        "categoryTitle": "Bardu",
+        "categoryTitle": [{"languageCode": "no", "value": "Bardu"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1923",
-        "categoryTitle": "Salangen",
+        "categoryTitle": [{"languageCode": "no", "value": "Salangen"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1924",
-        "categoryTitle": "Målselv",
+        "categoryTitle": [{"languageCode": "no", "value": "Målselv"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1925",
-        "categoryTitle": "Sørreisa",
+        "categoryTitle": [{"languageCode": "no", "value": "Sørreisa"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1926",
-        "categoryTitle": "Dyrøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Dyrøy"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1927",
-        "categoryTitle": "Tranøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Tranøy"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1928",
-        "categoryTitle": "Torsken",
+        "categoryTitle": [{"languageCode": "no", "value": "Torsken"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1929",
-        "categoryTitle": "Berg",
+        "categoryTitle": [{"languageCode": "no", "value": "Berg"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1931",
-        "categoryTitle": "Lenvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Lenvik"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1933",
-        "categoryTitle": "Balsfjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Balsfjord"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1936",
-        "categoryTitle": "Karlsøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Karlsøy"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1938",
-        "categoryTitle": "Lyngen",
+        "categoryTitle": [{"languageCode": "no", "value": "Lyngen"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1939",
-        "categoryTitle": "Storfjord - Omasvuotna - Omasvuono",
+        "categoryTitle": [{"languageCode": "no", "value": "Storfjord - Omasvuotna - Omasvuono"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1940",
-        "categoryTitle": "Gáivuotna - Kåfjord - Kaivuono",
+        "categoryTitle": [{"languageCode": "no", "value": "Gáivuotna - Kåfjord - Kaivuono"}],
         "validFrom": "2017-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1940",
-        "categoryTitle": "Gáivuotna - Kåfjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Gáivuotna - Kåfjord"}],
         "validFrom": "2014-01-01",
         "validUntil": "2016-12-31"
       },
       {
         "code": "1941",
-        "categoryTitle": "Skjervøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Skjervøy"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1942",
-        "categoryTitle": "Nordreisa",
+        "categoryTitle": [{"languageCode": "no", "value": "Nordreisa"}],
         "validFrom": "2014-01-01",
         "validUntil": "2017-12-31"
       },
       {
         "code": "1942",
-        "categoryTitle": "Nordreisa - Ráisa - Raisi",
+        "categoryTitle": [{"languageCode": "no", "value": "Nordreisa - Ráisa - Raisi"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "1943",
-        "categoryTitle": "Kvænangen",
+        "categoryTitle": [{"languageCode": "no", "value": "Kvænangen"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "2002",
-        "categoryTitle": "Vardø",
+        "categoryTitle": [{"languageCode": "no", "value": "Vardø"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "2003",
-        "categoryTitle": "Vadsø",
+        "categoryTitle": [{"languageCode": "no", "value": "Vadsø"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "2004",
-        "categoryTitle": "Hammerfest",
+        "categoryTitle": [{"languageCode": "no", "value": "Hammerfest"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "2011",
-        "categoryTitle": "Guovdageaidnu - Kautokeino",
+        "categoryTitle": [{"languageCode": "no", "value": "Guovdageaidnu - Kautokeino"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "2012",
-        "categoryTitle": "Alta",
+        "categoryTitle": [{"languageCode": "no", "value": "Alta"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "2014",
-        "categoryTitle": "Loppa",
+        "categoryTitle": [{"languageCode": "no", "value": "Loppa"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "2015",
-        "categoryTitle": "Hasvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Hasvik"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "2017",
-        "categoryTitle": "Kvalsund",
+        "categoryTitle": [{"languageCode": "no", "value": "Kvalsund"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "2018",
-        "categoryTitle": "Måsøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Måsøy"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "2019",
-        "categoryTitle": "Nordkapp",
+        "categoryTitle": [{"languageCode": "no", "value": "Nordkapp"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "2020",
-        "categoryTitle": "Porsanger - Porsángu - Porsanki",
+        "categoryTitle": [{"languageCode": "no", "value": "Porsanger - Porsángu - Porsanki"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "2021",
-        "categoryTitle": "Kárá?johka - Karasjok",
+        "categoryTitle": [{"languageCode": "no", "value": "Kárá?johka - Karasjok"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "2022",
-        "categoryTitle": "Lebesby",
+        "categoryTitle": [{"languageCode": "no", "value": "Lebesby"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "2023",
-        "categoryTitle": "Gamvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Gamvik"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "2024",
-        "categoryTitle": "Berlevåg",
+        "categoryTitle": [{"languageCode": "no", "value": "Berlevåg"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "2025",
-        "categoryTitle": "Deatnu - Tana",
+        "categoryTitle": [{"languageCode": "no", "value": "Deatnu - Tana"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "2027",
-        "categoryTitle": "Unjárga - Nesseby",
+        "categoryTitle": [{"languageCode": "no", "value": "Unjárga - Nesseby"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "2028",
-        "categoryTitle": "Båtsfjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Båtsfjord"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "2030",
-        "categoryTitle": "Sør-Varanger",
+        "categoryTitle": [{"languageCode": "no", "value": "Sør-Varanger"}],
         "validFrom": "2014-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "3001",
-        "categoryTitle": "Halden",
+        "categoryTitle": [{"languageCode": "no", "value": "Halden"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3002",
-        "categoryTitle": "Moss",
+        "categoryTitle": [{"languageCode": "no", "value": "Moss"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3003",
-        "categoryTitle": "Sarpsborg",
+        "categoryTitle": [{"languageCode": "no", "value": "Sarpsborg"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3004",
-        "categoryTitle": "Fredrikstad",
+        "categoryTitle": [{"languageCode": "no", "value": "Fredrikstad"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3005",
-        "categoryTitle": "Drammen",
+        "categoryTitle": [{"languageCode": "no", "value": "Drammen"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3006",
-        "categoryTitle": "Kongsberg",
+        "categoryTitle": [{"languageCode": "no", "value": "Kongsberg"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3007",
-        "categoryTitle": "Ringerike",
+        "categoryTitle": [{"languageCode": "no", "value": "Ringerike"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3011",
-        "categoryTitle": "Hvaler",
+        "categoryTitle": [{"languageCode": "no", "value": "Hvaler"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3012",
-        "categoryTitle": "Aremark",
+        "categoryTitle": [{"languageCode": "no", "value": "Aremark"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3013",
-        "categoryTitle": "Marker",
+        "categoryTitle": [{"languageCode": "no", "value": "Marker"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3014",
-        "categoryTitle": "Indre Østfold",
+        "categoryTitle": [{"languageCode": "no", "value": "Indre Østfold"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3015",
-        "categoryTitle": "Skiptvet",
+        "categoryTitle": [{"languageCode": "no", "value": "Skiptvet"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3016",
-        "categoryTitle": "Rakkestad",
+        "categoryTitle": [{"languageCode": "no", "value": "Rakkestad"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3017",
-        "categoryTitle": "Råde",
+        "categoryTitle": [{"languageCode": "no", "value": "Råde"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3018",
-        "categoryTitle": "Våler (Viken)",
+        "categoryTitle": [{"languageCode": "no", "value": "Våler (Viken)"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3019",
-        "categoryTitle": "Vestby",
+        "categoryTitle": [{"languageCode": "no", "value": "Vestby"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3020",
-        "categoryTitle": "Nordre Follo",
+        "categoryTitle": [{"languageCode": "no", "value": "Nordre Follo"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3021",
-        "categoryTitle": "Ås",
+        "categoryTitle": [{"languageCode": "no", "value": "Ås"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3022",
-        "categoryTitle": "Frogn",
+        "categoryTitle": [{"languageCode": "no", "value": "Frogn"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3023",
-        "categoryTitle": "Nesodden",
+        "categoryTitle": [{"languageCode": "no", "value": "Nesodden"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3024",
-        "categoryTitle": "Bærum",
+        "categoryTitle": [{"languageCode": "no", "value": "Bærum"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3025",
-        "categoryTitle": "Asker",
+        "categoryTitle": [{"languageCode": "no", "value": "Asker"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3026",
-        "categoryTitle": "Aurskog-Høland",
+        "categoryTitle": [{"languageCode": "no", "value": "Aurskog-Høland"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3027",
-        "categoryTitle": "Rælingen",
+        "categoryTitle": [{"languageCode": "no", "value": "Rælingen"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3028",
-        "categoryTitle": "Enebakk",
+        "categoryTitle": [{"languageCode": "no", "value": "Enebakk"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3029",
-        "categoryTitle": "Lørenskog",
+        "categoryTitle": [{"languageCode": "no", "value": "Lørenskog"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3030",
-        "categoryTitle": "Lillestrøm",
+        "categoryTitle": [{"languageCode": "no", "value": "Lillestrøm"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3031",
-        "categoryTitle": "Nittedal",
+        "categoryTitle": [{"languageCode": "no", "value": "Nittedal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3032",
-        "categoryTitle": "Gjerdrum",
+        "categoryTitle": [{"languageCode": "no", "value": "Gjerdrum"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3033",
-        "categoryTitle": "Ullensaker",
+        "categoryTitle": [{"languageCode": "no", "value": "Ullensaker"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3034",
-        "categoryTitle": "Nes",
+        "categoryTitle": [{"languageCode": "no", "value": "Nes"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3035",
-        "categoryTitle": "Eidsvoll",
+        "categoryTitle": [{"languageCode": "no", "value": "Eidsvoll"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3036",
-        "categoryTitle": "Nannestad",
+        "categoryTitle": [{"languageCode": "no", "value": "Nannestad"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3037",
-        "categoryTitle": "Hurdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Hurdal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3038",
-        "categoryTitle": "Hole",
+        "categoryTitle": [{"languageCode": "no", "value": "Hole"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3039",
-        "categoryTitle": "Flå",
+        "categoryTitle": [{"languageCode": "no", "value": "Flå"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3040",
-        "categoryTitle": "Nesbyen",
+        "categoryTitle": [{"languageCode": "no", "value": "Nesbyen"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3041",
-        "categoryTitle": "Gol",
+        "categoryTitle": [{"languageCode": "no", "value": "Gol"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3042",
-        "categoryTitle": "Hemsedal",
+        "categoryTitle": [{"languageCode": "no", "value": "Hemsedal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3043",
-        "categoryTitle": "Ål",
+        "categoryTitle": [{"languageCode": "no", "value": "Ål"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3044",
-        "categoryTitle": "Hol",
+        "categoryTitle": [{"languageCode": "no", "value": "Hol"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3045",
-        "categoryTitle": "Sigdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Sigdal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3046",
-        "categoryTitle": "Krødsherad",
+        "categoryTitle": [{"languageCode": "no", "value": "Krødsherad"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3047",
-        "categoryTitle": "Modum",
+        "categoryTitle": [{"languageCode": "no", "value": "Modum"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3048",
-        "categoryTitle": "Øvre Eiker",
+        "categoryTitle": [{"languageCode": "no", "value": "Øvre Eiker"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3049",
-        "categoryTitle": "Lier",
+        "categoryTitle": [{"languageCode": "no", "value": "Lier"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3050",
-        "categoryTitle": "Flesberg",
+        "categoryTitle": [{"languageCode": "no", "value": "Flesberg"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3051",
-        "categoryTitle": "Rollag",
+        "categoryTitle": [{"languageCode": "no", "value": "Rollag"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3052",
-        "categoryTitle": "Nore og Uvdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Nore og Uvdal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3053",
-        "categoryTitle": "Jevnaker",
+        "categoryTitle": [{"languageCode": "no", "value": "Jevnaker"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3054",
-        "categoryTitle": "Lunner",
+        "categoryTitle": [{"languageCode": "no", "value": "Lunner"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3401",
-        "categoryTitle": "Kongsvinger",
+        "categoryTitle": [{"languageCode": "no", "value": "Kongsvinger"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3403",
-        "categoryTitle": "Hamar",
+        "categoryTitle": [{"languageCode": "no", "value": "Hamar"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3405",
-        "categoryTitle": "Lillehammer",
+        "categoryTitle": [{"languageCode": "no", "value": "Lillehammer"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3407",
-        "categoryTitle": "Gjøvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Gjøvik"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3411",
-        "categoryTitle": "Ringsaker",
+        "categoryTitle": [{"languageCode": "no", "value": "Ringsaker"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3412",
-        "categoryTitle": "Løten",
+        "categoryTitle": [{"languageCode": "no", "value": "Løten"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3413",
-        "categoryTitle": "Stange",
+        "categoryTitle": [{"languageCode": "no", "value": "Stange"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3414",
-        "categoryTitle": "Nord-Odal",
+        "categoryTitle": [{"languageCode": "no", "value": "Nord-Odal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3415",
-        "categoryTitle": "Sør-Odal",
+        "categoryTitle": [{"languageCode": "no", "value": "Sør-Odal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3416",
-        "categoryTitle": "Eidskog",
+        "categoryTitle": [{"languageCode": "no", "value": "Eidskog"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3417",
-        "categoryTitle": "Grue",
+        "categoryTitle": [{"languageCode": "no", "value": "Grue"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3418",
-        "categoryTitle": "Åsnes",
+        "categoryTitle": [{"languageCode": "no", "value": "Åsnes"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3419",
-        "categoryTitle": "Våler (Innlandet)",
+        "categoryTitle": [{"languageCode": "no", "value": "Våler (Innlandet)"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3420",
-        "categoryTitle": "Elverum",
+        "categoryTitle": [{"languageCode": "no", "value": "Elverum"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3421",
-        "categoryTitle": "Trysil",
+        "categoryTitle": [{"languageCode": "no", "value": "Trysil"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3422",
-        "categoryTitle": "Åmot",
+        "categoryTitle": [{"languageCode": "no", "value": "Åmot"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3423",
-        "categoryTitle": "Stor-Elvdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Stor-Elvdal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3424",
-        "categoryTitle": "Rendalen",
+        "categoryTitle": [{"languageCode": "no", "value": "Rendalen"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3425",
-        "categoryTitle": "Engerdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Engerdal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3426",
-        "categoryTitle": "Tolga",
+        "categoryTitle": [{"languageCode": "no", "value": "Tolga"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3427",
-        "categoryTitle": "Tynset",
+        "categoryTitle": [{"languageCode": "no", "value": "Tynset"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3428",
-        "categoryTitle": "Alvdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Alvdal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3429",
-        "categoryTitle": "Folldal",
+        "categoryTitle": [{"languageCode": "no", "value": "Folldal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3430",
-        "categoryTitle": "Os",
+        "categoryTitle": [{"languageCode": "no", "value": "Os"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3431",
-        "categoryTitle": "Dovre",
+        "categoryTitle": [{"languageCode": "no", "value": "Dovre"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3432",
-        "categoryTitle": "Lesja",
+        "categoryTitle": [{"languageCode": "no", "value": "Lesja"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3433",
-        "categoryTitle": "Skjåk",
+        "categoryTitle": [{"languageCode": "no", "value": "Skjåk"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3434",
-        "categoryTitle": "Lom",
+        "categoryTitle": [{"languageCode": "no", "value": "Lom"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3435",
-        "categoryTitle": "Vågå",
+        "categoryTitle": [{"languageCode": "no", "value": "Vågå"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3436",
-        "categoryTitle": "Nord-Fron",
+        "categoryTitle": [{"languageCode": "no", "value": "Nord-Fron"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3437",
-        "categoryTitle": "Sel",
+        "categoryTitle": [{"languageCode": "no", "value": "Sel"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3438",
-        "categoryTitle": "Sør-Fron",
+        "categoryTitle": [{"languageCode": "no", "value": "Sør-Fron"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3439",
-        "categoryTitle": "Ringebu",
+        "categoryTitle": [{"languageCode": "no", "value": "Ringebu"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3440",
-        "categoryTitle": "Øyer",
+        "categoryTitle": [{"languageCode": "no", "value": "Øyer"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3441",
-        "categoryTitle": "Gausdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Gausdal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3442",
-        "categoryTitle": "Østre Toten",
+        "categoryTitle": [{"languageCode": "no", "value": "Østre Toten"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3443",
-        "categoryTitle": "Vestre Toten",
+        "categoryTitle": [{"languageCode": "no", "value": "Vestre Toten"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3446",
-        "categoryTitle": "Gran",
+        "categoryTitle": [{"languageCode": "no", "value": "Gran"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3447",
-        "categoryTitle": "Søndre Land",
+        "categoryTitle": [{"languageCode": "no", "value": "Søndre Land"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3448",
-        "categoryTitle": "Nordre Land",
+        "categoryTitle": [{"languageCode": "no", "value": "Nordre Land"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3449",
-        "categoryTitle": "Sør-Aurdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Sør-Aurdal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3450",
-        "categoryTitle": "Etnedal",
+        "categoryTitle": [{"languageCode": "no", "value": "Etnedal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3451",
-        "categoryTitle": "Nord-Aurdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Nord-Aurdal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3452",
-        "categoryTitle": "Vestre Slidre",
+        "categoryTitle": [{"languageCode": "no", "value": "Vestre Slidre"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3453",
-        "categoryTitle": "Øystre Slidre",
+        "categoryTitle": [{"languageCode": "no", "value": "Øystre Slidre"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3454",
-        "categoryTitle": "Vang",
+        "categoryTitle": [{"languageCode": "no", "value": "Vang"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3801",
-        "categoryTitle": "Horten",
+        "categoryTitle": [{"languageCode": "no", "value": "Horten"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3802",
-        "categoryTitle": "Holmestrand",
+        "categoryTitle": [{"languageCode": "no", "value": "Holmestrand"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3803",
-        "categoryTitle": "Tønsberg",
+        "categoryTitle": [{"languageCode": "no", "value": "Tønsberg"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3804",
-        "categoryTitle": "Sandefjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Sandefjord"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3805",
-        "categoryTitle": "Larvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Larvik"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3806",
-        "categoryTitle": "Porsgrunn",
+        "categoryTitle": [{"languageCode": "no", "value": "Porsgrunn"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3807",
-        "categoryTitle": "Skien",
+        "categoryTitle": [{"languageCode": "no", "value": "Skien"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3808",
-        "categoryTitle": "Notodden",
+        "categoryTitle": [{"languageCode": "no", "value": "Notodden"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3811",
-        "categoryTitle": "Færder",
+        "categoryTitle": [{"languageCode": "no", "value": "Færder"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3812",
-        "categoryTitle": "Siljan",
+        "categoryTitle": [{"languageCode": "no", "value": "Siljan"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3813",
-        "categoryTitle": "Bamble",
+        "categoryTitle": [{"languageCode": "no", "value": "Bamble"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3814",
-        "categoryTitle": "Kragerø",
+        "categoryTitle": [{"languageCode": "no", "value": "Kragerø"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3815",
-        "categoryTitle": "Drangedal",
+        "categoryTitle": [{"languageCode": "no", "value": "Drangedal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3816",
-        "categoryTitle": "Nome",
+        "categoryTitle": [{"languageCode": "no", "value": "Nome"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3817",
-        "categoryTitle": "Midt-Telemark",
+        "categoryTitle": [{"languageCode": "no", "value": "Midt-Telemark"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3818",
-        "categoryTitle": "Tinn",
+        "categoryTitle": [{"languageCode": "no", "value": "Tinn"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3819",
-        "categoryTitle": "Hjartdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Hjartdal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3820",
-        "categoryTitle": "Seljord",
+        "categoryTitle": [{"languageCode": "no", "value": "Seljord"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3821",
-        "categoryTitle": "Kviteseid",
+        "categoryTitle": [{"languageCode": "no", "value": "Kviteseid"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3822",
-        "categoryTitle": "Nissedal",
+        "categoryTitle": [{"languageCode": "no", "value": "Nissedal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3823",
-        "categoryTitle": "Fyresdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Fyresdal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3824",
-        "categoryTitle": "Tokke",
+        "categoryTitle": [{"languageCode": "no", "value": "Tokke"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "3825",
-        "categoryTitle": "Vinje",
+        "categoryTitle": [{"languageCode": "no", "value": "Vinje"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4201",
-        "categoryTitle": "Risør",
+        "categoryTitle": [{"languageCode": "no", "value": "Risør"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4202",
-        "categoryTitle": "Grimstad",
+        "categoryTitle": [{"languageCode": "no", "value": "Grimstad"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4203",
-        "categoryTitle": "Arendal",
+        "categoryTitle": [{"languageCode": "no", "value": "Arendal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4204",
-        "categoryTitle": "Kristiansand",
+        "categoryTitle": [{"languageCode": "no", "value": "Kristiansand"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4205",
-        "categoryTitle": "Lindesnes",
+        "categoryTitle": [{"languageCode": "no", "value": "Lindesnes"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4206",
-        "categoryTitle": "Farsund",
+        "categoryTitle": [{"languageCode": "no", "value": "Farsund"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4207",
-        "categoryTitle": "Flekkefjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Flekkefjord"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4211",
-        "categoryTitle": "Gjerstad",
+        "categoryTitle": [{"languageCode": "no", "value": "Gjerstad"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4212",
-        "categoryTitle": "Vegårshei",
+        "categoryTitle": [{"languageCode": "no", "value": "Vegårshei"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4213",
-        "categoryTitle": "Tvedestrand",
+        "categoryTitle": [{"languageCode": "no", "value": "Tvedestrand"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4214",
-        "categoryTitle": "Froland",
+        "categoryTitle": [{"languageCode": "no", "value": "Froland"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4215",
-        "categoryTitle": "Lillesand",
+        "categoryTitle": [{"languageCode": "no", "value": "Lillesand"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4216",
-        "categoryTitle": "Birkenes",
+        "categoryTitle": [{"languageCode": "no", "value": "Birkenes"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4217",
-        "categoryTitle": "Åmli",
+        "categoryTitle": [{"languageCode": "no", "value": "Åmli"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4218",
-        "categoryTitle": "Iveland",
+        "categoryTitle": [{"languageCode": "no", "value": "Iveland"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4219",
-        "categoryTitle": "Evje og Hornnes",
+        "categoryTitle": [{"languageCode": "no", "value": "Evje og Hornnes"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4220",
-        "categoryTitle": "Bygland",
+        "categoryTitle": [{"languageCode": "no", "value": "Bygland"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4221",
-        "categoryTitle": "Valle",
+        "categoryTitle": [{"languageCode": "no", "value": "Valle"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4222",
-        "categoryTitle": "Bykle",
+        "categoryTitle": [{"languageCode": "no", "value": "Bykle"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4223",
-        "categoryTitle": "Vennesla",
+        "categoryTitle": [{"languageCode": "no", "value": "Vennesla"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4224",
-        "categoryTitle": "Åseral",
+        "categoryTitle": [{"languageCode": "no", "value": "Åseral"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4225",
-        "categoryTitle": "Lyngdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Lyngdal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4226",
-        "categoryTitle": "Hægebostad",
+        "categoryTitle": [{"languageCode": "no", "value": "Hægebostad"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4227",
-        "categoryTitle": "Kvinesdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Kvinesdal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4228",
-        "categoryTitle": "Sirdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Sirdal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4601",
-        "categoryTitle": "Bergen",
+        "categoryTitle": [{"languageCode": "no", "value": "Bergen"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4602",
-        "categoryTitle": "Kinn",
+        "categoryTitle": [{"languageCode": "no", "value": "Kinn"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4611",
-        "categoryTitle": "Etne",
+        "categoryTitle": [{"languageCode": "no", "value": "Etne"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4612",
-        "categoryTitle": "Sveio",
+        "categoryTitle": [{"languageCode": "no", "value": "Sveio"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4613",
-        "categoryTitle": "Bømlo",
+        "categoryTitle": [{"languageCode": "no", "value": "Bømlo"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4614",
-        "categoryTitle": "Stord",
+        "categoryTitle": [{"languageCode": "no", "value": "Stord"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4615",
-        "categoryTitle": "Fitjar",
+        "categoryTitle": [{"languageCode": "no", "value": "Fitjar"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4616",
-        "categoryTitle": "Tysnes",
+        "categoryTitle": [{"languageCode": "no", "value": "Tysnes"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4617",
-        "categoryTitle": "Kvinnherad",
+        "categoryTitle": [{"languageCode": "no", "value": "Kvinnherad"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4618",
-        "categoryTitle": "Ullensvang",
+        "categoryTitle": [{"languageCode": "no", "value": "Ullensvang"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4619",
-        "categoryTitle": "Eidfjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Eidfjord"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4620",
-        "categoryTitle": "Ulvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Ulvik"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4621",
-        "categoryTitle": "Voss",
+        "categoryTitle": [{"languageCode": "no", "value": "Voss"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4622",
-        "categoryTitle": "Kvam",
+        "categoryTitle": [{"languageCode": "no", "value": "Kvam"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4623",
-        "categoryTitle": "Samnanger",
+        "categoryTitle": [{"languageCode": "no", "value": "Samnanger"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4624",
-        "categoryTitle": "Bjørnafjorden",
+        "categoryTitle": [{"languageCode": "no", "value": "Bjørnafjorden"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4625",
-        "categoryTitle": "Austevoll",
+        "categoryTitle": [{"languageCode": "no", "value": "Austevoll"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4626",
-        "categoryTitle": "Øygarden",
+        "categoryTitle": [{"languageCode": "no", "value": "Øygarden"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4627",
-        "categoryTitle": "Askøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Askøy"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4628",
-        "categoryTitle": "Vaksdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Vaksdal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4629",
-        "categoryTitle": "Modalen",
+        "categoryTitle": [{"languageCode": "no", "value": "Modalen"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4630",
-        "categoryTitle": "Osterøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Osterøy"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4631",
-        "categoryTitle": "Alver",
+        "categoryTitle": [{"languageCode": "no", "value": "Alver"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4632",
-        "categoryTitle": "Austrheim",
+        "categoryTitle": [{"languageCode": "no", "value": "Austrheim"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4633",
-        "categoryTitle": "Fedje",
+        "categoryTitle": [{"languageCode": "no", "value": "Fedje"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4634",
-        "categoryTitle": "Masfjorden",
+        "categoryTitle": [{"languageCode": "no", "value": "Masfjorden"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4635",
-        "categoryTitle": "Gulen",
+        "categoryTitle": [{"languageCode": "no", "value": "Gulen"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4636",
-        "categoryTitle": "Solund",
+        "categoryTitle": [{"languageCode": "no", "value": "Solund"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4637",
-        "categoryTitle": "Hyllestad",
+        "categoryTitle": [{"languageCode": "no", "value": "Hyllestad"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4638",
-        "categoryTitle": "Høyanger",
+        "categoryTitle": [{"languageCode": "no", "value": "Høyanger"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4639",
-        "categoryTitle": "Vik",
+        "categoryTitle": [{"languageCode": "no", "value": "Vik"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4640",
-        "categoryTitle": "Sogndal",
+        "categoryTitle": [{"languageCode": "no", "value": "Sogndal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4641",
-        "categoryTitle": "Aurland",
+        "categoryTitle": [{"languageCode": "no", "value": "Aurland"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4642",
-        "categoryTitle": "Lærdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Lærdal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4643",
-        "categoryTitle": "Årdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Årdal"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4644",
-        "categoryTitle": "Luster",
+        "categoryTitle": [{"languageCode": "no", "value": "Luster"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4645",
-        "categoryTitle": "Askvoll",
+        "categoryTitle": [{"languageCode": "no", "value": "Askvoll"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4646",
-        "categoryTitle": "Fjaler",
+        "categoryTitle": [{"languageCode": "no", "value": "Fjaler"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4647",
-        "categoryTitle": "Sunnfjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Sunnfjord"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4648",
-        "categoryTitle": "Bremanger",
+        "categoryTitle": [{"languageCode": "no", "value": "Bremanger"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4649",
-        "categoryTitle": "Stad",
+        "categoryTitle": [{"languageCode": "no", "value": "Stad"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4650",
-        "categoryTitle": "Gloppen",
+        "categoryTitle": [{"languageCode": "no", "value": "Gloppen"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "4651",
-        "categoryTitle": "Stryn",
+        "categoryTitle": [{"languageCode": "no", "value": "Stryn"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5001",
-        "categoryTitle": "Trondheim",
+        "categoryTitle": [{"languageCode": "no", "value": "Trondheim"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5004",
-        "categoryTitle": "Steinkjer",
+        "categoryTitle": [{"languageCode": "no", "value": "Steinkjer"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "5005",
-        "categoryTitle": "Namsos",
+        "categoryTitle": [{"languageCode": "no", "value": "Namsos"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "5006",
-        "categoryTitle": "Steinkjer",
+        "categoryTitle": [{"languageCode": "no", "value": "Steinkjer"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5007",
-        "categoryTitle": "Namsos",
+        "categoryTitle": [{"languageCode": "no", "value": "Namsos"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5011",
-        "categoryTitle": "Hemne",
+        "categoryTitle": [{"languageCode": "no", "value": "Hemne"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "5012",
-        "categoryTitle": "Snillfjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Snillfjord"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "5013",
-        "categoryTitle": "Hitra",
+        "categoryTitle": [{"languageCode": "no", "value": "Hitra"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "5014",
-        "categoryTitle": "Frøya",
+        "categoryTitle": [{"languageCode": "no", "value": "Frøya"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5015",
-        "categoryTitle": "Ørland",
+        "categoryTitle": [{"languageCode": "no", "value": "Ørland"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "5016",
-        "categoryTitle": "Agdenes",
+        "categoryTitle": [{"languageCode": "no", "value": "Agdenes"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "5017",
-        "categoryTitle": "Bjugn",
+        "categoryTitle": [{"languageCode": "no", "value": "Bjugn"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "5018",
-        "categoryTitle": "Åfjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Åfjord"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "5019",
-        "categoryTitle": "Roan",
+        "categoryTitle": [{"languageCode": "no", "value": "Roan"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "5020",
-        "categoryTitle": "Osen",
+        "categoryTitle": [{"languageCode": "no", "value": "Osen"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5021",
-        "categoryTitle": "Oppdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Oppdal"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5022",
-        "categoryTitle": "Rennebu",
+        "categoryTitle": [{"languageCode": "no", "value": "Rennebu"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5023",
-        "categoryTitle": "Meldal",
+        "categoryTitle": [{"languageCode": "no", "value": "Meldal"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "5024",
-        "categoryTitle": "Orkdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Orkdal"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "5025",
-        "categoryTitle": "Røros",
+        "categoryTitle": [{"languageCode": "no", "value": "Røros"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5026",
-        "categoryTitle": "Holtålen",
+        "categoryTitle": [{"languageCode": "no", "value": "Holtålen"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5027",
-        "categoryTitle": "Midtre Gauldal",
+        "categoryTitle": [{"languageCode": "no", "value": "Midtre Gauldal"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5028",
-        "categoryTitle": "Melhus",
+        "categoryTitle": [{"languageCode": "no", "value": "Melhus"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5029",
-        "categoryTitle": "Skaun",
+        "categoryTitle": [{"languageCode": "no", "value": "Skaun"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5030",
-        "categoryTitle": "Klæbu",
+        "categoryTitle": [{"languageCode": "no", "value": "Klæbu"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "5031",
-        "categoryTitle": "Malvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Malvik"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5032",
-        "categoryTitle": "Selbu",
+        "categoryTitle": [{"languageCode": "no", "value": "Selbu"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5033",
-        "categoryTitle": "Tydal",
+        "categoryTitle": [{"languageCode": "no", "value": "Tydal"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5034",
-        "categoryTitle": "Meråker",
+        "categoryTitle": [{"languageCode": "no", "value": "Meråker"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5035",
-        "categoryTitle": "Stjørdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Stjørdal"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5036",
-        "categoryTitle": "Frosta",
+        "categoryTitle": [{"languageCode": "no", "value": "Frosta"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5037",
-        "categoryTitle": "Levanger",
+        "categoryTitle": [{"languageCode": "no", "value": "Levanger"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5038",
-        "categoryTitle": "Verdal",
+        "categoryTitle": [{"languageCode": "no", "value": "Verdal"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5039",
-        "categoryTitle": "Verran",
+        "categoryTitle": [{"languageCode": "no", "value": "Verran"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "5040",
-        "categoryTitle": "Namdalseid",
+        "categoryTitle": [{"languageCode": "no", "value": "Namdalseid"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "5041",
-        "categoryTitle": "Snåase - Snåsa",
+        "categoryTitle": [{"languageCode": "no", "value": "Snåase - Snåsa"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5042",
-        "categoryTitle": "Lierne",
+        "categoryTitle": [{"languageCode": "no", "value": "Lierne"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5043",
-        "categoryTitle": "Raarvihke - Røyrvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Raarvihke - Røyrvik"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5044",
-        "categoryTitle": "Namsskogan",
+        "categoryTitle": [{"languageCode": "no", "value": "Namsskogan"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5045",
-        "categoryTitle": "Grong",
+        "categoryTitle": [{"languageCode": "no", "value": "Grong"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5046",
-        "categoryTitle": "Høylandet",
+        "categoryTitle": [{"languageCode": "no", "value": "Høylandet"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5047",
-        "categoryTitle": "Overhalla",
+        "categoryTitle": [{"languageCode": "no", "value": "Overhalla"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5048",
-        "categoryTitle": "Fosnes",
+        "categoryTitle": [{"languageCode": "no", "value": "Fosnes"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "5049",
-        "categoryTitle": "Flatanger",
+        "categoryTitle": [{"languageCode": "no", "value": "Flatanger"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5050",
-        "categoryTitle": "Vikna",
+        "categoryTitle": [{"languageCode": "no", "value": "Vikna"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "5051",
-        "categoryTitle": "Nærøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Nærøy"}],
         "validFrom": "2018-01-01",
         "validUntil": "2019-12-31"
       },
       {
         "code": "5052",
-        "categoryTitle": "Leka",
+        "categoryTitle": [{"languageCode": "no", "value": "Leka"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5053",
-        "categoryTitle": "Inderøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Inderøy"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5054",
-        "categoryTitle": "Indre Fosen",
+        "categoryTitle": [{"languageCode": "no", "value": "Indre Fosen"}],
         "validFrom": "2018-01-01",
         "validUntil": null
       },
       {
         "code": "5055",
-        "categoryTitle": "Heim",
+        "categoryTitle": [{"languageCode": "no", "value": "Heim"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5056",
-        "categoryTitle": "Hitra",
+        "categoryTitle": [{"languageCode": "no", "value": "Hitra"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5057",
-        "categoryTitle": "Ørland",
+        "categoryTitle": [{"languageCode": "no", "value": "Ørland"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5058",
-        "categoryTitle": "Åfjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Åfjord"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5059",
-        "categoryTitle": "Orkland",
+        "categoryTitle": [{"languageCode": "no", "value": "Orkland"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5060",
-        "categoryTitle": "Nærøysund",
+        "categoryTitle": [{"languageCode": "no", "value": "Nærøysund"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5061",
-        "categoryTitle": "Rindal",
+        "categoryTitle": [{"languageCode": "no", "value": "Rindal"}],
         "validFrom": "2019-01-01",
         "validUntil": null
       },
       {
         "code": "5401",
-        "categoryTitle": "Tromsø",
+        "categoryTitle": [{"languageCode": "no", "value": "Tromsø"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5402",
-        "categoryTitle": "Harstad - Hárstták",
+        "categoryTitle": [{"languageCode": "no", "value": "Harstad - Hárstták"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5403",
-        "categoryTitle": "Alta",
+        "categoryTitle": [{"languageCode": "no", "value": "Alta"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5404",
-        "categoryTitle": "Vardø",
+        "categoryTitle": [{"languageCode": "no", "value": "Vardø"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5405",
-        "categoryTitle": "Vadsø",
+        "categoryTitle": [{"languageCode": "no", "value": "Vadsø"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5406",
-        "categoryTitle": "Hammerfest",
+        "categoryTitle": [{"languageCode": "no", "value": "Hammerfest"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5411",
-        "categoryTitle": "Kvæfjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Kvæfjord"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5412",
-        "categoryTitle": "Tjeldsund",
+        "categoryTitle": [{"languageCode": "no", "value": "Tjeldsund"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5413",
-        "categoryTitle": "Ibestad",
+        "categoryTitle": [{"languageCode": "no", "value": "Ibestad"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5414",
-        "categoryTitle": "Gratangen",
+        "categoryTitle": [{"languageCode": "no", "value": "Gratangen"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5415",
-        "categoryTitle": "Loabák - Lavangen",
+        "categoryTitle": [{"languageCode": "no", "value": "Loabák - Lavangen"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5416",
-        "categoryTitle": "Bardu",
+        "categoryTitle": [{"languageCode": "no", "value": "Bardu"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5417",
-        "categoryTitle": "Salangen",
+        "categoryTitle": [{"languageCode": "no", "value": "Salangen"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5418",
-        "categoryTitle": "Målselv",
+        "categoryTitle": [{"languageCode": "no", "value": "Målselv"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5419",
-        "categoryTitle": "Sørreisa",
+        "categoryTitle": [{"languageCode": "no", "value": "Sørreisa"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5420",
-        "categoryTitle": "Dyrøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Dyrøy"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5421",
-        "categoryTitle": "Senja",
+        "categoryTitle": [{"languageCode": "no", "value": "Senja"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5422",
-        "categoryTitle": "Balsfjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Balsfjord"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5423",
-        "categoryTitle": "Karlsøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Karlsøy"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5424",
-        "categoryTitle": "Lyngen",
+        "categoryTitle": [{"languageCode": "no", "value": "Lyngen"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5425",
-        "categoryTitle": "Storfjord - Omasvuotna - Omasvuono",
+        "categoryTitle": [{"languageCode": "no", "value": "Storfjord - Omasvuotna - Omasvuono"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5426",
-        "categoryTitle": "Gáivuotna - Kåfjord - Kaivuono",
+        "categoryTitle": [{"languageCode": "no", "value": "Gáivuotna - Kåfjord - Kaivuono"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5427",
-        "categoryTitle": "Skjervøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Skjervøy"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5428",
-        "categoryTitle": "Nordreisa - Ráisa - Raisi",
+        "categoryTitle": [{"languageCode": "no", "value": "Nordreisa - Ráisa - Raisi"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5429",
-        "categoryTitle": "Kvænangen",
+        "categoryTitle": [{"languageCode": "no", "value": "Kvænangen"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5430",
-        "categoryTitle": "Guovdageaidnu - Kautokeino",
+        "categoryTitle": [{"languageCode": "no", "value": "Guovdageaidnu - Kautokeino"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5432",
-        "categoryTitle": "Loppa",
+        "categoryTitle": [{"languageCode": "no", "value": "Loppa"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5433",
-        "categoryTitle": "Hasvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Hasvik"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5434",
-        "categoryTitle": "Måsøy",
+        "categoryTitle": [{"languageCode": "no", "value": "Måsøy"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5435",
-        "categoryTitle": "Nordkapp",
+        "categoryTitle": [{"languageCode": "no", "value": "Nordkapp"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5436",
-        "categoryTitle": "Porsanger - Porsá?gu - Porsanki",
+        "categoryTitle": [{"languageCode": "no", "value": "Porsanger - Porsá?gu - Porsanki"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5437",
-        "categoryTitle": "Kárá?johka - Karasjok",
+        "categoryTitle": [{"languageCode": "no", "value": "Kárá?johka - Karasjok"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5438",
-        "categoryTitle": "Lebesby",
+        "categoryTitle": [{"languageCode": "no", "value": "Lebesby"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5439",
-        "categoryTitle": "Gamvik",
+        "categoryTitle": [{"languageCode": "no", "value": "Gamvik"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5440",
-        "categoryTitle": "Berlevåg",
+        "categoryTitle": [{"languageCode": "no", "value": "Berlevåg"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5441",
-        "categoryTitle": "Deatnu - Tana",
+        "categoryTitle": [{"languageCode": "no", "value": "Deatnu - Tana"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5442",
-        "categoryTitle": "Unjárga - Nesseby",
+        "categoryTitle": [{"languageCode": "no", "value": "Unjárga - Nesseby"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5443",
-        "categoryTitle": "Båtsfjord",
+        "categoryTitle": [{"languageCode": "no", "value": "Båtsfjord"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "5444",
-        "categoryTitle": "Sør-Varanger",
+        "categoryTitle": [{"languageCode": "no", "value": "Sør-Varanger"}],
         "validFrom": "2020-01-01",
         "validUntil": null
       },
       {
         "code": "9999",
-        "categoryTitle": "Uoppgitt",
+        "categoryTitle": [{"languageCode": "no", "value": "Uoppgitt"}],
         "validFrom": "2014-01-01",
         "validUntil": null
       },
       {
         "code": "2580",
-        "categoryTitle": "Utdanning i utlandet",
+        "categoryTitle": [{"languageCode": "no", "value": "Utdanning i utlandet"}],
         "validFrom": "1900-01-01",
         "validUntil": null
       }

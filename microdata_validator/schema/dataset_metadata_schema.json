@@ -47,7 +47,10 @@
             "$ref": "#/definitions/dateType"
           },
           "validUntil": {
-            "$ref": "#/definitions/dateType"
+            "oneOf": [
+              {"type": "null"},
+              {"$ref": "#/definitions/dateType"}
+            ]
           }
         },
         "required": [
