@@ -22,7 +22,7 @@
   ],
   "dataType": "STRING",
   "unitType": {
-    "pseudonymized": false,
+    "requiresPseudonymization": false,
     "shortName": "KOMMUNE",
     "name": [
       {

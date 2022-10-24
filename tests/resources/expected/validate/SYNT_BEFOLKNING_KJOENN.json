@@ -65,7 +65,7 @@
       "dataType": "LONG",
       "unitType": {
         "shortName": "PERSON",
-        "pseudonymized": true,
+        "requiresPseudonymization": true,
         "name": [
           {
             "languageCode": "no",

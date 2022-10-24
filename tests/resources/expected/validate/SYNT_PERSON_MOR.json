@@ -51,7 +51,7 @@
         ],
         "dataType": "LONG",
         "unitType": {
-          "pseudonymized": true,
+          "requiresPseudonymization": true,
           "shortName": "PERSON",
           "name": [
             {
@@ -96,7 +96,7 @@
           "description": [{"languageCode": "no", "value": "Fødselsnummer til personens biologiske mor"}],
           "dataType": "LONG",
           "unitType": {
-            "pseudonymized": true,
+            "requiresPseudonymization": true,
             "shortName": "PERSON",
             "name": [
               {

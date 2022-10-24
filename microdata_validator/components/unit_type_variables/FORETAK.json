@@ -23,7 +23,7 @@
   "dataType": "LONG",
   "unitType": {
     "shortName": "FORETAK",
-    "pseudonymized": true,
+    "requiresPseudonymization": true,
     "name": [
       {
         "languageCode": "no",

@@ -152,10 +152,10 @@
             "properties": {
                 "shortName": {"type": "string"},
                 "name": {"$ref": "#/definitions/multilingualStringType"},
-                "pseudonymized": {"type": "boolean"},
+                "requiresPseudonymization": {"type": "boolean"},
                 "description": {"$ref": "#/definitions/multilingualStringType"}
             },
-            "required": ["shortName", "name", "pseudonymized", "description"]
+            "required": ["shortName", "name", "requiresPseudonymization", "description"]
         },
         "valueDomain": {"$ref": "#/definitions/valueDomainType"}
     },
