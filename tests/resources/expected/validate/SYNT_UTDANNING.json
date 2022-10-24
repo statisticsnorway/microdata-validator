@@ -1,26 +1,11 @@
 {
-    "shortName": "SYNT_PERSON_INNTEKT",
+    "temporalityType": "STATUS",
     "sensitivityLevel": "PERSON_GENERAL",
-    "temporalityType": "ACCUMULATED",
     "populationDescription": [
         {
             "languageCode": "no",
-            "value": "Bosatte i Norge"
+            "value": "Personer med utdannelse i Norge"
         }
-    ],
-    "subjectFields": [
-        [
-            {
-                "languageCode": "no",
-                "value": "Økonomi"
-            }
-        ],
-        [
-            {
-                "languageCode": "no",
-                "value": "Samfunn"
-            }
-        ]
     ],
     "spatialCoverageDescription": [
         {
@@ -32,13 +17,21 @@
         "description": [
             {
                 "languageCode": "no",
-                "value": "Første publisering."
+                "value": "F\u00f8rste publisering."
             }
         ],
         "temporalEndOfSeries": false,
-        "temporalCoverageStart": "1970-01-01",
-        "temporalCoverageLatest": "2020-12-31"
+        "temporalCoverageStart": "1990-01-01",
+        "temporalCoverageLatest": "1994-01-01",
+        "temporalStatusDates": [
+            "1990-01-01",
+            "1991-01-01",
+            "1992-01-01",
+            "1993-01-01",
+            "1994-01-01"
+        ]
     },
+    "subjectFields": [[{"languageCode": "no", "value": "Befolkning"}]],
     "identifierVariables": [
         {
             "shortName": "PERSONID_1",
@@ -64,8 +57,8 @@
             ],
             "dataType": "LONG",
             "unitType": {
-                "requiresPseudonymization": true,
                 "shortName": "PERSON",
+                "requiresPseudonymization": true,
                 "name": [
                     {
                         "languageCode": "no",
@@ -104,37 +97,82 @@
     ],
     "measureVariables": [
         {
-            "shortName": "SYNT_PERSON_INNTEKT",
             "name": [
                 {
                     "languageCode": "no",
-                    "value": "Personens inntekt"
+                    "value": "Utdanning"
                 }
             ],
             "description": [
                 {
                     "languageCode": "no",
-                    "value": "Personens rapporterte inntekt"
+                    "value": "Utdanningsniv\u00e5 for person"
                 }
             ],
-            "dataType": "LONG",
-            "uriDefinition": [],
-            "valueDomain": {
-                "uriDefinition": [],
-                "description": [
+            "subjectFields": [
+                [
                     {
                         "languageCode": "no",
-                        "value": "Årlig personinntekt"
-                    }
-                ],
-                "measurementType": "CURRENCY",
-                "measurementUnitDescription": [
-                    {
-                        "languageCode": "no",
-                        "value": "Norske Kroner"
+                        "value": "Testdata"
                     }
                 ]
-            }
+            ],
+            "dataType": "STRING",
+            "valueDomain": {
+                "codeList": [
+                    {
+                        "code": "1",
+                        "categoryTitle": [
+                            {
+                                "languageCode": "no",
+                                "value": "Grunnskole"
+                            }
+                        ],
+                        "validFrom": "1926-01-01"
+                    },
+                    {
+                        "code": "2",
+                        "categoryTitle": [
+                            {
+                                "languageCode": "no",
+                                "value": "Videreg\u00e5ende skole"
+                            }
+                        ],
+                        "validFrom": "1926-01-01"
+                    },
+                    {
+                        "code": "3",
+                        "categoryTitle": [
+                            {
+                                "languageCode": "no",
+                                "value": "Bachelorgrad"
+                            }
+                        ],
+                        "validFrom": "1926-01-01"
+                    },
+                    {
+                        "code": "4",
+                        "categoryTitle": [
+                            {
+                                "languageCode": "no",
+                                "value": "Mastergrad"
+                            }
+                        ],
+                        "validFrom": "1926-01-01"
+                    },
+                    {
+                        "code": "5",
+                        "categoryTitle": [
+                            {
+                                "languageCode": "no",
+                                "value": "Doktorgrad"
+                            }
+                        ],
+                        "validFrom": "1926-01-01"
+                    }
+                ]
+            },
+            "shortName": "SYNT_UTDANNING"
         }
     ],
     "attributeVariables": [
@@ -153,11 +191,11 @@
             "description": [
                 {
                     "languageCode": "no",
-                    "value": "Startdato/måletidspunktet for hendelsen"
+                    "value": "Startdato/m\u00e5letidspunktet for hendelsen"
                 },
                 {
                     "languageCode": "en",
-                    "value": "Startdato/måletidspunktet for hendelsen"
+                    "value": "Startdato/m\u00e5letidspunktet for hendelsen"
                 }
             ],
             "name": [
@@ -186,11 +224,11 @@
             "description": [
                 {
                     "languageCode": "no",
-                    "value": "Startdato/måletidspunktet for hendelsen"
+                    "value": "Startdato/m\u00e5letidspunktet for hendelsen"
                 },
                 {
                     "languageCode": "en",
-                    "value": "Startdato/måletidspunktet for hendelsen"
+                    "value": "Startdato/m\u00e5letidspunktet for hendelsen"
                 }
             ],
             "name": [
@@ -204,5 +242,6 @@
                 }
             ]
         }
-    ]
+    ],
+    "shortName": "SYNT_UTDANNING"
 }

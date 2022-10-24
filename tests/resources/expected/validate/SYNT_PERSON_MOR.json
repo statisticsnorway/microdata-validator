@@ -8,6 +8,7 @@
         "value": "Alle personer registrert bosatt i Norge"
       }
     ],
+    "subjectFields": [[{"languageCode": "no", "value": "Befolkning"}]],
     "spatialCoverageDescription": [
       {
         "languageCode": "no",
@@ -50,7 +51,7 @@
         ],
         "dataType": "LONG",
         "unitType": {
-          "pseudonymized": true,
+          "requiresPseudonymization": true,
           "shortName": "PERSON",
           "name": [
             {
@@ -95,7 +96,7 @@
           "description": [{"languageCode": "no", "value": "Fødselsnummer til personens biologiske mor"}],
           "dataType": "LONG",
           "unitType": {
-            "pseudonymized": true,
+            "requiresPseudonymization": true,
             "shortName": "PERSON",
             "name": [
               {

@@ -22,7 +22,7 @@
   ],
   "dataType": "LONG",
   "unitType": {
-    "pseudonymized": true,
+    "requiresPseudonymization": true,
     "shortName": "KURS",
     "name": [
       {
