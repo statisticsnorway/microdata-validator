@@ -7,17 +7,17 @@
     },
     {
       "languageCode": "en",
-      "value": "Business identifier"
+      "value": "Establishment identifier"
     }
   ],
   "description": [
     {
       "languageCode": "no",
-      "value": "Identifikator for virksomhet i Microdata"
+      "value": "Identifikator for virksomhet i microdata"
     },
     {
       "languageCode": "en",
-      "value": "Identifier for business in Microdata"
+      "value": "Identifier for establishment in microdata"
     }
   ],
   "dataType": "LONG",
@@ -31,17 +31,17 @@
       },
       {
         "languageCode": "en",
-        "value": "Business"
+        "value": "Establishment"
       }
     ],
     "description": [
       {
         "languageCode": "no",
-        "value": "Virksomhet/bedrift er definert som en lokalt avgrenset funksjonell enhet som hovedsakelig driver virksomhet innenfor en bestemt næringsgruppe (Standard for næringsgruppering)."
+        "value": "Virksomhet er definert som en lokalt avgrenset funksjonell enhet som hovedsakelig driver aktivitet innenfor en bestemt næringsgruppe (Standard for næringsgruppering). SSB brukte tidligere termen \"bedrift\" om denne."
       },
       {
         "languageCode": "en",
-        "value": ""
+        "value": "Defined as a locally delimited functional unit that mainly carries out business within a specific industry group (Standard Industrial Classification)."
       }
     ]
   },
@@ -54,7 +54,7 @@
       },
       {
         "languageCode": "en",
-        "value": "Pseudonymized organisasjonsnummer"
+        "value": "Pseudonymized organisation number"
       }
     ]
   }

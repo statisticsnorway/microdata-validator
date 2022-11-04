@@ -7,17 +7,17 @@
     },
     {
       "languageCode": "en",
-      "value": "Kommune"
+      "value": "Municipality"
     }
   ],
   "description": [
     {
       "languageCode": "no",
-      "value": "Identifikator for kommune i Microdata"
+      "value": "Identifikator for kommune i microdata"
     },
     {
       "languageCode": "en",
-      "value": "Identifier for kommune in Microdata"
+      "value": "Identifier for municipality in microdata"
     }
   ],
   "dataType": "STRING",
@@ -31,13 +31,17 @@
       },
       {
         "languageCode": "en",
-        "value": "Kommune"
+        "value": "Municipality"
       }
     ],
     "description": [
       {
         "languageCode": "no",
-        "value": "Kommunene utgjør en administrativ inndeling av Norge. Kommune er betegnelsen både på et politisk og forvaltningsmessig nivå, og på et regionalt nivå."
+        "value": "Kommune er en regional administrativ enhet. Kommune er betegnelsen både på et politisk og forvaltningsmessig nivå og et regionalt nivå i statistikken."
+      },
+      {
+        "languageCode": "en",
+        "value": "Municipality is a regional administrative unit. Municipality is the designation both at a political and administrative level and the designation of a regional level in statistics."
       }
     ]
   },

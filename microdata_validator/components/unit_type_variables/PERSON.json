@@ -13,11 +13,11 @@
   "description": [
     {
       "languageCode": "no",
-      "value": "Identifikator for person i Microdata"
+      "value": "Identifikator for person i microdata"
     },
     {
       "languageCode": "en",
-      "value": "Identifier for person in Microdata"
+      "value": "Identifier for person in microdata"
     }
   ],
   "dataType": "LONG",
@@ -37,11 +37,11 @@
     "description": [
       {
         "languageCode": "no",
-        "value": "Statistisk enhet er person (individ, enkeltmenneske)"
+        "value": "Person er et enkeltmenneske, individ."
       },
       {
         "languageCode": "en",
-        "value": "Statistical unit is person (individual person)"
+        "value": "Person is a single person, an individual."
       }
     ]
   },
@@ -54,7 +54,7 @@
       },
       {
         "languageCode": "en",
-        "value": "Pseudonymized personnummer"
+        "value": "Pseudonymized national identity number"
       }
     ]
   }

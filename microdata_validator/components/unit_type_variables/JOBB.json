@@ -13,11 +13,11 @@
   "description": [
     {
       "languageCode": "no",
-      "value": "Identifikator for jobb i Microdata"
+      "value": "Identifikator for jobb i microdata"
     },
     {
       "languageCode": "en",
-      "value": "Identifier for job in Microdata"
+      "value": "Identifier for job in microdata"
     }
   ],
   "dataType": "LONG",
@@ -37,8 +37,13 @@
     "description": [
       {
         "languageCode": "no",
-        "value": "En jobb er betegnelse for en persons arbeidsforhold i en virksomhet. En person kan ha flere arbeidsforhold, også innenfor en periode."
+        "value": "En jobb er en persons arbeidsforhold i en virksomhet. En person kan ha flere arbeidsforhold, også innenfor en periode."
+      },
+      {
+        "languageCode": "en",
+        "value": "A job is a person's employment in an establishment. A person may have several employments, also within the same period of time."
       }
+
     ]
   },
   "format": "RandomUInt48",
@@ -50,7 +55,7 @@
       },
       {
         "languageCode": "en",
-        "value": "Pseudonymized combination of personnummer and organisasjonsnummer"
+        "value": "Pseudonymized combination of national identity number and organisation number"
       }
     ]
   }

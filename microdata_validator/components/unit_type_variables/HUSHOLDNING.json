@@ -13,11 +13,11 @@
   "description": [
     {
       "languageCode": "no",
-      "value": "Identifikator for husholdning i Microdata"
+      "value": "Identifikator for husholdning i microdata"
     },
     {
       "languageCode": "en",
-      "value": "Identifier for household in Microdata"
+      "value": "Identifier for household in microdata"
     }
   ],
   "dataType": "LONG",
@@ -41,7 +41,7 @@
       },
       {
         "languageCode": "en",
-        "value": ""
+        "value": "A household consists of persons who are permanently resident in the same dwelling (dwelling unit) or institution. A private household consists of persons who are permanently resident in the same dwelling, but the dwelling is not an institution. An institutional household consists of persons who are permanently resident, and whose needs for food, nursing and care, are covered in the institution."
       }
     ]
   },
@@ -54,7 +54,7 @@
       },
       {
         "languageCode": "en",
-        "value": "Pseudonymized personnummer"
+        "value": "Pseudonymized national identity number"
       }
     ]
   }
