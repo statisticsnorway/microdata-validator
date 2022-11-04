@@ -13,11 +13,11 @@
   "description": [
     {
       "languageCode": "no",
-      "value": "Identifikator for kjøretøy i Microdata"
+      "value": "Identifikator for kjøretøy i microdata"
     },
     {
       "languageCode": "no",
-      "value": "Identifier for vehicles in Microdata"
+      "value": "Identifier for vehicles in microdata"
     }
   ],
   "dataType": "LONG",
@@ -37,11 +37,11 @@
     "description": [
       {
         "languageCode": "no",
-        "value": "Et kjøretøy er en innretning som er bestemt til å kjøre på bakken."
+        "value": "Kjøretøy er en innretning som er bestemt til å kjøre på bakken."
       },
       {
         "languageCode": "en",
-        "value": "A vehicle is a thing used to drive on land."
+        "value": "A vehicle is an appliance that is provided to drive on the ground."
       }
     ]
   },
@@ -54,7 +54,7 @@
       },
       {
         "languageCode": "en",
-        "value": "Pseudonymized combination of personnummer and registreringsnummer for vehicles"
+        "value": "Pseudonymized combination of national identity number and license number for vehicles"
       }
     ]
   }

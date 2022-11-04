@@ -13,11 +13,11 @@
   "description": [
     {
       "languageCode": "no",
-      "value": "Identifikator for familie i Microdata"
+      "value": "Identifikator for familie i microdata"
     },
     {
       "languageCode": "en",
-      "value": "Identifier for family in Microdata"
+      "value": "Identifier for family in microdata"
     }
   ],
   "dataType": "LONG",
@@ -41,7 +41,7 @@
       },
       {
         "languageCode": "en",
-        "value": "A family is made up of persons that are permanent residents in the same household, and are connected to each other through marriage, registered partnership and/or as parents with unmarried children (regardless of the unmarried childs age). A family can include a maximum of two (subsequent) generations, and only one marriage/partnership. All individual persons are a member of a family and a houshold, so a single person is also considered a family."
+        "value": "A family consists of persons who are permanently resident in the same dwelling, and who are linked to each other as spouses, cohabitants, registered partners and/or as parents and unmarried children (regardless of the age of the unmarried child(ren)). A family can, at most, consist of two (consecutive) generations, and only one married/cohabiting couple. Individuals are also regarded as families, whereby all persons belong to a family and a household, either with others, or on their own."
       }
     ]
   },
@@ -54,7 +54,7 @@
       },
       {
         "languageCode": "en",
-        "value": "Pseudonymized personnummer"
+        "value": "Pseudonymized national identity number"
       }
     ]
   }
