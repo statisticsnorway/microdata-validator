@@ -1,14 +1,5 @@
-import json
-import os
-import logging
-
-import pytest
-
 from microdata_validator import validate
 
-
-logger = logging.getLogger()
-logger.setLevel(logging.INFO)
 
 INPUT_DIRECTORY = 'docs/examples'
 EXAMPLE_DATASETS = [
