@@ -139,7 +139,7 @@ def _read_and_process_data(
         logger.debug(f'{str(rows_validated)} rows validated')
         return {
             'start': min(start_dates),
-            'latest': max(stop_dates),
+            'latest': max(start_dates + stop_dates),
             'status_list': list(set(start_dates + stop_dates))
         }
 
