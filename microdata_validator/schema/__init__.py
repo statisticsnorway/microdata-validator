@@ -29,11 +29,11 @@ def validate_with_schema(metadata_json: dict) -> None:
 def validate_dataset_name(dataset_name: str) -> None:
     valid_characters = (
         string.ascii_uppercase + '_'
-        + str(''.join(list(str(num) for num in range(0, 9))))
+        + str(''.join(list(str(num) for num in range(0, 10))))
     )
     if not all([character in valid_characters for character in dataset_name]):
         raise InvalidDatasetName(
-            f'"{dataset_name}" contains invalid characters.'
+            f'"{dataset_name}" contains invalid characters. '
             'Please use only uppercase A-Z, numbers 0-9 or "_"'
         )
 
