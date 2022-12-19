@@ -1,8 +1,12 @@
-from microdata_validator import schema
-from microdata_validator.exceptions import ParseMetadataError
-from microdata_validator.repository import local_storage
-from pathlib import Path
 import pytest
+from pathlib import Path
+
+from microdata_validator import schema
+from microdata_validator.repository import local_storage
+from microdata_validator.exceptions import (
+    ParseMetadataError, InvalidDatasetName
+)
+
 
 RESOURCES_DIR = "tests/resources/schema"
 SIMPLE_JSON = Path(f"{RESOURCES_DIR}/simple_referenced.json")
@@ -47,3 +51,17 @@ def test_inline_invalid_metadata_file_path():
         schema.inline_metadata_references(
             NONEXISTENT_FILE_PATH, REF_DIR
         )
+
+
+def test_validate_dataset_name():
+    schema.validate_dataset_name('MITT_DATASET')
+    schema.validate_dataset_name('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+    schema.validate_dataset_name('123456789')
+    schema.validate_dataset_name('1A_2Z3_334_567_GHJ')
+
+    with pytest.raises(InvalidDatasetName):
+        schema.validate_dataset_name('ÆØÅ')
+    with pytest.raises(InvalidDatasetName):
+        schema.validate_dataset_name('MY-!DÅTÆSØT-!?')
+    with pytest.raises(InvalidDatasetName):
+        schema.validate_dataset_name('MY.DATASET-!?')
