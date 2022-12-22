@@ -17,8 +17,8 @@ def _read_and_process_data(
     data_error_limit: int = 50
 ) -> dict:
     data_errors = []
-    start_dates = []
-    stop_dates = []
+    start_dates = set()
+    stop_dates = set()
     rows_validated = 0
 
     logger.debug(f'Validate datafile "{data_file_path}"')
@@ -107,8 +107,8 @@ def _read_and_process_data(
                                 f'STOP date not valid - "{start}"'
                             )
                     # find temporalCoverage from datafile
-                    start_dates.append(str(start).strip('"'))
-                    stop_dates.append(str(stop).strip('"'))
+                    start_dates.add(str(start).strip('"'))
+                    stop_dates.add(str(stop).strip('"'))
             data_file_with_row_numbers.close()
         except UnicodeDecodeError as e:
             error_message = (
@@ -139,8 +139,8 @@ def _read_and_process_data(
         logger.debug(f'{str(rows_validated)} rows validated')
         return {
             'start': min(start_dates),
-            'latest': max(start_dates + stop_dates),
-            'status_list': list(set(start_dates + stop_dates))
+            'latest': max(start_dates.union(stop_dates)),
+            'status_list': list(start_dates.union(stop_dates))
         }
 
 
