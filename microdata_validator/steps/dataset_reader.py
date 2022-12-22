@@ -25,8 +25,9 @@ def _read_and_process_data(
     data_file_with_row_numbers = open(
         enriched_data_file_path, 'w', encoding='utf-8'
     )
-    with open(file=data_file_path, newline='', encoding='utf-8',
-              errors="strict") as f:
+    with open(
+        file=data_file_path, newline='', encoding='utf-8', errors="strict"
+    ) as f:
         csv_sniffer = csv.Sniffer()
         csv_file_separator = csv_sniffer.sniff(f.read(5000)).delimiter
         if csv_file_separator != field_separator:
@@ -35,8 +36,9 @@ def _read_and_process_data(
             )
             raise InvalidDataException(error_message, [error_message])
 
-    with open(file=data_file_path, newline='', encoding='utf-8',
-              errors="strict") as f:
+    with open(
+        file=data_file_path, newline='', encoding='utf-8', errors="strict"
+    ) as f:
         reader = csv.reader(f, delimiter=field_separator)
         try:
             for data_row in reader:

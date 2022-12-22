@@ -155,9 +155,9 @@ def _is_data_row_consistent(
             )
 
 
-def _is_data_row_consistent_with_metadata(data_type: str,
-                                          code_list_with_missing_values: list,
-                                          data_row: tuple) -> Union[str, None]:
+def _is_data_row_consistent_with_metadata(
+    data_type: str, code_list_with_missing_values: list, data_row: tuple
+) -> Union[str, None]:
     row_number = data_row[0]
     # unit_id = data_row[1]
     value = data_row[2]
