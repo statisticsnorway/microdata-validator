@@ -17,16 +17,17 @@ def _read_and_process_data(
     data_error_limit: int = 50
 ) -> dict:
     data_errors = []
-    start_dates = []
-    stop_dates = []
+    start_dates = set()
+    stop_dates = set()
     rows_validated = 0
 
     logger.debug(f'Validate datafile "{data_file_path}"')
     data_file_with_row_numbers = open(
         enriched_data_file_path, 'w', encoding='utf-8'
     )
-    with open(file=data_file_path, newline='', encoding='utf-8',
-              errors="strict") as f:
+    with open(
+        file=data_file_path, newline='', encoding='utf-8', errors="strict"
+    ) as f:
         csv_sniffer = csv.Sniffer()
         csv_file_separator = csv_sniffer.sniff(f.read(5000)).delimiter
         if csv_file_separator != field_separator:
@@ -35,8 +36,9 @@ def _read_and_process_data(
             )
             raise InvalidDataException(error_message, [error_message])
 
-    with open(file=data_file_path, newline='', encoding='utf-8',
-              errors="strict") as f:
+    with open(
+        file=data_file_path, newline='', encoding='utf-8', errors="strict"
+    ) as f:
         reader = csv.reader(f, delimiter=field_separator)
         try:
             for data_row in reader:
@@ -107,8 +109,8 @@ def _read_and_process_data(
                                 f'STOP date not valid - "{start}"'
                             )
                     # find temporalCoverage from datafile
-                    start_dates.append(str(start).strip('"'))
-                    stop_dates.append(str(stop).strip('"'))
+                    start_dates.add(str(start).strip('"'))
+                    stop_dates.add(str(stop).strip('"'))
             data_file_with_row_numbers.close()
         except UnicodeDecodeError as e:
             error_message = (
@@ -139,8 +141,8 @@ def _read_and_process_data(
         logger.debug(f'{str(rows_validated)} rows validated')
         return {
             'start': min(start_dates),
-            'latest': max(start_dates + stop_dates),
-            'status_list': list(set(start_dates + stop_dates))
+            'latest': max(start_dates.union(stop_dates)),
+            'status_list': list(start_dates.union(stop_dates))
         }
 
 
