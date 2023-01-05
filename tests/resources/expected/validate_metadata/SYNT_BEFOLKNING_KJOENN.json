@@ -149,7 +149,7 @@
   ],
   "attributeVariables": [
     {
-      "variableRole": "START_TIME",
+      "variableRole": "Start",
       "shortName": "START",
       "dataType": "DATE",
       "valueDomain": {
@@ -182,7 +182,7 @@
       ]
     },
     {
-      "variableRole": "STOP_TIME",
+      "variableRole": "Stop",
       "shortName": "STOP",
       "dataType": "DATE",
       "valueDomain": {

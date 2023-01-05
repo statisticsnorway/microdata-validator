@@ -11,8 +11,8 @@ def test_generate_temporal_attributes_valid_temporality():
         assert (start['dataType'], stop['dataType']) == ('DATE', 'DATE')
         assert start['shortName'] == 'START'
         assert stop['shortName'] == 'STOP'
-        assert start['variableRole'] == 'START_TIME'
-        assert stop['variableRole'] == 'STOP_TIME'
+        assert start['variableRole'] == 'Start'
+        assert stop['variableRole'] == 'Stop'
         assert 'name' in start.keys()
         assert 'description' in start.keys()
         assert 'name' in stop.keys()

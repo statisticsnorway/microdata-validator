@@ -167,7 +167,7 @@
   ],
   "attributeVariables": [
     {
-      "variableRole": "START_TIME",
+      "variableRole": "Start",
       "shortName": "START",
       "name": [
         {
@@ -196,7 +196,7 @@
       }
     },
     {
-      "variableRole": "STOP_TIME",
+      "variableRole": "Stop",
       "shortName": "STOP",
       "name": [
         {

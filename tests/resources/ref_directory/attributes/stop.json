@@ -1,5 +1,5 @@
 {
-    "variableRole": "STOP_TIME",
+    "variableRole": "Stop",
     "shortName": "STOP",
     "name": [
       {"languageCode": "no", "value": "Stoppdato"},
