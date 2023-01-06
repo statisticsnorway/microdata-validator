@@ -143,7 +143,7 @@ DESCRIPTIONS = {
 }
 
 START_VARIABLE_DEFINITION = {
-    "variableRole": "START_TIME",
+    "variableRole": "Start",
     "shortName": "START",
     "dataType": "DATE",
     "valueDomain": {
@@ -156,7 +156,7 @@ START_VARIABLE_DEFINITION = {
     },
 }
 STOP_VARIABLE_DEFINITION = {
-    "variableRole": "STOP_TIME",
+    "variableRole": "Stop",
     "shortName": "STOP",
     "dataType": "DATE",
     "valueDomain": {

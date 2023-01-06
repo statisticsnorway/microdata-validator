@@ -1,5 +1,5 @@
 {
-    "variableRole": "START_TIME",
+    "variableRole": "Start",
     "shortName": "START",
     "name": [
       {"languageCode": "no", "value": "Startdato"},
