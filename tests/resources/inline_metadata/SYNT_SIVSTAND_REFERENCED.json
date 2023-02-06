@@ -14,7 +14,9 @@
     }
   ],
   "subjectFields": [
-    [{"languageCode": "no", "value": "Befolkning"}]
+    {
+      "$ref": "subjectfields/befolkning.json"
+    }
   ],
   "dataRevision": {
     "description": [
@@ -42,11 +44,6 @@
         {
           "languageCode": "no",
           "value": "Sivilstand i forhold til ekteskapslovgivningen"
-        }
-      ],
-      "subjectFields": [
-        {
-          "$ref": "subjectfields/befolkning.json"
         }
       ],
       "dataType": "STRING",

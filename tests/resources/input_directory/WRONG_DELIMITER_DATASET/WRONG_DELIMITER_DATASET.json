@@ -44,20 +44,6 @@
           "value": "Rapportert kjønn for person"
         }
       ],
-      "subjectFields": [
-        [
-          {
-            "languageCode": "no",
-            "value": "Helse"
-          }
-        ],
-        [
-          {
-            "languageCode": "no",
-            "value": "Helsetjenester"
-          }
-        ]
-      ],
       "dataType": "STRING",
       "uriDefinition": [
         ""
