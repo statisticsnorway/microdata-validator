@@ -22,6 +22,8 @@ NO_SUCH_METADATA = 'NO_SUCH_METADATA'
 MISSING_IDENTIFIER_METADATA = 'MISSING_IDENTIFIER_DATASET'
 INVALID_SENSITIVITY_METADATA = 'INVALID_SENSITIVITY_DATASET'
 EMPTY_CODELIST_METADATA = 'EMPTY_CODELIST_DATASET'
+EXTRA_FIELDS_METADATA = 'EXTRA_FIELDS_DATASET'
+EXTRA_FIELDS_UNIT_MEASURE_METADATA = 'EXTRA_FIELDS_UNIT_MEASURE_DATASET'
 REF_DIRECTORY = 'tests/resources/ref_directory'
 
 
@@ -103,6 +105,22 @@ def test_validate_empty_codelist():
             '[] is too short'
         )
     ]
+
+
+def test_invalidate_extra_fields():
+    data_errors = validate_metadata(
+        EXTRA_FIELDS_METADATA,
+        input_directory=INPUT_DIRECTORY
+    )
+    assert len(data_errors) > 0
+
+
+def test_invalidate_extra_fields_unit_type_measure():
+    data_errors = validate_metadata(
+        EXTRA_FIELDS_UNIT_MEASURE_METADATA,
+        input_directory=INPUT_DIRECTORY
+    )
+    assert len(data_errors) > 10
 
 
 def test_validate_metadata_does_not_exist():
