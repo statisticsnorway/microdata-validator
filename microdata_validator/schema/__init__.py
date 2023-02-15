@@ -5,6 +5,7 @@ import logging
 from pathlib import Path
 
 from jsonschema import validate
+from microdata_validator.schema.metadata import Metadata
 from microdata_validator.repository import local_storage
 from microdata_validator.exceptions import (
     ParseMetadataError, InvalidDatasetName
@@ -15,15 +16,11 @@ logger = logging.getLogger()
 
 
 def validate_with_schema(metadata_json: dict) -> None:
-    json_schema_file = Path(__file__).parent.joinpath(
-        "dataset_metadata_schema.json"
-    )
-    with open(json_schema_file, mode="r", encoding="utf-8") as schema:
-        metadata_schema = json.load(schema)
-    validate(
-        instance=metadata_json,
-        schema=metadata_schema
-    )
+    try:
+        Metadata(**metadata_json)
+    except Exception as e:
+        logger.exception(e)
+        raise e
 
 
 def validate_dataset_name(dataset_name: str) -> None:
@@ -57,8 +54,6 @@ def inline_metadata_references(metadata_file_path: Path,
                             )
                         else:
                             recursive_ref_insert(item)
-            elif isinstance(value, str) and key == "$ref":
-                print(f"FOUND VALUE: {value}")
 
     if metadata_ref_directory is None:
         raise ParseMetadataError("No supplied reference directory")
