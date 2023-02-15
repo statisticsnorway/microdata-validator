@@ -55,8 +55,9 @@ def test_invalid_sensitivity():
     data_errors = validate_metadata(
         INVALID_SENSITIVITY_METADATA, INPUT_DIRECTORY
     )
-    assert len(data_errors) == 1
-    assert "'UNKNOWN' is not one of" in data_errors[0]
+    assert len(data_errors) == 3
+    assert "sensitivityLevel" in str(data_errors[0])
+    assert "value is not a valid enumeration member" in str(data_errors[0])
 
 
 def test_validate_valid_metadata_ref():
@@ -88,9 +89,8 @@ def test_validate_invalid_metadata():
         MISSING_IDENTIFIER_METADATA,
         input_directory=INPUT_DIRECTORY
     )
-    assert data_errors == [
-        "required: 'identifierVariables' is a required property"
-    ]
+    assert 'identifierVariables' in data_errors[0]['loc']
+    assert data_errors[0]['msg'] == 'field required'
 
 
 def test_validate_empty_codelist():
@@ -98,13 +98,8 @@ def test_validate_empty_codelist():
         EMPTY_CODELIST_METADATA,
         input_directory=INPUT_DIRECTORY
     )
-    assert data_errors == [
-        (
-            'properties.measureVariables.items.properties'
-            '.valueDomain.properties.codeList.minItems: '
-            '[] is too short'
-        )
-    ]
+    assert 'codeList' in data_errors[0]['loc']
+    assert 'ensure this value has at least 1 items' in data_errors[0]['msg']
 
 
 def test_invalidate_extra_fields():
@@ -112,7 +107,9 @@ def test_invalidate_extra_fields():
         EXTRA_FIELDS_METADATA,
         input_directory=INPUT_DIRECTORY
     )
-    assert len(data_errors) > 0
+    assert len(data_errors) == 4
+    for data_error in data_errors:
+        assert data_error['msg'] == 'extra fields not permitted'
 
 
 def test_invalidate_extra_fields_unit_type_measure():
@@ -120,7 +117,10 @@ def test_invalidate_extra_fields_unit_type_measure():
         EXTRA_FIELDS_UNIT_MEASURE_METADATA,
         input_directory=INPUT_DIRECTORY
     )
-    assert len(data_errors) > 10
+    assert len(data_errors) == 1
+    assert data_errors[0]['msg'] == (
+        'Can not set a dataType in a measure variable together with a unitType'
+    )
 
 
 def test_validate_metadata_does_not_exist():
