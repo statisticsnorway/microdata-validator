@@ -2,7 +2,7 @@ import os
 import logging
 from typing import List, Union
 from pathlib import Path
-from jsonschema import ValidationError
+from pydantic import ValidationError
 
 from microdata_validator import schema
 from microdata_validator.repository import local_storage
@@ -64,8 +64,7 @@ def validate(
     except InvalidDataException as e:
         data_errors = e.data_errors
     except ValidationError as e:
-        schema_path = ".".join([str(path) for path in e.relative_schema_path])
-        data_errors = [f"{schema_path}: {e.message}"]
+        data_errors = e.errors()
     except Exception as e:
         # Raise unexpected exceptions to user
         raise e
@@ -86,7 +85,7 @@ def validate_metadata(
     metadata_ref_directory: str = None,
     working_directory: str = '',
     keep_temporary_files: bool = False
-) -> list:
+) -> List[dict]:
     """
     Validate metadata and return a list of errors.
     If the metadata is valid, the list will be empty.
@@ -112,8 +111,7 @@ def validate_metadata(
             metadata_ref_directory
         )
     except ValidationError as e:
-        schema_path = ".".join([str(path) for path in e.relative_schema_path])
-        data_errors = [f"{schema_path}: {e.message}"]
+        data_errors = e.errors()
     except InvalidDatasetName as e:
         data_errors = [str(e)]
     except Exception as e:
