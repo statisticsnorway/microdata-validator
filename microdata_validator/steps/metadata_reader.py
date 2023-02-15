@@ -1,7 +1,7 @@
 import logging
 from pathlib import Path
 
-from microdata_validator.repository import local_storage
+from microdata_validator.adapter import local_storage
 from microdata_validator.components import (
     temporal_attributes, unit_type_variables
 )

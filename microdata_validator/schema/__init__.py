@@ -6,7 +6,7 @@ from pathlib import Path
 
 from jsonschema import validate
 from microdata_validator.schema.metadata import Metadata
-from microdata_validator.repository import local_storage
+from microdata_validator.adapter import local_storage
 from microdata_validator.exceptions import (
     ParseMetadataError, InvalidDatasetName
 )

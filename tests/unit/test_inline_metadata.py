@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 
 from microdata_validator import inline_metadata
-from microdata_validator.repository import local_storage
+from microdata_validator.adapter import local_storage
 from microdata_validator.schema import (
     inline_metadata_references, ParseMetadataError
 )

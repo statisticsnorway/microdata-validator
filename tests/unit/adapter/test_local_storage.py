@@ -2,7 +2,8 @@ import csv
 import os
 from pathlib import Path
 
-from microdata_validator.repository import local_storage
+from microdata_validator.adapter import local_storage
+
 
 RESOURCE_DIR = Path('tests/resources/repository')
 UNSORTED_DATASET_PATH = RESOURCE_DIR / 'unsorted_dataset.csv'

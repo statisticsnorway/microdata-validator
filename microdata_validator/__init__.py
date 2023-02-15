@@ -5,7 +5,7 @@ from pathlib import Path
 from pydantic import ValidationError
 
 from microdata_validator import schema
-from microdata_validator.repository import local_storage
+from microdata_validator.adapter import local_storage
 from microdata_validator.components import unit_id_types
 from microdata_validator.steps import (
     dataset_reader, dataset_validator, metadata_reader
