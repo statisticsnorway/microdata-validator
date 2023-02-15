@@ -15,9 +15,6 @@
       {
         "name": [{"languageCode": "no", "value": "Utdanning"}],
         "description": [{"languageCode": "no", "value": "Utdanningsnivå for person"}],
-        "subjectFields": [
-          [{"languageCode": "no", "value": "Testdata"}]
-        ],
         "dataType": "STRING",
         "valueDomain": {
           "codeList": [

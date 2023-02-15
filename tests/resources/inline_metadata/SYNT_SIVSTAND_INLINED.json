@@ -42,14 +42,6 @@
           "value": "Sivilstand i forhold til ekteskapslovgivningen"
         }
       ],
-      "subjectFields": [
-        [
-            {
-              "languageCode": "no",
-              "value": "Befolkning"
-            }
-          ]
-      ],
       "dataType": "STRING",
       "uriDefinition": [
         "https://www.ssb.no/a/metadata/conceptvariable/vardok/91/nb"
@@ -158,8 +150,7 @@
                 "languageCode": "no",
                 "value": "Sivilstand ukjent"
               }
-            ],
-            "validFrom": "1900-01-01"
+            ]
           }
         ]
       }

@@ -86,7 +86,7 @@ def test_validate_invalid_unit_type_dataset():
         input_directory=INPUT_DIRECTORY
     )
     assert len(data_errors) == 1
-    assert "'IKKE_EN_UNIT_TYPE' is not one of " in data_errors[0]
+    assert "value is not a valid enumeration member" in str(data_errors[0])
 
 
 def test_validate_valid_dataset_delete_temporary_files():
@@ -175,9 +175,8 @@ def test_validate_missing_identifier():
         working_directory=WORKING_DIRECTORY,
         input_directory=INPUT_DIRECTORY,
     )
-    assert data_errors == [
-        "required: 'identifierVariables' is a required property"
-    ]
+    assert 'identifierVariables' in data_errors[0]['loc']
+    assert data_errors[0]['msg'] == 'field required'
 
 
 def test_validate_invalid_dates():

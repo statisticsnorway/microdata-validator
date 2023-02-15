@@ -116,14 +116,6 @@
           "value": "Utdanningsniv\u00e5 for person"
         }
       ],
-      "subjectFields": [
-        [
-          {
-            "languageCode": "no",
-            "value": "Testdata"
-          }
-        ]
-      ],
       "dataType": "STRING",
       "valueDomain": {
         "codeList": [

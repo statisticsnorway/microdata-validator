@@ -14,10 +14,6 @@
       {
         "name": [{"languageCode": "no", "value": "Personens inntekt"}],
         "description": [{"languageCode": "no", "value": "Personens rapporterte inntekt"}],
-        "subjectFields": [
-          [{"languageCode": "no", "value": "Økonomi"}],
-          [{"languageCode": "no", "value": "Samfunn"}]
-        ],
         "dataType": "STRING",
         "uriDefinition": [""],
         "valueDomain": {
