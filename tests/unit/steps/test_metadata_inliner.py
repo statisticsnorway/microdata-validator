@@ -8,7 +8,7 @@ from microdata_validator.adapter import local_storage
 from microdata_validator.exceptions import ParseMetadataError
 
 
-RESOURCES_DIR = "tests/resources/schema"
+RESOURCES_DIR = "tests/resources/inliner"
 SIMPLE_JSON = Path(f"{RESOURCES_DIR}/simple_referenced.json")
 SIMPLE_JSON_BAD_REF = Path(f"{RESOURCES_DIR}/simple_bad_reference.json")
 SIMPLE_JSON_INLINED = Path(f"{RESOURCES_DIR}/simple_inlined.json")
