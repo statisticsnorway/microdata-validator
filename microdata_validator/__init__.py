@@ -12,7 +12,7 @@ from microdata_validator.steps import (
     dataset_reader, dataset_validator, metadata_reader, metadata_inliner
 )
 from microdata_validator.exceptions import (
-    InvalidDataException,
+    InvalidDatasetException,
     InvalidDatasetName
 )
 
@@ -68,10 +68,8 @@ def validate(
         data_errors = dataset_validator.run_validator(
             working_directory_path, dataset_name
         )
-    except InvalidDataException as e:
-        data_errors = e.data_errors
-    except ValidationError as e:
-        data_errors = e.errors()
+    except InvalidDatasetException as e:
+        data_errors = e.errors
     except Exception as e:
         # Raise unexpected exceptions to user
         raise e
@@ -128,8 +126,8 @@ def validate_metadata(
             working_directory_path,
             metadata_dict
         )
-    except ValidationError as e:
-        data_errors = e.errors()
+    except InvalidDatasetException as e:
+        data_errors = e.errors
     except InvalidDatasetName as e:
         data_errors = [str(e)]
     except Exception as e:

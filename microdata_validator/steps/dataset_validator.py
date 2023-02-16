@@ -2,7 +2,7 @@ import datetime
 from typing import Set, Union
 import logging
 from pathlib import Path
-from microdata_validator.exceptions import InvalidDataException
+from microdata_validator.exceptions import InvalidDatasetException
 
 from microdata_validator.adapter import local_storage
 
@@ -60,7 +60,7 @@ def _validate_data(
         ]
         data_errors += [error for error in row_errors if error is not None]
         if len(data_errors) >= error_limit:
-            raise InvalidDataException(
+            raise InvalidDatasetException(
                 'Invalid data found found in data file',
                 data_errors
             )

@@ -86,7 +86,7 @@ def test_validate_invalid_unit_type_dataset():
         input_directory=INPUT_DIRECTORY
     )
     assert len(data_errors) == 1
-    assert "value is not a valid enumeration member" in str(data_errors[0])
+    assert "value is not a valid enumeration member" in data_errors[0]
 
 
 def test_validate_valid_dataset_delete_temporary_files():
@@ -173,10 +173,10 @@ def test_validate_missing_identifier():
     data_errors = validate(
         MISSING_IDENTIFIER_DATASET_NAME,
         working_directory=WORKING_DIRECTORY,
-        input_directory=INPUT_DIRECTORY,
+        input_directory=INPUT_DIRECTORY
     )
-    assert 'identifierVariables' in data_errors[0]['loc']
-    assert data_errors[0]['msg'] == 'field required'
+    assert 'identifierVariables' in data_errors[0]
+    assert 'field required' in data_errors[0]
 
 
 def test_validate_invalid_dates():
