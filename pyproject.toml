@@ -18,7 +18,6 @@ pytest-dotenv = "^0.5.2"
 black = {version = "^22.3.0", allow-prereleases = true}
 pylint = "^2.15.3"
 pycodestyle = "^2.9.1"
-jsonschema = "^4.17.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
