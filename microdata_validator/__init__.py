@@ -5,7 +5,7 @@ from typing import List, Union
 from pathlib import Path
 from pydantic import ValidationError
 
-from microdata_validator import schema
+from microdata_validator.model import validate_metadata_model
 from microdata_validator.adapter import local_storage
 from microdata_validator.components import unit_id_types
 from microdata_validator.steps import (
@@ -176,7 +176,7 @@ def inline_metadata(
     metadata_dict = metadata_inliner.run_inliner(
         metadata_file_path, metadata_ref_directory
     )
-    schema.validate_with_schema(metadata_dict)
+    validate_metadata_model(metadata_dict)
 
     local_storage.write_json(output_file_path, metadata_dict)
     return output_file_path

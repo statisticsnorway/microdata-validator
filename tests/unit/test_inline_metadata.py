@@ -5,7 +5,7 @@ import pytest
 
 from microdata_validator import inline_metadata
 from microdata_validator.adapter import local_storage
-from microdata_validator.schema import ParseMetadataError
+from microdata_validator.exceptions import ParseMetadataError
 
 
 RESOURCES_DIR = "tests/resources/inline_metadata"

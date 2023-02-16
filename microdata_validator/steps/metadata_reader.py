@@ -5,7 +5,7 @@ from microdata_validator.adapter import local_storage
 from microdata_validator.components import (
     temporal_attributes, unit_type_variables
 )
-from microdata_validator.schema import validate_with_schema
+from microdata_validator.model import validate_metadata_model
 
 
 logger = logging.getLogger()
@@ -34,7 +34,7 @@ def run_reader(
     metadata_dict: dict
 ) -> None:
     logger.debug('Validating metadata JSON with JSON schema')
-    validate_with_schema(metadata_dict)
+    validate_metadata_model(metadata_dict)
     _insert_centralized_variable_definitions(metadata_dict)
     metadata_dict['shortName'] = dataset_name
     metadata_dict['measureVariables'][0]['shortName'] = dataset_name
