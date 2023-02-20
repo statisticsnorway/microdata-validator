@@ -68,10 +68,10 @@ def _read_and_process_data(
                         "UNIT_ID, VALUE, (START), (STOP), (ATTRIBUTES))"
                     )
                 else:
-                    unit_id = data_row[0].strip('"')
-                    value = data_row[1].strip('"')
-                    start = data_row[2].strip('"')
-                    stop = data_row[3].strip('"')
+                    unit_id = data_row[0].strip('"').strip()
+                    value = data_row[1].strip('"').strip()
+                    start = data_row[2].strip('"').strip()
+                    stop = data_row[3].strip('"').strip()
                     data_file_with_row_numbers.write(
                         f'{reader.line_num};{unit_id};{value};'
                         f'{start};{stop};\n'
