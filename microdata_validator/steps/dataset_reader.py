@@ -106,7 +106,7 @@ def _read_and_process_data(
                         except Exception:
                             data_errors.append(
                                 f'row {reader.line_num}: '
-                                f'STOP date not valid - "{start}"'
+                                f'STOP date not valid - "{stop}"'
                             )
                     # find temporalCoverage from datafile
                     start_dates.add(str(start).strip('"'))

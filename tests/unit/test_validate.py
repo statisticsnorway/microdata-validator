@@ -186,8 +186,8 @@ def test_validate_invalid_dates():
         input_directory=INPUT_DIRECTORY,
     )
     assert data_errors == [
-        'row 4: STOP date not valid - "1926-01-01"',
-        'row 15: STOP date not valid - "1940-02-01"'
+        'row 4: STOP date not valid - "1927-13-01"',
+        'row 15: STOP date not valid - "1940-02-31"'
     ]
 
 
