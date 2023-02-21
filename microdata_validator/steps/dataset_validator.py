@@ -1,10 +1,10 @@
 import datetime
-from typing import Union
+from typing import Set, Union
 import logging
 from pathlib import Path
-from microdata_validator.exceptions import InvalidDataException
+from microdata_validator.exceptions import InvalidDatasetException
 
-from microdata_validator.repository import local_storage
+from microdata_validator.adapter import local_storage
 
 logger = logging.getLogger()
 
@@ -13,20 +13,23 @@ def _get_data_type(metadata: dict) -> str:
     return metadata["measureVariables"][0]["dataType"]
 
 
-def _get_code_list_with_missing_values(metadata: dict) -> Union[list, None]:
+def _get_valid_code_set(metadata: dict) -> Set[str]:
     """get codeList if exists in enumerated-valueDomain"""
-    meta_value_domain_codes = None
-    value_domain = metadata["measureVariables"][0]["valueDomain"]
-    if "codeList" in value_domain:
-        meta_value_domain_codes = [
+    value_domain = metadata['measureVariables'][0]['valueDomain']
+    code_list_codes = (
+        [] if 'codeList' not in value_domain
+        else [
             item["code"] for item in value_domain["codeList"]
         ]
-    if "sentinelAndMissingValues" in value_domain:
-        meta_value_domain_codes += [
+    )
+    sentinel_codes = (
+        [] if 'sentinelAndMissingValues' not in value_domain
+        else [
             missing_item["code"] for missing_item
             in value_domain["sentinelAndMissingValues"]
         ]
-    return meta_value_domain_codes
+    )
+    return set(code_list_codes + sentinel_codes)
 
 
 def _validate_data(
@@ -41,9 +44,7 @@ def _validate_data(
     )
     temporality_type = metadata["temporalityType"]
     data_type = _get_data_type(metadata)
-    code_list_with_missing_values = (
-        _get_code_list_with_missing_values(metadata)
-    )
+    valid_code_set = _get_valid_code_set(metadata)
     previous_data_row = (None, None, None, None, None)
     data_errors = []
 
@@ -54,12 +55,12 @@ def _validate_data(
                 temporality_type, data_row, previous_data_row
             ),
             _is_data_row_consistent_with_metadata(
-                data_type, code_list_with_missing_values, data_row
+                data_type, valid_code_set, data_row
             )
         ]
         data_errors += [error for error in row_errors if error is not None]
         if len(data_errors) >= error_limit:
-            raise InvalidDataException(
+            raise InvalidDatasetException(
                 'Invalid data found found in data file',
                 data_errors
             )
@@ -156,7 +157,7 @@ def _is_data_row_consistent(
 
 
 def _is_data_row_consistent_with_metadata(
-    data_type: str, code_list_with_missing_values: list, data_row: tuple
+    data_type: str, valid_code_set: Set[str], data_row: tuple
 ) -> Union[str, None]:
     row_number = data_row[0]
     # unit_id = data_row[1]
@@ -165,10 +166,10 @@ def _is_data_row_consistent_with_metadata(
     # stop = data_row[4]
     # attributes = data_row[5]
 
-    if code_list_with_missing_values:
+    if valid_code_set:
         # Enumerated value-domain - check if value exsists in CodeList
         value_string = str(value).strip('"')
-        if value_string not in code_list_with_missing_values:
+        if value_string not in valid_code_set:
             return (
                 f"row {row_number}: "
                 f"'{value_string}' not in metadata "

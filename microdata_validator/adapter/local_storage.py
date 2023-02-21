@@ -74,8 +74,8 @@ def clean_up_temporary_files(
                     os.remove(working_directory / file)
                 except FileNotFoundError:
                     logger.error(
-                        f"Could not find file {file} in working directory "
-                        "when attempting to delete temporary files."
+                        f'Could not find file {file} in working directory '
+                        'when attempting to delete temporary files.'
                     )
     else:
         for file in generated_files:
@@ -83,8 +83,8 @@ def clean_up_temporary_files(
                 os.remove(working_directory / file)
             except FileNotFoundError:
                 logger.error(
-                    f"Could not find file {file} in working directory "
-                    "when attempting to delete temporary files."
+                    f'Could not find file {file} in working directory '
+                    'when attempting to delete temporary files.'
                 )
 
 
@@ -104,8 +104,8 @@ def _create_temp_sqlite_db_file(
     cursor = db_conn.cursor()
     cursor.execute(sql_create_table)
     # Set Sqlite-params to speed up performance
-    cursor.execute("PRAGMA synchronous = OFF")
-    cursor.execute("BEGIN TRANSACTION")
+    cursor.execute('PRAGMA synchronous = OFF')
+    cursor.execute('BEGIN TRANSACTION')
     return (db_conn, cursor)
 
 
@@ -118,9 +118,9 @@ def insert_data_csv_into_sqlite(
     with open(file=dataset_data_file, newline='', encoding='utf-8') as f:
         reader = csv.reader(f, delimiter=field_separator)
         cursor.executemany(
-            "INSERT INTO temp_dataset "
-            "(row_number, unit_id, value, start, stop, attributes) "
-            "VALUES (?, ?, ?, ?, ?, ?)",
+            'INSERT INTO temp_dataset '
+            '(row_number, unit_id, value, start, stop, attributes) '
+            'VALUES (?, ?, ?, ?, ?, ?)',
             reader
         )
     db_conn.commit()

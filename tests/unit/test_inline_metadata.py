@@ -4,10 +4,8 @@ from pathlib import Path
 import pytest
 
 from microdata_validator import inline_metadata
-from microdata_validator.repository import local_storage
-from microdata_validator.schema import (
-    inline_metadata_references, ParseMetadataError
-)
+from microdata_validator.adapter import local_storage
+from microdata_validator.exceptions import ParseMetadataError
 
 
 RESOURCES_DIR = "tests/resources/inline_metadata"
@@ -63,18 +61,24 @@ def test_inline_full_dataset_default_output_path():
     )
 
 
+def test_inline_file_already_exists():
+    with pytest.raises(FileExistsError) as e:
+        inline_metadata(
+            SIVSTAND_REFERENCED_FILE_PATH,
+            SIVSTAND_REFERENCED_FILE_PATH,
+            SIVSTAND_REFERENCED_FILE_PATH
+        )
+    assert 'File already exists at' in str(e)
+
+
 def test_inline_invalid_ref_dir():
     with pytest.raises(ParseMetadataError) as e:
-        inline_metadata_references(
-            SIVSTAND_REFERENCED_FILE_PATH, None
+        inline_metadata(
+            SIVSTAND_REFERENCED_FILE_PATH,
+            SIVSTAND_REFERENCED_FILE_PATH,
+            Path("/tests/resources/output.json")
         )
-    assert "No supplied reference directory" in str(e)
-
-    with pytest.raises(ParseMetadataError) as e:
-        inline_metadata_references(
-            SIVSTAND_REFERENCED_FILE_PATH, SIVSTAND_REFERENCED_FILE_PATH
-        )
-    assert "Supplied reference directory is invalid" in str(e)
+    assert 'Supplied reference directory is invalid' in str(e)
 
 
 def teardown_function():

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "microdata-validator"
-version = "7.0.5"
+version = "7.1.0"
 description = "Python package for validating datasets in the microdata platform"
 authors = ["microdata-developers"]
 license = "Apache-2.0"
@@ -9,7 +9,6 @@ readme = 'README.md'
 
 [tool.poetry.dependencies]
 python = ">=3.7.2,<4.0"
-jsonschema = "^4.2.1"
 pydantic = "^1.10.4"
 
 [tool.poetry.dev-dependencies]

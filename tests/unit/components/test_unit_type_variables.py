@@ -1,19 +1,31 @@
-import json
-from pathlib import Path
-from jsonschema import validate
+from typing import Optional
+from pydantic import BaseModel, conlist
 
+from microdata_validator.model.metadata import (
+    MultiLingualString, DataType, ValueDomain
+)
 from microdata_validator.components.unit_type_variables import (
     UNIT_TYPE_VARIABLES
 )
 
-SCHEMA_PATH = Path('tests/resources/components/unit_type_variable_schema.json')
-with open(SCHEMA_PATH, mode="r", encoding="utf-8") as schema:
-    metadata_schema = json.load(schema)
-
 
 def test_unit_type_variables_format():
     for _, variable in UNIT_TYPE_VARIABLES.items():
-        validate(
-            instance=variable,
-            schema=metadata_schema
-        )
+        UnitTypeVariable(**variable)
+
+
+class UnitType(BaseModel):
+    shortName: str
+    name: conlist(MultiLingualString, min_items=1)
+    requiresPseudonymization: bool
+    description: conlist(MultiLingualString, min_items=1)
+
+
+class UnitTypeVariable(BaseModel):
+    shortName: str
+    name: conlist(MultiLingualString, min_items=1)
+    description: conlist(MultiLingualString, min_items=1)
+    dataType: DataType
+    format: Optional[str]
+    unitType: UnitType
+    valueDomain: ValueDomain

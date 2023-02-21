@@ -2,9 +2,10 @@ import csv
 import os
 from pathlib import Path
 
-from microdata_validator.repository import local_storage
+from microdata_validator.adapter import local_storage
 
-RESOURCE_DIR = Path('tests/resources/repository')
+
+RESOURCE_DIR = Path('tests/resources/adapter')
 UNSORTED_DATASET_PATH = RESOURCE_DIR / 'unsorted_dataset.csv'
 SORTED_DATASET_PATH = RESOURCE_DIR / 'sorted_dataset.csv'
 SQLITE_FILE_PATH = RESOURCE_DIR / 'sql_dataset.db'

@@ -2,7 +2,7 @@ from copy import deepcopy
 from pathlib import Path
 
 from microdata_validator.exceptions import InvalidIdentifierType
-from microdata_validator.repository.local_storage import load_json
+from microdata_validator.adapter.local_storage import load_json
 
 
 UNIT_TYPE_VARIABLES_DIR = Path(__file__).parent

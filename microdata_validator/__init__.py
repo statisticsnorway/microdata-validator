@@ -1,17 +1,18 @@
 import os
 import logging
+import string
 from typing import List, Union
 from pathlib import Path
 from pydantic import ValidationError
 
-from microdata_validator import schema
-from microdata_validator.repository import local_storage
+from microdata_validator.model import validate_metadata_model
+from microdata_validator.adapter import local_storage
 from microdata_validator.components import unit_id_types
 from microdata_validator.steps import (
-    dataset_reader, dataset_validator, metadata_reader
+    dataset_reader, dataset_validator, metadata_reader, metadata_inliner
 )
 from microdata_validator.exceptions import (
-    InvalidDataException,
+    InvalidDatasetException,
     InvalidDatasetName
 )
 
@@ -47,11 +48,17 @@ def validate(
     # Run readers and validator
     data_errors = []
     try:
+        metadata_file_path = (
+            input_directory_path / dataset_name / f'{dataset_name}.json'
+        )
+        metadata_dict = metadata_inliner.run_inliner(
+            metadata_file_path,
+            metadata_ref_directory
+        )
         metadata_reader.run_reader(
             dataset_name,
             working_directory_path,
-            input_directory_path,
-            metadata_ref_directory
+            metadata_dict
         )
         dataset_reader.run_reader(
             dataset_name,
@@ -61,10 +68,8 @@ def validate(
         data_errors = dataset_validator.run_validator(
             working_directory_path, dataset_name
         )
-    except InvalidDataException as e:
-        data_errors = e.data_errors
-    except ValidationError as e:
-        data_errors = e.errors()
+    except InvalidDatasetException as e:
+        data_errors = e.errors
     except Exception as e:
         # Raise unexpected exceptions to user
         raise e
@@ -103,15 +108,26 @@ def validate_metadata(
          local_storage.resolve_working_directory(working_directory)
     )
 
+    # Make paths for input and ref directory
+    input_directory_path = Path(input_directory)
+    if metadata_ref_directory is not None:
+        metadata_ref_directory = Path(metadata_ref_directory)
+
     try:
+        metadata_file_path = (
+            input_directory_path / dataset_name / f'{dataset_name}.json'
+        )
+        metadata_dict = metadata_inliner.run_inliner(
+            metadata_file_path,
+            metadata_ref_directory
+        )
         metadata_reader.run_reader(
             dataset_name,
             working_directory_path,
-            Path(input_directory),
-            metadata_ref_directory
+            metadata_dict
         )
-    except ValidationError as e:
-        data_errors = e.errors()
+    except InvalidDatasetException as e:
+        data_errors = e.errors
     except InvalidDatasetName as e:
         data_errors = [str(e)]
     except Exception as e:
@@ -155,10 +171,10 @@ def inline_metadata(
 
     metadata_file_path = Path(metadata_file_path)
     metadata_ref_directory = Path(metadata_ref_directory)
-    metadata_dict = schema.inline_metadata_references(
+    metadata_dict = metadata_inliner.run_inliner(
         metadata_file_path, metadata_ref_directory
     )
-    schema.validate_with_schema(metadata_dict)
+    validate_metadata_model(metadata_dict)
 
     local_storage.write_json(output_file_path, metadata_dict)
     return output_file_path
@@ -178,7 +194,14 @@ def validate_dataset_name(dataset_name: str) -> None:
     Validates that the name of the dataset only contains valid
     characters (uppercase A-Z, numbers 0-9 and _)
     """
-    schema.validate_dataset_name(dataset_name)
+    valid_characters = (
+        string.ascii_uppercase + string.digits + '_'
+    )
+    if not all([character in valid_characters for character in dataset_name]):
+        raise InvalidDatasetName(
+            f'"{dataset_name}" contains invalid characters. '
+            'Please use only uppercase A-Z, numbers 0-9 or "_"'
+        )
 
 
 __all__ = [

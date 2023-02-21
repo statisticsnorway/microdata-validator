@@ -3,8 +3,8 @@ import datetime
 import logging
 from pathlib import Path
 
-from microdata_validator.exceptions import InvalidDataException
-from microdata_validator.repository import local_storage
+from microdata_validator.exceptions import InvalidDatasetException
+from microdata_validator.adapter import local_storage
 
 
 logger = logging.getLogger()
@@ -34,7 +34,7 @@ def _read_and_process_data(
             error_message = (
                 f'Invalid field separator "{csv_file_separator}". Use ";".'
             )
-            raise InvalidDataException(error_message, [error_message])
+            raise InvalidDatasetException(error_message, [error_message])
 
     with open(
         file=data_file_path, newline='', encoding='utf-8', errors="strict"
@@ -50,7 +50,7 @@ def _read_and_process_data(
                         f"Validation stopped - error limit reached, "
                         f"{str(rows_validated)} rows validated"
                     )
-                    raise InvalidDataException(
+                    raise InvalidDatasetException(
                         'Invalid data found while reading data file',
                         data_errors
                     )
@@ -68,10 +68,10 @@ def _read_and_process_data(
                         "UNIT_ID, VALUE, (START), (STOP), (ATTRIBUTES))"
                     )
                 else:
-                    unit_id = data_row[0].strip('"')
-                    value = data_row[1].strip('"')
-                    start = data_row[2].strip('"')
-                    stop = data_row[3].strip('"')
+                    unit_id = data_row[0].strip('"').strip()
+                    value = data_row[1].strip('"').strip()
+                    start = data_row[2].strip('"').strip()
+                    stop = data_row[3].strip('"').strip()
                     data_file_with_row_numbers.write(
                         f'{reader.line_num};{unit_id};{value};'
                         f'{start};{stop};\n'
@@ -106,7 +106,7 @@ def _read_and_process_data(
                         except Exception:
                             data_errors.append(
                                 f'row {reader.line_num}: '
-                                f'STOP date not valid - "{start}"'
+                                f'STOP date not valid - "{stop}"'
                             )
                     # find temporalCoverage from datafile
                     start_dates.add(str(start).strip('"'))
@@ -118,7 +118,7 @@ def _read_and_process_data(
                 f'File {data_file_path}, near row {reader.line_num}: {e}'
             )
             logger.error(error_message)
-            raise InvalidDataException(
+            raise InvalidDatasetException(
                 error_message, ['UTF-8 encoding error']
             ) from e
         except csv.Error as e:
@@ -127,14 +127,14 @@ def _read_and_process_data(
                 f'near row {reader.line_num}: {e}'
             )
             logger.error(error_message)
-            raise InvalidDataException(
+            raise InvalidDatasetException(
                 error_message, ['CSV reader error']
             ) from e
 
     if data_errors:
         logger.debug(f'ERROR in file - {data_file_path}')
         logger.debug(f'{str(rows_validated)} rows validated')
-        raise InvalidDataException(
+        raise InvalidDatasetException(
             'Invalid data found while reading data file', data_errors
         )
     else:

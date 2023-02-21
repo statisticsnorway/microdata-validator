@@ -1,14 +1,11 @@
 import logging
 from pathlib import Path
 
-from microdata_validator.repository import local_storage
+from microdata_validator.adapter import local_storage
 from microdata_validator.components import (
     temporal_attributes, unit_type_variables
 )
-from microdata_validator.schema import (
-    validate_with_schema,
-    inline_metadata_references
-)
+from microdata_validator.model import validate_metadata_model
 
 
 logger = logging.getLogger()
@@ -34,21 +31,10 @@ def _insert_centralized_variable_definitions(metadata: dict):
 def run_reader(
     dataset_name: str,
     working_directory: Path,
-    input_directory: Path,
-    metadata_ref_directory: Path
+    metadata_dict: dict
 ) -> None:
-    metadata_file_path = (
-        input_directory / dataset_name / f'{dataset_name}.json'
-    )
-    logger.debug(f'Reading metadata from file "{metadata_file_path}"')
-    if metadata_ref_directory is None:
-        metadata_dict = local_storage.load_json(metadata_file_path)
-    else:
-        metadata_dict = inline_metadata_references(
-            metadata_file_path, metadata_ref_directory
-        )
     logger.debug('Validating metadata JSON with JSON schema')
-    validate_with_schema(metadata_dict)
+    validate_metadata_model(metadata_dict)
     _insert_centralized_variable_definitions(metadata_dict)
     metadata_dict['shortName'] = dataset_name
     metadata_dict['measureVariables'][0]['shortName'] = dataset_name

@@ -56,8 +56,8 @@ def test_invalid_sensitivity():
         INVALID_SENSITIVITY_METADATA, INPUT_DIRECTORY
     )
     assert len(data_errors) == 3
-    assert "sensitivityLevel" in str(data_errors[0])
-    assert "value is not a valid enumeration member" in str(data_errors[0])
+    assert "sensitivityLevel" in data_errors[0]
+    assert "value is not a valid enumeration member" in data_errors[0]
 
 
 def test_validate_valid_metadata_ref():
@@ -89,8 +89,8 @@ def test_validate_invalid_metadata():
         MISSING_IDENTIFIER_METADATA,
         input_directory=INPUT_DIRECTORY
     )
-    assert 'identifierVariables' in data_errors[0]['loc']
-    assert data_errors[0]['msg'] == 'field required'
+    assert 'identifierVariables' in data_errors[0]
+    assert 'field required' in data_errors[0]
 
 
 def test_validate_empty_codelist():
@@ -98,8 +98,8 @@ def test_validate_empty_codelist():
         EMPTY_CODELIST_METADATA,
         input_directory=INPUT_DIRECTORY
     )
-    assert 'codeList' in data_errors[0]['loc']
-    assert 'ensure this value has at least 1 items' in data_errors[0]['msg']
+    assert 'codeList' in data_errors[0]
+    assert 'ensure this value has at least 1 items' in data_errors[0]
 
 
 def test_invalidate_extra_fields():
@@ -109,7 +109,7 @@ def test_invalidate_extra_fields():
     )
     assert len(data_errors) == 4
     for data_error in data_errors:
-        assert data_error['msg'] == 'extra fields not permitted'
+        assert 'extra fields not permitted' in data_error
 
 
 def test_invalidate_extra_fields_unit_type_measure():
@@ -118,9 +118,9 @@ def test_invalidate_extra_fields_unit_type_measure():
         input_directory=INPUT_DIRECTORY
     )
     assert len(data_errors) == 1
-    assert data_errors[0]['msg'] == (
+    assert (
         'Can not set a dataType in a measure variable together with a unitType'
-    )
+    ) in data_errors[0]
 
 
 def test_validate_metadata_does_not_exist():
