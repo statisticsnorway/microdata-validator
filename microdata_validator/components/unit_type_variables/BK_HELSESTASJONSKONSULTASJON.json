@@ -23,7 +23,7 @@
     "dataType": "LONG",
     "unitType": {
       "shortName": "BK_HELSESTASJONSKONSULTASJON",
-      "requiresPseudonymization": true,
+      "requiresPseudonymization": false,
       "name": [
         {
           "languageCode": "no",
