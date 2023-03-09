@@ -1,3 +1,4 @@
+# pylint: disable=raise-missing-from
 import logging
 
 from pydantic import ValidationError

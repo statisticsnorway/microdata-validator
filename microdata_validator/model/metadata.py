@@ -43,6 +43,7 @@ class UnitType(str, Enum):
     KURS = "KURS"
     PERSON = "PERSON"
     VIRKSOMHET = "VIRKSOMHET"
+    BK_HELSESTASJONSKONSULTASJON = "BK_HELSESTASJONSKONSULTASJON"
 
 
 class MultiLingualString(BaseModel):
