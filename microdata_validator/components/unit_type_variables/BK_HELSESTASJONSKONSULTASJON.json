@@ -50,11 +50,11 @@
       "description": [
         {
           "languageCode": "no",
-          "value": "Pseudonymisert helsestasjonskonsultasjonbesøksid"
+          "value": "Helsestasjonskonsultasjonbesøksid"
         },
         {
           "languageCode": "en",
-          "value": "Pseudonymized healt center visit id"
+          "value": "Healt center visit id"
         }
       ]
     }
