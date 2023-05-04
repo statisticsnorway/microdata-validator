@@ -3,7 +3,6 @@ import logging
 import string
 from typing import List, Union
 from pathlib import Path
-from pydantic import ValidationError
 
 from microdata_validator.model import validate_metadata_model
 from microdata_validator.adapter import local_storage
@@ -201,6 +200,11 @@ def validate_dataset_name(dataset_name: str) -> None:
         raise InvalidDatasetName(
             f'"{dataset_name}" contains invalid characters. '
             'Please use only uppercase A-Z, numbers 0-9 or "_"'
+        )
+    if dataset_name[0] in string.digits + '_':
+        raise InvalidDatasetName(
+            f'"{dataset_name}" has a leading number or _.'
+            'Please start dataset names with an upper case character A-Z'
         )
 
 
