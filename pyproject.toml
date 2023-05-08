@@ -11,16 +11,14 @@ readme = 'README.md'
 python = ">=3.7.2,<4.0"
 pydantic = "^1.10.4"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
+pytest-mock = "^3.10.0"
 pytest = "^6.2.5"
 pytest-cov = "^3.0.0"
 pytest-dotenv = "^0.5.2"
 black = {version = "^22.3.0", allow-prereleases = true}
 pylint = "^2.15.3"
 pycodestyle = "^2.9.1"
-
-[tool.poetry.group.dev.dependencies]
-pytest-mock = "^3.10.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
