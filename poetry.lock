@@ -463,14 +463,14 @@ email = ["email-validator (>=1.0.3)"]
 
 [[package]]
 name = "pylint"
-version = "2.17.3"
+version = "2.17.4"
 description = "python code static checker"
 category = "dev"
 optional = false
 python-versions = ">=3.7.2"
 files = [
-    {file = "pylint-2.17.3-py3-none-any.whl", hash = "sha256:a6cbb4c6e96eab4a3c7de7c6383c512478f58f88d95764507d84c899d656a89a"},
-    {file = "pylint-2.17.3.tar.gz", hash = "sha256:761907349e699f8afdcd56c4fe02f3021ab5b3a0fc26d19a9bfdc66c7d0d5cd5"},
+    {file = "pylint-2.17.4-py3-none-any.whl", hash = "sha256:7a1145fb08c251bdb5cca11739722ce64a63db479283d10ce718b2460e54123c"},
+    {file = "pylint-2.17.4.tar.gz", hash = "sha256:5dcf1d9e19f41f38e4e85d10f511e5b9c35e1aa74251bf95cdd8cb23584e2db1"},
 ]
 
 [package.dependencies]
@@ -551,6 +551,24 @@ files = [
 [package.dependencies]
 pytest = ">=5.0.0"
 python-dotenv = ">=0.9.1"
+
+[[package]]
+name = "pytest-mock"
+version = "3.10.0"
+description = "Thin-wrapper around the mock package for easier use with pytest"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "pytest-mock-3.10.0.tar.gz", hash = "sha256:fbbdb085ef7c252a326fd8cdcac0aa3b1333d8811f131bdcc701002e1be7ed4f"},
+    {file = "pytest_mock-3.10.0-py3-none-any.whl", hash = "sha256:f4c973eeae0282963eb293eb173ce91b091a79c1334455acfac9ddee8a1c784b"},
+]
+
+[package.dependencies]
+pytest = ">=5.0"
+
+[package.extras]
+dev = ["pre-commit", "pytest-asyncio", "tox"]
 
 [[package]]
 name = "python-dotenv"
@@ -753,4 +771,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.7.2,<4.0"
-content-hash = "2b1ba1454d6956d253f6d4c696d5b368e82ee0caac15bb07a9ae2bcbbc360bc5"
+content-hash = "537c3c6327db3c84c66e81007b8a147984ea8f63fdbad16269846f8d0297cab4"
