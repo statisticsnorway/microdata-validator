@@ -3,9 +3,10 @@ import os
 import logging
 
 import pytest
+from pytest_mock import MockerFixture
 
 from microdata_validator import validate
-
+from microdata_validator.steps import dataset_validator
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -195,6 +196,28 @@ def test_invalid_date_ranges():
             ' - 1940-01-31 > 1939-02-01'
         )
     ]
+
+
+def test_delete_temporary_files_when_exception(mocker: MockerFixture):
+    spy = mocker.patch.object(
+        dataset_validator,
+        'run_validator',
+        side_effect=Exception('mocked error')
+    )
+    data_errors = None
+
+    with pytest.raises(Exception):
+        data_errors = validate(
+            'SYNT_BEFOLKNING_SIVSTAND',
+            working_directory=WORKING_DIRECTORY,
+            input_directory=INPUT_DIRECTORY,
+            keep_temporary_files=True
+        )
+
+    spy.assert_called()
+    temp_files = get_working_directory_files()
+    assert not data_errors
+    assert temp_files == ['.gitkeep']
 
 
 def get_working_directory_files() -> list:

@@ -46,6 +46,7 @@ def validate(
 
     # Run readers and validator
     data_errors = []
+    unexpected_exception_occured = False
     try:
         metadata_file_path = (
             input_directory_path / dataset_name / f'{dataset_name}.json'
@@ -71,10 +72,11 @@ def validate(
         data_errors = e.errors
     except Exception as e:
         # Raise unexpected exceptions to user
+        unexpected_exception_occured = True
         raise e
     finally:
         # Delete temporary files
-        if not keep_temporary_files:
+        if not keep_temporary_files or unexpected_exception_occured:
             local_storage.clean_up_temporary_files(
                 dataset_name,
                 working_directory_path,
