@@ -11,20 +11,20 @@ from microdata_validator import validate_metadata
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-INPUT_DIRECTORY = 'tests/resources/input_directory'
-WORKING_DIRECTORY = 'tests/resources/working_directory'
-EXPECTED_DIRECTORY = 'tests/resources/expected/validate_metadata'
+INPUT_DIRECTORY = "tests/resources/input_directory"
+WORKING_DIRECTORY = "tests/resources/working_directory"
+EXPECTED_DIRECTORY = "tests/resources/expected/validate_metadata"
 
-VALID_METADATA = ['SYNT_BEFOLKNING_SIVSTAND', 'SYNT_PERSON_INNTEKT']
-VALID_METADATA_REF = 'SYNT_BEFOLKNING_KJOENN'
+VALID_METADATA = ["SYNT_BEFOLKNING_SIVSTAND", "SYNT_PERSON_INNTEKT"]
+VALID_METADATA_REF = "SYNT_BEFOLKNING_KJOENN"
 
-NO_SUCH_METADATA = 'NO_SUCH_METADATA'
-MISSING_IDENTIFIER_METADATA = 'MISSING_IDENTIFIER_DATASET'
-INVALID_SENSITIVITY_METADATA = 'INVALID_SENSITIVITY_DATASET'
-EMPTY_CODELIST_METADATA = 'EMPTY_CODELIST_DATASET'
-EXTRA_FIELDS_METADATA = 'EXTRA_FIELDS_DATASET'
-EXTRA_FIELDS_UNIT_MEASURE_METADATA = 'EXTRA_FIELDS_UNIT_MEASURE_DATASET'
-REF_DIRECTORY = 'tests/resources/ref_directory'
+NO_SUCH_METADATA = "NO_SUCH_METADATA"
+MISSING_IDENTIFIER_METADATA = "MISSING_IDENTIFIER_DATASET"
+INVALID_SENSITIVITY_METADATA = "INVALID_SENSITIVITY_DATASET"
+EMPTY_CODELIST_METADATA = "EMPTY_CODELIST_DATASET"
+EXTRA_FIELDS_METADATA = "EXTRA_FIELDS_DATASET"
+EXTRA_FIELDS_UNIT_MEASURE_METADATA = "EXTRA_FIELDS_UNIT_MEASURE_DATASET"
+REF_DIRECTORY = "tests/resources/ref_directory"
 
 
 def test_validate_valid_metadata():
@@ -33,18 +33,16 @@ def test_validate_valid_metadata():
             metadata,
             input_directory=INPUT_DIRECTORY,
             working_directory=WORKING_DIRECTORY,
-            keep_temporary_files=True
+            keep_temporary_files=True,
         )
         with open(
-            Path(WORKING_DIRECTORY) / f'{metadata}.json',
-            'r',
-            encoding='utf-8'
+            Path(WORKING_DIRECTORY) / f"{metadata}.json", "r", encoding="utf-8"
         ) as f:
             actual_metadata = json.load(f)
         with open(
-            Path(EXPECTED_DIRECTORY) / f'{metadata}.json',
-            'r',
-            encoding='utf-8'
+            Path(EXPECTED_DIRECTORY) / f"{metadata}.json",
+            "r",
+            encoding="utf-8",
         ) as f:
             expected_metadata = json.load(f)
         assert actual_metadata == expected_metadata
@@ -66,18 +64,18 @@ def test_validate_valid_metadata_ref():
         input_directory=INPUT_DIRECTORY,
         working_directory=WORKING_DIRECTORY,
         metadata_ref_directory=REF_DIRECTORY,
-        keep_temporary_files=True
+        keep_temporary_files=True,
     )
     with open(
-        Path(WORKING_DIRECTORY) / f'{VALID_METADATA_REF}.json',
-        'r',
-        encoding='utf-8'
+        Path(WORKING_DIRECTORY) / f"{VALID_METADATA_REF}.json",
+        "r",
+        encoding="utf-8",
     ) as f:
         actual_metadata = json.load(f)
     with open(
-        Path(EXPECTED_DIRECTORY) / f'{VALID_METADATA_REF}.json',
-        'r',
-        encoding='utf-8'
+        Path(EXPECTED_DIRECTORY) / f"{VALID_METADATA_REF}.json",
+        "r",
+        encoding="utf-8",
     ) as f:
         expected_metadata = json.load(f)
     assert actual_metadata == expected_metadata
@@ -86,40 +84,36 @@ def test_validate_valid_metadata_ref():
 
 def test_validate_invalid_metadata():
     data_errors = validate_metadata(
-        MISSING_IDENTIFIER_METADATA,
-        input_directory=INPUT_DIRECTORY
+        MISSING_IDENTIFIER_METADATA, input_directory=INPUT_DIRECTORY
     )
-    assert 'identifierVariables' in data_errors[0]
-    assert 'field required' in data_errors[0]
+    assert "identifierVariables" in data_errors[0]
+    assert "field required" in data_errors[0]
 
 
 def test_validate_empty_codelist():
     data_errors = validate_metadata(
-        EMPTY_CODELIST_METADATA,
-        input_directory=INPUT_DIRECTORY
+        EMPTY_CODELIST_METADATA, input_directory=INPUT_DIRECTORY
     )
-    assert 'codeList' in data_errors[0]
-    assert 'ensure this value has at least 1 items' in data_errors[0]
+    assert "codeList" in data_errors[0]
+    assert "ensure this value has at least 1 items" in data_errors[0]
 
 
 def test_invalidate_extra_fields():
     data_errors = validate_metadata(
-        EXTRA_FIELDS_METADATA,
-        input_directory=INPUT_DIRECTORY
+        EXTRA_FIELDS_METADATA, input_directory=INPUT_DIRECTORY
     )
     assert len(data_errors) == 4
     for data_error in data_errors:
-        assert 'extra fields not permitted' in data_error
+        assert "extra fields not permitted" in data_error
 
 
 def test_invalidate_extra_fields_unit_type_measure():
     data_errors = validate_metadata(
-        EXTRA_FIELDS_UNIT_MEASURE_METADATA,
-        input_directory=INPUT_DIRECTORY
+        EXTRA_FIELDS_UNIT_MEASURE_METADATA, input_directory=INPUT_DIRECTORY
     )
     assert len(data_errors) == 1
     assert (
-        'Can not set a dataType in a measure variable together with a unitType'
+        "Can not set a dataType in a measure variable together with a unitType"
     ) in data_errors[0]
 
 
@@ -134,5 +128,5 @@ def get_working_directory_files() -> list:
 
 def teardown_function():
     for file in get_working_directory_files():
-        if file != '.gitkeep':
-            os.remove(f'{WORKING_DIRECTORY}/{file}')
+        if file != ".gitkeep":
+            os.remove(f"{WORKING_DIRECTORY}/{file}")

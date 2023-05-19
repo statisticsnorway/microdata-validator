@@ -11,8 +11,7 @@ logger = logging.getLogger()
 
 
 def run_inliner(
-    metadata_file_path: Path,
-    metadata_ref_directory: Union[None, Path]
+    metadata_file_path: Path, metadata_ref_directory: Union[None, Path]
 ) -> dict:
     def recursive_ref_insert(metadata_object: dict):
         for key, value in metadata_object.items():

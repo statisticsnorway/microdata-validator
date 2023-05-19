@@ -17,36 +17,26 @@ REF_DIR = Path("tests/resources/ref_directory")
 
 
 def test_inline_simple():
-    actual_inlined = run_inliner(
-        SIMPLE_JSON, REF_DIR
-    )
-    assert actual_inlined == local_storage.load_json(
-       SIMPLE_JSON_INLINED
-    )
+    actual_inlined = run_inliner(SIMPLE_JSON, REF_DIR)
+    assert actual_inlined == local_storage.load_json(SIMPLE_JSON_INLINED)
 
 
 def test_inline_simple_bad_ref():
     with pytest.raises(FileNotFoundError):
-        run_inliner(
-            SIMPLE_JSON_BAD_REF, REF_DIR
-        )
+        run_inliner(SIMPLE_JSON_BAD_REF, REF_DIR)
 
 
 def test_inline_no_ref_dir():
     actual = run_inliner(SIMPLE_JSON, None)
-    with open(SIMPLE_JSON, encoding='utf-8') as f:
+    with open(SIMPLE_JSON, encoding="utf-8") as f:
         expected = json.load(f)
     assert actual == expected
 
     with pytest.raises(ParseMetadataError) as e:
-        run_inliner(
-            SIMPLE_JSON, SIMPLE_JSON
-        )
+        run_inliner(SIMPLE_JSON, SIMPLE_JSON)
     assert "Supplied reference directory is invalid" in str(e)
 
 
 def test_inline_invalid_metadata_file_path():
     with pytest.raises(FileNotFoundError):
-        run_inliner(
-            NONEXISTENT_FILE_PATH, REF_DIR
-        )
+        run_inliner(NONEXISTENT_FILE_PATH, REF_DIR)
