@@ -74,16 +74,17 @@ class CodeListItem(BaseModel, extra=Extra.forbid):
                 datetime.datetime(
                     int(date_string[:4]),
                     int(date_string[5:7]),
-                    int(date_string[8:10])
+                    int(date_string[8:10]),
                 )
             except ValueError as e:
                 raise ValueError(
                     f'Invalid {field_name} date for {values["code"]}. '
-                    'Date format: YYYY-MM-DD'
+                    "Date format: YYYY-MM-DD"
                 ) from e
-        validate_date_string('validFrom', values['validFrom'])
-        if values.get('validUntil' is not None):
-            validate_date_string('validUntil', values['validUntil'])
+
+        validate_date_string("validFrom", values["validFrom"])
+        if values.get("validUntil" != None):
+            validate_date_string("validUntil", values["validUntil"])
         return values
 
 
@@ -107,25 +108,26 @@ class ValueDomain(BaseModel, extra=Extra.forbid):
     def validate_value_domain(cls, values: dict):
         def raise_invalid_with_code_list(field_name: str):
             raise ValueError(
-                f'Can not add a {field_name} in a valuedomain with a codeList'
+                f"Can not add a {field_name} in a valuedomain with a codeList"
             )
-        if values.get('codeList', None) is not None:
-            if values.get('description', None) is not None:
-                raise_invalid_with_code_list('description')
-            if values.get('measurementType', None) is not None:
-                raise_invalid_with_code_list('measurementType')
-            if values.get('measurementUnitDescription', None) is not None:
-                raise_invalid_with_code_list('measurementUnitDescription')
-        elif values.get('description', None) is not None:
-            if values.get('sentinelAndMissingValues', None) is not None:
+
+        if values.get("codeList", None) is not None:
+            if values.get("description", None) is not None:
+                raise_invalid_with_code_list("description")
+            if values.get("measurementType", None) is not None:
+                raise_invalid_with_code_list("measurementType")
+            if values.get("measurementUnitDescription", None) is not None:
+                raise_invalid_with_code_list("measurementUnitDescription")
+        elif values.get("description", None) is not None:
+            if values.get("sentinelAndMissingValues", None) is not None:
                 raise ValueError(
-                    'Can not add sentinelAndMissingValues '
-                    'in valuedomain with a description'
+                    "Can not add sentinelAndMissingValues "
+                    "in valuedomain with a description"
                 )
         else:
             raise ValueError(
-                'A valueDomain must contain either a codeList '
-                'or a description'
+                "A valueDomain must contain either a codeList "
+                "or a description"
             )
         return values
 
@@ -144,19 +146,20 @@ class MeasureVariable(BaseModel):
     def validate_measure(cls, values: dict):
         def raise_invalid_with_unit_type(field_name: str):
             raise ValueError(
-                f'Can not set a {field_name} in a measure variable '
-                'together with a unitType'
+                f"Can not set a {field_name} in a measure variable "
+                "together with a unitType"
             )
-        if values.get('unitType', None) is not None:
-            if values.get('dataType', None) is not None:
-                raise_invalid_with_unit_type('dataType')
-            if values.get('valueDomain', None) is not None:
-                raise_invalid_with_unit_type('valueDomain')
+
+        if values.get("unitType", None) is not None:
+            if values.get("dataType", None) is not None:
+                raise_invalid_with_unit_type("dataType")
+            if values.get("valueDomain", None) is not None:
+                raise_invalid_with_unit_type("valueDomain")
         else:
-            if values.get('dataType', None) is None:
-                raise ValueError('Missing dataType in measure variable')
-            if values.get('valueDomain', None) is None:
-                raise ValueError('Missing valueDomain in measure variable')
+            if values.get("dataType", None) is None:
+                raise ValueError("Missing dataType in measure variable")
+            if values.get("valueDomain", None) is None:
+                raise ValueError("Missing valueDomain in measure variable")
         return values
 
 

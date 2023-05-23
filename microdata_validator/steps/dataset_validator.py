@@ -15,18 +15,18 @@ def _get_data_type(metadata: dict) -> str:
 
 def _get_valid_code_set(metadata: dict) -> Set[str]:
     """get codeList if exists in enumerated-valueDomain"""
-    value_domain = metadata['measureVariables'][0]['valueDomain']
+    value_domain = metadata["measureVariables"][0]["valueDomain"]
     code_list_codes = (
-        [] if 'codeList' not in value_domain
-        else [
-            item["code"] for item in value_domain["codeList"]
-        ]
+        []
+        if "codeList" not in value_domain
+        else [item["code"] for item in value_domain["codeList"]]
     )
     sentinel_codes = (
-        [] if 'sentinelAndMissingValues' not in value_domain
+        []
+        if "sentinelAndMissingValues" not in value_domain
         else [
-            missing_item["code"] for missing_item
-            in value_domain["sentinelAndMissingValues"]
+            missing_item["code"]
+            for missing_item in value_domain["sentinelAndMissingValues"]
         ]
     )
     return set(code_list_codes + sentinel_codes)
@@ -36,8 +36,8 @@ def _validate_data(
     sqlite_db_file_path: str, metadata: dict, error_limit: int = 50
 ) -> int:
     """
-        Read and validate sorted data rows from the temporary Sqlite
-        database file (sorted by unit_id, start, stop)
+    Read and validate sorted data rows from the temporary Sqlite
+    database file (sorted by unit_id, start, stop)
     """
     db_conn, db_cursor = local_storage.read_temp_sqlite_db_data_sorted(
         sqlite_db_file_path
@@ -56,13 +56,12 @@ def _validate_data(
             ),
             _is_data_row_consistent_with_metadata(
                 data_type, valid_code_set, data_row
-            )
+            ),
         ]
         data_errors += [error for error in row_errors if error is not None]
         if len(data_errors) >= error_limit:
             raise InvalidDatasetException(
-                'Invalid data found found in data file',
-                data_errors
+                "Invalid data found found in data file", data_errors
             )
         previous_data_row = data_row
     db_conn.close()
@@ -70,12 +69,10 @@ def _validate_data(
 
 
 def _is_data_row_consistent(
-    temporality_type: str,
-    data_row: tuple,
-    previous_data_row: tuple
+    temporality_type: str, data_row: tuple, previous_data_row: tuple
 ) -> Union[tuple, None]:
     """Validate consistency and event-history (unit_id * start * stop)
-       and check for row duplicates.
+    and check for row duplicates.
     """
     row_number = previous_data_row[0]
     unit_id = data_row[1]
@@ -181,18 +178,12 @@ def _is_data_row_consistent_with_metadata(
         try:
             int(str(value).strip('"'))
         except ValueError:
-            return (
-                f"row {row_number}: "
-                f"'{value}' not of type LONG"
-            )
+            return f"row {row_number}: " f"'{value}' not of type LONG"
     elif data_type == "DOUBLE":
         try:
             float(str(value).strip('"'))
         except ValueError:
-            return (
-                f"row {row_number}: "
-                f"'{value}' not of type DOUBLE"
-            )
+            return f"row {row_number}: " f"'{value}' not of type DOUBLE"
     elif data_type == "DATE":
         try:
             datetime.datetime(
@@ -206,17 +197,17 @@ def _is_data_row_consistent_with_metadata(
 
 
 def run_validator(working_directory: Path, dataset_name: str) -> list:
-    metadata_path = working_directory / f'{dataset_name}.json'
+    metadata_path = working_directory / f"{dataset_name}.json"
     sqlite_path = working_directory / f"{dataset_name}.db"
     logger.debug(
         f'Dataset "{dataset_name}" - validate consistency between '
-        'data and metadata, event-history (unit_id * start * stop)'
-        'and check for row duplicates'
+        "data and metadata, event-history (unit_id * start * stop)"
+        "and check for row duplicates"
     )
     metadata = local_storage.load_json(metadata_path)
     data_errors = _validate_data(sqlite_path, metadata)
     if len(data_errors) > 0:
-        logger.debug('Found data consistency error(s)')
+        logger.debug("Found data consistency error(s)")
         return data_errors
     else:
         logger.debug(

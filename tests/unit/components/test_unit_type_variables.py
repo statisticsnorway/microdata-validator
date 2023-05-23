@@ -2,10 +2,12 @@ from typing import Optional
 from pydantic import BaseModel, conlist
 
 from microdata_validator.model.metadata import (
-    MultiLingualString, DataType, ValueDomain
+    MultiLingualString,
+    DataType,
+    ValueDomain,
 )
 from microdata_validator.components.unit_type_variables import (
-    UNIT_TYPE_VARIABLES
+    UNIT_TYPE_VARIABLES,
 )
 
 

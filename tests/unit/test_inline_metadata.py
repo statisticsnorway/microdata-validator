@@ -33,7 +33,7 @@ def test_inline_full_dataset():
     result_file_path = inline_metadata(
         SIVSTAND_REFERENCED_FILE_PATH,
         REF_DIR,
-        output_file_path=OUTPUT_FILE_PATH
+        output_file_path=OUTPUT_FILE_PATH,
     )
     actual_inlined = local_storage.load_json(result_file_path)
     assert actual_inlined == local_storage.load_json(
@@ -43,17 +43,11 @@ def test_inline_full_dataset():
 
 def test_inline_full_dataset_no_overwite():
     with pytest.raises(FileExistsError):
-        inline_metadata(
-            SIVSTAND_REFERENCED_FILE_PATH,
-            REF_DIR
-        )
+        inline_metadata(SIVSTAND_REFERENCED_FILE_PATH, REF_DIR)
 
 
 def test_inline_full_dataset_default_output_path():
-    result_file_path = inline_metadata(
-        KJOENN_FILE_PATH,
-        REF_DIR
-    )
+    result_file_path = inline_metadata(KJOENN_FILE_PATH, REF_DIR)
     assert str(result_file_path) == KJOENN_DEFAULT_OUTPUT_PATH
     actual_inlined = local_storage.load_json(result_file_path)
     assert actual_inlined == local_storage.load_json(
@@ -66,9 +60,9 @@ def test_inline_file_already_exists():
         inline_metadata(
             SIVSTAND_REFERENCED_FILE_PATH,
             SIVSTAND_REFERENCED_FILE_PATH,
-            SIVSTAND_REFERENCED_FILE_PATH
+            SIVSTAND_REFERENCED_FILE_PATH,
         )
-    assert 'File already exists at' in str(e)
+    assert "File already exists at" in str(e)
 
 
 def test_inline_invalid_ref_dir():
@@ -76,9 +70,9 @@ def test_inline_invalid_ref_dir():
         inline_metadata(
             SIVSTAND_REFERENCED_FILE_PATH,
             SIVSTAND_REFERENCED_FILE_PATH,
-            Path("/tests/resources/output.json")
+            Path("/tests/resources/output.json"),
         )
-    assert 'Supplied reference directory is invalid' in str(e)
+    assert "Supplied reference directory is invalid" in str(e)
 
 
 def teardown_function():

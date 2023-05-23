@@ -150,7 +150,7 @@ START_VARIABLE_DEFINITION = {
         "description": [
             {
                 "languageCode": "no",
-                "value": "Dato oppgitt i dager siden 1970-01-01"
+                "value": "Dato oppgitt i dager siden 1970-01-01",
             }
         ]
     },
@@ -163,7 +163,7 @@ STOP_VARIABLE_DEFINITION = {
         "description": [
             {
                 "languageCode": "no",
-                "value": "Dato oppgitt i dager siden 1970-01-01"
+                "value": "Dato oppgitt i dager siden 1970-01-01",
             }
         ]
     },

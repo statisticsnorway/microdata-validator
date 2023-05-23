@@ -17,13 +17,14 @@ def validate_metadata_model(metadata_json: dict) -> None:
         logger.exception(e)
         error_messages = []
         for error in e.errors():
-            location = '->'.join(
-                loc for loc in error['loc']
-                if loc != '__root__' and not isinstance(loc, int)
+            location = "->".join(
+                loc
+                for loc in error["loc"]
+                if loc != "__root__" and not isinstance(loc, int)
             )
             error_messages.append(f'{location}: {error["msg"]}')
         raise InvalidDatasetException(
-            'Invalid metadata file', errors=error_messages
+            "Invalid metadata file", errors=error_messages
         )
     except Exception as e:
         logger.exception(e)
