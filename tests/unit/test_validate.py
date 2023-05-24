@@ -17,6 +17,7 @@ VALID_DATASET_NAMES = [
     "SYNT_PERSON_MOR",
     "SYNT_UTDANNING",
 ]
+EMPTY_CSV_DATASET = "EMPTY_CSV_DATASET"
 MANY_ERRORS_DATASET = "SYNT_MANY_ERRORS"
 VALID_DATASET_REF = "SYNT_BEFOLKNING_KJOENN"
 NO_SUCH_DATASET_NAME = "NO_SUCH_DATASET"
@@ -57,6 +58,18 @@ def test_validate_valid_dataset():
         ) as f:
             expected_metadata = json.load(f)
         assert actual_metadata == expected_metadata
+
+
+def test_validate_empty_data_file():
+    data_errors = validate(
+        EMPTY_CSV_DATASET,
+        working_directory=WORKING_DIRECTORY,
+        keep_temporary_files=True,
+        input_directory=INPUT_DIRECTORY,
+    )
+    assert data_errors == [
+        ("Can not read separator from dataset. The .csv file might be empty.",)
+    ]
 
 
 def test_validate_many_errors_threshold():
