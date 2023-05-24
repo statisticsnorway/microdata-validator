@@ -29,7 +29,15 @@ def _read_and_process_data(
         file=data_file_path, newline="", encoding="utf-8", errors="strict"
     ) as f:
         csv_sniffer = csv.Sniffer()
-        csv_file_separator = csv_sniffer.sniff(f.read(5000)).delimiter
+        try:
+            csv_file_separator = csv_sniffer.sniff(f.read(5000)).delimiter
+        except csv.Error as e:
+            error_message = (
+                "Can not read separator from dataset. The .csv file might be empty.",
+            )
+            raise InvalidDatasetException(
+                error_message, [error_message]
+            ) from e
         if csv_file_separator != field_separator:
             error_message = (
                 f'Invalid field separator "{csv_file_separator}". Use ";".'
