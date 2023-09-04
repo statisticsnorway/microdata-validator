@@ -1,3 +1,9 @@
+⚠️ Deprecation Notice ⚠️
+-------------------------
+
+This package has been deprecated. Please use the [microdata-tools](https://github.com/statisticsnorway/microdata-tools) 
+package.
+
 # microdata-validator
 
 Python package for validating datasets in the microdata platform.
